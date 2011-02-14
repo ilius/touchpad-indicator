@@ -1,0 +1,89 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Lorenzo Carbonell <EMAIL@ADDRESS>, 2010.
+#
+#: touchpad-indicator.py:190
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-05 09:49+0100\n"
+"PO-Revision-Date: 2010-11-27 08:05+0100\n"
+"Last-Translator: Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: change_touchpad_state.py:60 touchpad-indicator.py:102
+#: touchpad-indicator.py:167
+msgid "Touchpad Enabled"
+msgstr "Das Touchpad ist aktiviert"
+
+#: change_touchpad_state.py:62 touchpad-indicator.py:106
+#: touchpad-indicator.py:171
+msgid "Touchpad Disabled"
+msgstr "Das Touchpad ist deaktiviert"
+
+#: shortcut.py:106
+msgid "Touchpad-Indicator"
+msgstr "Touchpad-Indicator"
+
+#: shortcut.py:107
+msgid "Set shortcut for Touchpad-Indicator:"
+msgstr "Set Abkürzung für Touchpad-Indikator:"
+
+#: shortcut.py:108
+msgid "Ok"
+msgstr "Ok"
+
+#: shortcut.py:109
+msgid "Cancel"
+msgstr "Cancel"
+
+#: shortcut.py:147
+msgid "La combinacion <Control> + <Alt> + "
+msgstr "Diese Verknüpfung <Control> + <Alt> + "
+
+#: shortcut.py:147
+msgid " ya esta asignada"
+msgstr "wird zugewiesen"
+
+#: touchpad-indicator.py:101 touchpad-indicator.py:121
+#: touchpad-indicator.py:166
+msgid "Disable Touchpad"
+msgstr "Deaktiviert Touchpad"
+
+#: touchpad-indicator.py:105 touchpad-indicator.py:147
+#: touchpad-indicator.py:170
+msgid "Enable Touchpad"
+msgstr "Aktiviert Touchpad"
+
+#: touchpad-indicator.py:122
+msgid "Shortcut"
+msgstr "Verknüpfung"
+
+#: touchpad-indicator.py:123
+msgid "Exit"
+msgstr "Aus"
+
+#: touchpad-indicator.py:125
+msgid "About..."
+msgstr "Über..."
+
+#: touchpad-indicator.py:128
+msgid "Set shortcut"
+msgstr "Set Verknüpfung"
+
+#: touchpad-indicator.py:129
+msgid "Remove shortcut"
+msgstr "Entfernen Verknüpfung"
+
+#: touchpad-indicator.py:189
+msgid "An indicator for the Touchpad"
+msgstr "Ein Indikator für das Touchpad"
+
+#~ msgid "Disable TouchPad"

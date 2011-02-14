@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: touchpad-indicator.py:190
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-05 10:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: change_touchpad_state.py:60 touchpad-indicator.py:102
+#: touchpad-indicator.py:167
+msgid "Touchpad Enabled"
+msgstr ""
+
+#: change_touchpad_state.py:62 touchpad-indicator.py:106
+#: touchpad-indicator.py:171
+msgid "Touchpad Disabled"
+msgstr ""
+
+#: shortcut.py:106
+msgid "Touchpad-Indicator"
+msgstr ""
+
+#: shortcut.py:107
+msgid "Set shortcut for Touchpad-Indicator:"
+msgstr ""
+
+#: shortcut.py:108
+msgid "Ok"
+msgstr ""
+
+#: shortcut.py:109
+msgid "Cancel"
+msgstr ""
+
+#: shortcut.py:147
+msgid "La combinacion <Control> + <Alt> + "
+msgstr ""
+
+#: shortcut.py:147
+msgid " ya esta asignada"
+msgstr ""
+
+#: touchpad-indicator.py:101 touchpad-indicator.py:121
+#: touchpad-indicator.py:166
+msgid "Disable Touchpad"
+msgstr ""
+
+#: touchpad-indicator.py:105 touchpad-indicator.py:147
+#: touchpad-indicator.py:170
+msgid "Enable Touchpad"
+msgstr ""
+
+#: touchpad-indicator.py:122
+msgid "Shortcut"
+msgstr ""
+
+#: touchpad-indicator.py:123
+msgid "Exit"
+msgstr ""
+
+#: touchpad-indicator.py:125
+msgid "About..."
+msgstr ""
+
+#: touchpad-indicator.py:128
+msgid "Set shortcut"
+msgstr ""
+
+#: touchpad-indicator.py:129
+msgid "Remove shortcut"
+msgstr ""
+
+#: touchpad-indicator.py:189
+msgid "An indicator for the Touchpad"
+msgstr ""
