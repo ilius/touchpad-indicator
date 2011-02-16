@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/share/touchpad-indicator/touchpad-indicator.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[es_ES]=Touchpad-Indicator
+Name=Touchpad-Indicator
+Comment[es_ES]=Touchpad-Indicator official shortcut
+Comment=Touchpad-Indicator official shortcut

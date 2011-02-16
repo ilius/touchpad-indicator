@@ -28,6 +28,8 @@ __date__ ='$30/10/2010'
 #
 #
 import gobject
+import shlex
+import subprocess
 import gtk
 import appindicator
 import gconf
@@ -38,6 +40,7 @@ import dbus
 import dbus.service
 from dbus.mainloop.glib import DBusGMainLoop
 from shortcut import Shortcut
+import glib
 
 
 
@@ -53,6 +56,13 @@ _ = gettext.gettext
 icon_enabled = '/usr/share/pixmaps/touchpad-indicator.svg'
 icon_disabled = '/usr/share/pixmaps/touchpad-indicator-disabled.svg'
 gconf_touchpad_enabled = '/desktop/gnome/peripherals/touchpad/touchpad_enabled'
+
+def ejecuta(comando):
+	args = shlex.split(comando)
+	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
+	valor = p.communicate()[0]
+	return valor
+
 
 class TouchpadIndicator(dbus.service.Object):
 	def __init__(self):
@@ -96,6 +106,12 @@ class TouchpadIndicator(dbus.service.Object):
 		#
 		bus_name = dbus.service.BusName('es.atareao.touchpad_indicator_service', bus=dbus.SessionBus())
 		dbus.service.Object.__init__(self, bus_name, '/es/atareao/touchpad_indicator_service')
+		#
+		glib.timeout_add_seconds(1, self.work)
+
+	def work(self):
+		print ejecuta('lsusb')
+		return True
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def change_state(self):
@@ -188,8 +204,8 @@ class TouchpadIndicator(dbus.service.Object):
 	def menu_about_response(self,widget):
 		ad=gtk.AboutDialog()
 		ad.set_name('Touchpad-Indicator')
-		ad.set_version('0.6.4')
-		ad.set_copyright('Copyrignt (c) 2010\nLorenzo Carbonell')
+		ad.set_version('0.7.0')
+		ad.set_copyright('Copyrignt (c) 2011\nLorenzo Carbonell')
 		ad.set_comments(_('An indicator for the Touchpad'))
 		ad.set_license(_(''+
 		'This program is free software: you can redistribute it and/or modify it\n'+
