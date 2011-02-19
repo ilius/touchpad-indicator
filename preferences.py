@@ -28,8 +28,11 @@ import os
 import gtk
 import locale
 import gettext
-import gconf
 import com
+import gconf
+from configurator import GConf
+import devices
+import time
 
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(com.APP, com.LANGDIR)
@@ -74,21 +77,7 @@ class Keybindings():
 	def get_action(self):
 		return self.action
 		
-class GConf():
-	def __init__(self):
-		self.client = gconf.client_get_default()
 
-	def get_key(self, key):
-		return self.client.get_string(key)
-
-	def set_key(self, key, val):
-		self.client.set_string(key, str(val))
-	
-	def get_all_keys(self,folder):
-		return self.client.all_entries(folder)
-
-	def get_all_dirs(self,folder):
-		return self.client.all_dirs(folder)
 	
 class Preferences(gtk.Dialog):
 	def __init__(self):
@@ -121,7 +110,11 @@ class Preferences(gtk.Dialog):
 		table1.attach(self.checkbutton1,0,2,1,2)
 		#
 		self.checkbutton2 = gtk.CheckButton(_('Disable touchpad when mouse plugged'))
-		table1.attach(self.checkbutton2,0,2,2,3)
+		table1.attach(self.checkbutton2,0,1,2,3)
+		#
+		self.button0 = gtk.Button(_('Configure'))
+		self.button0.connect('clicked',self.configure)
+		table1.attach(self.button0,1,2,2,3)
 
 		
 		#***************************************************************
@@ -138,22 +131,33 @@ class Preferences(gtk.Dialog):
 		#***************************************************************		
 		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator.py.desktop")):
 			self.checkbutton1.set_active(True)
-		self.on_mouse_plugged = 'disable'
+		#
 		gconfi = GConf()
+
+		self.key = ''
+		self.on_mouse_plugged = False
+		self.devices = []
+		
 		try:
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
-			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged','disable')
-		if self.on_mouse_plugged == 'disable':
-			self.checkbutton2.set_active(True)
-		else:
-			self.checkbutton2.set_active(False)
-
-		k=gconfi.get_key('/desktop/gnome/keybindings/touchpad_indicator/binding')
-		if k!=None and len(k)>0:
-			k=k[k.rfind('>')+1:]
-			self.entry11.set_text(k)
-			self.key=k		
+			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
+		self.checkbutton2.set_active(self.on_mouse_plugged)
+		try:
+			self.devices = gconfi.get_string_list('/apps/touchpad-indicator/options/devices')
+		except ValueError:
+			gconfi.set_string_list('/apps/touchpad-indicator/options/devices',[])
+		
+		try:
+			k=gconfi.get_key('/desktop/gnome/keybindings/touchpad_indicator/binding')
+			if k!=None and len(k)>0:
+				k=k[k.rfind('>')+1:]
+				self.key=k
+			else:
+				self.key = ''
+		except ValueError:
+			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
+		self.entry11.set_text(self.key)
 		#
 		self.show_all()
 		#
@@ -162,6 +166,24 @@ class Preferences(gtk.Dialog):
 	def close_application(self, widget, event, data=None):
 		self.ok = False
 		self.hide()
+	def configure(self,widget):
+		self.messagedialog('Touchpad Indicator',_('Unplug the mouse'))
+		time.sleep(1)
+		totdevices = devices.get_devices()
+		self.messagedialog('Touchpad Indicator',_('Plug the mouse'))
+		time.sleep(1)
+		newdevices = devices.get_devices()
+		for dev in newdevices:
+			if not dev in totdevices:
+				if not dev in self.devices:
+					self.devices.append(dev)
+	
+	def messagedialog(self,title,message):
+		dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,gtk.MESSAGE_INFO,buttons=gtk.BUTTONS_OK)
+		dialog.set_markup("<b>%s</b>" % title)
+		dialog.format_secondary_markup(message)
+		dialog.run()
+		dialog.destroy()
 		
 	def close_ok(self,widget):
 		gconfi = GConf()
@@ -182,21 +204,14 @@ class Preferences(gtk.Dialog):
 				os.remove(filestart)
 		#
 		#
-		if self.checkbutton2.get_active():
-			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged','disable')
-		else:
-			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged','none')
-		
+		gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
+		gconfi.set_string_list('/apps/touchpad-indicator/options/devices',self.devices)
 		#
 		#
 		self.ok = True
 		self.hide()
 
 	def close_cancel(self,widget):
-		self.latitude = None
-		self.longitude = None
-		self.location = None
-		self.temperature = None
 		self.ok = False
 		self.hide()
 
@@ -213,7 +228,7 @@ class Preferences(gtk.Dialog):
 				keyval=gtk.gdk.keyval_name(event.keyval)
 			if keyval in get_combination_keys() and keyval!=self.key:
 				dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,type=gtk.MESSAGE_WARNING,buttons=gtk.BUTTONS_OK)
-				msg = _('La combinacion <Control> + <Alt> + ')+keyval+_(' ya esta asignada')
+				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
 				dialog.set_property('title', 'Error')
 				dialog.set_property('text', msg)				
 				dialog.run()
