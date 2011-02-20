@@ -39,12 +39,16 @@ class GConf():
 		casts[type(value)](self.client,key, value)		
 
 	def get_key(self,key):
-		casts = {gconf.VALUE_BOOL:   gconf.Value.get_bool,
-                 gconf.VALUE_INT:    gconf.Value.get_int,
-                 gconf.VALUE_FLOAT:  gconf.Value.get_float,
-                 gconf.VALUE_STRING: gconf.Value.get_string}		
-		value = self.client.get(key)
-		return casts[value.type](value)
+		try:
+			casts = {gconf.VALUE_BOOL:   gconf.Value.get_bool,
+					 gconf.VALUE_INT:    gconf.Value.get_int,
+					 gconf.VALUE_FLOAT:  gconf.Value.get_float,
+					 gconf.VALUE_STRING: gconf.Value.get_string}		
+			value = self.client.get(key)
+			return casts[value.type](value)
+		except AttributeError:
+			raise ValueError
+
 
 	def set_string_list(self,key,values):
 		self.client.set_list(key,gconf.VALUE_STRING,values)

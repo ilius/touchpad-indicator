@@ -211,7 +211,7 @@ class TouchpadIndicator(dbus.service.Object):
 	def menu_about_response(self,widget):
 		ad=gtk.AboutDialog()
 		ad.set_name('Touchpad-Indicator')
-		ad.set_version('0.7.0')
+		ad.set_version('0.7.3')
 		ad.set_copyright('Copyrignt (c) 2011\nLorenzo Carbonell')
 		ad.set_comments(_('An indicator for the Touchpad'))
 		ad.set_license(''+
@@ -239,3 +239,4 @@ if __name__ == "__main__":
 	DBusGMainLoop(set_as_default=True)
 	tpi=TouchpadIndicator()
 	gtk.main()
+	exit(0)
