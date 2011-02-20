@@ -27,5 +27,5 @@ __date__ ="$29-ene-2011$"
 
 APP = 'touchpad-indicator'
 LANGDIR = '/usr/share/locale-langpack'
-APPDIR = '/home/atareao/Python/touchpad-indicator/'
-#APPDIR = '/usr/share/touchpad-indicator/'
+#APPDIR = '/home/atareao/Python/touchpad-indicator/'
+APPDIR = '/usr/share/touchpad-indicator/'

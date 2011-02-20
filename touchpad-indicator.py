@@ -214,7 +214,7 @@ class TouchpadIndicator(dbus.service.Object):
 		ad.set_version('0.7.0')
 		ad.set_copyright('Copyrignt (c) 2011\nLorenzo Carbonell')
 		ad.set_comments(_('An indicator for the Touchpad'))
-		ad.set_license(_(''+
+		ad.set_license(''+
 		'This program is free software: you can redistribute it and/or modify it\n'+
 		'under the terms of the GNU General Public License as published by the\n'+
 		'Free Software Foundation, either version 3 of the License, or (at your option)\n'+
@@ -224,7 +224,7 @@ class TouchpadIndicator(dbus.service.Object):
 		'or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for\n'+
 		'more details.\n\n'+
 		'You should have received a copy of the GNU General Public License along with\n'+
-		'this program.  If not, see <http://www.gnu.org/licenses/>.'))		
+		'this program.  If not, see <http://www.gnu.org/licenses/>.')
 		ad.set_website('http://www.atareao.es')
 		ad.set_website_label('http://www.atareao.es')
 		ad.set_authors(['Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])

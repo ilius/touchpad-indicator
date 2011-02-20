@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Lorenzo Carbonell <EMAIL@ADDRESS>, 2010.
 #
-#: touchpad-indicator.py:190
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-05 09:40+0100\n"
+"POT-Creation-Date: 2011-02-19 11:00+0100\n"
 "PO-Revision-Date: 2010-11-25 01:50+0100\n"
 "Last-Translator: Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n"
 "Language-Team: English\n"
@@ -18,72 +17,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: change_touchpad_state.py:60 touchpad-indicator.py:102
-#: touchpad-indicator.py:167
+#: change_touchpad_state.py:60 touchpad-indicator.py:138
+#: touchpad-indicator.py:200
 msgid "Touchpad Enabled"
 msgstr "Touchpad Enabled"
 
-#: change_touchpad_state.py:62 touchpad-indicator.py:106
-#: touchpad-indicator.py:171
+#: change_touchpad_state.py:62 touchpad-indicator.py:142
+#: touchpad-indicator.py:204
 msgid "Touchpad Disabled"
 msgstr "Touchpad Disabled"
 
-#: shortcut.py:106
-msgid "Touchpad-Indicator"
-msgstr "Touchpad-Indicator"
+#: preferences.py:87 touchpad-indicator.py:160
+msgid "Preferences"
+msgstr ""
 
-#: shortcut.py:107
+#: preferences.py:101
 msgid "Set shortcut for Touchpad-Indicator:"
 msgstr "Set shortcut for Touchpad-Indicator:"
 
-#: shortcut.py:108
+#: preferences.py:109
+msgid "Autostart"
+msgstr ""
+
+#: preferences.py:112
+msgid "Disable touchpad when mouse plugged"
+msgstr ""
+
+#: preferences.py:115
+msgid "Configure"
+msgstr ""
+
+#: preferences.py:124
 msgid "Ok"
 msgstr "Ok"
 
-#: shortcut.py:109
+#: preferences.py:128
 msgid "Cancel"
 msgstr "Cancel"
 
-#: shortcut.py:147
-msgid "La combinacion <Control> + <Alt> + "
+#: preferences.py:170
+msgid "Unplug the mouse"
+msgstr ""
+
+#: preferences.py:173
+msgid "Plug the mouse"
+msgstr ""
+
+#: preferences.py:231
+#, fuzzy
+msgid "This shortcut <Control> + <Alt> + "
 msgstr "This shortcut <Control> + <Alt> + "
 
-#: shortcut.py:147
-msgid " ya esta asignada"
+#: preferences.py:231
+#, fuzzy
+msgid " is assigned"
 msgstr " is used"
 
-#: touchpad-indicator.py:101 touchpad-indicator.py:121
-#: touchpad-indicator.py:166
+#: touchpad-indicator.py:137 touchpad-indicator.py:159
+#: touchpad-indicator.py:199
 msgid "Disable Touchpad"
 msgstr "Disable Touchpad"
 
-#: touchpad-indicator.py:105 touchpad-indicator.py:147
-#: touchpad-indicator.py:170
+#: touchpad-indicator.py:141 touchpad-indicator.py:174
+#: touchpad-indicator.py:203
 msgid "Enable Touchpad"
 msgstr "Enable Touchpad"
 
-#: touchpad-indicator.py:122
-msgid "Shortcut"
-msgstr "Shortcut"
-
-#: touchpad-indicator.py:123
+#: touchpad-indicator.py:161
 msgid "Exit"
 msgstr "Exit"
 
-#: touchpad-indicator.py:125
+#: touchpad-indicator.py:163
 msgid "About..."
 msgstr "About..."
 
-#: touchpad-indicator.py:128
-msgid "Set shortcut"
-msgstr "Set shortcut"
-
-#: touchpad-indicator.py:129
-msgid "Remove shortcut"
-msgstr "Remove shortcut"
-
-#: touchpad-indicator.py:189
+#: touchpad-indicator.py:216
 msgid "An indicator for the Touchpad"
 msgstr "An indicator for the Touchpad"
 
-#~ msgid "Disable TouchPad"
+#~ msgid "Touchpad-Indicator"
+#~ msgstr "Touchpad-Indicator"
+
+#~ msgid "Shortcut"
+#~ msgstr "Shortcut"
+
+#~ msgid "Set shortcut"
+#~ msgstr "Set shortcut"
+
+#~ msgid "Remove shortcut"
+#~ msgstr "Remove shortcut"
