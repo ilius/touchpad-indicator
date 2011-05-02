@@ -82,11 +82,12 @@ class Keybindings():
 class Preferences(gtk.Dialog):
 	def __init__(self):
 		#
-		gtk.Dialog.__init__(self)
+		gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
 		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		self.set_title('Touchpad Indicator | '+_('Preferences'))
 		self.set_default_size(400, 150)
-		self.connect('destroy', self.close_application)
+		self.connect('close', self.close_application)
+		self.set_icon(gtk.gdk.pixbuf_new_from_file(os.path.join(com.IMGDIR,'touchpad-indicator.svg')))
+		self.set_icon_from_file(os.path.join(com.IMGDIR,'touchpad-indicator.svg'))
 		#
 		self.vbox1 = gtk.VBox(spacing = 5)
 		self.vbox1.set_border_width(5)
@@ -115,19 +116,7 @@ class Preferences(gtk.Dialog):
 		self.button0 = gtk.Button(_('Configure'))
 		self.button0.connect('clicked',self.configure)
 		table1.attach(self.button0,1,2,2,3)
-
-		
-		#***************************************************************
-		table2 = gtk.Table(1,2,True)
-		self.vbox1.add(table2)
-		#
-		self.button1 = gtk.Button(_('Ok'))
-		self.button1.connect('clicked',self.close_ok)
-		table2.attach(self.button1,0,1,0,1)
-		#
-		self.button2 = gtk.Button(_('Cancel'))
-		self.button2.connect('clicked',self.close_cancel)
-		table2.attach(self.button2,1,2,0,1)
+	
 		#***************************************************************		
 		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator.py.desktop")):
 			self.checkbutton1.set_active(True)
@@ -163,9 +152,15 @@ class Preferences(gtk.Dialog):
 		#
 		#
 		#
-	def close_application(self, widget, event, data=None):
-		self.ok = False
-		self.hide()
+		self.respuesta = self.run()
+		print self.respuesta
+		if self.respuesta == gtk.RESPONSE_ACCEPT:
+			self.close_ok()
+		self.destroy()
+		
+	def close_application(self, widget, event):
+		self.destroy()
+
 	def configure(self,widget):
 		self.messagedialog('Touchpad Indicator',_('Unplug the mouse'))
 		time.sleep(1)
@@ -185,7 +180,7 @@ class Preferences(gtk.Dialog):
 		dialog.run()
 		dialog.destroy()
 		
-	def close_ok(self,widget):
+	def close_ok(self):
 		gconfi = GConf()
 		gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
 		gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/name','modify_touchpad_status')
@@ -206,17 +201,6 @@ class Preferences(gtk.Dialog):
 		#
 		gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
 		gconfi.set_string_list('/apps/touchpad-indicator/options/devices',self.devices)
-		#
-		#
-		self.ok = True
-		self.hide()
-
-	def close_cancel(self,widget):
-		self.ok = False
-		self.hide()
-
-	def on_exit_activate(self,widget):
-		self.hide()
 
 	def on_entry11_key_release_event(self,widget,event):
 		key=event.keyval
@@ -242,5 +226,4 @@ class Preferences(gtk.Dialog):
 		return self.key
 if __name__ == "__main__":	
 	cm = Preferences()
-	cm.run()
 	exit(0)

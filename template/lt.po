@@ -1,0 +1,93 @@
+# Lithuanian translation for touchpad-indicator
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the touchpad-indicator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: touchpad-indicator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-02 20:36+0200\n"
+"PO-Revision-Date: 2011-04-26 15:23+0000\n"
+"Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
+"Language-Team: Lithuanian <lt@li.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-05-02 16:41+0000\n"
+"X-Generator: Launchpad (build 12915)\n"
+
+#: change_touchpad_state.py:60 touchpad-indicator.py:150
+#: touchpad-indicator.py:165 touchpad-indicator.py:228
+msgid "Touchpad Enabled"
+msgstr "Įjungtas jutiklinis kilimėlis (touchpad)"
+
+#: change_touchpad_state.py:62 touchpad-indicator.py:154
+#: touchpad-indicator.py:169 touchpad-indicator.py:232
+msgid "Touchpad Disabled"
+msgstr "Išjungtas jutiklinis kilimėlis (touchpad)"
+
+#: preferences.py:85 touchpad-indicator.py:186
+msgid "Preferences"
+msgstr "Nustatymai"
+
+#: preferences.py:102
+msgid "Set shortcut for Touchpad-Indicator:"
+msgstr ""
+
+#: preferences.py:110
+msgid "Autostart"
+msgstr "Automatinis pasileidimas"
+
+#: preferences.py:113
+msgid "Disable touchpad when mouse plugged"
+msgstr "Išjungti jutiklinį kilimėlį (touchpad) prijungus pelę"
+
+#: preferences.py:116
+msgid "Configure"
+msgstr ""
+
+#: preferences.py:165
+msgid "Unplug the mouse"
+msgstr "Atjungti pelę"
+
+#: preferences.py:168
+msgid "Plug the mouse"
+msgstr "Prijunk pelę"
+
+#: preferences.py:215
+msgid "This shortcut <Control> + <Alt> + "
+msgstr ""
+
+#: preferences.py:215
+msgid " is assigned"
+msgstr ""
+
+#: touchpad-indicator.py:149 touchpad-indicator.py:164
+#: touchpad-indicator.py:185 touchpad-indicator.py:227
+msgid "Disable Touchpad"
+msgstr "Išjungti jutiklinį kilimėlį (touchpad)"
+
+#: touchpad-indicator.py:153 touchpad-indicator.py:168
+#: touchpad-indicator.py:200 touchpad-indicator.py:231
+msgid "Enable Touchpad"
+msgstr "Įjungti jutiklinį kilimėlį (touchpad)"
+
+#: touchpad-indicator.py:187
+msgid "Exit"
+msgstr "Baigti"
+
+#: touchpad-indicator.py:189
+msgid "About..."
+msgstr "Apie..."
+
+#: touchpad-indicator.py:244
+msgid "An indicator for the Touchpad"
+msgstr "Jutiklinio kilimėlio (touchpad) indikatorius"
+
+#~ msgid "Ok"
+#~ msgstr "Gerai"
+
+#~ msgid "Cancel"
+#~ msgstr "Atsisakyti"

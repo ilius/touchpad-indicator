@@ -9,7 +9,7 @@ __date__ ='$30/10/2010'
 #
 # Adding keybiding
 #
-# Copyright (C) 2010 Lorenzo Carbonell
+# Copyright (C) 2010-2011 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
@@ -27,6 +27,7 @@ __date__ ='$30/10/2010'
 #
 #
 #
+import os
 import gobject
 import gtk
 import appindicator
@@ -48,12 +49,17 @@ gettext.textdomain(com.APP)
 _ = gettext.gettext
 
 
-icon_enabled = '/usr/share/pixmaps/touchpad-indicator.svg'
-icon_disabled = '/usr/share/pixmaps/touchpad-indicator-disabled.svg'
+icon_enabled = os.path.join(com.IMGDIR,'touchpad-indicator.svg')
+print icon_enabled
+icon_disabled = os.path.join(com.IMGDIR,'touchpad-indicator-disabled.svg')
 gconf_touchpad_enabled = '/desktop/gnome/peripherals/touchpad/touchpad_enabled'
 
 class TouchpadIndicator(dbus.service.Object):
 	def __init__(self):
+		if dbus.SessionBus().request_name('es.atareao.touchpad_indicator') != dbus.bus.REQUEST_NAME_REPLY_PRIMARY_OWNER:
+			print "application already running"
+			exit(0)
+		
 		'''
 		Categorias:
 		* CATEGORY_APPLICATION_STATUS
@@ -84,6 +90,7 @@ class TouchpadIndicator(dbus.service.Object):
 		bus_name = dbus.service.BusName('es.atareao.touchpad_indicator_service', bus=dbus.SessionBus())
 		dbus.service.Object.__init__(self, bus_name, '/es/atareao/touchpad_indicator_service')
 		#
+		self.manual = False
 		glib.timeout_add_seconds(1, self.work)
 
 	def read_preferences(self):
@@ -118,19 +125,24 @@ class TouchpadIndicator(dbus.service.Object):
 				for device in self.devices:
 					for el in devices.get_devices():
 						if device == el:
-							self.change_state()
+							self.menu_enabled_touchpad.set_visible(False)
+							self.automatic_change_state(False)
+							break
 			else:
 				esta = False
 				for device in self.devices:
 					if device in devices.get_devices():
 						esta = True
 						break
-				if not esta:
-					self.change_state()			
+				if not esta and not self.manual:
+					self.menu_enabled_touchpad.set_visible(True)
+					self.automatic_change_state(True)
+					
 		return True
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def change_state(self):
+		self.manual = True
 		is_touch_enabled = not self.get_touch_enabled()
 		self.set_touch_enabled(is_touch_enabled)
 		if is_touch_enabled==True:
@@ -143,6 +155,20 @@ class TouchpadIndicator(dbus.service.Object):
 			self.indicator.set_status(appindicator.STATUS_ATTENTION)
 		self.notification.show()
 		
+	def automatic_change_state(self,state):
+		self.manual = False
+		if state != self.get_touch_enabled():
+			is_touch_enabled = not self.get_touch_enabled()
+			self.set_touch_enabled(is_touch_enabled)
+			if is_touch_enabled==True:
+				self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
+				self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),icon_enabled)
+				self.indicator.set_status(appindicator.STATUS_ACTIVE)
+			else:
+				self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
+				self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),icon_disabled)
+				self.indicator.set_status(appindicator.STATUS_ATTENTION)
+			self.notification.show()
 		
 	def get_touch_enabled(self):
 		gconfi = GConf()
@@ -188,11 +214,13 @@ class TouchpadIndicator(dbus.service.Object):
 		self.indicator.set_menu(self.menu)
 	
 	def menu_preferences_response(self,widget):
+		self.menu_preferences.set_visible(False)
 		preferences = Preferences()
-		preferences.run()
 		self.read_preferences()
+		self.menu_preferences.set_visible(True)
 		
 	def menu_touchpad_enabled_response(self,widget):
+		self.manual = True
 		is_touch_enabled = not self.get_touch_enabled()
 		self.set_touch_enabled(is_touch_enabled)
 		if is_touch_enabled==True:
@@ -211,8 +239,8 @@ class TouchpadIndicator(dbus.service.Object):
 	def menu_about_response(self,widget):
 		ad=gtk.AboutDialog()
 		ad.set_name('Touchpad-Indicator')
-		ad.set_version('0.7.3')
-		ad.set_copyright('Copyrignt (c) 2011\nLorenzo Carbonell')
+		ad.set_version('0.7.4.1')
+		ad.set_copyright('Copyrignt (c) 2010-2011\nLorenzo Carbonell')
 		ad.set_comments(_('An indicator for the Touchpad'))
 		ad.set_license(''+
 		'This program is free software: you can redistribute it and/or modify it\n'+
@@ -229,8 +257,24 @@ class TouchpadIndicator(dbus.service.Object):
 		ad.set_website_label('http://www.atareao.es')
 		ad.set_authors(['Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
 		ad.set_documenters(['Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
-		#ad.set_logo(logo)
-		#ad.set_logo_icon_name(icon_name)
+		ad.set_translator_credits(''+
+		'Daniel Tao <https://launchpad.net/~danieltaoys-gmail>\n'+
+		'Daniele "OpenNingia" Simonetti <https://launchpad.net/~oppifjellet>\n'+
+		'Giorgi Maghlakelidze <https://launchpad.net/~dracid>\n'+
+		'Javier García Díaz <https://launchpad.net/~jgd>\n'+
+		'Jiri Grönroos <https://launchpad.net/~jiri-gronroos>\n'+
+		'Lorenzo Carbonell <https://launchpad.net/~lorenzo-carbonell>\n'+
+		'Luca Ferretti <https://launchpad.net/~elle.uca>\n'+
+		'Mantas Kriaučiūnas <https://launchpad.net/~mantas>\n'+
+		'Martino Barbon <https://launchpad.net/~martins999>\n'+
+		'Montes Morgan <https://launchpad.net/~montes-morgan>\n'+
+		'Nur Kholis Majid <https://launchpad.net/~kholis>\n'+
+		'pibe <https://launchpad.net/~pibe>\n'+
+		'Sergey Sedov <https://launchpad.net/~serg-sedov>\n'+
+		'Velikanov Dmitry <https://launchpad.net/~velikanov-dmitry>\n'+
+		'XsLiDian <https://launchpad.net/~xslidian>\n')
+		ad.set_icon_from_file(icon_enabled)
+		ad.set_logo(gtk.gdk.pixbuf_new_from_file(icon_enabled))
 		ad.set_program_name('Touchpad-Indicator')
 		ad.run()
 		ad.hide()

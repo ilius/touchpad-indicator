@@ -1,0 +1,93 @@
+# Polish translation for touchpad-indicator
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the touchpad-indicator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: touchpad-indicator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-02 20:36+0200\n"
+"PO-Revision-Date: 2011-03-01 17:31+0000\n"
+"Last-Translator: pibe <Unknown>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-05-02 16:41+0000\n"
+"X-Generator: Launchpad (build 12915)\n"
+
+#: change_touchpad_state.py:60 touchpad-indicator.py:150
+#: touchpad-indicator.py:165 touchpad-indicator.py:228
+msgid "Touchpad Enabled"
+msgstr "Touchpad włączony"
+
+#: change_touchpad_state.py:62 touchpad-indicator.py:154
+#: touchpad-indicator.py:169 touchpad-indicator.py:232
+msgid "Touchpad Disabled"
+msgstr "Touchpad wyłączony"
+
+#: preferences.py:85 touchpad-indicator.py:186
+msgid "Preferences"
+msgstr "Ustawienia"
+
+#: preferences.py:102
+msgid "Set shortcut for Touchpad-Indicator:"
+msgstr "Ustaw skrót klawiszowy dla Touchpad-Indicator"
+
+#: preferences.py:110
+msgid "Autostart"
+msgstr "Uruchamiaj automatycznie"
+
+#: preferences.py:113
+msgid "Disable touchpad when mouse plugged"
+msgstr "Wyłącz Touchpad gdy myszka jest podłączona"
+
+#: preferences.py:116
+msgid "Configure"
+msgstr "Konfiguruj"
+
+#: preferences.py:165
+msgid "Unplug the mouse"
+msgstr "Odłącz myszkę"
+
+#: preferences.py:168
+msgid "Plug the mouse"
+msgstr "Podłącz myszkę"
+
+#: preferences.py:215
+msgid "This shortcut <Control> + <Alt> + "
+msgstr "Ten skrót <Control> + <Alt> + "
+
+#: preferences.py:215
+msgid " is assigned"
+msgstr " jest przydzielony"
+
+#: touchpad-indicator.py:149 touchpad-indicator.py:164
+#: touchpad-indicator.py:185 touchpad-indicator.py:227
+msgid "Disable Touchpad"
+msgstr "Wyłącz Touchpad"
+
+#: touchpad-indicator.py:153 touchpad-indicator.py:168
+#: touchpad-indicator.py:200 touchpad-indicator.py:231
+msgid "Enable Touchpad"
+msgstr "Włącz Touchpad"
+
+#: touchpad-indicator.py:187
+msgid "Exit"
+msgstr "Zakończ"
+
+#: touchpad-indicator.py:189
+msgid "About..."
+msgstr "O programie..."
+
+#: touchpad-indicator.py:244
+msgid "An indicator for the Touchpad"
+msgstr "Wskaźnik Touchpad"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
