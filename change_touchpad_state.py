@@ -25,43 +25,39 @@ __date__ ='$21/11/2010'
 #
 #
 import dbus
-import gconf
 import pynotify
+from touchpad import Touchpad
 import locale
 import gettext
-
-APP = 'touchpad-indicator'
-DIR = '/usr/share/locale-langpack'
+import com
 
 locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain(APP, DIR)
-gettext.textdomain(APP)
+gettext.bindtextdomain(com.APP, com.LANGDIR)
+gettext.textdomain(com.APP)
 _ = gettext.gettext
 
  
 bus = dbus.SessionBus()
-icon_enabled = '/usr/share/pixmaps/touchpad-indicator.svg'
-icon_disabled = '/usr/share/pixmaps/touchpad-indicator-disabled.svg'
-gconf_touchpad_enabled = '/desktop/gnome/peripherals/touchpad/touchpad_enabled'
 
 def get_touch_enabled():
-	gconfi = gconf.client_get_default()
-	touch_enabled = gconfi.get_value(gconf_touchpad_enabled)
-	return touch_enabled
+	touchpad = Touchpad()
+	return touchpad.all_touchpad_enabled()
 
 def set_touch_enabled(enabled):
-	gconfi = gconf.client_get_default()
-	gconfi.set_value(gconf_touchpad_enabled,enabled)
+	touchpad = Touchpad()
+	if enabled == True:
+		touchpad.enable_all_touchpads()
+	else:
+		touchpad.disable_all_touchpads()
 
 def change_state():
 	is_touch_enabled = not get_touch_enabled()
 	set_touch_enabled(is_touch_enabled)
 	if is_touch_enabled==True:
-		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),icon_enabled)
+		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
 	else:
-		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),icon_disabled)
+		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
 	notification.show()	
-
 
 try:
 	touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')

@@ -39,10 +39,6 @@ gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
-APPDIR = com.APPDIR
-
-#KEY = '/desktop/gnome/keybindings/touchpad_indicator/'
-
 def search_for_keys(gconfi,chain):
 	keys=[]
 	for key in gconfi.get_all_keys(chain):
@@ -62,9 +58,6 @@ def get_combination_keys():
 	for dire in gconfi.get_all_dirs('/desktop/gnome/keybindings'):
 		keys+=search_for_keys(gconfi,dire)
 	return keys
-
-
-gconf_touchpad_enabled = '/desktop/gnome/peripherals/touchpad/touchpad_enabled'
 
 class Keybindings():
 	def __init__(self,combination_key,action):
@@ -86,8 +79,8 @@ class Preferences(gtk.Dialog):
 		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
 		self.set_default_size(400, 150)
 		self.connect('close', self.close_application)
-		self.set_icon(gtk.gdk.pixbuf_new_from_file(os.path.join(com.IMGDIR,'touchpad-indicator.svg')))
-		self.set_icon_from_file(os.path.join(com.IMGDIR,'touchpad-indicator.svg'))
+		#self.set_icon(gtk.gdk.pixbuf_new_from_file(com.ICON))
+		self.set_icon_from_file(com.ICON)
 		#
 		self.vbox1 = gtk.VBox(spacing = 5)
 		self.vbox1.set_border_width(5)
@@ -99,7 +92,7 @@ class Preferences(gtk.Dialog):
 		table1 = gtk.Table(3,2,True)
 		self.frame1.add(table1)
 		#
-		self.label11 = gtk.Label(_('Set shortcut for Touchpad-Indicator:'))
+		self.label11 = gtk.Label(_('Set shortcut for Touchpad-Indicator <Ctrl><Alt>:'))
 		table1.attach(self.label11,0,1,0,1)
 		#
 		self.entry11 = gtk.Entry()
@@ -118,7 +111,7 @@ class Preferences(gtk.Dialog):
 		table1.attach(self.button0,1,2,2,3)
 	
 		#***************************************************************		
-		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator.py.desktop")):
+		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
 			self.checkbutton1.set_active(True)
 		#
 		gconfi = GConf()

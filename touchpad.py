@@ -1,0 +1,84 @@
+#! /usr/bin/python
+# -*- coding: iso-8859-1 -*-
+#
+__author__="atareao"
+__date__ ="$16-may-2011$"
+#
+# touchpad.py
+#
+# Copyright (C) 2011 Lorenzo Carbonell
+# lorenzo.carbonell.cerezo@gmail.com
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+#
+import shlex, subprocess
+
+def ejecuta(comando):
+	args = shlex.split(comando)
+	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
+	valor = p.communicate()[0]
+	return valor
+
+class Touchpad(object):
+	def __init__(self):
+		self.ids = self._get_ids()
+		
+	def _get_ids(self):
+		ids = []
+		lines = ejecuta('xinput list')
+		for line in lines.split('\n'):
+			if line.lower().find('touchpad')!=-1:
+				ids.append(int(line.split('=')[1].split('[')[0].strip()))
+			if line.lower().find('glidepoint')!=-1:
+				ids.append(int(line.split('=')[1].split('[')[0].strip()))
+		return ids
+	
+	def set_touchpad_enabled(self,id):
+		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)
+	
+	def set_touchpad_disabled(self,id):
+		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
+
+	def is_touchpad_enabled(self,id):
+		lines = ejecuta('xinput list-props %s'%id)
+		for line in lines.split('\n'):
+			if line.lower().find('device enabled')!=-1:
+				if line.split(':')[1].strip() == '1':
+					return True
+		return False
+
+	def disable_all_touchpads(self):
+		for id in self.ids:
+			self.set_touchpad_disabled(id)
+
+	def enable_all_touchpads(self):
+		for id in self.ids:
+			self.set_touchpad_enabled(id)
+
+	def all_touchpad_enabled(self):
+		for id in self.ids:
+			if self.is_touchpad_enabled(id) == False:
+				return False
+		return True
+		
+
+if __name__ == '__main__':
+	tp = Touchpad()
+	tp.enable_all_touchpads()
+	print tp.all_touchpad_enabled()
+	tp.disable_all_touchpads()
+	print tp.all_touchpad_enabled()
+	tp.enable_all_touchpads()
