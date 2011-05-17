@@ -35,7 +35,22 @@ def ejecuta(comando):
 class Touchpad(object):
 	def __init__(self):
 		self.ids = self._get_ids()
+	
+	def _get_all_ids(self):
+		ids = []
+		lines = ejecuta('xinput --list')
+		for line in lines.split('\n'):
+			if line.find('id=')!=-1:
+				ids.append(int(line.split('=')[1].split('[')[0].strip()))
+		return ids
 		
+	def _is_touchpad(self,id):
+		comp = ejecuta(('xinput --list-props %s') % (id))
+		if comp.find('Synaptics Off') != -1:
+			return True
+		return False
+		
+	'''		
 	def _get_ids(self):
 		ids = []
 		lines = ejecuta('xinput list')
@@ -45,6 +60,14 @@ class Touchpad(object):
 			if line.lower().find('glidepoint')!=-1:
 				ids.append(int(line.split('=')[1].split('[')[0].strip()))
 		return ids
+	'''
+	def _get_ids(self):
+		ids = []
+		for id in self._get_all_ids():
+			if self._is_touchpad(id):
+				ids.append(id)
+		return ids
+	
 	
 	def set_touchpad_enabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)
@@ -53,7 +76,7 @@ class Touchpad(object):
 		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
 
 	def is_touchpad_enabled(self,id):
-		lines = ejecuta('xinput list-props %s'%id)
+		lines = ejecuta('xinput --list-props %s'%id)
 		for line in lines.split('\n'):
 			if line.lower().find('device enabled')!=-1:
 				if line.split(':')[1].strip() == '1':
@@ -77,8 +100,11 @@ class Touchpad(object):
 
 if __name__ == '__main__':
 	tp = Touchpad()
+	for id in tp._get_all_ids():
+		print id
+		print ('El devide %s es Touchpad %s')%(id,tp._is_touchpad(id))
 	tp.enable_all_touchpads()
 	print tp.all_touchpad_enabled()
-	tp.disable_all_touchpads()
+	#tp.disable_all_touchpads()
 	print tp.all_touchpad_enabled()
 	tp.enable_all_touchpads()

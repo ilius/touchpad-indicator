@@ -34,6 +34,7 @@ import appindicator
 import pynotify
 import locale
 import gettext
+import webbrowser
 import dbus
 import dbus.service
 from dbus.mainloop.glib import DBusGMainLoop
@@ -75,7 +76,6 @@ class TouchpadIndicator(dbus.service.Object):
 		#
 		self.indicator.set_status(appindicator.STATUS_ACTIVE)
 		self.indicator.set_icon(com.ICON_ENABLED)
-		self.indicator.set_attention_icon(com.ICON_DISABLED)
 		#
 		self.read_preferences()
 		#
@@ -96,7 +96,6 @@ class TouchpadIndicator(dbus.service.Object):
 		self.key = ''
 		self.on_mouse_plugged = False
 		self.devices = []
-		
 		try:
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
@@ -144,11 +143,11 @@ class TouchpadIndicator(dbus.service.Object):
 		if is_touch_enabled==True:
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-			self.indicator.set_status(appindicator.STATUS_ACTIVE)
+			self.indicator.set_icon(com.ICON_ENABLED)
 		else:
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-			self.indicator.set_status(appindicator.STATUS_ATTENTION)
+			self.indicator.set_icon(com.ICON_DISABLED)
 		self.notification.show()
 		
 	def automatic_change_state(self,state):
@@ -159,11 +158,11 @@ class TouchpadIndicator(dbus.service.Object):
 			if is_touch_enabled==True:
 				self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 				self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-				self.indicator.set_status(appindicator.STATUS_ACTIVE)
+				self.indicator.set_icon(com.ICON_ENABLED)
 			else:
 				self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 				self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-				self.indicator.set_status(appindicator.STATUS_ATTENTION)
+				self.indicator.set_icon(com.ICON_DISABLED)
 			self.notification.show()
 		
 	def get_touch_enabled(self):
@@ -176,46 +175,85 @@ class TouchpadIndicator(dbus.service.Object):
 			touchpad.enable_all_touchpads()
 		else:
 			touchpad.disable_all_touchpads()
-			
+
+	def get_help_menu(self):
+		help_menu =gtk.Menu()
+		#		
+		menu_project = gtk.MenuItem(_('Application Web...'))
+		menu_help_online = gtk.MenuItem(_('Get help online...'))
+		menu_translations = gtk.MenuItem(_('Translate this application...'))
+		menu_bugs = gtk.MenuItem(_('Report a bug...'))
+		menu_separator_help_menu=gtk.SeparatorMenuItem()
+		menu_about=gtk.MenuItem(_('About'))
+		#
+		menu_project.connect('activate',self.on_menu_project_clicked)
+		menu_help_online.connect('activate',self.on_menu_help_online_clicked)
+		menu_translations.connect('activate',self.on_menu_translations_clicked)
+		menu_bugs.connect('activate',self.on_menu_bugs_clicked)
+		menu_about.connect('activate',self.menu_about_response)
+		#
+		menu_project.show()
+		menu_help_online.show()
+		menu_translations.show()
+		menu_bugs.show()
+		menu_separator_help_menu.show()
+		menu_about.show()
+		#
+		help_menu.append(menu_project)
+		help_menu.append(menu_help_online)
+		help_menu.append(menu_translations)
+		help_menu.append(menu_bugs)
+		help_menu.append(menu_separator_help_menu)
+		help_menu.append(menu_about)
+		#
+		help_menu.show()
+		#
+		return help_menu
+
 	def set_menu(self):
 		self.menu = gtk.Menu()
 		#
 		self.menu_enabled_touchpad=gtk.MenuItem(_('Disable Touchpad'))
 		self.menu_preferences=gtk.MenuItem(_('Preferences'))
-		self.menu_exit=gtk.MenuItem(_('Exit'))
 		self.menu_separator1=gtk.MenuItem()
-		self.menu_about=gtk.MenuItem(_('About...'))
-		#
-		self.menu.append(self.menu_enabled_touchpad)
-		self.menu.append(self.menu_preferences)
-		self.menu.append(self.menu_exit)
-		self.menu.append(self.menu_separator1)
-		self.menu.append(self.menu_about)	
-		#	
-		if self.get_touch_enabled()==True:
-			self.indicator.set_status (appindicator.STATUS_ACTIVE)
-		else:
-			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
-			self.indicator.set_status (appindicator.STATUS_ATTENTION)
-		#
-		self.menu_enabled_touchpad.show()
-		self.menu_preferences.show()
-		self.menu_exit.show()
-		self.menu_separator1.show()
-		self.menu_about.show()
+		self.menu_help = gtk.MenuItem(_('Help'))
+		self.menu_help.set_submenu(self.get_help_menu())
+		self.menu_separator2=gtk.MenuItem()
+		self.menu_exit=gtk.MenuItem(_('Exit'))
 		#
 		self.menu_enabled_touchpad.connect('activate', self.menu_touchpad_enabled_response)
 		self.menu_preferences.connect('activate',self.menu_preferences_response)
 		self.menu_exit.connect('activate', self.menu_exit_response)
-		self.menu_about.connect('activate', self.menu_about_response)
+		#
+		self.menu_enabled_touchpad.show()
+		self.menu_preferences.show()
+		self.menu_separator1.show()
+		self.menu_help.show()
+		self.menu_separator2.show()
+		self.menu_exit.show()		
+		#
+		self.menu.append(self.menu_enabled_touchpad)
+		self.menu.append(self.menu_preferences)
+		self.menu.append(self.menu_separator1)
+		self.menu.append(self.menu_help)
+		self.menu.append(self.menu_separator2)
+		self.menu.append(self.menu_exit)
+		#
 		self.menu.show()
 		self.indicator.set_menu(self.menu)
+		self.indicator.set_status(appindicator.STATUS_ACTIVE)
+		#	
+		if self.get_touch_enabled()==True:
+			self.indicator.set_icon(com.ICON_ENABLED)
+		else:
+			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
+			self.indicator.set_icon(com.ICON_DISABLED)
 	
 	def menu_preferences_response(self,widget):
-		self.menu_preferences.set_sensitive(False)
+		widget.set_sensitive(False)
 		preferences = Preferences()
 		self.read_preferences()
-		self.menu_preferences.set_sensitive(True)
+		widget.set_sensitive(True)
 		
 	def menu_touchpad_enabled_response(self,widget):
 		self.manual = True
@@ -224,17 +262,30 @@ class TouchpadIndicator(dbus.service.Object):
 		if is_touch_enabled==True:
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-			self.indicator.set_status(appindicator.STATUS_ACTIVE)
+			self.indicator.set_icon(com.ICON_ENABLED)
 		else:
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-			self.indicator.set_status(appindicator.STATUS_ATTENTION)
+			self.indicator.set_icon(com.ICON_DISABLED)
 		self.notification.show()
 
 	def menu_exit_response(self,widget):
 		exit(0)
-
+		
+	def on_menu_project_clicked(self,widget):
+		webbrowser.open('https://launchpad.net/touchpad-indicator')
+		
+	def on_menu_help_online_clicked(self,widget):
+		webbrowser.open('https://answers.launchpad.net/touchpad-indicator')
+	
+	def on_menu_translations_clicked(self,widget):
+		webbrowser.open('https://translations.launchpad.net/touchpad-indicator')
+	
+	def on_menu_bugs_clicked(self,widget):
+		webbrowser.open('https://bugs.launchpad.net/touchpad-indicator')		
+			
 	def menu_about_response(self,widget):
+		widget.set_sensitive(False)
 		ad=gtk.AboutDialog()
 		ad.set_name(com.APPNAME)
 		ad.set_version(com.VERSION)
@@ -273,9 +324,10 @@ class TouchpadIndicator(dbus.service.Object):
 		'XsLiDian <https://launchpad.net/~xslidian>\n')
 		ad.set_icon_from_file(com.ICON)
 		ad.set_logo(gtk.gdk.pixbuf_new_from_file(com.ICON))
-		ad.set_program_name('Touchpad-Indicator')
+		ad.set_program_name(com.APPNAME)
 		ad.run()
 		ad.destroy()
+		widget.set_sensitive(True)
 
 if __name__ == "__main__":
 	DBusGMainLoop(set_as_default=True)

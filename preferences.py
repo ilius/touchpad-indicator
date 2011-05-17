@@ -77,7 +77,7 @@ class Preferences(gtk.Dialog):
 		#
 		gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
 		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		self.set_default_size(400, 150)
+		self.set_size_request(700, 180)
 		self.connect('close', self.close_application)
 		#self.set_icon(gtk.gdk.pixbuf_new_from_file(com.ICON))
 		self.set_icon_from_file(com.ICON)
@@ -89,10 +89,13 @@ class Preferences(gtk.Dialog):
 		self.frame1 = gtk.Frame()
 		self.vbox1.add(self.frame1)
 		#***************************************************************
+		self.vbox2 = gtk.VBox(spacing = 5)
+		self.vbox2.set_border_width(5)
+		self.frame1.add(self.vbox2)
 		table1 = gtk.Table(3,2,True)
-		self.frame1.add(table1)
+		self.vbox2.add(table1)
 		#
-		self.label11 = gtk.Label(_('Set shortcut for Touchpad-Indicator <Ctrl><Alt>:'))
+		self.label11 = gtk.Label(_('Shortcut')+': <Ctrl> + <Alt> +')
 		table1.attach(self.label11,0,1,0,1)
 		#
 		self.entry11 = gtk.Entry()
@@ -115,11 +118,9 @@ class Preferences(gtk.Dialog):
 			self.checkbutton1.set_active(True)
 		#
 		gconfi = GConf()
-
 		self.key = ''
 		self.on_mouse_plugged = False
 		self.devices = []
-		
 		try:
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
