@@ -52,12 +52,12 @@ def set_touch_enabled(enabled):
 
 def change_state():
 	is_touch_enabled = not get_touch_enabled()
-	set_touch_enabled(is_touch_enabled)
-	if is_touch_enabled==True:
-		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-	else:
-		notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-	notification.show()	
+	if set_touch_enabled(is_touch_enabled):
+		if is_touch_enabled==True:
+			notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
+		else:
+			notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
+		notification.show()	
 
 try:
 	touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')

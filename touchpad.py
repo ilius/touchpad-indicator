@@ -91,10 +91,12 @@ class Touchpad(object):
 	def disable_all_touchpads(self):
 		for id in self.ids:
 			self.set_touchpad_disabled(id)
+		return not self.all_touchpad_enabled()
 
 	def enable_all_touchpads(self):
 		for id in self.ids:
 			self.set_touchpad_enabled(id)
+		return self.all_touchpad_enabled()
 
 	def all_touchpad_enabled(self):
 		for id in self.ids:
