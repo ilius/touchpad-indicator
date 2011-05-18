@@ -25,6 +25,7 @@ __date__ ="$16-may-2011$"
 #
 #
 import shlex, subprocess
+from configurator import GConf
 
 def ejecuta(comando):
 	args = shlex.split(comando)
@@ -71,9 +72,13 @@ class Touchpad(object):
 	
 	def set_touchpad_enabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)
+		gconfi = GConf()
+		gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',True)		
 	
 	def set_touchpad_disabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
+		gconfi = GConf()
+		gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',False)		
 
 	def is_touchpad_enabled(self,id):
 		lines = ejecuta('xinput --list-props %s'%id)
