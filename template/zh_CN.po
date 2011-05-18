@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-02 20:36+0200\n"
+"POT-Creation-Date: 2011-05-18 06:52+0200\n"
 "PO-Revision-Date: 2011-03-01 01:07+0000\n"
 "Last-Translator: Daniel Tao <danieltaoys@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -18,73 +18,97 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-05-02 16:41+0000\n"
 "X-Generator: Launchpad (build 12915)\n"
 
-#: change_touchpad_state.py:60 touchpad-indicator.py:150
-#: touchpad-indicator.py:165 touchpad-indicator.py:228
+#: change_touchpad_state.py:57 touchpad-indicator.py:145
+#: touchpad-indicator.py:160 touchpad-indicator.py:264
 msgid "Touchpad Enabled"
 msgstr "触摸板已启用"
 
-#: change_touchpad_state.py:62 touchpad-indicator.py:154
-#: touchpad-indicator.py:169 touchpad-indicator.py:232
+#: change_touchpad_state.py:59 touchpad-indicator.py:149
+#: touchpad-indicator.py:164 touchpad-indicator.py:268
 msgid "Touchpad Disabled"
 msgstr "触摸板已禁用"
 
-#: preferences.py:85 touchpad-indicator.py:186
+#: preferences.py:78 touchpad-indicator.py:217
 msgid "Preferences"
 msgstr "首选项"
 
-#: preferences.py:102
-msgid "Set shortcut for Touchpad-Indicator:"
-msgstr "设置 Touchpad-Indicator 快捷键:"
+#: preferences.py:98
+msgid "Shortcut"
+msgstr ""
 
-#: preferences.py:110
+#: preferences.py:106
 msgid "Autostart"
 msgstr "自动启动"
 
-#: preferences.py:113
+#: preferences.py:109
 msgid "Disable touchpad when mouse plugged"
 msgstr "插上鼠标后禁用触摸板"
 
-#: preferences.py:116
+#: preferences.py:112
 msgid "Configure"
 msgstr "配置"
 
-#: preferences.py:165
+#: preferences.py:159
 msgid "Unplug the mouse"
 msgstr "拔出鼠标"
 
-#: preferences.py:168
+#: preferences.py:162
 msgid "Plug the mouse"
 msgstr "插入鼠标"
 
-#: preferences.py:215
+#: preferences.py:209
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "快捷键 <Control> + <Alt> + "
 
-#: preferences.py:215
+#: preferences.py:209
 msgid " is assigned"
 msgstr " 已指派"
 
-#: touchpad-indicator.py:149 touchpad-indicator.py:164
-#: touchpad-indicator.py:185 touchpad-indicator.py:227
+#: touchpad-indicator.py:144 touchpad-indicator.py:159
+#: touchpad-indicator.py:216 touchpad-indicator.py:263
 msgid "Disable Touchpad"
 msgstr "禁用触摸板"
 
-#: touchpad-indicator.py:153 touchpad-indicator.py:168
-#: touchpad-indicator.py:200 touchpad-indicator.py:231
+#: touchpad-indicator.py:148 touchpad-indicator.py:163
+#: touchpad-indicator.py:249 touchpad-indicator.py:267
 msgid "Enable Touchpad"
 msgstr "启用触摸板"
 
+#: touchpad-indicator.py:182
+msgid "Application Web..."
+msgstr ""
+
+#: touchpad-indicator.py:183
+msgid "Get help online..."
+msgstr ""
+
+#: touchpad-indicator.py:184
+msgid "Translate this application..."
+msgstr ""
+
+#: touchpad-indicator.py:185
+msgid "Report a bug..."
+msgstr ""
+
 #: touchpad-indicator.py:187
+#, fuzzy
+msgid "About"
+msgstr "关于..."
+
+#: touchpad-indicator.py:219
+msgid "Help"
+msgstr ""
+
+#: touchpad-indicator.py:222
 msgid "Exit"
 msgstr "退出"
 
-#: touchpad-indicator.py:189
-msgid "About..."
-msgstr "关于..."
-
-#: touchpad-indicator.py:244
+#: touchpad-indicator.py:293
 msgid "An indicator for the Touchpad"
 msgstr "触摸板指示器"
+
+#~ msgid "Set shortcut for Touchpad-Indicator:"
+#~ msgstr "设置 Touchpad-Indicator 快捷键:"
 
 #~ msgid "Ok"
 #~ msgstr "确定"
