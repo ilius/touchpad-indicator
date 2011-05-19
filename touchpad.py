@@ -25,6 +25,7 @@ __date__ ="$16-may-2011$"
 #
 #
 import shlex, subprocess
+import time
 from configurator import GConf
 
 def ejecuta(comando):
@@ -91,11 +92,13 @@ class Touchpad(object):
 	def disable_all_touchpads(self):
 		for id in self.ids:
 			self.set_touchpad_disabled(id)
+			time.sleep(1)
 		return not self.all_touchpad_enabled()
 
 	def enable_all_touchpads(self):
 		for id in self.ids:
 			self.set_touchpad_enabled(id)
+			time.sleep(1)
 		return self.all_touchpad_enabled()
 
 	def all_touchpad_enabled(self):

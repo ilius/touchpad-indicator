@@ -115,11 +115,11 @@ class TouchpadIndicator(dbus.service.Object):
 		except ValueError:
 			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
 	def work(self):
-		if self.on_mouse_plugged:
-			if self.get_touch_enabled():
-				for device in self.devices:
-					for el in devices.get_devices():
-						if device == el:
+		if self.on_mouse_plugged:		
+			for device in self.devices:
+				for el in devices.get_devices():
+					if device == el:
+						if self.get_touch_enabled():
 							self.menu_enabled_touchpad.set_visible(False)
 							self.automatic_change_state(False)
 							break
