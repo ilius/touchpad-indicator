@@ -29,6 +29,7 @@ import gtk
 import locale
 import gettext
 import com
+import shutil
 import gconf
 from configurator import GConf
 import devices
