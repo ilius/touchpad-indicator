@@ -184,10 +184,10 @@ class Preferences(gtk.Dialog):
 			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
 		#
 		#
-		filestart = os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator.py.desktop")
+		filestart = os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")
 		if self.checkbutton1.get_active():
 			if not os.path.exists(filestart):
-				os.symlink('/usr/share/touchpad-indicator/touchpad-indicator.py.desktop',filestart)
+				shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',filestart)
 		else:		
 			if os.path.exists(filestart):
 				os.remove(filestart)
