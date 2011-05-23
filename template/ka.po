@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-18 06:52+0200\n"
+"POT-Creation-Date: 2011-05-22 12:03+0200\n"
 "PO-Revision-Date: 2011-02-22 22:54+0000\n"
 "Last-Translator: Giorgi Maghlakelidze <acidlabz@gmail.com>\n"
 "Language-Team: Georgian <ka@li.org>\n"
@@ -18,94 +18,87 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-05-02 16:41+0000\n"
 "X-Generator: Launchpad (build 12915)\n"
 
-#: change_touchpad_state.py:57 touchpad-indicator.py:145
-#: touchpad-indicator.py:160 touchpad-indicator.py:264
-msgid "Touchpad Enabled"
-msgstr "სერსორული პანელი ჩართულია"
-
-#: change_touchpad_state.py:59 touchpad-indicator.py:149
-#: touchpad-indicator.py:164 touchpad-indicator.py:268
-msgid "Touchpad Disabled"
-msgstr "სერსორული პანელი გათიშულია"
-
-#: preferences.py:78 touchpad-indicator.py:217
+#: preferences.py:79 touchpad-indicator.py:176
 msgid "Preferences"
 msgstr "გამართვა"
 
-#: preferences.py:98
+#: preferences.py:99
 msgid "Shortcut"
 msgstr ""
 
-#: preferences.py:106
+#: preferences.py:108
 msgid "Autostart"
 msgstr "ავტოგაშვება"
 
-#: preferences.py:109
+#: preferences.py:111
 msgid "Disable touchpad when mouse plugged"
 msgstr "სენსორული პანელის გათიშვა თაგვის გამოღებისას"
 
-#: preferences.py:112
-msgid "Configure"
-msgstr "გამართვა"
-
-#: preferences.py:159
-msgid "Unplug the mouse"
-msgstr "გამოიღეთ თაგვი"
-
-#: preferences.py:162
-msgid "Plug the mouse"
-msgstr "შეაერთეთ თაგვი"
-
-#: preferences.py:209
+#: preferences.py:189
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "ეს კომბინაცია <Control> + <Alt> + "
 
-#: preferences.py:209
+#: preferences.py:189
 msgid " is assigned"
 msgstr " მინიჭებულია"
 
-#: touchpad-indicator.py:144 touchpad-indicator.py:159
-#: touchpad-indicator.py:216 touchpad-indicator.py:263
+#: touchpad-indicator.py:76 touchpad-indicator.py:175
 msgid "Disable Touchpad"
 msgstr "სენსორული პანელის გათიშვა"
 
-#: touchpad-indicator.py:148 touchpad-indicator.py:163
-#: touchpad-indicator.py:249 touchpad-indicator.py:267
+#: touchpad-indicator.py:77
+msgid "Touchpad Enabled"
+msgstr "სერსორული პანელი ჩართულია"
+
+#: touchpad-indicator.py:82 touchpad-indicator.py:210
 msgid "Enable Touchpad"
 msgstr "სენსორული პანელის ჩართვა"
 
-#: touchpad-indicator.py:182
+#: touchpad-indicator.py:83
+msgid "Touchpad Disabled"
+msgstr "სერსორული პანელი გათიშულია"
+
+#: touchpad-indicator.py:141
 msgid "Application Web..."
 msgstr ""
 
-#: touchpad-indicator.py:183
+#: touchpad-indicator.py:142
 msgid "Get help online..."
 msgstr ""
 
-#: touchpad-indicator.py:184
+#: touchpad-indicator.py:143
 msgid "Translate this application..."
 msgstr ""
 
-#: touchpad-indicator.py:185
+#: touchpad-indicator.py:144
 msgid "Report a bug..."
 msgstr ""
 
-#: touchpad-indicator.py:187
+#: touchpad-indicator.py:146
 #, fuzzy
 msgid "About"
 msgstr "ცნობები..."
 
-#: touchpad-indicator.py:219
+#: touchpad-indicator.py:178
 msgid "Help"
 msgstr ""
 
-#: touchpad-indicator.py:222
+#: touchpad-indicator.py:181
 msgid "Exit"
 msgstr "გასვლა"
 
-#: touchpad-indicator.py:293
+#: touchpad-indicator.py:243
 msgid "An indicator for the Touchpad"
 msgstr "სერნსორული პანელის ინდიკატორი"
+
+#~ msgid "Configure"
+#~ msgstr "გამართვა"
+
+#~ msgid "Unplug the mouse"
+#~ msgstr "გამოიღეთ თაგვი"
+
+#~ msgid "Plug the mouse"
+#~ msgstr "შეაერთეთ თაგვი"
 
 #~ msgid "Set shortcut for Touchpad-Indicator:"
 #~ msgstr "ინდიკატორის ცხელი ღილაკი:"

@@ -78,7 +78,7 @@ class Preferences(gtk.Dialog):
 		#
 		gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
 		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		self.set_size_request(700, 180)
+		self.set_size_request(500, 180)
 		self.connect('close', self.close_application)
 		#self.set_icon(gtk.gdk.pixbuf_new_from_file(com.ICON))
 		self.set_icon_from_file(com.ICON)
@@ -101,6 +101,7 @@ class Preferences(gtk.Dialog):
 		#
 		self.entry11 = gtk.Entry()
 		self.entry11.set_editable(False)
+		self.entry11.set_width_chars(4)
 		self.entry11.connect('key-release-event',self.on_entry11_key_release_event)
 		table1.attach(self.entry11,1,2,0,1)
 		#
@@ -108,11 +109,7 @@ class Preferences(gtk.Dialog):
 		table1.attach(self.checkbutton1,0,2,1,2)
 		#
 		self.checkbutton2 = gtk.CheckButton(_('Disable touchpad when mouse plugged'))
-		table1.attach(self.checkbutton2,0,1,2,3)
-		#
-		self.button0 = gtk.Button(_('Configure'))
-		self.button0.connect('clicked',self.configure)
-		table1.attach(self.button0,1,2,2,3)
+		table1.attach(self.checkbutton2,0,2,2,3)
 	
 		#***************************************************************		
 		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
@@ -126,12 +123,7 @@ class Preferences(gtk.Dialog):
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
 			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
-		self.checkbutton2.set_active(self.on_mouse_plugged)
-		try:
-			self.devices = gconfi.get_string_list('/apps/touchpad-indicator/options/devices')
-		except ValueError:
-			gconfi.set_string_list('/apps/touchpad-indicator/options/devices',[])
-		
+		self.checkbutton2.set_active(self.on_mouse_plugged)		
 		try:
 			k=gconfi.get_key('/desktop/gnome/keybindings/touchpad_indicator/binding')
 			if k!=None and len(k)>0:
@@ -155,18 +147,6 @@ class Preferences(gtk.Dialog):
 		
 	def close_application(self, widget, event):
 		self.destroy()
-
-	def configure(self,widget):
-		self.messagedialog('Touchpad Indicator',_('Unplug the mouse'))
-		time.sleep(1)
-		totdevices = devices.get_devices()
-		self.messagedialog('Touchpad Indicator',_('Plug the mouse'))
-		time.sleep(1)
-		newdevices = devices.get_devices()
-		for dev in newdevices:
-			if not dev in totdevices:
-				if not dev in self.devices:
-					self.devices.append(dev)
 	
 	def messagedialog(self,title,message):
 		dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,gtk.MESSAGE_INFO,buttons=gtk.BUTTONS_OK)
@@ -195,7 +175,6 @@ class Preferences(gtk.Dialog):
 		#
 		#
 		gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
-		gconfi.set_string_list('/apps/touchpad-indicator/options/devices',self.devices)
 
 	def on_entry11_key_release_event(self,widget,event):
 		key=event.keyval
@@ -219,6 +198,7 @@ class Preferences(gtk.Dialog):
 	
 	def get_key(self):
 		return self.key
+		
 if __name__ == "__main__":	
 	cm = Preferences()
 	exit(0)

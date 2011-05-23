@@ -25,45 +25,15 @@ __date__ ='$21/11/2010'
 #
 #
 import dbus
-import pynotify
-from touchpad import Touchpad
-import locale
-import gettext
-import com
-
-locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain(com.APP, com.LANGDIR)
-gettext.textdomain(com.APP)
-_ = gettext.gettext
-
  
 bus = dbus.SessionBus()
 
-def get_touch_enabled():
-	touchpad = Touchpad()
-	return touchpad.all_touchpad_enabled()
-
-def set_touch_enabled(enabled):
-	touchpad = Touchpad()
-	if enabled == True:
-		touchpad.enable_all_touchpads()
-	else:
-		touchpad.disable_all_touchpads()
-
-def change_state():
-	is_touch_enabled = not get_touch_enabled()
-	if set_touch_enabled(is_touch_enabled):
-		if is_touch_enabled==True:
-			notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-		else:
-			notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-		notification.show()	
-
-try:
-	touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')
-	change_state = touchpad_indicator_service.get_dbus_method('change_state', 'es.atareao.touchpad_indicator_service')
-	change_state()
-except dbus.exceptions.DBusException,argument:
-	if str(argument).find('es.atareao.touchpad_indicator_service'):
+if __name__ == '__main__':
+	try:
+		touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')
+		change_state = touchpad_indicator_service.get_dbus_method('change_state', 'es.atareao.touchpad_indicator_service')
 		change_state()
-exit(0)
+		print('Touchpad-Indicator is working')
+	except dbus.exceptions.DBusException,argument:
+		print('Touchpad-Indicator is not working')
+	exit(0)

@@ -48,7 +48,11 @@ class Touchpad(object):
 		
 	def _is_touchpad(self,id):
 		comp = ejecuta(('xinput --list-props %s') % (id))
-		if comp.find('Synaptics Off') != -1:
+		#if comp.find('Synaptics Off') != -1:
+		comp = comp.lower()
+		if comp.find('touchpad') != -1:
+			return True
+		elif comp.find('glidepoint') != -1:
 			return True
 		return False
 		

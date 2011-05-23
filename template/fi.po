@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-18 06:52+0200\n"
+"POT-Creation-Date: 2011-05-22 12:03+0200\n"
 "PO-Revision-Date: 2011-02-21 20:43+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -18,94 +18,87 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-05-02 16:41+0000\n"
 "X-Generator: Launchpad (build 12915)\n"
 
-#: change_touchpad_state.py:57 touchpad-indicator.py:145
-#: touchpad-indicator.py:160 touchpad-indicator.py:264
-msgid "Touchpad Enabled"
-msgstr "Kosketuslevy käytössä"
-
-#: change_touchpad_state.py:59 touchpad-indicator.py:149
-#: touchpad-indicator.py:164 touchpad-indicator.py:268
-msgid "Touchpad Disabled"
-msgstr "Kosketuslevy poissa käytöstä"
-
-#: preferences.py:78 touchpad-indicator.py:217
+#: preferences.py:79 touchpad-indicator.py:176
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: preferences.py:98
+#: preferences.py:99
 msgid "Shortcut"
 msgstr ""
 
-#: preferences.py:106
+#: preferences.py:108
 msgid "Autostart"
 msgstr "Automaattinen käynnistys"
 
-#: preferences.py:109
+#: preferences.py:111
 msgid "Disable touchpad when mouse plugged"
 msgstr "Poista kosketuslevy käytöstä hiiren ollessa kytkettynä"
 
-#: preferences.py:112
-msgid "Configure"
-msgstr "Muokkaa"
-
-#: preferences.py:159
-msgid "Unplug the mouse"
-msgstr "Poista hiiri koneesta"
-
-#: preferences.py:162
-msgid "Plug the mouse"
-msgstr "Liitä hiiri koneeseen"
-
-#: preferences.py:209
+#: preferences.py:189
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Pikanäppäin <Control> + <Alt> + "
 
-#: preferences.py:209
+#: preferences.py:189
 msgid " is assigned"
 msgstr " on määritelty"
 
-#: touchpad-indicator.py:144 touchpad-indicator.py:159
-#: touchpad-indicator.py:216 touchpad-indicator.py:263
+#: touchpad-indicator.py:76 touchpad-indicator.py:175
 msgid "Disable Touchpad"
 msgstr "Poista kosketyslevy käytöstä"
 
-#: touchpad-indicator.py:148 touchpad-indicator.py:163
-#: touchpad-indicator.py:249 touchpad-indicator.py:267
+#: touchpad-indicator.py:77
+msgid "Touchpad Enabled"
+msgstr "Kosketuslevy käytössä"
+
+#: touchpad-indicator.py:82 touchpad-indicator.py:210
 msgid "Enable Touchpad"
 msgstr "Käytä kosketyslevyä"
 
-#: touchpad-indicator.py:182
+#: touchpad-indicator.py:83
+msgid "Touchpad Disabled"
+msgstr "Kosketuslevy poissa käytöstä"
+
+#: touchpad-indicator.py:141
 msgid "Application Web..."
 msgstr ""
 
-#: touchpad-indicator.py:183
+#: touchpad-indicator.py:142
 msgid "Get help online..."
 msgstr ""
 
-#: touchpad-indicator.py:184
+#: touchpad-indicator.py:143
 msgid "Translate this application..."
 msgstr ""
 
-#: touchpad-indicator.py:185
+#: touchpad-indicator.py:144
 msgid "Report a bug..."
 msgstr ""
 
-#: touchpad-indicator.py:187
+#: touchpad-indicator.py:146
 #, fuzzy
 msgid "About"
 msgstr "Tietoja..."
 
-#: touchpad-indicator.py:219
+#: touchpad-indicator.py:178
 msgid "Help"
 msgstr ""
 
-#: touchpad-indicator.py:222
+#: touchpad-indicator.py:181
 msgid "Exit"
 msgstr "Sulje"
 
-#: touchpad-indicator.py:293
+#: touchpad-indicator.py:243
 msgid "An indicator for the Touchpad"
 msgstr "Ilmaisin kosketuslevyä varten"
+
+#~ msgid "Configure"
+#~ msgstr "Muokkaa"
+
+#~ msgid "Unplug the mouse"
+#~ msgstr "Poista hiiri koneesta"
+
+#~ msgid "Plug the mouse"
+#~ msgstr "Liitä hiiri koneeseen"
 
 #~ msgid "Set shortcut for Touchpad-Indicator:"
 #~ msgstr "Aseta pikanäppäin kosketyslevyilmaisimelle:"
