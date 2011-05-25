@@ -223,7 +223,6 @@ def is_mouse_plugged():
 		if detected != None:
 			if detected['type'] == 'Mouse':
 				return True
-	print 'No'
 	return False
 
 def cleanstr_cb(m):
