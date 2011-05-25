@@ -75,16 +75,13 @@ class TouchpadIndicator(dbus.service.Object):
 		self.set_menu()
 
 	def set_touch_enabled(self,enabled):
-		print 0
 		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
-			print 1
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
 			self.indicator.set_icon(com.ICON_ENABLED)
 			self.notification.show()
 			return self.touchpad.enable_all_touchpads()
 		elif enabled == False and self.touchpad.all_touchpad_enabled() == True:
-			print 2
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
 			self.indicator.set_icon(com.ICON_DISABLED)
