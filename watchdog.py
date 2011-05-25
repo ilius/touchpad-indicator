@@ -217,12 +217,15 @@ devices = [
     },
 ]
 def is_mouse_plugged():
+	print 'looking watchdog'
 	context = pyudev.Context()
 	for device in context.list_devices(subsystem='input'):
 		detected = detect_device(device)
 		if detected != None:
 			if detected['type'] == 'Mouse':
+				print 'Si'
 				return True
+	print 'No'
 	return False
 
 def cleanstr_cb(m):

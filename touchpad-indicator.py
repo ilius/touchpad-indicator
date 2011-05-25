@@ -62,24 +62,29 @@ class TouchpadIndicator(dbus.service.Object):
 		bus_name = dbus.service.BusName('es.atareao.touchpad_indicator_service', bus=dbus.SessionBus())
 		dbus.service.Object.__init__(self, bus_name, '/es/atareao/touchpad_indicator_service')
 		#
+		self.icon_theme =  gtk.icon_theme_get_default()
+		self.icon_theme.prepend_search_path(com.IMGDIR)
+		#
 		self.touchpad = Touchpad()
-		self.is_mouse_on = watchdog.is_mouse_plugged()
 		self.is_working = True
+		#
+		self.the_watchdog = None
 		#
 		self.read_preferences()
 		#
 		self.set_menu()
-		#
-		self.watchdog = subprocess.Popen(com.WATCHDOG)
 
 	def set_touch_enabled(self,enabled):
-		if enabled == True:
+		print 0
+		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
+			print 1
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
 			self.indicator.set_icon(com.ICON_ENABLED)
 			self.notification.show()
 			return self.touchpad.enable_all_touchpads()
-		else:
+		elif enabled == False and self.touchpad.all_touchpad_enabled() == True:
+			print 2
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
 			self.indicator.set_icon(com.ICON_DISABLED)
@@ -90,14 +95,12 @@ class TouchpadIndicator(dbus.service.Object):
 	def on_mouse_detected_plugged(self,tipo):
 		if self.on_mouse_plugged == True:
 			self.menu_enabled_touchpad.set_sensitive(False)
-			self.is_mouse_on = True
 			self.set_touch_enabled(False)
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def on_mouse_detected_unplugged(self,tipo):
 		if self.on_mouse_plugged == True:
 			self.menu_enabled_touchpad.set_sensitive(True)
-			self.is_mouse_on = False
 			self.set_touch_enabled(True)
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
@@ -106,7 +109,7 @@ class TouchpadIndicator(dbus.service.Object):
 		
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def change_state(self):
-		if self.on_mouse_plugged == False or self.is_mouse_on == False:
+		if self.on_mouse_plugged == False or watchdog.is_mouse_plugged() == False:
 			is_touch_enabled = not self.touchpad.all_touchpad_enabled()
 			self.set_touch_enabled(is_touch_enabled)
 
@@ -118,6 +121,13 @@ class TouchpadIndicator(dbus.service.Object):
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
 			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
+		if self.on_mouse_plugged == True:
+			if self.the_watchdog == None:
+				self.the_watchdog = subprocess.Popen(com.WATCHDOG)
+		else:
+			if self.the_watchdog != None:
+				self.the_watchdog.kill()
+				self.the_watchdog = None
 		try:
 			k=gconfi.get_key('/desktop/gnome/keybindings/touchpad_indicator/binding')
 			if k!=None and len(k)>0:
@@ -188,7 +198,7 @@ class TouchpadIndicator(dbus.service.Object):
 		self.menu_exit.show()		
 		#
 		self.menu.append(self.menu_enabled_touchpad)
-		if self.on_mouse_plugged == True and self.is_mouse_on == True:
+		if self.on_mouse_plugged == True and watchdog.is_mouse_plugged() == True:
 			self.menu_enabled_touchpad.set_sensitive(False)
 		self.menu.append(self.menu_preferences)
 		self.menu.append(self.menu_separator1)
@@ -197,8 +207,7 @@ class TouchpadIndicator(dbus.service.Object):
 		self.menu.append(self.menu_exit)
 		#
 		if self.on_mouse_plugged == True:
-			self.is_mouse_on = watchdog.is_mouse_plugged()
-			if self.is_mouse_on == True and self.touchpad.all_touchpad_enabled() == True:
+			if watchdog.is_mouse_plugged() == True and self.touchpad.all_touchpad_enabled() == True:
 				self.menu_enabled_touchpad.set_sensitive(False)
 				self.set_touch_enabled(False)						
 		#
@@ -206,7 +215,7 @@ class TouchpadIndicator(dbus.service.Object):
 		self.indicator.set_menu(self.menu)
 		self.indicator.set_status(appindicator.STATUS_ACTIVE)
 		#
-		if (self.on_mouse_plugged == False or self.is_mouse_on == False) and self.touchpad.all_touchpad_enabled()==True:
+		if (self.on_mouse_plugged == False or watchdog.is_mouse_plugged() == False) and self.touchpad.all_touchpad_enabled()==True:
 			self.indicator.set_icon(com.ICON_ENABLED)
 		else:
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
@@ -221,7 +230,8 @@ class TouchpadIndicator(dbus.service.Object):
 
 	def menu_exit_response(self,widget):
 		self.is_working = False
-		self.watchdog.kill()
+		if self.the_watchdog != None:
+			self.the_watchdog.kill()
 		exit(0)
 		
 	def on_menu_project_clicked(self,widget):

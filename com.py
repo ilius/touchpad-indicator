@@ -25,7 +25,7 @@ __date__ ="$29-ene-2011$"
 #
 #
 
-VERSION = '0.7.6.4'
+VERSION = '0.7.6.5'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 LANGDIR = '/usr/share/locale-langpack'
@@ -33,6 +33,6 @@ ROOTDIR = '/usr/share/'
 APPDIR = ROOTDIR + APP + '/'
 IMGDIR = APPDIR + 'img/'
 ICON = IMGDIR+'touchpad-indicator.svg'
-ICON_ENABLED = ICON
-ICON_DISABLED = IMGDIR+'touchpad-indicator-disabled.svg'
+ICON_ENABLED = 'touchpad-indicator'
+ICON_DISABLED = 'touchpad-indicator-disabled'
 WATCHDOG = APPDIR + 'watchdog.py'
