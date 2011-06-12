@@ -1,17 +1,17 @@
-# Lithuanian translation for touchpad-indicator
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
-# This file is distributed under the same license as the touchpad-indicator package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Lorenzo Carbonell <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.7.6.6\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.1\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2011-06-12 21:10+0200\n"
-"PO-Revision-Date: 2011-05-04 19:34+0000\n"
-"Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
-"Language-Team: Lithuanian <lt@li.org>\n"
-"Language: lt\n"
+"PO-Revision-Date: 2011-05-29 16:20+0000\n"
+"Last-Translator: atareao <Unknown>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,100 +21,108 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
 msgid "Preferences"
-msgstr "Nustatymai"
+msgstr "Preferencias"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
-msgstr ""
+msgstr "Atajo de teclado"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
-msgstr "Automatinis pasileidimas"
+msgstr "Inicio automático"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
-msgstr "Išjungti jutiklinį kilimėlį (touchpad) prijungus pelę"
+msgstr "Desactivar touchpad al conectar un ratón"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 #, fuzzy
 msgid "Enable touchpad at start"
-msgstr "Įjungti jutiklinį kilimėlį (touchpad)"
+msgstr "Activar el touchpad"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid "This shortcut <Control> + <Alt> + "
-msgstr "Ši klavišų kombinacija <Control> + <Alt> + "
+msgstr "La combinación <Control> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid " is assigned"
-msgstr " jau naudojama"
+msgstr " está asignada"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
 msgid "Disable Touchpad"
-msgstr "Išjungti jutiklinį kilimėlį (touchpad)"
+msgstr "Desactivar el touchpad"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:104
 msgid "Touchpad Enabled"
-msgstr "Įjungtas jutiklinis kilimėlis (touchpad)"
+msgstr "Touchpad activado"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:109
 msgid "Enable Touchpad"
-msgstr "Įjungti jutiklinį kilimėlį (touchpad)"
+msgstr "Activar el touchpad"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:110
 msgid "Touchpad Disabled"
-msgstr "Išjungtas jutiklinis kilimėlis (touchpad)"
+msgstr "Touchpad desactivado"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:173
 msgid "Application Web..."
-msgstr ""
+msgstr "Sitio web..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:174
 msgid "Get help online..."
-msgstr ""
+msgstr "Obtener ayuda en línea..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:175
 msgid "Translate this application..."
-msgstr ""
+msgstr "Traducir esta aplicación..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Report a bug..."
-msgstr ""
+msgstr "Informar de un problema..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
 msgid "Exit"
-msgstr "Baigti"
+msgstr "Salir"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:242
 msgid "An indicator for the Touchpad"
-msgstr "Jutiklinio kilimėlio (touchpad) indikatorius"
-
-#~ msgid "Cancel"
-#~ msgstr "Atsisakyti"
+msgstr "Un indicador para el touchpad"
 
 #~ msgid "Ok"
-#~ msgstr "Gerai"
+#~ msgstr "Aceptar"
 
-#~ msgid "About..."
-#~ msgstr "Apie..."
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "Touchpad-Indicator"
+#~ msgstr "Touchpad-Indicator"
+
+#~ msgid "Set shortcut"
+#~ msgstr "Asigna un atajo de teclado"
+
+#~ msgid "Remove shortcut"
+#~ msgstr "Borra el atajo de teclado"
 
 #~ msgid "Set shortcut for Touchpad-Indicator:"
-#~ msgstr ""
-#~ "Nustatyti klavišų kombinaciją jutiklinio kilimėlio (touchpad) iš/įjungimui"
-
-#~ msgid "Unplug the mouse"
-#~ msgstr "Atjunkite pelę"
-
-#~ msgid "Plug the mouse"
-#~ msgstr "Prijunkite pelę"
+#~ msgstr "Establece una combinación de teclas para Touchpad-Indicator:"
 
 #~ msgid "Configure"
-#~ msgstr "Konfigūruoti"
+#~ msgstr "Configurar"
+
+#~ msgid "Unplug the mouse"
+#~ msgstr "Desconecte el ratón"
+
+#~ msgid "Plug the mouse"
+#~ msgstr "Conecte el ratón"
+
+#~ msgid "About..."
+#~ msgstr "Acerca de..."

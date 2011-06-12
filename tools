@@ -37,7 +37,7 @@ from time import gmtime, strftime, localtime
 ########################################################################
 MAIN_DIR = os.getcwd()
 DEBIAN_DIR = os.path.join(MAIN_DIR,'debian')
-LANGUAGES_DIR = os.path.join(MAIN_DIR,'po')
+LANGUAGES_DIR = os.path.join(MAIN_DIR,'template1')
 SRC_DIR = os.path.join(MAIN_DIR,'src')
 #
 CONFIGURATION = os.path.join(MAIN_DIR,'build.cfg')
@@ -49,7 +49,7 @@ APP = config.get('Definitions', 'app', '')
 APPNAME = APP.title()
 VERSION = config.get('Definitions', 'version', '')
 CHANGES = config.get('Definitions', 'changes', '')
-TEMPLATE = os.path.join(LANGUAGES_DIR,APP+'.pot')
+TEMPLATE = os.path.join(LANGUAGES_DIR,'template1.pot')
 ICON = os.path.join('Definitions','icon','')
 CATEGORIES = os.path.join('Definitions','categories','')
 #
@@ -184,7 +184,7 @@ def create_tar_gz():
 	tar_gz = os.path.join(MAIN_DIR,APP+'_'+VERSION+'.orig.tar.gz')
 	if os.path.exists(tar_gz):
 		os.remove(tar_gz)
-	command = 'tar -c -v -z --exclude src/.bzr* -f %s src/ po/'%(tar_gz)
+	command = 'tar -c -v -z --exclude src/.bzr* -f %s src/ template1/'%(tar_gz)
 	print ejecuta(command)
 	
 def edit_changelog(file):
@@ -253,7 +253,7 @@ def edit_rules(file):
 			f = open(file_txt,'r')
 			for lan in f.readlines():
 				lan = lan[:-1]
-				fs.write('\tmsgfmt po/%s.po -o ${CURDIR}/debian/%s/usr/share/locale-langpack/%s/LC_MESSAGES/%s.mo\n'%(lan,APP,lan,APP))
+				fs.write('\tmsgfmt template1/%s.po -o ${CURDIR}/debian/%s/usr/share/locale-langpack/%s/LC_MESSAGES/%s.mo\n'%(lan,APP,lan,APP))
 			f.close()
 			while(linea!= '\t# End comile languages\n'):
 				i+=1
@@ -431,7 +431,7 @@ def create_rules(file):
 	fl = open(file_txt,'r')
 	for lan in fl.readlines():
 		lan = lan[:-1]
-		f.write('\tmsgfmt po/%s.po -o ${CURDIR}/debian/%s/usr/share/locale-langpack/%s/LC_MESSAGES/%s.mo\n'%(lan,APP,lan,APP))
+		f.write('\tmsgfmt template1/%s.po -o ${CURDIR}/debian/%s/usr/share/locale-langpack/%s/LC_MESSAGES/%s.mo\n'%(lan,APP,lan,APP))
 	fl.close()
 	f.write('\t# End comile languages\n')
 	####################################################################
@@ -546,11 +546,11 @@ def edit_mkr():
 		file = os.path.relpath(file,SRC_DIR)
 		fb.write('mkdir -p {MOUNT_DIR}/usr/share/%s/%s\n'%(APP,file))
 	fb.write('#######################################################\n')	
-	fb.write('cp *.py {MOUNT_DIR}/usr/share/%s/\n'%(APP))
+	fb.write('cp src/*.py {MOUNT_DIR}/usr/share/%s/\n'%(APP))
 	for file in files:
 		if len(glob.glob(os.path.join(file,'*.py')))>0:
 			file = os.path.relpath(file,SRC_DIR)
-			fb.write('cp %s/*.py {MOUNT_DIR}/usr/share/%s/%s/\n'%(file,APP,file))
+			fb.write('cp src/%s/*.py {MOUNT_DIR}/usr/share/%s/%s/\n'%(file,APP,file))
 	fb.close()	
 
 def create_deb():
@@ -578,7 +578,7 @@ def create_deb():
 	fb = open(file_build,'r')
 	for ln in fb.readlines():
 		ln = ln.replace('{MOUNT_DIR}',folder_debian[:-1])
-		ln = ln.replace('cp ','cp '+SRC_DIR+'/')
+		ln = ln.replace('cp ','cp '+MAIN_DIR+'/')
 		fdeb.write(ln)
 	fb.close()
 	#

@@ -1,17 +1,17 @@
-# Basque translation for touchpad-indicator
+# Dutch translation for touchpad-indicator
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.7.6.6\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.1\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2011-06-12 21:10+0200\n"
-"PO-Revision-Date: 2011-05-23 12:59+0000\n"
-"Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
-"Language-Team: Basque <eu@li.org>\n"
-"Language: eu\n"
+"PO-Revision-Date: 2011-05-10 15:27+0000\n"
+"Last-Translator: Yared Hufkens <Unknown>\n"
+"Language-Team: Dutch <nl@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,87 +21,93 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
 msgid "Preferences"
-msgstr "Hobespenak"
+msgstr "Voorkeuren"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
-msgstr "Laster-tekla"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
-msgstr "Autoabiarazi"
+msgstr "Automatisch starten"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
-msgstr "Ezgaitu touchpad-a sagua konektatzean"
+msgstr "Touchpad uitschakelen als er een muis is angesloten"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 #, fuzzy
 msgid "Enable touchpad at start"
-msgstr "Gaitu touchpad-a"
+msgstr "Touchpad inschakelen"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid "This shortcut <Control> + <Alt> + "
-msgstr "Laster-tekla hau <Control> + <Alt> + "
+msgstr "De snelkoppeling <Control> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid " is assigned"
-msgstr " jadanik erabiltzen da."
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
 msgid "Disable Touchpad"
-msgstr "Ezgaitu touchpad-a"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:104
 msgid "Touchpad Enabled"
-msgstr "Touchpad-a gaituta"
+msgstr "Touchpad ingeschakeld"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:109
 msgid "Enable Touchpad"
-msgstr "Gaitu touchpad-a"
+msgstr "Touchpad inschakelen"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:110
 msgid "Touchpad Disabled"
-msgstr "Touchpad-a ezgaituta"
+msgstr "Touchpad uitgeschakeld"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:173
 msgid "Application Web..."
-msgstr "Web aplikazioa..."
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:174
 msgid "Get help online..."
-msgstr "Jaso online laguntza..."
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:175
 msgid "Translate this application..."
-msgstr "Itzuli aplikazioa hau..."
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Report a bug..."
-msgstr "Arazoen berri eman..."
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "About"
-msgstr "Honi buruz"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
 msgid "Help"
-msgstr "Laguntza"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
 msgid "Exit"
-msgstr "Irten"
+msgstr "Afsluiten"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:242
 msgid "An indicator for the Touchpad"
-msgstr ""
+msgstr "Een indicator voor het touchpad"
+
+#~ msgid "Set shortcut for Touchpad-Indicator:"
+#~ msgstr "Snelkoppeling voor Touchpad-Indicator setten"
 
 #~ msgid "Configure"
-#~ msgstr "Konfiguratu"
+#~ msgstr "Opties"
 
 #~ msgid "Unplug the mouse"
-#~ msgstr "Deskonektatu sagua"
+#~ msgstr "De muis aftrekken"
 
 #~ msgid "Plug the mouse"
-#~ msgstr "Konektatu sagua"
+#~ msgstr "De muis aansluiten"
+
+#~ msgid "About..."
+#~ msgstr "Info..."
