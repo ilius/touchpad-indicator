@@ -1,0 +1,16 @@
+# Build the sctructure
+mkdir -p {MOUNT_DIR}/usr/share/applications
+mkdir -p {MOUNT_DIR}/usr/share/pixmaps
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/img
+# Copy files
+cp img/*.svg {MOUNT_DIR}/usr/share/touchpad-indicator/img/
+cp img/*.svg {MOUNT_DIR}/usr/share/pixmaps/
+cp touchpad-indicator-autostart.desktop {MOUNT_DIR}/usr/share/touchpad-indicator/
+cp Touchpad-Indicator.desktop {MOUNT_DIR}/usr/share/applications/	
+# Structure and source files
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/pyudev
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/img
+#######################################################
+cp *.py {MOUNT_DIR}/usr/share/touchpad-indicator/
+cp pyudev/*.py {MOUNT_DIR}/usr/share/touchpad-indicator/pyudev/

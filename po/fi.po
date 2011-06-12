@@ -1,0 +1,119 @@
+# Finnish translation for touchpad-indicator
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the touchpad-indicator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: touchpad-indicator 0.7.6.6\n"
+"Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
+"POT-Creation-Date: 2011-06-12 21:10+0200\n"
+"PO-Revision-Date: 2011-05-19 17:27+0000\n"
+"Last-Translator: Jiri Grönroos <Unknown>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-06-12 19:08+0000\n"
+"X-Generator: Launchpad (build 13175)\n"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
+msgid "Preferences"
+msgstr "Asetukset"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
+msgid "Shortcut"
+msgstr "Pikanäppäin"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
+msgid "Autostart"
+msgstr "Automaattinen käynnistys"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
+msgid "Disable touchpad when mouse plugged"
+msgstr "Poista kosketuslevy käytöstä hiiren ollessa kytkettynä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
+#, fuzzy
+msgid "Enable touchpad at start"
+msgstr "Käytä kosketyslevyä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+msgid "This shortcut <Control> + <Alt> + "
+msgstr "Pikanäppäin <Control> + <Alt> + "
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+msgid " is assigned"
+msgstr " on määritelty"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
+msgid "Disable Touchpad"
+msgstr "Poista kosketyslevy käytöstä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:104
+msgid "Touchpad Enabled"
+msgstr "Kosketuslevy käytössä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:109
+msgid "Enable Touchpad"
+msgstr "Käytä kosketyslevyä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:110
+msgid "Touchpad Disabled"
+msgstr "Kosketuslevy poissa käytöstä"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:173
+msgid "Application Web..."
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:174
+msgid "Get help online..."
+msgstr "Hae apua verkosta..."
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:175
+msgid "Translate this application..."
+msgstr "Käännä tämä ohjelma..."
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
+msgid "Report a bug..."
+msgstr "Raportoi ongelmasta..."
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
+msgid "About"
+msgstr "Tietoja"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+msgid "Help"
+msgstr "Ohje"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
+msgid "Exit"
+msgstr "Sulje"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:242
+msgid "An indicator for the Touchpad"
+msgstr "Ilmaisin kosketuslevyä varten"
+
+#~ msgid "Cancel"
+#~ msgstr "Peru"
+
+#~ msgid "Set shortcut for Touchpad-Indicator:"
+#~ msgstr "Aseta pikanäppäin kosketyslevyilmaisimelle:"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Configure"
+#~ msgstr "Muokkaa"
+
+#~ msgid "Unplug the mouse"
+#~ msgstr "Poista hiiri koneesta"
+
+#~ msgid "Plug the mouse"
+#~ msgstr "Liitä hiiri koneeseen"
+
+#~ msgid "About..."
+#~ msgstr "Tietoja..."

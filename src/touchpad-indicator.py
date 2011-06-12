@@ -52,6 +52,30 @@ gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
+def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
+	if text != None and icon == None:
+		menu_item = gtk.MenuItem(text)
+	elif text == None and icon != None:
+		menu_item = gtk.ImageMenuItem()
+		image = gtk.Image()
+		image.set_from_file(icon)
+		menu_item.set_image(image)
+	elif text != None and icon != None:
+		menu_item = gtk.ImageMenuItem(text)
+		image = gtk.Image()
+		image.set_from_file(icon)
+		menu_item.set_image(image)
+		menu_item.set_always_show_image(True)
+	elif icon == None:
+		menu_item = gtk.MenuItem(text)
+	else:
+		menu_item = gtk.SeparatorMenuItem()
+	if conector_event != None and conector_action != None:				
+		menu_item.connect(conector_event,conector_action)
+	menu_item.show()
+	menu.append(menu_item)
+	return menu_item
+
 class TouchpadIndicator(dbus.service.Object):
 	def __init__(self):
 		if dbus.SessionBus().request_name('es.atareao.touchpad_indicator') != dbus.bus.REQUEST_NAME_REPLY_PRIMARY_OWNER:
@@ -89,13 +113,13 @@ class TouchpadIndicator(dbus.service.Object):
 			return self.touchpad.disable_all_touchpads()
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
-	def on_mouse_detected_plugged(self,tipo):
+	def on_mouse_detected_plugged(self):
 		if self.on_mouse_plugged == True:
 			self.menu_enabled_touchpad.set_sensitive(False)
 			self.set_touch_enabled(False)
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
-	def on_mouse_detected_unplugged(self,tipo):
+	def on_mouse_detected_unplugged(self):
 		if self.on_mouse_plugged == True:
 			self.menu_enabled_touchpad.set_sensitive(True)
 			self.set_touch_enabled(True)
@@ -114,10 +138,15 @@ class TouchpadIndicator(dbus.service.Object):
 		gconfi = GConf()
 		self.key = ''
 		self.on_mouse_plugged = False
+		self.on_start_enabled = False
 		try:
 			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
 		except ValueError:
 			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
+		try:
+			self.on_start_enabled = gconfi.get_key('/apps/touchpad-indicator/options/on_start_enabled')
+		except ValueError:
+			gconfi.set_key('/apps/touchpad-indicator/options/on_start_enabled',False)
 		if self.on_mouse_plugged == True:
 			if self.the_watchdog == None:
 				self.the_watchdog = subprocess.Popen(com.WATCHDOG)
@@ -141,32 +170,12 @@ class TouchpadIndicator(dbus.service.Object):
 	def get_help_menu(self):
 		help_menu =gtk.Menu()
 		#		
-		menu_project = gtk.MenuItem(_('Application Web...'))
-		menu_help_online = gtk.MenuItem(_('Get help online...'))
-		menu_translations = gtk.MenuItem(_('Translate this application...'))
-		menu_bugs = gtk.MenuItem(_('Report a bug...'))
-		menu_separator_help_menu=gtk.SeparatorMenuItem()
-		menu_about=gtk.MenuItem(_('About'))
-		#
-		menu_project.connect('activate',self.on_menu_project_clicked)
-		menu_help_online.connect('activate',self.on_menu_help_online_clicked)
-		menu_translations.connect('activate',self.on_menu_translations_clicked)
-		menu_bugs.connect('activate',self.on_menu_bugs_clicked)
-		menu_about.connect('activate',self.menu_about_response)
-		#
-		menu_project.show()
-		menu_help_online.show()
-		menu_translations.show()
-		menu_bugs.show()
-		menu_separator_help_menu.show()
-		menu_about.show()
-		#
-		help_menu.append(menu_project)
-		help_menu.append(menu_help_online)
-		help_menu.append(menu_translations)
-		help_menu.append(menu_bugs)
-		help_menu.append(menu_separator_help_menu)
-		help_menu.append(menu_about)
+		add2menu(help_menu,text = _('Application Web...'),conector_event = 'activate',conector_action = self.on_menu_project_clicked)
+		add2menu(help_menu,text = _('Get help online...'),conector_event = 'activate',conector_action = self.on_menu_help_online_clicked)
+		add2menu(help_menu,text = _('Translate this application...'),conector_event = 'activate',conector_action = self.on_menu_translations_clicked)
+		add2menu(help_menu,text = _('Report a bug...'),conector_event = 'activate',conector_action = self.on_menu_bugs_clicked)
+		add2menu(help_menu)
+		add2menu(help_menu,text = _('About'),conector_event = 'activate',conector_action = self.menu_about_response)
 		#
 		help_menu.show()
 		#
@@ -175,49 +184,30 @@ class TouchpadIndicator(dbus.service.Object):
 	def set_menu(self):
 		self.menu = gtk.Menu()
 		#
-		self.menu_enabled_touchpad=gtk.MenuItem(_('Disable Touchpad'))
-		self.menu_preferences=gtk.MenuItem(_('Preferences'))
-		self.menu_separator1=gtk.MenuItem()
-		self.menu_help = gtk.MenuItem(_('Help'))
+		self.menu_enabled_touchpad=add2menu(self.menu,text = _('Disable Touchpad'),conector_event = 'activate',conector_action = self.menu_touchpad_enabled_response)
+		add2menu(self.menu,text = _('Preferences'),conector_event = 'activate',conector_action = self.menu_preferences_response)
+		add2menu(self.menu)
+		self.menu_help = add2menu(self.menu,text = _('Help'))
 		self.menu_help.set_submenu(self.get_help_menu())
+		add2menu(self.menu)
 		self.menu_separator2=gtk.MenuItem()
-		self.menu_exit=gtk.MenuItem(_('Exit'))
-		#
-		self.menu_enabled_touchpad.connect('activate', self.menu_touchpad_enabled_response)
-		self.menu_preferences.connect('activate',self.menu_preferences_response)
-		self.menu_exit.connect('activate', self.menu_exit_response)
-		#
-		self.menu_enabled_touchpad.show()
-		self.menu_preferences.show()
-		self.menu_separator1.show()
-		self.menu_help.show()
-		self.menu_separator2.show()
-		self.menu_exit.show()		
-		#
-		self.menu.append(self.menu_enabled_touchpad)
-		if self.on_mouse_plugged == True and watchdog.is_mouse_plugged() == True:
-			self.menu_enabled_touchpad.set_sensitive(False)
-		self.menu.append(self.menu_preferences)
-		self.menu.append(self.menu_separator1)
-		self.menu.append(self.menu_help)
-		self.menu.append(self.menu_separator2)
-		self.menu.append(self.menu_exit)
-		#
-		if self.on_mouse_plugged == True:
-			if watchdog.is_mouse_plugged() == True and self.touchpad.all_touchpad_enabled() == True:
-				self.menu_enabled_touchpad.set_sensitive(False)
-				self.set_touch_enabled(False)						
+		add2menu(self.menu,text = _('Exit'),conector_event = 'activate',conector_action = self.menu_exit_response)
 		#
 		self.menu.show()
 		self.indicator.set_menu(self.menu)
 		self.indicator.set_status(appindicator.STATUS_ACTIVE)
-		#
-		if (self.on_mouse_plugged == False or watchdog.is_mouse_plugged() == False) and self.touchpad.all_touchpad_enabled()==True:
-			self.indicator.set_icon(com.ICON_ENABLED)
+		#			
+		if self.on_mouse_plugged == True and watchdog.is_mouse_plugged() == True:
+			if self.touchpad.all_touchpad_enabled()==True:
+				self.set_touch_enabled(False)
+				self.menu_enabled_touchpad.set_sensitive(False)
+			else:
+				self.menu_enabled_touchpad.set_sensitive(True)
 		else:
-			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
-			self.indicator.set_icon(com.ICON_DISABLED)
-	
+			if self.on_start_enabled == True and self.touchpad.all_touchpad_enabled()==False:
+				self.set_touch_enabled(True)
+			self.menu_enabled_touchpad.set_sensitive(True)
+
 	def menu_preferences_response(self,widget):
 		widget.set_sensitive(False)
 		preferences = Preferences()

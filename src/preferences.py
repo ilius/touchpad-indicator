@@ -40,7 +40,19 @@ gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
-def search_for_keys(gconfi,chain):
+gconfi = GConf()
+
+def set_key(key,value):
+	gconfi.set_key(key,value)
+
+def get_key(key,value):
+	try:
+		value = gconfi.get_key(key)
+	except ValueError:
+		gconfi.set_key(key,value)
+	return value
+
+def search_for_keys(chain):
 	keys=[]
 	for key in gconfi.get_all_keys(chain):
 		if key.get_value().type == gconf.VALUE_STRING:
@@ -52,12 +64,11 @@ def search_for_keys(gconfi,chain):
 	return keys
 
 def get_combination_keys():
-	gconfi = GConf()
-	keys=search_for_keys(gconfi,'/apps/compiz/general/allscreens/options')
-	keys+=search_for_keys(gconfi,'/apps/metacity/global_keybindings')
-	keys+=search_for_keys(gconfi,'/apps/metacity/window_keybindings')
+	keys=search_for_keys('/apps/compiz/general/allscreens/options')
+	keys+=search_for_keys('/apps/metacity/global_keybindings')
+	keys+=search_for_keys('/apps/metacity/window_keybindings')
 	for dire in gconfi.get_all_dirs('/desktop/gnome/keybindings'):
-		keys+=search_for_keys(gconfi,dire)
+		keys+=search_for_keys(dire)
 	return keys
 
 class Keybindings():
@@ -69,9 +80,7 @@ class Keybindings():
 		return self.combination_key
 	
 	def get_action(self):
-		return self.action
-		
-
+		return self.action	
 	
 class Preferences(gtk.Dialog):
 	def __init__(self):
@@ -80,7 +89,6 @@ class Preferences(gtk.Dialog):
 		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
 		self.set_size_request(500, 180)
 		self.connect('close', self.close_application)
-		#self.set_icon(gtk.gdk.pixbuf_new_from_file(com.ICON))
 		self.set_icon_from_file(com.ICON)
 		#
 		self.vbox1 = gtk.VBox(spacing = 5)
@@ -93,7 +101,7 @@ class Preferences(gtk.Dialog):
 		self.vbox2 = gtk.VBox(spacing = 5)
 		self.vbox2.set_border_width(5)
 		self.frame1.add(self.vbox2)
-		table1 = gtk.Table(3,2,True)
+		table1 = gtk.Table(4,2,True)
 		self.vbox2.add(table1)
 		#
 		self.label11 = gtk.Label(_('Shortcut')+': <Ctrl> + <Alt> +')
@@ -110,30 +118,12 @@ class Preferences(gtk.Dialog):
 		#
 		self.checkbutton2 = gtk.CheckButton(_('Disable touchpad when mouse plugged'))
 		table1.attach(self.checkbutton2,0,2,2,3)
-	
-		#***************************************************************		
-		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
-			self.checkbutton1.set_active(True)
 		#
-		gconfi = GConf()
-		self.key = ''
-		self.on_mouse_plugged = False
-		self.devices = []
-		try:
-			self.on_mouse_plugged = gconfi.get_key('/apps/touchpad-indicator/options/on_mouse_plugged')
-		except ValueError:
-			gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
-		self.checkbutton2.set_active(self.on_mouse_plugged)		
-		try:
-			k=gconfi.get_key('/desktop/gnome/keybindings/touchpad_indicator/binding')
-			if k!=None and len(k)>0:
-				k=k[k.rfind('>')+1:]
-				self.key=k
-			else:
-				self.key = ''
-		except ValueError:
-			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
-		self.entry11.set_text(self.key)
+		self.checkbutton3 = gtk.CheckButton(_('Enable touchpad at start'))
+		table1.attach(self.checkbutton3,0,2,3,4)
+		#***************************************************************		
+		#
+		self.load_preferences()
 		#
 		self.show_all()
 		#
@@ -156,13 +146,12 @@ class Preferences(gtk.Dialog):
 		dialog.destroy()
 		
 	def close_ok(self):
-		gconfi = GConf()
-		gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
-		gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/name','modify_touchpad_status')
+		set_key('/desktop/gnome/keybindings/touchpad_indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
+		set_key('/desktop/gnome/keybindings/touchpad_indicator/name','modify_touchpad_status')
 		if len(self.entry11.get_text())>0:
-			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','<Control><Alt>'+self.entry11.get_text())			
+			set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','<Control><Alt>'+self.entry11.get_text())			
 		else:
-			gconfi.set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
+			set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
 		#
 		#
 		filestart = os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")
@@ -174,7 +163,8 @@ class Preferences(gtk.Dialog):
 				os.remove(filestart)
 		#
 		#
-		gconfi.set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
+		set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
+		set_key('/apps/touchpad-indicator/options/on_start_enabled',self.checkbutton3.get_active())	
 
 	def on_entry11_key_release_event(self,widget,event):
 		key=event.keyval
@@ -195,9 +185,25 @@ class Preferences(gtk.Dialog):
 			else:
 				self.entry11.set_text(keyval)
 				self.key = keyval
-	
-	def get_key(self):
-		return self.key
+			
+	def load_preferences(self):
+		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
+			self.checkbutton1.set_active(True)
+		self.key = ''
+		self.on_start_enabled = False
+		self.on_mouse_plugged = False
+		self.devices = []
+		self.on_mouse_plugged = get_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
+		self.checkbutton2.set_active(self.on_mouse_plugged)		
+		self.on_start_enabled = get_key('/apps/touchpad-indicator/options/on_start_enabled',False)
+		self.checkbutton3.set_active(self.on_start_enabled)		
+		k=get_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
+		if k!=None and len(k)>0:
+			k=k[k.rfind('>')+1:]
+			self.key=k
+		else:
+			self.key = ''
+		self.entry11.set_text(self.key)		
 		
 if __name__ == "__main__":	
 	cm = Preferences()
