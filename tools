@@ -281,7 +281,8 @@ def create_package():
 	shutil.copy(os.path.join(MAIN_DIR,'changelog'),os.path.join(folder_debian,'changelog'))
 	edit_mkr()
 	create_rules(os.path.join(folder_debian,'rules'))
-	create_control(os.path.join(folder_debian,'control'))
+	#create_control(os.path.join(folder_debian,'control'))
+	create_control_launchpad(os.path.join(folder_debian,'control'))
 
 def update_changelog_and_rules():
 	folder = os.path.join(MAIN_DIR,APP+'-'+VERSION)
@@ -302,12 +303,12 @@ def debuild():
 	os.chdir(curdir)
 	
 def dput():
-	curdir = os.getcwd()
-	os.chdir(MAIN_DIR)
 	changes = os.path.join(MAIN_DIR,APP+'_'+VERSION+'-1ubuntu1_source.changes')
-	command = 'dput %s %s'%(PPA,changes)
-	print ejecuta(command)
-	os.chdir(curdir)
+	if os.path.exists(changes):
+		command = 'dput %s %s'%(PPA,changes)
+		print ejecuta(command)
+	else:
+		print 'File %s not exists'%changes
 
 def create_copyright(file):
 	if os.path.exists(file):
@@ -476,7 +477,25 @@ def create_compat(file):
 	if os.path.exists(file):
 		os.remove(file)
 	f = open(file,'w')
-	f.write('7')
+	f.write('7\n')
+	f.close()
+
+def create_control_launchpad(file):
+	if os.path.exists(file):
+		os.remove(file)
+	f = open(file,'w')
+	f.write('Source: %s\n'%APP)	
+	f.write('Section: %s\n'%SECTION)
+	f.write('Priority: %s\n'%PRIORITY)
+	f.write('Maintainer: %s <%s>\n'%(AUTHOR,AUTHOR_EMAIL))
+	f.write('Build-Depends: debhelper (>= 7.0.50~)\n')
+	f.write('Standards-Version: 3.8.4\n')
+	f.write('Homepage: %s\n'%HOMEPAGE)
+	f.write('\n')
+	f.write('Package: %s\n'%APP)
+	f.write('Architecture: %s\n'%ARCHITECTURE)
+	f.write('Depends: %s\n'%DEPENDS)
+	f.write('Description: %s\n'%DESCRIPTION)
 	f.close()
 
 def create_control(file):
@@ -608,12 +627,14 @@ def remove_builds():
 	build = os.path.join(MAIN_DIR,APP+'_'+VERSION+'-1ubuntu1_source.build')
 	changes = os.path.join(MAIN_DIR,APP+'_'+VERSION+'-1ubuntu1_source.changes')
 	orig = os.path.join(MAIN_DIR,APP+'_'+VERSION+'.orig.tar.gz')
+	upload =os.path.join(MAIN_DIR,APP+'_'+VERSION+'-1ubuntu1_source.ppa.upload')
 	delete_it(folder)
 	delete_it(diff)
 	delete_it(dsc)
 	delete_it(build)
 	delete_it(changes)
 	delete_it(orig)
+	delete_it(upload)
 	#
 	folder_build = os.path.join(MAIN_DIR,'build/')
 	folder_dist = os.path.join(MAIN_DIR,'dist/')
@@ -702,26 +723,6 @@ if __name__ == '__main__':
 		print '############################################################'
 		debuild()
 	elif args[1] == '-dput':
-		print '############################################################'
-		print 'Removing compiled files'
-		print '############################################################'
-		remove_compiled_files(SRC_DIR)
-		print '############################################################'
-		print 'Removing language saved files'
-		print '############################################################'
-		remove_languages_saved_files(LANGUAGES_DIR)
-		print '############################################################'
-		print 'Creating tar file'
-		print '############################################################'
-		create_tar_gz()
-		print '############################################################'
-		print 'Creating package'
-		print '############################################################'
-		create_package()
-		print '############################################################'
-		print 'Creating builds'
-		print '############################################################'
-		debuild()
 		print '############################################################'
 		print 'Put changes in ppa'
 		print '############################################################'
