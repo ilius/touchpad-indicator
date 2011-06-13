@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.1\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.2\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-06-12 21:10+0200\n"
+"POT-Creation-Date: 2011-06-13 20:52+0200\n"
 "PO-Revision-Date: 2011-05-10 15:27+0000\n"
 "Last-Translator: Yared Hufkens <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Launchpad (build 13175)\n"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -49,51 +49,53 @@ msgid " is assigned"
 msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:189
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:213
 msgid "Disable Touchpad"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:104
-msgid "Touchpad Enabled"
-msgstr "Touchpad ingeschakeld"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:109
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:106
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:216
 msgid "Enable Touchpad"
 msgstr "Touchpad inschakelen"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:110
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:109
+msgid "Touchpad Enabled"
+msgstr "Touchpad ingeschakeld"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:113
 msgid "Touchpad Disabled"
 msgstr "Touchpad uitgeschakeld"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:173
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:175
 msgid "Application Web..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:174
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Get help online..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:175
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
 msgid "Translate this application..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "Report a bug..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:180
 msgid "About"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:192
 msgid "Help"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:196
 msgid "Exit"
 msgstr "Afsluiten"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:242
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:250
 msgid "An indicator for the Touchpad"
 msgstr "Een indicator voor het touchpad"
 

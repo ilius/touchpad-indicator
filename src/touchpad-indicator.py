@@ -99,16 +99,18 @@ class TouchpadIndicator(dbus.service.Object):
 		self.set_menu()
 
 	def set_touch_enabled(self,enabled):
-		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
+		if self.touchpad.all_touchpad_enabled() == False:
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
-			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
 			self.indicator.set_icon(com.ICON_ENABLED)
+		else:
+			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
+			self.indicator.set_icon(com.ICON_DISABLED)			
+		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
+			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
 			self.notification.show()
 			return self.touchpad.enable_all_touchpads()
 		elif enabled == False and self.touchpad.all_touchpad_enabled() == True:
-			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
 			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-			self.indicator.set_icon(com.ICON_DISABLED)
 			self.notification.show()
 			return self.touchpad.disable_all_touchpads()
 
@@ -207,6 +209,12 @@ class TouchpadIndicator(dbus.service.Object):
 			if self.on_start_enabled == True and self.touchpad.all_touchpad_enabled()==False:
 				self.set_touch_enabled(True)
 			self.menu_enabled_touchpad.set_sensitive(True)
+		if self.touchpad.all_touchpad_enabled() == False:
+			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
+			self.indicator.set_icon(com.ICON_ENABLED)
+		else:
+			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
+			self.indicator.set_icon(com.ICON_DISABLED)			
 
 	def menu_preferences_response(self,widget):
 		widget.set_sensitive(False)

@@ -1,3 +1,9 @@
+touchpad-indicator (0.8.0.2-1ubuntu1) natty; urgency=low
+
+  * Fixed a bug with icons
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 13 Jun 2011 18:52:20 +0200
+
 touchpad-indicator (0.8.0.1-1ubuntu1) natty; urgency=low
 
   * Added new option at start
