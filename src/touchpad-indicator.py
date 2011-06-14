@@ -99,20 +99,21 @@ class TouchpadIndicator(dbus.service.Object):
 		self.set_menu()
 
 	def set_touch_enabled(self,enabled):
-		if self.touchpad.all_touchpad_enabled() == False:
+		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
+			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
+			self.notification.show()
+			self.touchpad.enable_all_touchpads()
+		elif enabled == False and self.touchpad.all_touchpad_enabled() == True:
+			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
+			self.notification.show()
+			self.touchpad.disable_all_touchpads()
+		if self.touchpad.all_touchpad_enabled() == True:
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.indicator.set_icon(com.ICON_ENABLED)
 		else:
 			self.menu_enabled_touchpad.set_label(_('Enable Touchpad'))
-			self.indicator.set_icon(com.ICON_DISABLED)			
-		if enabled == True and self.touchpad.all_touchpad_enabled() == False:
-			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Enabled'),com.ICON_ENABLED)
-			self.notification.show()
-			return self.touchpad.enable_all_touchpads()
-		elif enabled == False and self.touchpad.all_touchpad_enabled() == True:
-			self.notification = pynotify.Notification ('Touchpad-Indicator',_('Touchpad Disabled'),com.ICON_DISABLED)
-			self.notification.show()
-			return self.touchpad.disable_all_touchpads()
+			self.indicator.set_icon(com.ICON_DISABLED)
+		return True
 
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def on_mouse_detected_plugged(self):
@@ -202,14 +203,12 @@ class TouchpadIndicator(dbus.service.Object):
 		if self.on_mouse_plugged == True and watchdog.is_mouse_plugged() == True:
 			if self.touchpad.all_touchpad_enabled()==True:
 				self.set_touch_enabled(False)
-				self.menu_enabled_touchpad.set_sensitive(False)
-			else:
-				self.menu_enabled_touchpad.set_sensitive(True)
+			self.menu_enabled_touchpad.set_sensitive(False)
 		else:
 			if self.on_start_enabled == True and self.touchpad.all_touchpad_enabled()==False:
 				self.set_touch_enabled(True)
 			self.menu_enabled_touchpad.set_sensitive(True)
-		if self.touchpad.all_touchpad_enabled() == False:
+		if self.touchpad.all_touchpad_enabled() == True:
 			self.menu_enabled_touchpad.set_label(_('Disable Touchpad'))
 			self.indicator.set_icon(com.ICON_ENABLED)
 		else:
