@@ -85,7 +85,10 @@ SIGNATURES = {
         unref=([udev_p], None),
         ref=([udev_p], udev_p),
         get_sys_path=([udev_p], c_char_p),
-        get_dev_path=([udev_p], c_char_p)),
+        get_dev_path=([udev_p], c_char_p),
+        get_run_path=([udev_p], c_char_p),
+        get_log_priority=([udev_p], c_int),
+        set_log_priority=([udev_p, c_int], None)),
     # enumeration
     'udev_enumerate': dict(
         new=([udev_p], udev_enumerate_p),
@@ -112,11 +115,14 @@ SIGNATURES = {
                                     udev_device_p),
         new_from_environment=([udev_p], udev_device_p),
         get_parent=([udev_device_p], udev_device_p),
+        get_parent_with_subsystem_devtype=([udev_device_p, c_char_p, c_char_p],
+                                           udev_device_p),
         get_devpath=([udev_device_p], c_char_p),
         get_subsystem=([udev_device_p], c_char_p),
         get_syspath=([udev_device_p], c_char_p),
         get_sysname=([udev_device_p], c_char_p),
         get_driver=([udev_device_p], c_char_p),
+        get_devtype=([udev_device_p], c_char_p),
         get_devnode=([udev_device_p], c_char_p),
         get_property_value=([udev_device_p, c_char_p], c_char_p),
         get_sysattr_value=([udev_device_p, c_char_p], c_char_p),
@@ -125,7 +131,8 @@ SIGNATURES = {
         get_usec_since_initialized=([udev_device_p], c_ulonglong),
         get_devlinks_list_entry=([udev_device_p], udev_list_entry_p),
         get_tags_list_entry=([udev_device_p], udev_list_entry_p),
-        get_properties_list_entry=([udev_device_p], udev_list_entry_p)),
+        get_properties_list_entry=([udev_device_p], udev_list_entry_p),
+        get_sysattr_list_entry=([udev_device_p], udev_list_entry_p)),
     # monitoring
     'udev_monitor': dict(
         ref=([udev_monitor_p], udev_monitor_p),
@@ -136,7 +143,8 @@ SIGNATURES = {
         get_fd=([udev_monitor_p], c_int),
         receive_device=([udev_monitor_p], udev_device_p),
         filter_add_match_subsystem_devtype=(
-            [udev_monitor_p, c_char_p, c_char_p], c_int))
+            [udev_monitor_p, c_char_p, c_char_p], c_int),
+        filter_add_match_tag=([udev_monitor_p, c_char_p], c_int))
     }
 
 
@@ -162,7 +170,8 @@ ERROR_CHECKERS = dict(
     udev_enumerate_add_match_tag=check_negative_errorcode,
     udev_enumerate_add_match_sysname=check_negative_errorcode,
     udev_enumerate_add_match_is_initialized=check_negative_errorcode,
-    udev_monitor_filter_add_match_subsystem_devtype=check_negative_errorcode)
+    udev_monitor_filter_add_match_subsystem_devtype=check_negative_errorcode,
+    udev_monitor_filter_add_match_tag=check_negative_errorcode)
 
 
 def load_udev_library():
@@ -172,8 +181,13 @@ def load_udev_library():
 
     Important functions are given proper signatures and return types to
     support type checking and argument conversion.
+
+    Raise :exc:`~exceptions.ImportError`, if the udev library was not found.
     """
-    libudev = CDLL(find_library('udev'), use_errno=True)
+    udev_library_name = find_library('udev')
+    if not udev_library_name:
+        raise ImportError('No library named udev')
+    libudev = CDLL(udev_library_name, use_errno=True)
     # context function signature
     for namespace, members in SIGNATURES.items():
         for funcname in members:

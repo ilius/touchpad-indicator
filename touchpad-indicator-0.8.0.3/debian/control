@@ -1,0 +1,12 @@
+Source: touchpad-indicator
+Section: utils
+Priority: extra
+Maintainer: Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: http:\\www.atareao.es
+
+Package: touchpad-indicator
+Architecture: all
+Depends: python (>=2.6), python-usb, python-gconf
+Description: Touchpad-Indicator is an indicator for the Touchpad

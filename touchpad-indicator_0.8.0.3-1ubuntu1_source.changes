@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Tue, 14 Jun 2011 14:03:55 +0200
+Source: touchpad-indicator
+Binary: touchpad-indicator
+Architecture: source
+Version: 0.8.0.3-1ubuntu1
+Distribution: natty
+Urgency: low
+Maintainer: Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>
+Changed-By: Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>
+Description: 
+ touchpad-indicator - Touchpad-Indicator is an indicator for the Touchpad
+Changes: 
+ touchpad-indicator (0.8.0.3-1ubuntu1) natty; urgency=low
+ .
+   * Fixed a bug with icons status
+Checksums-Sha1: 
+ adf7702dc54806bae1c3c0316ade2dabc56c443f 1128 touchpad-indicator_0.8.0.3-1ubuntu1.dsc
+ 3f4b2e11328a8b4be3e04dcb9ffabfb71ac74ba4 34613 touchpad-indicator_0.8.0.3.orig.tar.gz
+ 8609b5e7b0221903bdf89e726d2424c321b01531 3607 touchpad-indicator_0.8.0.3-1ubuntu1.diff.gz
+Checksums-Sha256: 
+ 97cb371d9b0800d3bd4e1e751d376d15ac298fd2943070cd2474dedcbbf5c516 1128 touchpad-indicator_0.8.0.3-1ubuntu1.dsc
+ b258ae485b32c1b3fee1d7ed654f9d504fafc510a761c42c7ae90e051d432b97 34613 touchpad-indicator_0.8.0.3.orig.tar.gz
+ be3261630acf82f9a61bdbf504ab46da41dcaec6dfc1fcc9da950d270537200a 3607 touchpad-indicator_0.8.0.3-1ubuntu1.diff.gz
+Files: 
+ 6f273110000207fde27bded8bd63ea3a 1128 utils extra touchpad-indicator_0.8.0.3-1ubuntu1.dsc
+ f1b47da48623392e708cec6dcbc69b0a 34613 utils extra touchpad-indicator_0.8.0.3.orig.tar.gz
+ ccc6089e0d29b27b9ca6b396cf146765 3607 utils extra touchpad-indicator_0.8.0.3-1ubuntu1.diff.gz
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAk33amYACgkQgchw0m+STU39ywCdFA9Vcj9bGkITBE3ebblzwfP0
+NkEAn21f9Y1nsGZQkd1QxwaPFMgT39vO
+=Uewt
+-----END PGP SIGNATURE-----

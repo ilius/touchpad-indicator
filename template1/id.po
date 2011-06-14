@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.3\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-06-14 16:02+0200\n"
+"POT-Creation-Date: 2011-06-14 22:09+0200\n"
 "PO-Revision-Date: 2011-02-22 03:01+0000\n"
 "Last-Translator: Nur Kholis Majid <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -18,84 +18,84 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-06-12 19:08+0000\n"
 "X-Generator: Launchpad (build 13175)\n"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:88
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:191
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:191
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:107
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:116
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
 msgstr "Autostart"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:119
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
 msgstr "Nonaktifkan touchpad ketika mouse terpasang"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:122
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 #, fuzzy
 msgid "Enable touchpad at start"
 msgstr "Aktifkan Touchpad"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Shortcut ini <Control>+<Alt>+ "
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid " is assigned"
 msgstr " ditentukan"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
 msgid "Touchpad Enabled"
 msgstr "Touchpad Diaktifkan"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:107
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:107
 msgid "Touchpad Disabled"
 msgstr "Touchpad Dinonaktifkan"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:111
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:212
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:111
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:212
 msgid "Disable Touchpad"
 msgstr "Nonaktifkan Touchpad"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:114
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:215
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:114
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:215
 msgid "Enable Touchpad"
 msgstr "Aktifkan Touchpad"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Application Web..."
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
 msgid "Get help online..."
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "Translate this application..."
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:179
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:179
 msgid "Report a bug..."
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:181
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:181
 msgid "About"
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Help"
 msgstr ""
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:197
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:197
 msgid "Exit"
 msgstr "Keluar"
 
-#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
 msgid "An indicator for the Touchpad"
 msgstr "Indikator untuk Touchpad"
 

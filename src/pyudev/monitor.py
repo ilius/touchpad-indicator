@@ -34,7 +34,7 @@ import select
 from contextlib import closing
 
 from pyudev._libudev import libudev, get_libudev_errno
-from pyudev._util import assert_bytes, assert_unicode
+from pyudev._util import ensure_byte_string, ensure_unicode_string
 
 from pyudev.core import Device
 
@@ -72,15 +72,18 @@ class Monitor(object):
     retrieve a file descriptor using :meth:`fileno`.  This file descriptor
     can then be passed to classes like
     :class:`~PyQt4.QtCore.QSocketNotifier` from Qt4.
+
+    Instances of this class can directly be given as ``udev_monitor *`` to
+    functions wrapped through :mod:`ctypes`.
     """
 
     def __init__(self, context, monitor_p, socket_path=None):
         self.context = context
-        self._monitor = monitor_p
+        self._as_parameter_ = monitor_p
         self._socket_path = socket_path
 
     def __del__(self):
-        libudev.udev_monitor_unref(self._monitor)
+        libudev.udev_monitor_unref(self)
 
     @classmethod
     def from_netlink(cls, context, source='udev'):
@@ -108,9 +111,8 @@ class Monitor(object):
         if source not in ('kernel', 'udev'):
             raise ValueError('Invalid source: {0!r}. Must be one of "udev" '
                              'or "kernel"'.format(source))
-        source = assert_bytes(source)
         monitor = libudev.udev_monitor_new_from_netlink(
-            context._context, source)
+            context, ensure_byte_string(source))
         if not monitor:
             raise EnvironmentError('Could not create udev monitor')
         return cls(context, monitor)
@@ -120,21 +122,20 @@ class Monitor(object):
         """
         Connect to an arbitrary udev daemon using the given ``socket_path``.
 
-        ``context`` is the :class:`Context` to use. ``socket_path`` is a
-        byte or unicode string, pointing to an existing socket.  If the path
-        starts with a @, use an abstract namespace socket.  If
-        ``socket_path`` does not exist, fall back to an abstract namespace
-        socket.
+        ``context`` is the :class:`Context` to use. ``socket_path`` is a byte
+        or unicode string, pointing to an existing socket.  If the path starts
+        with a ``@``, use an abstract namespace socket.  If ``socket_path``
+        does not exist, fall back to an abstract namespace socket.
 
         The caller is responsible for permissions and cleanup of the socket
         file.
 
-        Return a new :class:`Monitor` object, which is connected to the
-        given socket.  Raise :exc:`~exceptions.EnvironmentError`, if the
-        creation of the monitor failed.
+        Return a new :class:`Monitor` object, which is connected to the given
+        socket.  Raise :exc:`~exceptions.EnvironmentError`, if the creation of
+        the monitor failed.
         """
         monitor = libudev.udev_monitor_new_from_socket(
-            context._context, assert_bytes(socket_path))
+            context, ensure_byte_string(socket_path))
         if not monitor:
             raise EnvironmentError('Could not create monitor for socket: '
                                    '{0!r}'.format(socket_path))
@@ -147,7 +148,7 @@ class Monitor(object):
         This is really a real file descriptor ;), which can be watched and
         :func:`select.select`\ ed.
         """
-        return libudev.udev_monitor_get_fd(self._monitor)
+        return libudev.udev_monitor_get_fd(self)
 
     def filter_by(self, subsystem, device_type=None):
         """
@@ -168,11 +169,32 @@ class Monitor(object):
 
         This method must be called *before* :meth:`enable_receiving`.
         """
-        subsystem = assert_bytes(subsystem)
+        subsystem = ensure_byte_string(subsystem)
         if device_type:
-            device_type = assert_bytes(device_type)
+            device_type = ensure_byte_string(device_type)
         libudev.udev_monitor_filter_add_match_subsystem_devtype(
-            self._monitor, subsystem, device_type)
+            self, subsystem, device_type)
+
+    def filter_by_tag(self, tag):
+        """
+        Filter incoming events by the given ``tag``.
+
+        ``tag`` is a byte or unicode string with the name of a tag.  Only
+        events for devices which have this tag attached pass the filter and are
+        handed to the caller.
+
+        Like with :meth:`filter_by` this filter is also executed inside the
+        kernel, so that client processes are usually not woken up for devices
+        without the given ``tag``.
+
+        This method must be called *before* :meth:`enable_receiving`.
+
+        .. udevminversion:: 154
+
+        .. versionadded:: 0.9
+        """
+        libudev.udev_monitor_filter_add_match_tag(
+            self, ensure_byte_string(tag))
 
     def enable_receiving(self):
         """
@@ -187,7 +209,7 @@ class Monitor(object):
            need to call it explicitly, if you are iterating over the
            monitor.
         """
-        error = libudev.udev_monitor_enable_receiving(self._monitor)
+        error = libudev.udev_monitor_enable_receiving(self)
         if error:
             errno = get_libudev_errno()
             raise EnvironmentError(errno, os.strerror(errno),
@@ -219,14 +241,15 @@ class Monitor(object):
         Raise :exc:`~exceptions.EnvironmentError`, if no device could be
         read.
         """
-        device_p = libudev.udev_monitor_receive_device(self._monitor)
+        device_p = libudev.udev_monitor_receive_device(self)
         if not device_p:
             errno = get_libudev_errno()
             if errno == 0:
                 raise EnvironmentError('Could not receive device')
             else:
                 raise EnvironmentError(errno, os.strerror(errno))
-        action = assert_unicode(libudev.udev_device_get_action(device_p))
+        action = ensure_unicode_string(
+            libudev.udev_device_get_action(device_p))
         return action, Device(self.context, device_p)
 
     def __iter__(self):

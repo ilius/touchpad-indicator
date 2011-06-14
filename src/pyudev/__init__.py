@@ -63,8 +63,8 @@
 
     In both cases ``devices`` is an instance of :class:`Enumerator`.  When
     iterated over, this class yields :class:`Device` objects, representing
-    those devices, which match the filters.  :class:`Device` provide various
-    attributes to access information:
+    those devices, which match the filters.  :class:`Device` objects provide
+    various attributes to access information:
 
     >>> for device in devices:
     ...     if device.sys_name.startswith('event'):
@@ -77,8 +77,8 @@
     Monitoring devices
     ^^^^^^^^^^^^^^^^^^
 
-    Alternatively you can monitor the device tree for changes instead of
-    listing all devices using the :class:`Monitor` class:
+    Instead of listing devices, you can monitor the device tree for changes
+    using the :class:`Monitor` class:
 
     >>> monitor = pyudev.Monitor.from_netlink(context)
     >>> monitor.filter_by(subsystem='input')
@@ -146,7 +146,11 @@
     attributes of :mod:`pyudev` classes are not available, if udev is too old.
     Whenever this is the case, the minimum version of udev required to use the
     attribute is described in the documentation, see for instance
-    :attr:`Device.is_initialized`.
+    :attr:`Device.is_initialized`.  If no specific version is mentioned, the
+    attribute is available from udev 151 onwards, which is the oldest udev
+    version supported by :mod:`pyudev`.  udev 150 and earlier may work with
+    :mod:`pyudev`, but are not tested and consequently not officially
+    supported.
 
     You can use :func:`udev_version()` to check the version of udev and see, if
     it is recent enough for your needs:
@@ -165,9 +169,11 @@ from __future__ import (print_function, division, unicode_literals,
                         absolute_import)
 
 
-__version__ = '0.8'
+__version__ = '0.10'
+__version_info__ = tuple(map(int, __version__.split('.')))
 __all__ = ['Context', 'Device']
 
 
+from pyudev.device import *
 from pyudev.core import *
 from pyudev.monitor import *
