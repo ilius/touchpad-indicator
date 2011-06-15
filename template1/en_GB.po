@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.4\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.5\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2011-06-14 22:09+0200\n"
 "PO-Revision-Date: 2011-05-10 15:29+0000\n"

@@ -260,24 +260,29 @@ class TouchpadIndicator(dbus.service.Object):
 		'this program.  If not, see <http://www.gnu.org/licenses/>.')
 		ad.set_website('http://www.atareao.es')
 		ad.set_website_label('http://www.atareao.es')
-		ad.set_authors(['Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
-		ad.set_documenters(['Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>'])
+		ad.set_authors(['Lorenzo Carbonell <https://launchpad.net/~lorenzo-carbonell>','Miguel Angel Santamaría Rogado <https://launchpad.net/~gabiel>'])
+		ad.set_documenters(['Lorenzo Carbonell <https://launchpad.net/~lorenzo-carbonell>'])
 		ad.set_translator_credits(''+
-		'Daniel Tao <https://launchpad.net/~danieltaoys-gmail>\n'+
-		'Daniele "OpenNingia" Simonetti <https://launchpad.net/~oppifjellet>\n'+
+		'Ander Elortondo <https://launchpad.net/~ander-elor>\n'+
+		'anyone28 <https://launchpad.net/~b4025475>\n'+
+		'Candido Fernandez <https://launchpad.net/~candidinho>\n'+
+		'Fitoschido <https://launchpad.net/~fitoschido>\n'+
 		'Giorgi Maghlakelidze <https://launchpad.net/~dracid>\n'+
+		'ipadro <https://launchpad.net/~ivan-patfran>\n'+
 		'Javier García Díaz <https://launchpad.net/~jgd>\n'+
 		'Jiri Grönroos <https://launchpad.net/~jiri-gronroos>\n'+
+		'José Roitberg <https://launchpad.net/~roitberg>\n'+
 		'Lorenzo Carbonell <https://launchpad.net/~lorenzo-carbonell>\n'+
-		'Luca Ferretti <https://launchpad.net/~elle.uca>\n'+
 		'Mantas Kriaučiūnas <https://launchpad.net/~mantas>\n'+
-		'Martino Barbon <https://launchpad.net/~martins999>\n'+
+		'Marek Tyburec <https://launchpad.net/~marek-tyburec>\n'+
+		'Miguel Anxo Bouzada <https://launchpad.net/~mbouzada>\n'+
 		'Montes Morgan <https://launchpad.net/~montes-morgan>\n'+
 		'Nur Kholis Majid <https://launchpad.net/~kholis>\n'+
 		'pibe <https://launchpad.net/~pibe>\n'+
-		'Sergey Sedov <https://launchpad.net/~serg-sedov>\n'+
+		'rodion <https://launchpad.net/~rodion-samusik>\n'+
 		'Velikanov Dmitry <https://launchpad.net/~velikanov-dmitry>\n'+
-		'XsLiDian <https://launchpad.net/~xslidian>\n')
+		'XsLiDian <https://launchpad.net/~xslidian>\n'+
+		'Yared Hufkens <https://launchpad.net/~w38m4570r>\n')
 		ad.set_icon_from_file(com.ICON)
 		ad.set_logo(gtk.gdk.pixbuf_new_from_file(com.ICON))
 		ad.set_program_name(com.APPNAME)

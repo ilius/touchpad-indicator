@@ -1,3 +1,15 @@
+touchpad-indicator (0.8.0.6-1ubuntu1) natty; urgency=low
+
+  * updated
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 15 Jun 2011 19:02:49 +0200
+
+touchpad-indicator (0.8.0.5-1ubuntu1) natty; urgency=low
+
+  * Changed wathdog, now it must work when you come back from suspend
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 15 Jun 2011 04:57:00 +0200
+
 touchpad-indicator (0.8.0.4-1ubuntu1) natty; urgency=low
 
   * Updated pyudev to version 0.10

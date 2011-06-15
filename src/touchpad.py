@@ -55,6 +55,13 @@ class Touchpad(object):
 		elif comp.find('glidepoint') != -1:
 			return True
 		return False
+	def is_there_touchpad(self):
+		comp = ejecuta('xinput --list-props %s')
+		#if comp.find('Synaptics Off') != -1:
+		comp = comp.lower()
+		if comp.find('touchpad') != -1 or comp.find('glidepoint') != -1:
+			return True
+		return False
 		
 	'''		
 	def _get_ids(self):
@@ -122,3 +129,4 @@ if __name__ == '__main__':
 	#tp.disable_all_touchpads()
 	print tp.all_touchpad_enabled()
 	tp.enable_all_touchpads()
+	print tp.is_there_touchpad()

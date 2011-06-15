@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 __author__='Miguel Angel Santamaría Rogado'
-__date__ ='$27/05/2011'
+__date__ ='$15/06/2011'
 #
 # watchdog.py
 #
@@ -92,17 +92,25 @@ def watch():
     #TODO: filter also by device_type, so we can get rid of is_mouse()
     monitor.filter_by(subsystem="input", device_type=None)
 
-    for action, device in monitor:
-        if is_working() != True:
-            exit(0)
-        if is_mouse(device):
-            try:
-                if action == "add":
-                        on_mouse_detected_plugged()
-                elif action == "remove":
-                        on_mouse_detected_unplugged()
-            except:
-                exit(0)
+    while is_working():
+        try:
+            for action, device in monitor:
+                if is_working() != True:
+                    exit(0)
+                if is_mouse(device):
+                    try:
+                        if action == "add":
+                                on_mouse_detected_plugged()
+                        elif action == "remove":
+                                on_mouse_detected_unplugged()
+                    except:
+                        exit(0)
+        except IOError:
+            print('Return from suspend? Reseting the monitor')
+            # reset the monitor
+            monitor = pyudev.Monitor.from_netlink(udev_context)
+            monitor.filter_by(subsystem="input", device_type=None)
+            continue
 
 if __name__ == "__main__":
     """Watcher for plug/unplug of mice from the system"""
