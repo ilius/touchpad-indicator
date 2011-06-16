@@ -28,11 +28,20 @@ import shlex, subprocess
 import time
 from configurator import GConf
 
+TOUCHPADS = ['touchpad','glidepoint','fingersensingpad']
+
 def ejecuta(comando):
 	args = shlex.split(comando)
 	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
 	valor = p.communicate()[0]
 	return valor
+
+def search_touchpad(where):
+	where = where.lower()
+	for touchpad in TOUCHPAD:
+		if where.find(touchpad) != -1:
+			return True
+	return False
 
 class Touchpad(object):
 	def __init__(self):
@@ -48,20 +57,11 @@ class Touchpad(object):
 		
 	def _is_touchpad(self,id):
 		comp = ejecuta(('xinput --list-props %s') % (id))
-		#if comp.find('Synaptics Off') != -1:
-		comp = comp.lower()
-		if comp.find('touchpad') != -1:
-			return True
-		elif comp.find('glidepoint') != -1:
-			return True
-		return False
+		return search_touchpad(comp)
+		
 	def is_there_touchpad(self):
 		comp = ejecuta('xinput --list-props %s')
-		#if comp.find('Synaptics Off') != -1:
-		comp = comp.lower()
-		if comp.find('touchpad') != -1 or comp.find('glidepoint') != -1:
-			return True
-		return False
+		return search_touchpad(comp)
 		
 	'''		
 	def _get_ids(self):
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 	tp = Touchpad()
 	for id in tp._get_all_ids():
 		print id
-		print ('El devide %s es Touchpad %s')%(id,tp._is_touchpad(id))
+		print ('El device %s es Touchpad %s')%(id,tp._is_touchpad(id))
 	tp.enable_all_touchpads()
 	print tp.all_touchpad_enabled()
 	#tp.disable_all_touchpads()
