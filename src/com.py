@@ -25,7 +25,7 @@ __date__ ="$29-ene-2011$"
 #
 #
 
-VERSION = '0.8.0.7'
+VERSION = '0.8.0.8'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 LANGDIR = '/usr/share/locale-langpack'

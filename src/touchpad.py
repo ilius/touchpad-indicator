@@ -38,7 +38,7 @@ def ejecuta(comando):
 
 def search_touchpad(where):
 	where = where.lower()
-	for touchpad in TOUCHPAD:
+	for touchpad in TOUCHPADS:
 		if where.find(touchpad) != -1:
 			return True
 	return False
