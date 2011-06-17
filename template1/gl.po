@@ -5,96 +5,96 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.7\n"
+"Project-Id-Version: touchpad-indicator 0.8.0.8\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-06-15 21:00+0200\n"
+"POT-Creation-Date: 2011-06-17 11:31+0200\n"
 "PO-Revision-Date: 2011-06-13 09:03+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-16 05:32+0000\n"
 "X-Generator: Launchpad (build 13168)\n"
-"Language: gl\n"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:191
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:88
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:191
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
 msgstr "Atallo"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
 msgstr "Inicio automático"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
 msgstr "Desactivar o panel táctil ao conectar un rato"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 msgid "Enable touchpad at start"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Este atallo <Control> + <Alt> + "
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:179
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid " is assigned"
 msgstr " está asignado"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
 msgid "Touchpad Enabled"
 msgstr "Panel táctil activado"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:107
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:107
 msgid "Touchpad Disabled"
 msgstr "Panel táctil desactivado"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:111
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:212
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:111
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:212
 msgid "Disable Touchpad"
 msgstr "Desactivar o panel táctil"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:114
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:215
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:114
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:215
 msgid "Enable Touchpad"
 msgstr "Activar o panel táctil"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Application Web..."
 msgstr "Aplicativo Web..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
 msgid "Get help online..."
 msgstr "Obter axuda en liña..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "Translate this application..."
 msgstr "Traducir este aplicativo..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:179
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:179
 msgid "Report a bug..."
 msgstr "Informar dun fallo..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:181
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:181
 msgid "About"
 msgstr "Sobre"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Help"
 msgstr "Axuda"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:197
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:197
 msgid "Exit"
 msgstr "Saír"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
+#: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
 msgid "An indicator for the Touchpad"
 msgstr "Un indicador para o panel táctil"
 
