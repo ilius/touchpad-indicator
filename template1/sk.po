@@ -1,114 +1,98 @@
-# English (United Kingdom) translation for touchpad-indicator
+# Slovak translation for touchpad-indicator
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.8\n"
-"Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
+"Project-Id-Version: touchpad-indicator\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-06-17 11:32+0200\n"
-"PO-Revision-Date: 2011-06-13 09:04+0000\n"
-"Last-Translator: Lorenzo Carbonell <Unknown>\n"
-"Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"PO-Revision-Date: 2011-06-17 10:32+0000\n"
+"Last-Translator: anyone28 <Unknown>\n"
+"Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-18 05:53+0000\n"
 "X-Generator: Launchpad (build 13168)\n"
-"Language: \n"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:88
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:191
 msgid "Preferences"
-msgstr "Preferences"
+msgstr "Predvoľby"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
-msgstr ""
+msgstr "Klávesová skratka"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
-msgstr "Autostart"
+msgstr "Autoštart"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
-msgstr "Disable touchpad when mouse plugged"
+msgstr "Ak je pripojená myš, deaktivuj touchpad"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 msgid "Enable touchpad at start"
-msgstr ""
+msgstr "Aktivuj touchpad pri štarte"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid "This shortcut <Control> + <Alt> + "
-msgstr "This shortcut <Control> + <Alt> + "
+msgstr "Klávesová skratka <Control> + <Alt> + "
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/preferences.py:179
 msgid " is assigned"
-msgstr " is assigned"
+msgstr " je už priradená"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:103
 msgid "Touchpad Enabled"
-msgstr "Touchpad Enabled"
+msgstr "Touchpad je aktivovaný"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:107
 msgid "Touchpad Disabled"
-msgstr "Touchpad Disabled"
+msgstr "Touchpad je deaktivovaný"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:111
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:212
 msgid "Disable Touchpad"
-msgstr "Disable Touchpad"
+msgstr "Deaktivuj touchpad"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:114
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:215
 msgid "Enable Touchpad"
-msgstr "Enable Touchpad"
+msgstr "Aktivuj touchpad"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:176
 msgid "Application Web..."
-msgstr ""
+msgstr "Web stránka tejto aplikácie..."
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:177
 msgid "Get help online..."
-msgstr ""
+msgstr "Online pomoc..."
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:178
 msgid "Translate this application..."
-msgstr ""
+msgstr "Preložiť túto aplikáciu..."
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:179
 msgid "Report a bug..."
-msgstr ""
+msgstr "Nahlásiť chybu..."
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:181
 msgid "About"
-msgstr ""
+msgstr "O aplikácii"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Help"
-msgstr ""
+msgstr "Nápoveda"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:197
 msgid "Exit"
-msgstr "Exit"
+msgstr "Koniec"
 
 #: /home/lorenzo/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
 msgid "An indicator for the Touchpad"
-msgstr "An indicator for the Touchpad"
-
-#~ msgid "Set shortcut for Touchpad-Indicator:"
-#~ msgstr "Set shortcut for Touchpad-Indicator:"
-
-#~ msgid "Configure"
-#~ msgstr "Configure"
-
-#~ msgid "Unplug the mouse"
-#~ msgstr "Unplug the mouse"
-
-#~ msgid "Plug the mouse"
-#~ msgstr "Plug the mouse"
-
-#~ msgid "About..."
-#~ msgstr "About..."
+msgstr "Indokátor touchpadu"
