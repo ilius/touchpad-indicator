@@ -1,10 +1,22 @@
 # Build the sctructure
 mkdir -p {MOUNT_DIR}/usr/share/applications
 mkdir -p {MOUNT_DIR}/usr/share/pixmaps
+mkdir -p {MOUNT_DIR}/usr/share/icons/hicolor/scalable/apps
+mkdir -p {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator
 mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/img
 # Copy files
-cp src/img/*.svg {MOUNT_DIR}/usr/share/touchpad-indicator/img/
-cp src/img/*.svg {MOUNT_DIR}/usr/share/pixmaps/
+cp src/img/touchpad-indicator-normal.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/apps/
+cp src/img/touchpad-indicator-light.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/apps/
+cp src/img/touchpad-indicator-dark.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/apps/
+cp src/img/touchpad-indicator-normal-disabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-light-disabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-dark-disabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-normal-enabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-light-enabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-dark-enabled.svg {MOUNT_DIR}/usr/share/icons/hicolor/scalable/status/
+cp src/img/touchpad-indicator-normal.svg {MOUNT_DIR}/usr/share/pixmaps/
+cp src/img/touchpad-indicator-normal.svg {MOUNT_DIR}/usr/share/touchpad-indicator/img
 cp src/touchpad-indicator-autostart.desktop {MOUNT_DIR}/usr/share/touchpad-indicator/
 cp src/Touchpad-Indicator.desktop {MOUNT_DIR}/usr/share/applications/	
 # Structure and source files

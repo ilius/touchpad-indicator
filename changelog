@@ -1,3 +1,9 @@
+touchpad-indicator (0.8.0.9-1ubuntu1) natty; urgency=low
+
+  * Option to select icon theme
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 20 Jun 2011 20:05:28 +0200
+
 touchpad-indicator (0.8.0.7-1ubuntu1) natty; urgency=low
 
   * Added support to Sentelic touchpad
