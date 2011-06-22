@@ -19,3 +19,4 @@ pt_BR
 en_GB
 eu
 sk
+ja

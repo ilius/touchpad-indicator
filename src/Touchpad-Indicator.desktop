@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Touchpad-Indicator
-Version=0.8.0.9
+Version=0.8.0.10
 Exec=/usr/share/touchpad-indicator/touchpad-indicator.py
 Comment=Touchpad-Indicator
 Icon=/usr/share/pixmaps/touchpad-indicator.svg

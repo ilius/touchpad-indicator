@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-06-20 21:52+0200\n"
+"POT-Creation-Date: 2011-06-22 22:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,39 +26,39 @@ msgstr ""
 msgid "Shortcut"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:115
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:118
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:121
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 msgid "Enable touchpad at start"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:124
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:125
 msgid "Select icon theme"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:127
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:128
 msgid "Normal"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:129
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:130
 msgid "Light"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:131
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:132
 msgid "Dark"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:196
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
 msgid "This shortcut <Control> + <Alt> + "
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:196
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
 msgid " is assigned"
 msgstr ""
 

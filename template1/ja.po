@@ -1,17 +1,17 @@
-# English translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lorenzo Carbonell <EMAIL@ADDRESS>, 2010.
+# Japanese translation for touchpad-indicator
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the touchpad-indicator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.8.0.10\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2011-06-22 22:06+0200\n"
-"PO-Revision-Date: 2011-06-13 09:04+0000\n"
-"Last-Translator: Lorenzo Carbonell <Unknown>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2011-06-22 10:47+0000\n"
+"Last-Translator: Nobuto MURATA <nobuto@nobuto-murata.org>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,116 +21,95 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:87
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:200
 msgid "Preferences"
-msgstr ""
+msgstr "設定"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:106
 msgid "Shortcut"
-msgstr "Shortcut"
+msgstr "ショートカット"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
 msgid "Autostart"
-msgstr ""
+msgstr "自動起動"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
 msgid "Disable touchpad when mouse plugged"
-msgstr ""
+msgstr "マウス接続時はタッチパッドを無効にする"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
 msgid "Enable touchpad at start"
-msgstr ""
+msgstr "起動時にタッチパッドを有効にする"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:125
 msgid "Select icon theme"
-msgstr ""
+msgstr "アイコンテーマの選択"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:128
 msgid "Normal"
-msgstr ""
+msgstr "通常"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:130
 msgid "Light"
-msgstr ""
+msgstr "明るめ"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:132
 msgid "Dark"
-msgstr ""
+msgstr "暗め"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
 msgid "This shortcut <Control> + <Alt> + "
-msgstr ""
+msgstr "このショートカット <Control> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
 msgid " is assigned"
-msgstr ""
+msgstr " が割り当てられています"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:108
 msgid "Touchpad Enabled"
-msgstr "Touchpad Enabled"
+msgstr "タッチパッドが有効になりました"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:112
 msgid "Touchpad Disabled"
-msgstr "Touchpad Disabled"
+msgstr "タッチパッドが無効になりました"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:116
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:199
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:221
 msgid "Disable Touchpad"
-msgstr "Disable Touchpad"
+msgstr "タッチパッドを無効にする"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:119
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:224
 msgid "Enable Touchpad"
-msgstr "Enable Touchpad"
+msgstr "タッチパッドを有効にする"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:185
 msgid "Application Web..."
-msgstr ""
+msgstr "アプリケーションのWebページ…"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:186
 msgid "Get help online..."
-msgstr ""
+msgstr "オンラインヘルプを開く…"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
 msgid "Translate this application..."
-msgstr ""
+msgstr "このアプリケーションを翻訳する…"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
 msgid "Report a bug..."
-msgstr ""
+msgstr "問題点を報告する…"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
 msgid "About"
-msgstr ""
+msgstr "情報"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:202
 msgid "Help"
-msgstr ""
+msgstr "ヘルプ"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
 msgid "Exit"
-msgstr "Exit"
+msgstr "終了"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:258
 msgid "An indicator for the Touchpad"
-msgstr "An indicator for the Touchpad"
-
-#~ msgid "Set shortcut for Touchpad-Indicator:"
-#~ msgstr "Set shortcut for Touchpad-Indicator:"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel"
-
-#~ msgid "About..."
-#~ msgstr "About..."
-
-#~ msgid "Touchpad-Indicator"
-#~ msgstr "Touchpad-Indicator"
-
-#~ msgid "Set shortcut"
-#~ msgstr "Set shortcut"
-
-#~ msgid "Remove shortcut"
-#~ msgstr "Remove shortcut"
+msgstr "タッチパッド用インジケーター"
