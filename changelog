@@ -1,3 +1,15 @@
+touchpad-indicator (0.8.0.11-1ubuntu1) natty; urgency=low
+
+  * On exit enable touchpad
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Tue, 28 Jun 2011 04:18:03 +0200
+
+touchpad-indicator (0.8.0.10-1ubuntu1) natty; urgency=low
+
+  * Create ./config/autostart if not exists
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 22 Jun 2011 20:08:30 +0200
+
 touchpad-indicator (0.8.0.9-1ubuntu1) natty; urgency=low
 
   * Option to select icon theme

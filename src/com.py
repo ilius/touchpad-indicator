@@ -25,12 +25,35 @@ __date__ ="$29-ene-2011$"
 #
 #
 
-VERSION = '0.8.0.10'
+import os
+
+######################################
+
+def is_package():
+    return __file__.find('src') < 0
+
+######################################
+
+
+VERSION = '0.8.1.0'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
-LANGDIR = '/usr/share/locale-langpack'
-ROOTDIR = '/usr/share/'
-APPDIR = ROOTDIR + APP + '/'
-IMGDIR = APPDIR + 'img/'
-ICON = IMGDIR+'touchpad-indicator-normal.svg'
-WATCHDOG = APPDIR + 'watchdog.py'
+
+# check if running from source
+if is_package():
+    ROOTDIR = '/usr/share/'
+    LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
+    APPDIR = os.path.join(ROOTDIR, APP)
+else:
+    VERSION = VERSION + '-src'
+    ROOTDIR = os.path.dirname(__file__)
+    LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
+    APPDIR = ROOTDIR
+
+
+IMGDIR = os.path.join(APPDIR, 'img')
+ICON = os.path.join(IMGDIR, 'touchpad-indicator-normal.svg')
+ICON_ENABLED = 'touchpad-indicator'
+ICON_DISABLED = 'touchpad-indicator-disabled'
+
+WATCHDOG = os.path.join(APPDIR, 'watchdog.py')

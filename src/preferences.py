@@ -32,7 +32,6 @@ import com
 import shutil
 import gconf
 from configurator import GConf
-import time
 
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(com.APP, com.LANGDIR)
@@ -70,6 +69,7 @@ def get_combination_keys():
 		keys+=search_for_keys(dire)
 	return keys
 
+
 class Keybindings():
 	def __init__(self,combination_key,action):
 		self.combination_key = combination_key
@@ -82,6 +82,7 @@ class Keybindings():
 		return self.action	
 	
 class Preferences(gtk.Dialog):
+
 	def __init__(self):
 		#
 		gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
@@ -100,7 +101,7 @@ class Preferences(gtk.Dialog):
 		self.vbox2 = gtk.VBox(spacing = 5)
 		self.vbox2.set_border_width(5)
 		self.frame1.add(self.vbox2)
-		table1 = gtk.Table(6,3,True)
+		table1 = gtk.Table(7,3,True)
 		self.vbox2.add(table1)
 		#
 		self.label11 = gtk.Label(_('Shortcut')+': <Ctrl> + <Alt> +')
@@ -122,16 +123,19 @@ class Preferences(gtk.Dialog):
 		self.checkbutton3 = gtk.CheckButton(_('Enable touchpad at start'))
 		table1.attach(self.checkbutton3,0,2,3,4)
 		#
+		self.checkbutton4 = gtk.CheckButton(_('Start hidden'))
+		table1.attach(self.checkbutton4,0,2,4,5)
+		#
 		label1 = gtk.Label(_('Select icon theme')+':')
 		label1.set_alignment(0,0.5)
-		table1.attach(label1,0,3,4,5)
+		table1.attach(label1,0,3,5,6)
 		self.radiobutton0 = gtk.RadioButton(None,_('Normal'))
-		table1.attach(self.radiobutton0,0,1,5,6)
+		table1.attach(self.radiobutton0,0,1,6,7)
 		self.radiobutton1 = gtk.RadioButton(self.radiobutton0,_('Light'))
-		table1.attach(self.radiobutton1,1,2,5,6)
+		table1.attach(self.radiobutton1,1,2,6,7)
 		self.radiobutton2 = gtk.RadioButton(self.radiobutton0,_('Dark'))
-		table1.attach(self.radiobutton2,2,3,5,6)		
-		#***************************************************************		
+		table1.attach(self.radiobutton2,2,3,6,7)
+		#***************************************************************
 		#
 		self.load_preferences()
 		#
@@ -178,6 +182,8 @@ class Preferences(gtk.Dialog):
 		#
 		set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
 		set_key('/apps/touchpad-indicator/options/on_start_enabled',self.checkbutton3.get_active())	
+		set_key('/apps/touchpad-indicator/options/start_hidden', self.checkbutton4.get_active())
+
 		if self.radiobutton0.get_active() == True:
 			option = 0
 		elif self.radiobutton1.get_active() == True:
@@ -185,7 +191,7 @@ class Preferences(gtk.Dialog):
 		else:
 			option = 2
 		set_key('/apps/touchpad-indicator/options/theme',option)
-		
+
 
 	def on_entry11_key_release_event(self,widget,event):
 		key=event.keyval
@@ -199,32 +205,35 @@ class Preferences(gtk.Dialog):
 				dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,type=gtk.MESSAGE_WARNING,buttons=gtk.BUTTONS_OK)
 				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
 				dialog.set_property('title', 'Error')
-				dialog.set_property('text', msg)				
+				dialog.set_property('text', msg)
 				dialog.run()
 				dialog.destroy()
 				self.entry11.set_text(self.key)
 			else:
 				self.entry11.set_text(keyval)
 				self.key = keyval
-			
+
 	def load_preferences(self):
 		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
 			self.checkbutton1.set_active(True)
 		self.key = ''
 		self.on_start_enabled = False
 		self.on_mouse_plugged = False
+		self.start_hidden = False
 		self.devices = []
 		self.on_mouse_plugged = get_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
-		self.checkbutton2.set_active(self.on_mouse_plugged)		
+		self.checkbutton2.set_active(self.on_mouse_plugged)
 		self.on_start_enabled = get_key('/apps/touchpad-indicator/options/on_start_enabled',False)
-		self.checkbutton3.set_active(self.on_start_enabled)		
+		self.checkbutton3.set_active(self.on_start_enabled)
+		self.start_hidden = get_key('/apps/touchpad-indicator/options/start_hidden',False)
+		self.checkbutton4.set_active(self.start_hidden)
 		k=get_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
 		if k!=None and len(k)>0:
 			k=k[k.rfind('>')+1:]
 			self.key=k
 		else:
 			self.key = ''
-		self.entry11.set_text(self.key)	
+		self.entry11.set_text(self.key)
 		option = get_key('/apps/touchpad-indicator/options/theme',0)
 		if option == 0:
 			self.radiobutton0.set_active(True)
@@ -232,8 +241,8 @@ class Preferences(gtk.Dialog):
 			self.radiobutton1.set_active(True)
 		else:
 			self.radiobutton2.set_active(True)
-			
-		
-if __name__ == "__main__":	
+
+
+if __name__ == "__main__":
 	cm = Preferences()
 	exit(0)

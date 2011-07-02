@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.0.10\n"
+"Project-Id-Version: touchpad-indicator 0.8.1.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-06-22 22:06+0200\n"
+"POT-Creation-Date: 2011-07-02 20:15+0200\n"
 "PO-Revision-Date: 2011-06-13 09:02+0000\n"
 "Last-Translator: Lorenzo Carbonell <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -15,102 +15,110 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-22 20:04+0000\n"
-"X-Generator: Launchpad (build 13265)\n"
+"X-Launchpad-Export-Date: 2011-07-02 18:01+0000\n"
+"X-Generator: Launchpad (build 13333)\n"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:87
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:200
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:106
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
 msgid "Shortcut"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:116
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:117
 msgid "Autostart"
 msgstr "Automatisch starten"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:119
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:120
 msgid "Disable touchpad when mouse plugged"
 msgstr "Touchpad uitschakelen als er een muis is angesloten"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:122
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:123
 msgid "Enable touchpad at start"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:125
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:126
+msgid "Start hidden"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:129
 msgid "Select icon theme"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:128
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:132
 msgid "Normal"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:130
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:134
 msgid "Light"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:132
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:136
 msgid "Dark"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:206
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "De snelkoppeling <Control> + <Alt> + "
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:200
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:206
 msgid " is assigned"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:108
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:147
 msgid "Touchpad Enabled"
 msgstr "Touchpad ingeschakeld"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:112
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:151
 msgid "Touchpad Disabled"
 msgstr "Touchpad uitgeschakeld"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:116
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:199
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:221
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:155
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:246
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
 msgid "Disable Touchpad"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:119
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:224
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:159
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
 msgid "Enable Touchpad"
 msgstr "Touchpad inschakelen"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:185
-msgid "Application Web..."
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:232
+msgid "Web..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:186
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:233
 msgid "Get help online..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:187
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:234
 msgid "Translate this application..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:188
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:235
 msgid "Report a bug..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:237
 msgid "About"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:202
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:247
+msgid "Hide icon"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:251
 msgid "Help"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:255
 msgid "Exit"
 msgstr "Afsluiten"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:258
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:319
 msgid "An indicator for the Touchpad"
 msgstr "Een indicator voor het touchpad"
 
