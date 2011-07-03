@@ -35,7 +35,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.8.1.0'
+VERSION = '0.8.1.1'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 
