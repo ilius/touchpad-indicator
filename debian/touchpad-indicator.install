@@ -1,0 +1,7 @@
+bin/* /usr/bin
+src/* /usr/share/touchpad-indicator
+data/Touchpad-Indicator.desktop /usr/share/applications
+data/touchpad-indicator-autostart.desktop /usr/share/touchpad-indicator
+data/apps.indicators.touchpad-indicator.gschema.xml /usr/share/glib-2.0/schemas
+data/icons/*.svg /usr/share/icons/hicolor/24x24/status
+data/icons/touchpad-indicator.svg /usr/share/pixmaps

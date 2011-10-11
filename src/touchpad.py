@@ -1,13 +1,11 @@
 #! /usr/bin/python
-# -*- coding: iso-8859-1 -*-
-#
-__author__="atareao"
-__date__ ="$16-may-2011$"
+# -*- coding: utf-8 -*-
 #
 # touchpad.py
 #
-# Copyright (C) 2011 Lorenzo Carbonell
-# lorenzo.carbonell.cerezo@gmail.com
+# Copyright (C) 2010,2011
+# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Miguel Angel Santamaría Rogado <leibag@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +24,8 @@ __date__ ="$16-may-2011$"
 #
 import shlex, subprocess
 import time
-from configurator import GConf
+import com
+from configurator import Configurator
 
 TOUCHPADS = ['touchpad','glidepoint','fingersensingpad']
 
@@ -46,6 +45,7 @@ def search_touchpad(where):
 class Touchpad(object):
 	def __init__(self):
 		self.ids = self._get_ids()
+		self.configurator = Configurator(com.KEY)
 	
 	def _get_all_ids(self):
 		ids = []
@@ -83,14 +83,14 @@ class Touchpad(object):
 	
 	
 	def set_touchpad_enabled(self,id):
-		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)
-		gconfi = GConf()
-		gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',True)		
+		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)		
+		self.configurator.set('touchpad-enabled',True)
 	
 	def set_touchpad_disabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
-		gconfi = GConf()
-		gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',False)		
+		#gconfi = GConf()
+		#gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',False)		
+		self.configurator.set('touchpad-enabled',False)
 
 	def is_touchpad_enabled(self,id):
 		lines = ejecuta('xinput --list-props %s'%id)

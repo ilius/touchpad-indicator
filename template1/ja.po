@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.8.1.0\n"
+"Project-Id-Version: touchpad-indicator 0.9.1.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-07-02 20:15+0200\n"
+"POT-Creation-Date: 2011-10-11 20:48+0200\n"
 "PO-Revision-Date: 2011-06-22 10:47+0000\n"
 "Last-Translator: Nobuto MURATA <nobuto@nobuto-murata.org>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,109 +18,176 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-07-02 18:01+0000\n"
 "X-Generator: Launchpad (build 13333)\n"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:88
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:249
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:46
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:288
 msgid "Preferences"
 msgstr "設定"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:107
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:65
 msgid "Shortcut"
 msgstr "ショートカット"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:117
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:81
 msgid "Autostart"
 msgstr "自動起動"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:120
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:84
 msgid "Disable touchpad when mouse plugged"
 msgstr "マウス接続時はタッチパッドを無効にする"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:123
-msgid "Enable touchpad at start"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:87
+#, fuzzy
+msgid "Enable touchpad on exit"
 msgstr "起動時にタッチパッドを有効にする"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:126
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:90
+#, fuzzy
+msgid "Enable touchpad on start"
+msgstr "起動時にタッチパッドを有効にする"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:93
 msgid "Start hidden"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:129
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:96
+msgid "Show notifications"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:99
 msgid "Select icon theme"
 msgstr "アイコンテーマの選択"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:132
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:102
 msgid "Normal"
 msgstr "通常"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:134
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:104
 msgid "Light"
 msgstr "明るめ"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:136
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:106
 msgid "Dark"
 msgstr "暗め"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:206
-msgid "This shortcut <Control> + <Alt> + "
-msgstr "このショートカット <Control> + <Alt> + "
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences.py:206
-msgid " is assigned"
-msgstr " が割り当てられています"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:147
-msgid "Touchpad Enabled"
-msgstr "タッチパッドが有効になりました"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:151
-msgid "Touchpad Disabled"
-msgstr "タッチパッドが無効になりました"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:155
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:246
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:133
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
 msgid "Disable Touchpad"
 msgstr "タッチパッドを無効にする"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:159
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:135
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
 msgid "Enable Touchpad"
 msgstr "タッチパッドを有効にする"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:232
-msgid "Web..."
-msgstr ""
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:204
+msgid "Touchpad Enabled"
+msgstr "タッチパッドが有効になりました"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:233
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:207
+msgid "Touchpad Disabled"
+msgstr "タッチパッドが無効になりました"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:270
+msgid "Application Web..."
+msgstr "アプリケーションのWebページ…"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
 msgid "Get help online..."
 msgstr "オンラインヘルプを開く…"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:234
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:272
 msgid "Translate this application..."
 msgstr "このアプリケーションを翻訳する…"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:235
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:273
 msgid "Report a bug..."
 msgstr "問題点を報告する…"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:237
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
 msgid "About"
 msgstr "情報"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:247
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
 msgid "Hide icon"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:251
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:290
 msgid "Help"
 msgstr "ヘルプ"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:255
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:294
 msgid "Exit"
 msgstr "終了"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:319
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:306
 msgid "An indicator for the Touchpad"
 msgstr "タッチパッド用インジケーター"
 
-#~ msgid "Application Web..."
-#~ msgstr "アプリケーションのWebページ…"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:419
+msgid "usage: %prog [options]"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:425
+msgid "show this help and exit."
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:430
+msgid "change the touchpad state. If indicator is not running launch it."
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:435
+msgid ""
+"show the icon if indicator is hidden. Default action. If indicator is not "
+"running launch it."
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:51
+msgid "Esc "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:55
+msgid "Caps "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:68
+msgid "Home "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:70
+msgid "PgUp "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:73
+msgid "End "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:75
+msgid "PgDn "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:76
+msgid "Ins "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:77
+msgid "Del "
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:318
+msgid "Ctrl+"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:320
+msgid "Alt+"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:322
+msgid "Super+"
+msgstr ""
+
+#~ msgid "This shortcut <Control> + <Alt> + "
+#~ msgstr "このショートカット <Control> + <Alt> + "
+
+#~ msgid " is assigned"
+#~ msgstr " が割り当てられています"

@@ -1,13 +1,12 @@
 #! /usr/bin/python
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 #
-__author__="atareao"
-__date__ ="$19-feb-2011$"
 #
 # Configurator for access to gconf
 #
-# Copyright (C) 2011 Lorenzo Carbonell
-# lorenzo.carbonell.cerezo@gmail.com
+# Copyright (C) 2010,2011
+# Miguel Angel Santamaría Rogado <leibag@gmail.com>
+# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,40 +23,45 @@ __date__ ="$19-feb-2011$"
 #
 #
 #
-import gconf
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gio
+from gi.repository import GLib
 import types
 
-class GConf():
-	def __init__(self):
-		self.client = gconf.client_get_default()
+class Configurator():
+	def __init__(self,base_key):
+		self.settings = Gio.Settings.new(base_key)
 
-	def set_key(self,key,value):
-		casts = {types.BooleanType: gconf.Client.set_bool,
-                 types.IntType:     gconf.Client.set_int,
-                 types.FloatType:   gconf.Client.set_float,
-                 types.StringType:  gconf.Client.set_string}
-		casts[type(value)](self.client,key, value)		
-
-	def get_key(self,key):
+	def get(self,key):
+		casts = { 'b': GLib.Variant.get_boolean,
+				  'i': GLib.Variant.get_int16,
+				  'd': GLib.Variant.get_double,
+				  's': GLib.Variant.get_string}
 		try:
-			casts = {gconf.VALUE_BOOL:   gconf.Value.get_bool,
-					 gconf.VALUE_INT:    gconf.Value.get_int,
-					 gconf.VALUE_FLOAT:  gconf.Value.get_float,
-					 gconf.VALUE_STRING: gconf.Value.get_string}		
-			value = self.client.get(key)
-			return casts[value.type](value)
+			res = self.settings.get_value(key)
+			tip = res.get_type_string()
+			return casts[tip](res)
 		except AttributeError:
-			raise ValueError
+			return None
 
-
-	def set_string_list(self,key,values):
-		self.client.set_list(key,gconf.VALUE_STRING,values)
-	
-	def get_string_list(self,key):
-		return self.client.get_list(key,gconf.VALUE_STRING)
-
-	def get_all_keys(self,folder):
-		return self.client.all_entries(folder)
-
-	def get_all_dirs(self,folder):
-		return self.client.all_dirs(folder)
+	def set(self,key,value):
+		casts = {types.BooleanType: Gio.Settings.set_boolean,
+				types.IntType:      Gio.Settings.set_int,
+				types.FloatType:    Gio.Settings.set_double,
+				types.StringType:   Gio.Settings.set_string,
+				types.UnicodeType:  Gio.Settings.set_string}
+		try:
+			if casts[type(value)](self.settings,key,value) == True:
+				self.settings.sync()
+				return True
+		except AttributeError:
+			pass
+		return False
+		
+if __name__ == '__main__':
+	configurator = Configurator('org.gwibber.preferences')
+	print configurator.get('autostart')
+	configurator.set('autostart',True)
+	print configurator.get('autostart')
+	exit(0)

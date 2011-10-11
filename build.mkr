@@ -21,8 +21,8 @@ cp src/touchpad-indicator-autostart.desktop {MOUNT_DIR}/usr/share/touchpad-indic
 cp src/Touchpad-Indicator.desktop {MOUNT_DIR}/usr/share/applications/	
 # Structure and source files
 mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator
-mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/pyudev
 mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/img
+mkdir -p {MOUNT_DIR}/usr/share/touchpad-indicator/pyudev
 #######################################################
 cp src/*.py {MOUNT_DIR}/usr/share/touchpad-indicator/
 cp src/pyudev/*.py {MOUNT_DIR}/usr/share/touchpad-indicator/pyudev/

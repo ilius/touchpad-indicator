@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.1.0-1ubuntu2) oneiric; urgency=low
+
+  * Ported to PyGi, added several features by Miguel Angel Santamaria
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Tue, 11 Oct 2011 20:43:32 +0200
+
 touchpad-indicator (0.8.1.1-1ubuntu1) natty; urgency=low
 
   * On exit enable touchpad

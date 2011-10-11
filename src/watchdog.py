@@ -1,14 +1,11 @@
-#!/usr/bin/env python
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
-#
-__author__='Miguel Angel Santamaría Rogado'
-__date__ ='$27/05/2011'
 #
 # watchdog.py
 #
-#
-# Copyright (C) 2011 Miguel Angel Santamarí­a Rogado
-# leibag@gmail.com
+# Copyright (C) 2010,2011
+# Miguel Angel Santamaría Rogado <leibag@gmail.com>
+# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +27,6 @@ import dbus
 
 on_mouse_detected_plugged = None
 on_mouse_detected_unplugged = None
-is_working = None
 
 faulty_devices = [
     u'11/2/a/0', ] # TPPS/2 IBM TrackPoint
@@ -84,7 +80,6 @@ def init_dbus():
     """Initialize dbus parameters"""
     global on_mouse_detected_plugged
     global on_mouse_detected_unplugged
-    global is_working
 
     bus = dbus.SessionBus()
     try:
@@ -97,9 +92,6 @@ def init_dbus():
         on_mouse_detected_unplugged = touchpad_indicator_service.get_dbus_method\
                                 ('on_mouse_detected_unplugged',
                                 'es.atareao.touchpad_indicator_service')
-        is_working = touchpad_indicator_service.get_dbus_method\
-                                ('is_working',
-                                'es.atareao.touchpad_indicator_service')
     except:
         print('watchdog: Failed to initialize dbus.')
         exit(0)
@@ -109,19 +101,15 @@ def watch():
     """The watcher"""
     global on_mouse_detected_plugged
     global on_mouse_detected_unplugged
-    global is_working
     global udev_context
 
     monitor = pyudev.Monitor.from_netlink(udev_context)
     #TODO: filter also by device_type, so we can get rid of is_mouse()
     monitor.filter_by(subsystem="input", device_type=None)
 
-    while is_working():
+    while True:
         try:
             for action, device in monitor:
-                if is_working() != True:
-                    print('watchdog: touchpad-indicator not running. Bye.')
-                    exit(0)
                 if is_mouse(device):
                     try:
                         if action == "add":

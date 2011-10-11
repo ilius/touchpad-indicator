@@ -1,13 +1,11 @@
 #! /usr/bin/python
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 #
-__author__="atareao"
-__date__ ="$29-ene-2011$"
+# preferences.py
 #
-# <from numbers to letters.>
-#
-# Copyright (C) 2011 Lorenzo Carbonell
-# lorenzo.carbonell.cerezo@gmail.com
+# Copyright (C) 2010,2011
+# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Miguel Angel Santamaría Rogado <leibag@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,224 +23,67 @@ __date__ ="$29-ene-2011$"
 #
 #
 import os
-import gtk
 import locale
 import gettext
 import com
 import shutil
-import gconf
-from configurator import GConf
+from configurator import Configurator
 
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
-gconfi = GConf()
-
-def set_key(key,value):
-	gconfi.set_key(key,value)
-
-def get_key(key,value):
-	try:
-		value = gconfi.get_key(key)
-	except ValueError:
-		gconfi.set_key(key,value)
-	return value
-
-def search_for_keys(chain):
-	keys=[]
-	for key in gconfi.get_all_keys(chain):
-		if key.get_value().type == gconf.VALUE_STRING:
-			if (key.get_value().get_string().find('<Control>')!=-1) and (key.get_value().get_string().find('<Alt>')!=-1):
-				k=key.get_value().get_string()
-				k=k[k.rfind('>')+1:]
-				if len(k)==1:
-					keys.append(k)
-	return keys
-
-def get_combination_keys():
-	keys=search_for_keys('/apps/compiz/general/allscreens/options')
-	keys+=search_for_keys('/apps/metacity/global_keybindings')
-	keys+=search_for_keys('/apps/metacity/window_keybindings')
-	for dire in gconfi.get_all_dirs('/desktop/gnome/keybindings'):
-		keys+=search_for_keys(dire)
-	return keys
-
-
-class Keybindings():
-	def __init__(self,combination_key,action):
-		self.combination_key = combination_key
-		self.action = action
-
-	def get_combination_key(self):
-		return self.combination_key
-	
-	def get_action(self):
-		return self.action	
-	
-class Preferences(gtk.Dialog):
-
+class Preferences():
 	def __init__(self):
-		#
-		gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-		self.set_position(gtk.WIN_POS_CENTER_ALWAYS)
-		self.set_size_request(500, 230)
-		self.connect('close', self.close_application)
-		self.set_icon_from_file(com.ICON)
-		#
-		self.vbox1 = gtk.VBox(spacing = 5)
-		self.vbox1.set_border_width(5)
-		self.get_content_area().add(self.vbox1)
-		#
-		self.frame1 = gtk.Frame()
-		self.vbox1.add(self.frame1)
-		#***************************************************************
-		self.vbox2 = gtk.VBox(spacing = 5)
-		self.vbox2.set_border_width(5)
-		self.frame1.add(self.vbox2)
-		table1 = gtk.Table(7,3,True)
-		self.vbox2.add(table1)
-		#
-		self.label11 = gtk.Label(_('Shortcut')+': <Ctrl> + <Alt> +')
-		self.label11.set_alignment(0,0.5)
-		table1.attach(self.label11,0,2,0,1)
-		#
-		self.entry11 = gtk.Entry()
-		self.entry11.set_editable(False)
-		self.entry11.set_width_chars(4)
-		self.entry11.connect('key-release-event',self.on_entry11_key_release_event)
-		table1.attach(self.entry11,2,3,0,1)
-		#
-		self.checkbutton1 = gtk.CheckButton(_('Autostart'))
-		table1.attach(self.checkbutton1,0,2,1,2)
-		#
-		self.checkbutton2 = gtk.CheckButton(_('Disable touchpad when mouse plugged'))
-		table1.attach(self.checkbutton2,0,2,2,3)
-		#
-		self.checkbutton3 = gtk.CheckButton(_('Enable touchpad at start'))
-		table1.attach(self.checkbutton3,0,2,3,4)
-		#
-		self.checkbutton4 = gtk.CheckButton(_('Start hidden'))
-		table1.attach(self.checkbutton4,0,2,4,5)
-		#
-		label1 = gtk.Label(_('Select icon theme')+':')
-		label1.set_alignment(0,0.5)
-		table1.attach(label1,0,3,5,6)
-		self.radiobutton0 = gtk.RadioButton(None,_('Normal'))
-		table1.attach(self.radiobutton0,0,1,6,7)
-		self.radiobutton1 = gtk.RadioButton(self.radiobutton0,_('Light'))
-		table1.attach(self.radiobutton1,1,2,6,7)
-		self.radiobutton2 = gtk.RadioButton(self.radiobutton0,_('Dark'))
-		table1.attach(self.radiobutton2,2,3,6,7)
-		#***************************************************************
-		#
-		self.load_preferences()
-		#
-		self.show_all()
-		#
-		#
-		#
-		self.respuesta = self.run()
-		print self.respuesta
-		if self.respuesta == gtk.RESPONSE_ACCEPT:
-			self.close_ok()
-		self.destroy()
-		
-	def close_application(self, widget, event):
-		self.destroy()
-	
-	def messagedialog(self,title,message):
-		dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,gtk.MESSAGE_INFO,buttons=gtk.BUTTONS_OK)
-		dialog.set_markup("<b>%s</b>" % title)
-		dialog.format_secondary_markup(message)
-		dialog.run()
-		dialog.destroy()
-		
-	def close_ok(self):
-		set_key('/desktop/gnome/keybindings/touchpad_indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
-		set_key('/desktop/gnome/keybindings/touchpad_indicator/name','modify_touchpad_status')
-		if len(self.entry11.get_text())>0:
-			set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','<Control><Alt>'+self.entry11.get_text())			
+		self.configurator = Configurator(com.KEY)
+
+	def check_autostart_dir(self):
+		if not os.path.exists(com.AUTOSTART_DIR):
+			os.makedirs(com.AUTOSTART_DIR)
+
+	def create_or_remove_autostart(self,create):
+		self.check_autostart_dir()
+		if create == True:
+			if not os.path.exists(com.FILE_AUTO_START):
+				shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',com.FILE_AUTO_START)
 		else:
-			set_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
-		#
-		#
-		autostart_dir = os.path.join(os.getenv('HOME'),'.config/autostart')
-		if not os.path.exists(autostart_dir):
-			os.makedirs(autostart_dir)
-		filestart = os.path.join(autostart_dir,'touchpad-indicator-autostart.desktop')
-		if self.checkbutton1.get_active():
-			if not os.path.exists(filestart):
-				shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',filestart)
-		else:		
-			if os.path.exists(filestart):
-				os.remove(filestart)
-		#
-		#
-		set_key('/apps/touchpad-indicator/options/on_mouse_plugged',self.checkbutton2.get_active())	
-		set_key('/apps/touchpad-indicator/options/on_start_enabled',self.checkbutton3.get_active())	
-		set_key('/apps/touchpad-indicator/options/start_hidden', self.checkbutton4.get_active())
+			if os.path.exists(com.FILE_AUTO_START):
+				os.remove(com.FILE_AUTO_START)
 
-		if self.radiobutton0.get_active() == True:
-			option = 0
-		elif self.radiobutton1.get_active() == True:
-			option = 1
-		else:
-			option = 2
-		set_key('/apps/touchpad-indicator/options/theme',option)
-
-
-	def on_entry11_key_release_event(self,widget,event):
-		key=event.keyval
-		# numeros / letras mayusculas / letras minusculas
-		if ((key>47) and (key<58)) or ((key > 64) and (key < 91)) or ((key > 96) and (key < 123)):
-			if gtk.gdk.keyval_is_upper(event.keyval):
-				keyval=gtk.gdk.keyval_name(gtk.gdk.keyval_to_lower(event.keyval))
-			else:
-				keyval=gtk.gdk.keyval_name(event.keyval)
-			if keyval in get_combination_keys() and keyval!=self.key:
-				dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,type=gtk.MESSAGE_WARNING,buttons=gtk.BUTTONS_OK)
-				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
-				dialog.set_property('title', 'Error')
-				dialog.set_property('text', msg)
-				dialog.run()
-				dialog.destroy()
-				self.entry11.set_text(self.key)
-			else:
-				self.entry11.set_text(keyval)
-				self.key = keyval
-
-	def load_preferences(self):
-		if os.path.exists(os.path.join(os.getenv("HOME"),".config/autostart/touchpad-indicator-autostart.desktop")):
-			self.checkbutton1.set_active(True)
-		self.key = ''
-		self.on_start_enabled = False
+	def read(self):
+		self.autostart = os.path.exists(com.FILE_AUTO_START)
+		self.on_mouse_plugged = self.configurator.get('on-mouse-plugged')
+		self.enable_on_start = self.configurator.get('enable-on-start')		
+		self.enable_on_exit = self.configurator.get('enable-on-exit')
+		self.start_hidden = self.configurator.get('start-hidden')
+		self.show_notifications = self.configurator.get('show-notifications')
+		self.shortcut = self.configurator.get('shortcut').lower().strip()
+		self.theme = self.configurator.get('theme')
+		
+	def save(self):
+		self.create_or_remove_autostart(self.autostart)
+		self.configurator.set('on-mouse-plugged',self.on_mouse_plugged)
+		self.configurator.set('enable-on-start',self.enable_on_start)
+		self.configurator.set('enable-on-exit',self.enable_on_exit)
+		self.configurator.set('start-hidden',self.start_hidden)
+		self.configurator.set('show-notifications',self.show_notifications)
+		self.configurator.set('shortcut',self.shortcut)
+		self.configurator.set('theme',self.theme)
+		
+	def set_default(self):
+		self.autostart = False
 		self.on_mouse_plugged = False
+		self.enable_on_exit = False
+		self.enable_on_start = True
 		self.start_hidden = False
-		self.devices = []
-		self.on_mouse_plugged = get_key('/apps/touchpad-indicator/options/on_mouse_plugged',False)
-		self.checkbutton2.set_active(self.on_mouse_plugged)
-		self.on_start_enabled = get_key('/apps/touchpad-indicator/options/on_start_enabled',False)
-		self.checkbutton3.set_active(self.on_start_enabled)
-		self.start_hidden = get_key('/apps/touchpad-indicator/options/start_hidden',False)
-		self.checkbutton4.set_active(self.start_hidden)
-		k=get_key('/desktop/gnome/keybindings/touchpad_indicator/binding','')
-		if k!=None and len(k)>0:
-			k=k[k.rfind('>')+1:]
-			self.key=k
-		else:
-			self.key = ''
-		self.entry11.set_text(self.key)
-		option = get_key('/apps/touchpad-indicator/options/theme',0)
-		if option == 0:
-			self.radiobutton0.set_active(True)
-		elif option == 1:
-			self.radiobutton1.set_active(True)
-		else:
-			self.radiobutton2.set_active(True)
-
-
+		self.show_notifications = True
+		self.theme = '0'
+		self.shortcut = 'ctrl+c'
+		self.save()
+		
 if __name__ == "__main__":
-	cm = Preferences()
+	pf = Preferences()
+	pf.read()
+	print pf.autostart
 	exit(0)
