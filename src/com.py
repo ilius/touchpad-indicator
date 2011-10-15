@@ -34,7 +34,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.1.0'
+VERSION = '0.9.1.1'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 
@@ -54,7 +54,7 @@ else:
 AUTOSTART_DIR = os.path.join(os.getenv('HOME'),'.config/autostart')
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.desktop')
 
-ICON = os.path.join(IMGDIR, 'touchpad-indicator-normal.svg')
+ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
 ICON_ENABLED = 'touchpad-indicator'
 ICON_DISABLED = 'touchpad-indicator-disabled'
 

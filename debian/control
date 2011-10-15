@@ -13,6 +13,7 @@ Depends: ${misc:Depends}, ${python:Depends},
 	gir1.2-gdkpixbuf-2.0,
 	gir1.2-appindicator3-0.1,
 	gir1.2-notify-0.7,
+	python-xlib,
 	python-pyudev,		
 	python-dbus
 Description: Indicator for the Touchpad

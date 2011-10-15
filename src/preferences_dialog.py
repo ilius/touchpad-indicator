@@ -113,10 +113,6 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		#
 		#
-		self.respuesta = self.run()
-		if self.respuesta == Gtk.ResponseType.ACCEPT:
-			self.close_ok()
-		self.destroy()
 		
 	def close_application(self, widget, event):
 		self.destroy()
@@ -183,10 +179,15 @@ class PreferencesDialog(Gtk.Dialog):
 		self.preferences.enable_on_start = self.checkbutton4.get_active()
 		self.preferences.start_hidden = self.checkbutton5.get_active()
 		self.preferences.show_notifications = self.checkbutton6.get_active()
-		self.preferences.shorcut = key
+		self.preferences.shortcut = key
 		self.preferences.theme = theme
 		self.preferences.save()
 		
 if __name__ == "__main__":
 	cm = PreferencesDialog()
+	if 	cm.run() == Gtk.ResponseType.ACCEPT:
+			cm.close_ok()
+	cm.hide()
+	cm.destroy()
+
 	exit(0)

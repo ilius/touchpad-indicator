@@ -1,4 +1,4 @@
-# Georgian translation for touchpad-indicator
+# Serbian translation for touchpad-indicator
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.1.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2011-10-15 07:46+0200\n"
-"PO-Revision-Date: 2011-10-11 20:17+0000\n"
-"Last-Translator: Giorgi Maghlakelidze <acidlabz@gmail.com>\n"
-"Language-Team: Georgian <ka@li.org>\n"
-"Language: ka\n"
+"PO-Revision-Date: 2011-08-22 07:51+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <sr@li.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,19 +21,19 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:46
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:288
 msgid "Preferences"
-msgstr "გამართვა"
+msgstr "Поставке"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:65
 msgid "Shortcut"
-msgstr ""
+msgstr "Пречица"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:81
 msgid "Autostart"
-msgstr "ავტოგაშვება"
+msgstr "Самопокретање"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:84
 msgid "Disable touchpad when mouse plugged"
-msgstr "სენსორული პანელის გათიშვა თაგვის გამოღებისას"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:87
 msgid "Enable touchpad on exit"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:93
 msgid "Start hidden"
-msgstr ""
+msgstr "Започни скривен"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:96
 msgid "Show notifications"
@@ -53,38 +53,38 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:99
 msgid "Select icon theme"
-msgstr ""
+msgstr "Изаберите тему иконице"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:102
 msgid "Normal"
-msgstr ""
+msgstr "Нормално"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:104
 msgid "Light"
-msgstr ""
+msgstr "Светло"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:106
 msgid "Dark"
-msgstr ""
+msgstr "Тамно"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:132
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:189
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
 msgid "Disable Touchpad"
-msgstr "სენსორული პანელის გათიშვა"
+msgstr "Искључи додирну таблу"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:134
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Enable Touchpad"
-msgstr "სენსორული პანელის ჩართვა"
+msgstr "Укључи додирну таблу"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:203
 msgid "Touchpad Enabled"
-msgstr "სერსორული პანელი ჩართულია"
+msgstr "Укључена додирна табла"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
 msgid "Touchpad Disabled"
-msgstr "სერსორული პანელი გათიშულია"
+msgstr "Искључена додирна табла"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:270
 msgid "Application Web..."
@@ -92,35 +92,35 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
 msgid "Get help online..."
-msgstr ""
+msgstr "Нађите помоћ на мрежи..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:272
 msgid "Translate this application..."
-msgstr ""
+msgstr "Преведите овај програм..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:273
 msgid "Report a bug..."
-msgstr ""
+msgstr "Пријавите грешку..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
 msgid "About"
-msgstr ""
+msgstr "О програму"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
 msgid "Hide icon"
-msgstr ""
+msgstr "Сакриј иконицу"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:290
 msgid "Help"
-msgstr ""
+msgstr "Помоћ"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:293
 msgid "Exit"
-msgstr "გასვლა"
+msgstr "Напусти"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:305
 msgid "An indicator for the Touchpad"
-msgstr "სერნსორული პანელის ინდიკატორი"
+msgstr "Указивач за Додирну таблу"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:422
 msgid "usage: %prog [options]"

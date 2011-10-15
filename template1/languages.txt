@@ -20,3 +20,8 @@ en_GB
 eu
 sk
 ja
+vi
+uk
+zh_TW
+sr
+sv

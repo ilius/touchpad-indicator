@@ -56,6 +56,11 @@ install: build
 	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/eu/LC_MESSAGES
 	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sk/LC_MESSAGES
 	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/ja/LC_MESSAGES
+	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/vi/LC_MESSAGES
+	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/uk/LC_MESSAGES
+	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/zh_TW/LC_MESSAGES
+	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sr/LC_MESSAGES
+	mkdir -p ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sv/LC_MESSAGES
 	# End create languages directories
 	# Compile languages
 	msgfmt template1/en.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/en/LC_MESSAGES/touchpad-indicator.mo
@@ -80,6 +85,11 @@ install: build
 	msgfmt template1/eu.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/eu/LC_MESSAGES/touchpad-indicator.mo
 	msgfmt template1/sk.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sk/LC_MESSAGES/touchpad-indicator.mo
 	msgfmt template1/ja.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/ja/LC_MESSAGES/touchpad-indicator.mo
+	msgfmt template1/vi.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/vi/LC_MESSAGES/touchpad-indicator.mo
+	msgfmt template1/uk.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/uk/LC_MESSAGES/touchpad-indicator.mo
+	msgfmt template1/zh_TW.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/zh_TW/LC_MESSAGES/touchpad-indicator.mo
+	msgfmt template1/sr.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sr/LC_MESSAGES/touchpad-indicator.mo
+	msgfmt template1/sv.po -o ${CURDIR}/debian/touchpad-indicator/usr/share/locale-langpack/sv/LC_MESSAGES/touchpad-indicator.mo
 	# End comile languages
 
 	# Add here commands to install the package into debian/<packagename>.

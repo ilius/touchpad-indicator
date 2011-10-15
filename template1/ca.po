@@ -7,47 +7,45 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.1.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-10-11 20:48+0200\n"
-"PO-Revision-Date: 2011-07-01 20:00+0000\n"
-"Last-Translator: David Caro <Unknown>\n"
+"POT-Creation-Date: 2011-10-15 07:46+0200\n"
+"PO-Revision-Date: 2011-10-11 20:16+0000\n"
+"Last-Translator: Lorenzo Carbonell <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-07-02 18:01+0000\n"
-"X-Generator: Launchpad (build 13333)\n"
+"X-Launchpad-Export-Date: 2011-10-15 05:40+0000\n"
+"X-Generator: Launchpad (build 14124)\n"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:46
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:288
 msgid "Preferences"
-msgstr "Preferències"
+msgstr "Настройки"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:65
 msgid "Shortcut"
-msgstr "Drecera"
+msgstr "Быстрый вызов"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:81
 msgid "Autostart"
-msgstr "Inici automàtic"
+msgstr "Автозапуск"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:84
 msgid "Disable touchpad when mouse plugged"
-msgstr "Desactivar el Touchpad al connectar el ratolí"
+msgstr "Отключать тачпад при подключении мыши"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:87
-#, fuzzy
 msgid "Enable touchpad on exit"
-msgstr "Activar el touchpad al iniciar"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:90
-#, fuzzy
 msgid "Enable touchpad on start"
-msgstr "Activar el touchpad al iniciar"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:93
 msgid "Start hidden"
-msgstr ""
+msgstr "Запускать в фоновом режиме"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:96
 msgid "Show notifications"
@@ -55,38 +53,38 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:99
 msgid "Select icon theme"
-msgstr "Seleccionar el tema de les icones"
+msgstr "Выберите тему значков"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:102
 msgid "Normal"
-msgstr "Normal"
+msgstr "Обычный"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:104
 msgid "Light"
-msgstr "Clar"
+msgstr "Светлая"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:106
 msgid "Dark"
-msgstr "Fosc"
+msgstr "Темная"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:133
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:132
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:189
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
 msgid "Disable Touchpad"
-msgstr "Deshabilita Touchpad"
+msgstr "Отключить тачпад"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:135
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:134
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Enable Touchpad"
-msgstr "Habilita Touchpad"
+msgstr "Включить тачпад"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:204
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:203
 msgid "Touchpad Enabled"
-msgstr "Touchpad habilitat"
+msgstr "Тачпад включен"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:207
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
 msgid "Touchpad Disabled"
-msgstr "Touchpad deshabilitat"
+msgstr "Тачпад отключен"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:270
 msgid "Application Web..."
@@ -94,49 +92,49 @@ msgstr "Aplicació web..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
 msgid "Get help online..."
-msgstr "Aconseguir ajuda online..."
+msgstr "Помощь онлайн..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:272
 msgid "Translate this application..."
-msgstr "Tradueix aquesta aplicació..."
+msgstr "Перевести приложение..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:273
 msgid "Report a bug..."
-msgstr "Informa d'un error..."
+msgstr "Сообщить об ошибке..."
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
 msgid "About"
-msgstr "Quant a"
+msgstr "О программе"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
 msgid "Hide icon"
-msgstr ""
+msgstr "Скрыть значок"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:290
 msgid "Help"
-msgstr "Ajuda"
+msgstr "Помощь"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:294
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:293
 msgid "Exit"
-msgstr "Sortir"
+msgstr "Выйти"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:306
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:305
 msgid "An indicator for the Touchpad"
-msgstr "Un indicador del Touchpad"
+msgstr "Индикатор тачпада"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:419
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:422
 msgid "usage: %prog [options]"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:425
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:428
 msgid "show this help and exit."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:430
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:433
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:435
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:438
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
@@ -174,35 +172,14 @@ msgstr ""
 msgid "Del "
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:318
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:321
 msgid "Ctrl+"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:320
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:323
 msgid "Alt+"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:322
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:325
 msgid "Super+"
 msgstr ""
-
-#~ msgid "This shortcut <Control> + <Alt> + "
-#~ msgstr "Accés directe <Control>+<Alt>+ "
-
-#~ msgid " is assigned"
-#~ msgstr " està assignat"
-
-#~ msgid "Configure"
-#~ msgstr "Configuració"
-
-#~ msgid "Set shortcut for Touchpad-Indicator:"
-#~ msgstr "Conjunt de tecles pel Touchpad-Indicator"
-
-#~ msgid "Unplug the mouse"
-#~ msgstr "Desconnectar el ratolí"
-
-#~ msgid "Plug the mouse"
-#~ msgstr "Connectar el ratolí"
-
-#~ msgid "About..."
-#~ msgstr "Sobre..."

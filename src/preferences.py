@@ -37,6 +37,14 @@ _ = gettext.gettext
 class Preferences():
 	def __init__(self):
 		self.configurator = Configurator(com.KEY)
+		self.autostart = False
+		self.on_mouse_plugged = False
+		self.enable_on_exit = False
+		self.enable_on_start = True
+		self.start_hidden = False
+		self.show_notifications = True
+		self.theme = '0'
+		self.shortcut = 'ctrl+alt+f'
 
 	def check_autostart_dir(self):
 		if not os.path.exists(com.AUTOSTART_DIR):
@@ -58,7 +66,7 @@ class Preferences():
 		self.enable_on_exit = self.configurator.get('enable-on-exit')
 		self.start_hidden = self.configurator.get('start-hidden')
 		self.show_notifications = self.configurator.get('show-notifications')
-		self.shortcut = self.configurator.get('shortcut').lower().strip()
+		self.shortcut = self.configurator.get('shortcut')
 		self.theme = self.configurator.get('theme')
 		
 	def save(self):
@@ -68,7 +76,7 @@ class Preferences():
 		self.configurator.set('enable-on-exit',self.enable_on_exit)
 		self.configurator.set('start-hidden',self.start_hidden)
 		self.configurator.set('show-notifications',self.show_notifications)
-		self.configurator.set('shortcut',self.shortcut)
+		self.configurator.set('shortcut',self.shortcut)	
 		self.configurator.set('theme',self.theme)
 		
 	def set_default(self):
@@ -79,11 +87,13 @@ class Preferences():
 		self.start_hidden = False
 		self.show_notifications = True
 		self.theme = '0'
-		self.shortcut = 'ctrl+c'
+		self.shortcut = 'ctrl+alt+f'
 		self.save()
 		
 if __name__ == "__main__":
 	pf = Preferences()
 	pf.read()
-	print pf.autostart
+	print pf.shortcut
+	pf.shortcut = 'ctrl+alt+t'
+	pf.save()
 	exit(0)

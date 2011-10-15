@@ -3,7 +3,6 @@
 #
 #
 # Report Ubuntu and Machine information
-# Adding keybiding
 #
 # Copyright (C) 2010,2011
 # Miguel Angel Santamaría Rogado <leibag@gmail.com>

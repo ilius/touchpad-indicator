@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-10-11 20:48+0200\n"
+"POT-Creation-Date: 2011-10-15 07:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,22 +66,22 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:133
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:190
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:132
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:189
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
 msgid "Disable Touchpad"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:135
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:194
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:134
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
 msgid "Enable Touchpad"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:204
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:203
 msgid "Touchpad Enabled"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:207
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
 msgid "Touchpad Disabled"
 msgstr ""
 
@@ -113,27 +113,27 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:294
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:293
 msgid "Exit"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:306
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:305
 msgid "An indicator for the Touchpad"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:419
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:422
 msgid "usage: %prog [options]"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:425
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:428
 msgid "show this help and exit."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:430
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:433
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:435
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:438
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
@@ -171,14 +171,14 @@ msgstr ""
 msgid "Del "
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:318
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:321
 msgid "Ctrl+"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:320
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:323
 msgid "Alt+"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:322
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:325
 msgid "Super+"
 msgstr ""

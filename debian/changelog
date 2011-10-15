@@ -1,4 +1,10 @@
-touchpad-indicator (0.9.1.0-1ubuntu2) oneiric; urgency=low
+touchpad-indicator (0.9.1.1-1ubuntu1) oneiric; urgency=low
+
+  * Fixed some bugs with enable and disable feature by shortcut
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 15 Oct 2011 07:46:55 +0200
+
+touchpad-indicator (0.9.1.0-1ubuntu1) oneiric; urgency=low
 
   * Ported to PyGi, added several features by Miguel Angel Santamaria
 

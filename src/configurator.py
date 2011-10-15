@@ -31,6 +31,7 @@ import types
 
 class Configurator():
 	def __init__(self,base_key):
+		print base_key
 		self.settings = Gio.Settings.new(base_key)
 
 	def get(self,key):

@@ -184,11 +184,14 @@ class ListenKbd(threading.Thread):
 
 	def update_text(self, string=None):
 		global get_shortcut
+		global change_state
 		try:
 			if not string is None:
 				keypressed = string.lower().strip()
 				if keypressed == get_shortcut().lower().strip():
 					change_state()
+					string = None
+					keypressed = None
 			else:
 				print ''
 		except:

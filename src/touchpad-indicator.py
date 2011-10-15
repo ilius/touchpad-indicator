@@ -40,7 +40,6 @@ from optparse import OptionParser
 from touchpad import Touchpad
 from preferences import Preferences
 from preferences_dialog import PreferencesDialog
-from preferences import Preferences
 import com
 import watchdog
 import listenkbd
@@ -67,9 +66,7 @@ def add2menu(menu, text = None, icon = None, conector_event = None, conector_act
 		if icon == None:
 			menu_item = Gtk.SeparatorMenuItem()
 		else:
-			menu_item = Gtk.ImageMenuItem()
-			image = Gtk.Image.new_from_stock(icon, Gtk.IconSize.MENU)
-			menu_item.set_image(image)
+			menu_item = Gtk.ImageMenuItem.new_from_stock(icon, None)
 			menu_item.set_always_show_image(True)
 	if conector_event != None and conector_action != None:				
 		menu_item.connect(conector_event,conector_action)
@@ -101,6 +98,8 @@ class DBUSService(dbus.service.Object):
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def unhide(self):
 		self.ind.unhide()
+	
+	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def get_shortcut(self):		
 		return self.ind.get_shortcut()
 
@@ -227,6 +226,7 @@ class TouchpadIndicator():
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 		
 	def change_state(self):
+		print 'cambiado'
 		if not self.preferences.on_mouse_plugged or\
 				not watchdog.is_mouse_plugged():
 			is_touch_enabled = not self.touchpad.all_touchpad_enabled()
@@ -287,10 +287,9 @@ class TouchpadIndicator():
 				conector_action = self.on_hide_item)
 		add2menu(menu,text = _('Preferences'),conector_event = 'activate',conector_action = self.on_preferences_item)
 		add2menu(menu)
-		self.menu_help = add2menu(menu,text = _('Help'))
-		self.menu_help.set_submenu(self.get_help_menu())
+		menu_help = add2menu(menu,text = _('Help'))
+		menu_help.set_submenu(self.get_help_menu())
 		add2menu(menu)
-		self.menu_separator2=Gtk.MenuItem()
 		add2menu(menu,text = _('Exit'),conector_event = 'activate',conector_action = self.on_quit_item)
 		#
 		menu.show()
@@ -350,7 +349,7 @@ class TouchpadIndicator():
 		self.change_state()
 
 	def get_shortcut(self):
-		return self.key
+		return self.preferences.shortcut
 
 	def on_hide_item(self, widget, data=None):
 		self.indicator.set_status(appindicator.IndicatorStatus.PASSIVE)
@@ -358,7 +357,11 @@ class TouchpadIndicator():
 	def on_preferences_item(self, widget, data=None):
 		widget.set_sensitive(False)
 		preferences_dialog = PreferencesDialog()
-		self.read_preferences()
+		if 	preferences_dialog.run() == Gtk.ResponseType.ACCEPT:
+			preferences_dialog.close_ok()
+			self.read_preferences()
+		preferences_dialog.hide()
+		preferences_dialog.destroy()
 		# we need to change the status icons
 		self.indicator.set_icon(self.active_icon)
 		self.indicator.set_attention_icon(self.attention_icon)

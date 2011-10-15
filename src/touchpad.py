@@ -25,9 +25,8 @@
 import shlex, subprocess
 import time
 import com
-from configurator import Configurator
 
-TOUCHPADS = ['touchpad','glidepoint','fingersensingpad']
+TOUCHPADS = ['touchpad','glidepoint','fingersensingpad','bcm5974']
 
 def ejecuta(comando):
 	args = shlex.split(comando)
@@ -45,7 +44,6 @@ def search_touchpad(where):
 class Touchpad(object):
 	def __init__(self):
 		self.ids = self._get_ids()
-		self.configurator = Configurator(com.KEY)
 	
 	def _get_all_ids(self):
 		ids = []
@@ -84,13 +82,11 @@ class Touchpad(object):
 	
 	def set_touchpad_enabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)		
-		self.configurator.set('touchpad-enabled',True)
 	
 	def set_touchpad_disabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
 		#gconfi = GConf()
 		#gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',False)		
-		self.configurator.set('touchpad-enabled',False)
 
 	def is_touchpad_enabled(self,id):
 		lines = ejecuta('xinput --list-props %s'%id)
