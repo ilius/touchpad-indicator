@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.1.2-1ubuntu1) oneiric; urgency=low
+
+  * Modify way to get information
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 16 Oct 2011 08:56:52 +0200
+
 touchpad-indicator (0.9.1.1-1ubuntu1) oneiric; urgency=low
 
   * Fixed some bugs with enable and disable feature by shortcut

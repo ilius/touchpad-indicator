@@ -22,63 +22,80 @@
 #
 #
 #
-
+import os
+import machine_information
+import com
 try:
-    import pyudev
+	import pyudev
 except:
-    print('Error: no pyudev installed.')
+	print('Error: no pyudev installed.')
 
+FILEOUTPUT = os.path.join(os.environ['HOME'],'device_list.txt')
 
-def print_device_attrib(Device):
-    print('------------------------------------------------------')
-    print('sys_name: ' + Device.sys_name)
-    for attrName, attrValue in Device.iteritems():
-        print(attrName + ': ' + str(attrValue))
+def print_device_attrib(Device, fileoutput=None):
+	print('------------------------------------------------------')
+	print('sys_name: ' + Device.sys_name)
+	for attrName, attrValue in Device.iteritems():
+		print(attrName + ': ' + str(attrValue))
+	if fileoutput != None:
+		fileoutput.write('------------------------------------------------------\n')
+		fileoutput.write('sys_name: ' + Device.sys_name+'\n')
+		for attrName, attrValue in Device.iteritems():
+			fileoutput.write(attrName + ': ' + str(attrValue)+'\n')
 
-if __name__ == "__main__":
-    context = pyudev.Context()
+def print_devices(kind, context, fileoutput=None):
+	if kind == 'MOUSE':
+		search = '---------------MICE----------------'
+		devices_list = context.list_devices(subsystem='input', ID_INPUT_MOUSE=True)
+	elif kind == 'TOUCHPAD':
+		search = '-------------TOUCHPADS-------------'
+		devices_list = context.list_devices(subsystem='input', ID_INPUT_TOUCHPAD=True)
+	else:
+		search = '-----------OTHER DEVICES-----------'
+		devices_list = context.list_devices(subsystem='input')
+	print('\n\n')
+	print search
+	for device in devices_list:
+		print('device: ' + device.sys_name)
+		try:
+			print('parent name: ' + device.parent['NAME'])
+			print('parent attributes:')
+			print_device_attrib(device.parent)
+		except:
+			print(device.sys_name + ' has no parent')
+		print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+		print('device atributes:')
+		print_device_attrib(device)
+	if fileoutput != None:
+		fileoutput.write('\n\n')
+		fileoutput.write(search+'\n')
+		for device in devices_list:
+			fileoutput.write('device: ' + device.sys_name+'\n')
+			try:
+				fileoutput.write('parent name: ' + device.parent['NAME']+'\n')
+				fileoutput.write('parent attributes:\n')
+				print_device_attrib(device.parent,fileoutput)
+			except:
+				fileoutput.write(device.sys_name + ' has no parent\n')
+			fileoutput.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
+			fileoutput.write('device atributes:\n')
+			print_device_attrib(device,fileoutput)
 
-    print('---------------MICE----------------')
-    mice_list = context.list_devices(subsystem='input', ID_INPUT_MOUSE=True)
-    for device in mice_list:
-        print('\n\n******************************************************')
-        print('device: ' + device.sys_name)
-        try:
-            print('parent name: ' + device.parent['NAME'])
-            print('parent attributes:')
-            print_device_attrib(device.parent)
-        except:
-            print(device.sys_name + ' has no parent')
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        print('device atributes:')
-        print_device_attrib(device)
+def header(fileoutput):
+	fileoutput.write('#####################################################\n')
+	fileoutput.write(machine_information.get_information())
+	fileoutput.write('Touchpad-Indicator version: %s\n'%com.VERSION)
+	fileoutput.write('#####################################################\n')
 
-    print('\n\n-------------TOUCHPADS-------------')
-    touch_list = context.list_devices(subsystem='input', ID_INPUT_TOUCHPAD=True)
-    for device in touch_list:
-        print('\n\n******************************************************')
-        print('device: ' + device.sys_name)
-        try:
-            print('parent name: ' + device.parent['NAME'])
-            print('parent attributes:')
-            print_device_attrib(device.parent)
-        except:
-            print(device.sys_name + ' has no parent')
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        print('device atributes:')
-        print_device_attrib(device)
+def list():
+	context = pyudev.Context()
+	fileoutput = open(FILEOUTPUT,'w')
+	header(fileoutput)
+	print_devices('MOUSE',context,fileoutput)
+	print_devices('TOUCHPAD',context,fileoutput)
+	print_devices('OTHER',context,fileoutput)
+	fileoutput.close()
 
-    print('\n\n-----------OTHER DEVICES-----------')
-    others = context.list_devices(subsystem='input')
-    for device in others:
-        print('\n\n******************************************************')
-        print('device: ' + device.sys_name)
-        try:
-            print('parent name: ' + device.parent['NAME'])
-            print('parent attributes:')
-            print_device_attrib(device.parent)
-        except:
-            print(device.sys_name + ' has no parent')
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        print('device atributes:')
-        print_device_attrib(device)
+if __name__ == "__main__":	
+	list()
+	exit(0)

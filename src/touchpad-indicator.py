@@ -47,6 +47,7 @@ import machine_information
 
 import locale
 import gettext
+import device_list
 
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(com.APP, com.LANGDIR)
@@ -436,11 +437,18 @@ if __name__ == "__main__":
 			dest='show',
 			default=False,
 			help=_('show the icon if indicator is hidden. Default action. If indicator is not running launch it.'))
+	parser.add_option('-l', '--list-devices',
+			action='store_true',
+			dest='list',
+			default=False,
+			help=_('list devices'))
 
 	(options, args) = parser.parse_args()
 
 	if options.help:
 		parser.print_help()
+	elif options.list:
+		device_list.list()
 		exit(0)
 
 	# check if there is another touchpad-indicator
@@ -451,8 +459,6 @@ if __name__ == "__main__":
 		else: # show by default
 			make_visible()
 			exit(0)
-		if options.show:
-			make_visible()
 		exit(0)
 	else: # first!!!
 		Notify.init("touchpad-indicator")
