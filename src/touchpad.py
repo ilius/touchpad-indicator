@@ -109,6 +109,8 @@ class Touchpad(object):
 		return self.all_touchpad_enabled()
 
 	def all_touchpad_enabled(self):
+		if not self.is_there_touchpad():
+			return False
 		for id in self.ids:
 			if self.is_touchpad_enabled(id) == False:
 				return False

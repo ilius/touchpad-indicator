@@ -43,10 +43,6 @@ gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
-
-MODE_RAW = 0
-MODE_NORMAL = 1
-
 REPLACE_KEYS = {
 	'XK_Escape':_('Esc '),
 	'XK_Tab':u'\u21B9 ',
@@ -109,25 +105,18 @@ def init_dbus():
 		exit(0)
 
 def listenkbd():
-	import os
-	import logging
-
-	global change_state
-	global get_shortcut
-	#
-	logfile = os.path.join(os.path.expanduser('~'),'screenkey.log')
-	logging.basicConfig(filename=logfile, level=logging.DEBUG)
-	logger = logging.getLogger('listenkbd')
-	lkbd = ListenKbd('prueba',logger,MODE_NORMAL)
+	lkbd = ListenKbd()
 	lkbd.start()
 
 class ListenKbd(threading.Thread):
 
-	def __init__(self, label, logger, mode):
+	def __init__(self):
 		threading.Thread.__init__(self)
+		'''
 		self.mode = mode
 		self.logger = logger
 		self.label = label
+		'''
 		self.text = ""
 		self.command = None
 		self.shift = None
@@ -139,15 +128,12 @@ class ListenKbd(threading.Thread):
 			'meta': False,
 			'super':False
 			}
-
-		self.logger.debug("Thread created")
 		self.keymap = modmap.get_keymap_table()
 		self.modifiers = modmap.get_modifier_map()
 		self.local_dpy = display.Display()
 		self.record_dpy = display.Display()
 
 		if not self.record_dpy.has_extension("RECORD"):
-			self.logger.error("RECORD extension not found.")
 			print "RECORD extension not found"
 			sys.exit(1)
 
@@ -167,7 +153,6 @@ class ListenKbd(threading.Thread):
 				}])
 
 	def run(self):
-		self.logger.debug("Thread started.")
 		self.record_dpy.record_enable_context(self.ctx, self.key_press)
 
 	def lookup_keysym(self, keysym):
@@ -196,17 +181,8 @@ class ListenKbd(threading.Thread):
 				print ''
 		except:
 			exit(0)
-	'''
-	def update_text(self, string=None):
-		if not string is None:
-			self.text = "%s%s" % (self.label.get_text(), string)
-			self.label.set_text(self.text)
-		else:
-			self.label.set_text("")
-		self.label.emit("text-changed")
-	'''
+			
 	def key_press(self, reply):
-
 		# FIXME:
 		# This is not the most efficient way to detect the
 		# use of sudo/gksudo but it works.
@@ -218,9 +194,6 @@ class ListenKbd(threading.Thread):
 		if reply.category != record.FromServer:
 			return
 		if reply.client_swapped:
-			self.logger.warning(
-				"* received swapped protocol data, cowardly ignored"
-			)
 			return
 		if not len(reply.data) or ord(reply.data[0]) < 2:
 			# not an event
@@ -231,10 +204,7 @@ class ListenKbd(threading.Thread):
 			event, data = rq.EventField(None).parse_binary_value(data, 
 									self.record_dpy.display, None, None)
 			if event.type in [X.KeyPress, X.KeyRelease]:
-				if self.mode == MODE_NORMAL:
-					key = self.key_normal_mode(event)
-				if self.mode == MODE_RAW:
-					key = self.key_raw_mode(event)
+				key = self.key_normal_mode(event)
 				if not key:
 					return
 		self.update_text(key)
@@ -247,13 +217,7 @@ class ListenKbd(threading.Thread):
 		if event.detail in self.keymap:
 			key_normal, key_shift, key_dead, key_deadshift = \
 											self.keymap[event.detail]
-			self.logger.debug("Key %s(keycode) %s. Symbols %s" % 
-				(event.detail, 
-				 event.type == X.KeyPress and "pressed" or "released", 
-				 self.keymap[event.detail])
-				)
 		else:
-			self.logger.debug('No mapping for scan_code %d' % event.detail)
 			return
 
 
@@ -305,15 +269,6 @@ class ListenKbd(threading.Thread):
 		# Backspace key
 		elif event.detail == 22 and event.type == X.KeyPress:
 			return
-			'''
-			if len(self.label.get_text()) > 0:
-				self.label.set_text(
-					unicode(self.label.get_text(), 'utf-8')[:-1]
-				)
-				key = ""
-			else:
-				return		
-			'''
 		else:
 			if event.type == X.KeyPress:
 				key = key_normal
@@ -347,20 +302,10 @@ class ListenKbd(threading.Thread):
 
 		return key
 
-	def key_raw_mode(self, event):
-		key = ''
-		if event.type == X.KeyPress:
-			keysym = self.local_dpy.keycode_to_keysym(event.detail, 0)
-			key = self.lookup_keysym(keysym)
-		else:
-			return
-		return key
-
 	def stop(self):
 		self.local_dpy.record_disable_context(self.ctx)
 		self.local_dpy.flush()
 		self.record_dpy.record_free_context(self.ctx)
-		self.logger.debug("Thread stopped.")
 
 if __name__ == '__main__':
 	init_dbus()

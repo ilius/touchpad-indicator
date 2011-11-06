@@ -43,7 +43,7 @@ def is_mouse_plugged(blacklist=faulty_devices):
 
     if blacklist != None:
         for mouse in possible_mice:
-            if mouse.parent['PRODUCT'] not in blacklist:
+            if mouse.parent != None and 'PRODUCT' in mouse.parent.keys() and mouse.parent['PRODUCT'] not in blacklist:
                 mice_list.append(mouse)
     else:
         mice_list = list(possible_mice)
@@ -60,9 +60,9 @@ def is_mouse(device, blacklist=faulty_devices):
        :param blacklist: list of devices to discard."""
     if blacklist != None:
         try:
-            if device.parent != None and device.parent['PRODUCT'] in blacklist:
+            if device.parent != None and 'PRODUCT' in mouse.parent.keys() and device.parent['PRODUCT'] in blacklist:
                 return False
-            elif device['PRODUCT'] in blacklist:
+            elif 'PRODUCT' in device.keys() and device['PRODUCT'] in blacklist:
                 return False
         except KeyError:
             # if no PRODUCT attribute, ignore the blacklist

@@ -227,7 +227,6 @@ class TouchpadIndicator():
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 		
 	def change_state(self):
-		print 'cambiado'
 		if not self.preferences.on_mouse_plugged or\
 				not watchdog.is_mouse_plugged():
 			is_touch_enabled = not self.touchpad.all_touchpad_enabled()
