@@ -29,7 +29,8 @@ on_mouse_detected_plugged = None
 on_mouse_detected_unplugged = None
 
 faulty_devices = [
-    u'11/2/a/0', ] # TPPS/2 IBM TrackPoint
+    u'11/2/a/0', # TPPS/2 IBM TrackPoint
+    u'11/2/5/7326'] # ImPS/2 ALPS GlidePoint
 
 udev_context = pyudev.Context()
 
