@@ -34,7 +34,7 @@ FILEOUTPUT = os.path.join(os.environ['HOME'],'device_list.txt')
 
 def print_device_attrib(Device, fileoutput=None):
 	print('------------------------------------------------------')
-	print('sys_name: ' + Device.sys_name)
+	print(u'sys_name: ' + unicode(Device.sys_name))
 	for attrName, attrValue in Device.iteritems():
 		print(attrName + ': ' + str(attrValue))
 	if fileoutput != None:
@@ -98,4 +98,5 @@ def list():
 
 if __name__ == "__main__":	
 	list()
+	print(unicode(chr(255)))
 	exit(0)

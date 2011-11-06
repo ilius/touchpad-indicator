@@ -237,9 +237,9 @@ class TouchpadIndicator():
 
 		if self.the_watchdog == None:
 			self.the_watchdog = subprocess.Popen(com.WATCHDOG)
-			if watchdog.is_mouse_plugged():
-				self.change_state_item.set_sensitive(False)
-				self.set_touch_enabled(False)
+		if watchdog.is_mouse_plugged():
+			self.change_state_item.set_sensitive(False)
+			self.set_touch_enabled(False)
 
 	def read_preferences(self):
 		self.preferences.read()

@@ -58,7 +58,7 @@ class Touchpad(object):
 		return search_touchpad(comp)
 		
 	def is_there_touchpad(self):
-		comp = ejecuta('xinput --list-props %s')
+		comp = ejecuta('xinput --list')
 		return search_touchpad(comp)
 		
 	'''		
@@ -110,6 +110,7 @@ class Touchpad(object):
 
 	def all_touchpad_enabled(self):
 		if not self.is_there_touchpad():
+			print 'como'
 			return False
 		for id in self.ids:
 			if self.is_touchpad_enabled(id) == False:
