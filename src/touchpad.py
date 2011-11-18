@@ -100,15 +100,20 @@ class Touchpad(object):
 		for id in self.ids:
 			self.set_touchpad_disabled(id)
 			time.sleep(1)
+		id=ejecuta('sudo rmmod psmouse')
 		return not self.all_touchpad_enabled()
 
 	def enable_all_touchpads(self):
 		for id in self.ids:
 			self.set_touchpad_enabled(id)
 			time.sleep(1)
+		ejecuta('sudo modprobe psmouse')
 		return self.all_touchpad_enabled()
 
 	def all_touchpad_enabled(self):
+                modules=ejecuta('lsmod')
+                if "psmouse" in modules:
+                        return True
 		if not self.is_there_touchpad():
 			print 'como'
 			return False
@@ -125,7 +130,7 @@ if __name__ == '__main__':
 		print ('El device %s es Touchpad %s')%(id,tp._is_touchpad(id))
 	tp.enable_all_touchpads()
 	print tp.all_touchpad_enabled()
-	#tp.disable_all_touchpads()
+	tp.disable_all_touchpads()
 	print tp.all_touchpad_enabled()
 	tp.enable_all_touchpads()
 	print tp.is_there_touchpad()
