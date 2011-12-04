@@ -32,7 +32,7 @@ except:
 
 FILEOUTPUT = os.path.join(os.environ['HOME'],'device_list.txt')
 
-def print_device_attrib(Device, fileoutput=None):
+	def print_device_attrib(Device, fileoutput=None):
 	print('------------------------------------------------------')
 	print(u'sys_name: ' + unicode(Device.sys_name))
 	for attrName, attrValue in Device.iteritems():
