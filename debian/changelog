@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.1.7-1ubuntu1) oneiric; urgency=low
+
+  * added bugfix for dell laptop which disables the psmouse kernel module when mouse is plugged in
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 04 Dec 2011 10:50:44 +0100
+
 touchpad-indicator (0.9.1.6-1ubuntu1) oneiric; urgency=low
 
   * Updated translations
