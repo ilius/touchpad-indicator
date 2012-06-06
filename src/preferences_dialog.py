@@ -26,9 +26,10 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
-from preferences import Preferences
+#from preferences import Preferences
+from configurator import Configuration, create_or_remove_autostart
+from gconfigurator import GConf
 import com
-
 import locale
 import gettext
 
@@ -38,11 +39,57 @@ gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
 
+
+gconfi = GConf()
+
+def set_key(key,value):
+	gconfi.set_key(key,value)
+
+def get_key(key,value=None):
+	try:
+		value = gconfi.get_key(key)
+	except ValueError:
+		gconfi.set_key(key,value)
+	return value
+
+def search_for_keys(chain):
+	keys=[]
+	for key in gconfi.get_all_keys(chain):
+		print get_key(key)
+		'''
+		if key.get_value().type == gconf.VALUE_STRING:
+			if (key.get_value().get_string().find('<Control>')!=-1) and (key.get_value().get_string().find('<Alt>')!=-1):
+				k=key.get_value().get_string()
+				k=k[k.rfind('>')+1:]
+				if len(k)==1:
+					keys.append(k)
+		'''
+	return keys
+
+def get_combination_keys():
+	keys=search_for_keys('/apps/compiz/general/allscreens/options')
+	keys+=search_for_keys('/apps/metacity/global_keybindings')
+	keys+=search_for_keys('/apps/metacity/window_keybindings')
+	for dire in gconfi.get_all_dirs('/desktop/gnome/keybindings'):
+		keys+=search_for_keys(dire)
+	return keys
+
+
+class Keybindings():
+	def __init__(self,combination_key,action):
+		self.combination_key = combination_key
+		self.action = action
+
+	def get_combination_key(self):
+		return self.combination_key
+	
+	def get_action(self):
+		return self.action	
+
 class PreferencesDialog(Gtk.Dialog):
 
 	def __init__(self):
 		#
-		self.preferences = Preferences()
 		Gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
 		self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
 		self.set_size_request(500, 230)
@@ -137,30 +184,42 @@ class PreferencesDialog(Gtk.Dialog):
 				keyval=Gdk.keyval_name(event.keyval)
 			self.entry11.set_text(keyval)
 			self.key = keyval
+			if keyval in get_combination_keys() and keyval!=self.key:
+				dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,type=gtk.MESSAGE_WARNING,buttons=gtk.BUTTONS_OK)
+				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
+				dialog.set_property('title', 'Error')
+				dialog.set_property('text', msg)
+				dialog.run()
+				dialog.destroy()
+				self.entry11.set_text(self.key)
+			else:
+				self.entry11.set_text(keyval)
+				self.key = keyval
 
 	def load_preferences(self):
-		self.preferences.read()
-		self.checkbutton1.set_active(self.preferences.autostart)
-		self.checkbutton2.set_active(self.preferences.on_mouse_plugged)
-		self.checkbutton3.set_active(self.preferences.enable_on_exit)
-		self.checkbutton4.set_active(self.preferences.enable_on_start)
-		self.checkbutton5.set_active(self.preferences.start_hidden)
-		self.checkbutton6.set_active(self.preferences.show_notifications)
-		key = self.preferences.shortcut
+		configuration = Configuration()
+		self.checkbutton1.set_active(configuration.get('autostart') == 'yes')
+		self.checkbutton2.set_active(configuration.get('on_mouse_plugged') == 'yes')
+		self.checkbutton3.set_active(configuration.get('enable_on_exit') == 'yes')
+		self.checkbutton4.set_active(configuration.get('enable_on_start') == 'yes')
+		self.checkbutton5.set_active(configuration.get('start_hidden') == 'yes')
+		self.checkbutton6.set_active(configuration.get('show_notifications') == 'yes')
+		key = configuration.get('shortcut')
 		if key.find('ctrl')>-1:
 			self.ctrl.set_active(True)
 		if key.find('alt')>-1:
 			self.alt.set_active(True)
 		self.entry11.set_text(key[-1:])
-		option = self.preferences.theme
-		if option == '0':
+		option = configuration.get('theme')
+		if option == 'normal':
 			self.radiobutton0.set_active(True)
-		elif option == '1':
+		elif option == 'light':
 			self.radiobutton1.set_active(True)
 		else:
 			self.radiobutton2.set_active(True)
 
 	def save_preferences(self):
+		configuration = Configuration()
 		key=''
 		if self.ctrl.get_active() == True:
 			key+='ctrl+'
@@ -168,21 +227,28 @@ class PreferencesDialog(Gtk.Dialog):
 			key+='alt+'
 		key += self.entry11.get_text()
 		key = key.lower().strip()
-		theme = '0'
-		if self.radiobutton1.get_active() == True:
-			theme = '1'
+		if self.radiobutton0.get_active() == True:
+			theme = 'normal'
+		elif self.radiobutton1.get_active() == True:
+			theme = 'light'
 		elif self.radiobutton2.get_active() == True:
-			theme = '2'
-		self.preferences.autostart = self.checkbutton1.get_active()
-		self.preferences.on_mouse_plugged = self.checkbutton2.get_active()
-		self.preferences.enable_on_exit = self.checkbutton3.get_active()
-		self.preferences.enable_on_start = self.checkbutton4.get_active()
-		self.preferences.start_hidden = self.checkbutton5.get_active()
-		self.preferences.show_notifications = self.checkbutton6.get_active()
-		self.preferences.shortcut = key
-		self.preferences.theme = theme
-		self.preferences.save()
-		
+			theme = 'dark'
+		self.save_option(configuration,'autostart',self.checkbutton1.get_active())
+		create_or_remove_autostart(self.checkbutton1.get_active())
+		self.save_option(configuration,'on_mouse_plugged',self.checkbutton2.get_active())
+		self.save_option(configuration,'enable_on_exit',self.checkbutton3.get_active())
+		self.save_option(configuration,'enable_on_start',self.checkbutton4.get_active())
+		self.save_option(configuration,'start_hidden',self.checkbutton5.get_active())
+		self.save_option(configuration,'show_notifications',self.checkbutton6.get_active())
+		configuration.set('shortcut',key)
+		configuration.set('theme',theme)
+		configuration.save()
+
+	def save_option(self,conf,option,value):
+		if value:
+			conf.set(option,'yes')
+		else:
+			conf.set(option,'no')
 if __name__ == "__main__":
 	cm = PreferencesDialog()
 	if 	cm.run() == Gtk.ResponseType.ACCEPT:

@@ -29,7 +29,7 @@ import os
 ######################################
 
 def is_package():
-    return __file__.find('src') < 0
+	return __file__.find('src') < 0
 
 ######################################
 
@@ -37,27 +37,36 @@ def is_package():
 VERSION = '0.9.1.7'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
+APPCONF = APP + '.conf'
 
 # check if running from source
+STATUS_ICON = {}
 if is_package():
-    ROOTDIR = '/usr/share/'
-    LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
-    APPDIR = os.path.join(ROOTDIR, APP)
-    IMGDIR = '/usr/share/pixmaps'
+	ROOTDIR = '/usr/share/'
+	LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
+	APPDIR = os.path.join(ROOTDIR, APP)
+	IMGDIR = '/usr/share/pixmaps'
+	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
+	STATUS_ICON['normal'] = ('touchpad-indicator-normal-enabled','touchpad-indicator-normal-disabled')
+	STATUS_ICON['light'] = ('touchpad-indicator-light-enabled','touchpad-indicator-light-disabled')
+	STATUS_ICON['dark'] = ('touchpad-indicator-dark-enabled','touchpad-indicator-dark-disabled')
 else:
-    VERSION = VERSION + '-src'
-    ROOTDIR = os.path.dirname(__file__)
-    LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
-    APPDIR = ROOTDIR
-    IMGDIR = os.path.join(APPDIR, '../data/icons')
+	VERSION = VERSION + '-src'
+	ROOTDIR = os.path.dirname(__file__)
+	LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
+	APPDIR = ROOTDIR
+	IMGDIR = os.path.normpath(os.path.join(APPDIR, '../data/icons'))
+	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
+	STATUS_ICON['normal'] = (os.path.join(IMGDIR,'touchpad-indicator-normal-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-normal-disabled.svg'))
+	STATUS_ICON['light'] = (os.path.join(IMGDIR,'touchpad-indicator-light-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-light-disabled.svg'))
+	STATUS_ICON['dark'] = (os.path.join(IMGDIR,'touchpad-indicator-dark-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-dark-disabled.svg'))
+
+
+CONFIG_DIR = os.path.join(os.path.expanduser('~'),'.config')
+CONFIG_APP_DIR = os.path.join(CONFIG_DIR, APP)
+CONFIG_FILE = os.path.join(CONFIG_APP_DIR, APPCONF)
 
 AUTOSTART_DIR = os.path.join(os.getenv('HOME'),'.config/autostart')
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.desktop')
-
-ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
-ICON_ENABLED = 'touchpad-indicator'
-ICON_DISABLED = 'touchpad-indicator-disabled'
-
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
-LISTENKBD = os.path.join(APPDIR, 'listenkbd.py')
-KEY = 'apps.indicators.touchpad-indicator'
+

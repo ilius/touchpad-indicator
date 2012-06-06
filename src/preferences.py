@@ -89,6 +89,8 @@ class Preferences():
 		self.theme = '0'
 		self.shortcut = 'ctrl+alt+f'
 		self.save()
+
+
 		
 if __name__ == "__main__":
 	pf = Preferences()

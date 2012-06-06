@@ -1,12 +1,12 @@
 #! /usr/bin/python
-# -*- coding: utf-8 -*-
+# -*- coding: iso-8859-1 -*-
+#
+__author__='Lorenzo Carbonell'
+__date__ ='$22/05/2012'
 #
 #
-# Configurator for access to gconf
-#
-# Copyright (C) 2010,2011
-# Miguel Angel Santamaría Rogado <leibag@gmail.com>
-# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Copyright (C) 2012 Lorenzo Carbonell
+# lorenzo.carbonell.cerezo@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,46 +23,107 @@
 #
 #
 #
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gio
-from gi.repository import GLib
-import types
 
-class Configurator():
-	def __init__(self,base_key):
-		print base_key
-		self.settings = Gio.Settings.new(base_key)
+import ConfigParser
+import com
+import os
+import shutil
 
-	def get(self,key):
-		casts = { 'b': GLib.Variant.get_boolean,
-				  'i': GLib.Variant.get_int16,
-				  'd': GLib.Variant.get_double,
-				  's': GLib.Variant.get_string}
+DEFAULTS = {
+			'autostart':'no',
+			'on_mouse_plugged':'no',
+			'enable_on_exit':'no',
+			'enable_on_start':'yes',
+			'start_hidden':'no',
+			'show_notifications':'yes',
+			'theme':'light',
+			'shortcut':'ctrl+alt+f'
+			}
+
+def check_autostart_dir():
+	if not os.path.exists(com.AUTOSTART_DIR):
+		os.makedirs(com.AUTOSTART_DIR)
+
+def create_or_remove_autostart(create):
+	check_autostart_dir()
+	if create == True:
+		if not os.path.exists(com.FILE_AUTO_START):
+			shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',com.FILE_AUTO_START)
+	else:
+		if os.path.exists(com.FILE_AUTO_START):
+			os.remove(com.FILE_AUTO_START)
+
+class Configuration(object):
+	
+	def __init__(self):
+		self.config = ConfigParser.RawConfigParser()
+		self.conf = DEFAULTS
+		if not os.path.exists(com.CONFIG_FILE):
+			self.create()
+			self.save()
+		self.read()
+	'''
+	####################################################################
+	Config Functions
+	####################################################################
+	'''
+		 
+	def _get(self,key):
 		try:
-			res = self.settings.get_value(key)
-			tip = res.get_type_string()
-			return casts[tip](res)
-		except AttributeError:
-			return None
-
-	def set(self,key,value):
-		casts = {types.BooleanType: Gio.Settings.set_boolean,
-				types.IntType:      Gio.Settings.set_int,
-				types.FloatType:    Gio.Settings.set_double,
-				types.StringType:   Gio.Settings.set_string,
-				types.UnicodeType:  Gio.Settings.set_string}
-		try:
-			if casts[type(value)](self.settings,key,value) == True:
-				self.settings.sync()
-				return True
-		except AttributeError:
-			pass
-		return False
+			value = self.config.get('Configuration',key)
+		except ConfigParser.NoOptionError:
+			value = DEFAULTS[key]
+		if value == 'None':
+			value = None
+		return value
 		
-if __name__ == '__main__':
-	configurator = Configurator('org.gwibber.preferences')
-	print configurator.get('autostart')
-	configurator.set('autostart',True)
-	print configurator.get('autostart')
-	exit(0)
+	def set(self, key, value):
+		if key in self.conf.keys():
+			self.conf[key] = value
+			return value
+		return None
+			
+	def get(self,key):
+		if key in self.conf.keys():
+			return self.conf[key]
+		return None
+
+	'''
+	####################################################################
+	Operations
+	####################################################################
+	'''
+	def read(self):
+		self.config.read(com.CONFIG_FILE)
+		for key in self.conf.keys():
+			self.conf[key] =  self._get(key)
+		
+
+	def create(self):
+		if not self.config.has_section('Configuration'):
+			self.config.add_section('Configuration')
+		self.set_defaults()
+	
+	def set_defaults(self):
+		self.conf = {}
+		for key in DEFAULTS.keys():
+			self.conf[key] = DEFAULTS[key]
+		self.password = ''
+
+	def save(self):
+		for key in self.conf.keys():
+			self.config.set('Configuration', key, self.conf[key])
+		if not os.path.exists(com.CONFIG_APP_DIR):
+			os.makedirs(com.CONFIG_APP_DIR)
+		self.config.write(open(com.CONFIG_FILE, 'w'))
+		
+
+if __name__=='__main__':
+	configuration = Configuration()
+	#configuration.set('password','armadillo')
+	#configuration.save()
+	print '############################################################'
+	print configuration.get('autostart')
+	print configuration.get('theme')
+	print configuration.set('theme','dark')
+	print configuration.get('theme')

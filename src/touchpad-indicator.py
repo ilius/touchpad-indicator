@@ -38,11 +38,11 @@ from dbus.mainloop.glib import DBusGMainLoop
 from optparse import OptionParser
 
 from touchpad import Touchpad
-from preferences import Preferences
+from configurator import Configuration
 from preferences_dialog import PreferencesDialog
 import com
 import watchdog
-import listenkbd
+#import listenkbd
 import machine_information
 
 import locale
@@ -113,16 +113,13 @@ class TouchpadIndicator():
 		self.active_icon = None
 		self.attention_icon = None
 		self.listenkbd = None
-
-		self.preferences = Preferences()
-
 		self.read_preferences()
 
 		self.indicator = appindicator.Indicator.new ('Touchpad-Indicator',\
 			self.active_icon, appindicator.IndicatorCategory.HARDWARE)
 		self.indicator.set_attention_icon(self.attention_icon)
 
-		if not self.preferences.start_hidden:
+		if not self.start_hidden:
 			self.indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
 
 		self.touchpad = Touchpad()
@@ -136,10 +133,8 @@ class TouchpadIndicator():
 			if self.indicator.get_status() != appindicator.IndicatorStatus.PASSIVE:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 
-		if self.preferences.on_mouse_plugged == True:
+		if self.on_mouse_plugged == True:
 			self.launch_watchdog()
-
-		self.listenkbd = subprocess.Popen(com.LISTENKBD)
 
 		self.indicator.set_menu(menu)
 	############ preferences related methods #################
@@ -147,16 +142,8 @@ class TouchpadIndicator():
 		"""Change the icon theme of the indicator.
 			If the theme selected is invalid set the "normal" theme.
 			:param theme: the index of the selected theme."""
-
-		icons = (
-			('touchpad-indicator-normal-enabled', 'touchpad-indicator-normal-disabled'),
-			('touchpad-indicator-light-enabled', 'touchpad-indicator-light-disabled'),
-			('touchpad-indicator-dark-enabled', 'touchpad-indicator-dark-disabled'),
-			('touchpad-enabled', 'touchpad-disabled'))
-		if theme > (len(icons) - 1):
-			theme = 0
-		self.active_icon = icons[theme][0]
-		self.attention_icon = icons[theme][1]
+		self.active_icon = com.STATUS_ICON[theme][0]
+		self.attention_icon = com.STATUS_ICON[theme][1]
 		self.indicator.set_icon(self.active_icon)
 		self.indicator.set_attention_icon(self.attention_icon)
 
@@ -179,11 +166,11 @@ class TouchpadIndicator():
 			:param enabled: If True enable the touchpads."""
 
 		if enabled and not self.touchpad.all_touchpad_enabled():
-			if self.preferences.show_notifications:
+			if self.show_notifications:
 				self.show_notification('enabled')
 			self.touchpad.enable_all_touchpads()
 		elif not enabled and self.touchpad.all_touchpad_enabled():
-			if self.preferences.show_notifications:
+			if self.show_notifications:
 				self.show_notification('disabled')
 			self.touchpad.disable_all_touchpads()
 		if self.touchpad.all_touchpad_enabled():
@@ -208,12 +195,12 @@ class TouchpadIndicator():
 		notification.show()
 
 	def on_mouse_detected_plugged(self):
-		if self.preferences.on_mouse_plugged:
+		if self.on_mouse_plugged:
 			self.change_state_item.set_sensitive(False)
 			self.set_touch_enabled(False)
 
 	def on_mouse_detected_unplugged(self):
-		if self.preferences.on_mouse_plugged and\
+		if self.on_mouse_plugged and\
 				not watchdog.is_mouse_plugged():
 			self.change_state_item.set_sensitive(True)
 			self.set_touch_enabled(True)
@@ -227,7 +214,7 @@ class TouchpadIndicator():
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 		
 	def change_state(self):
-		if not self.preferences.on_mouse_plugged or\
+		if not self.on_mouse_plugged or\
 				not watchdog.is_mouse_plugged():
 			is_touch_enabled = not self.touchpad.all_touchpad_enabled()
 			self.set_touch_enabled(is_touch_enabled)
@@ -242,26 +229,27 @@ class TouchpadIndicator():
 			self.set_touch_enabled(False)
 
 	def read_preferences(self):
-		self.preferences.read()
-		if self.preferences.theme == '0':
-			self.ICON = 'touchpad-indicator-normal'
-			self.active_icon = 'touchpad-indicator-normal-enabled'
-			self.attention_icon = 'touchpad-indicator-normal-disabled'
-		elif self.preferences.theme == '1':
-			self.ICON = 'touchpad-indicator-light'
-			self.active_icon = 'touchpad-indicator-light-enabled'
-			self.attention_icon = 'touchpad-indicator-light-disabled'
-		else:
-			self.ICON = 'touchpad-indicator-dark'
-			self.active_icon = 'touchpad-indicator-dark-enabled'
-			self.attention_icon = 'touchpad-indicator-dark-disabled'
-		if self.preferences.on_mouse_plugged == True:
+		configuration = Configuration()
+		self.autostart = (configuration.get('autostart')=='yes')
+		self.on_mouse_plugged = (configuration.get('on_mouse_plugged')=='yes')
+		self.enable_on_exit = (configuration.get('enable_on_exit')=='yes')
+		self.enable_on_start = (configuration.get('enable_on_start')=='yes')
+		self.start_hidden = (configuration.get('start_hidden')=='yes')
+		self.show_notifications = (configuration.get('show_notifications')=='yes')
+		self.theme = configuration.get('theme')
+		self.shortcut = configuration.get('shortcut')
+		self.autostart = (configuration.get('autostart')=='yes')
+		self.ICON = com.ICON
+		self.active_icon = com.STATUS_ICON[configuration.get('theme')][0]
+		self.attention_icon = com.STATUS_ICON[configuration.get('theme')][1]
+		if configuration.get('on_mouse_plugged') == 'yes':
 			if self.the_watchdog == None:
 				self.the_watchdog = subprocess.Popen(com.WATCHDOG)
 		else:
 			if self.the_watchdog != None:
 				self.the_watchdog.kill()
 				self.the_watchdog = None
+
 	################### menu creation ######################
 
 	def get_help_menu(self):
@@ -370,8 +358,6 @@ class TouchpadIndicator():
 	def on_quit_item(self, widget, data=None):
 		if self.the_watchdog != None:
 			self.the_watchdog.kill()
-		if self.listenkbd != None:
-			self.listenkbd.kill()
 		if self.preferences.enable_on_exit == True:
 			self.touchpad.enable_all_touchpads()
 		else:
@@ -411,14 +397,6 @@ def change_status():
 	change_state()
 
 if __name__ == "__main__":
-	####################################################################
-	print '#####################################################'
-	print machine_information.get_information()
-	print 'Touchpad-Indicator version: %s'%com.VERSION
-	print '#####################################################'
-	####################################################################
-	DBusGMainLoop(set_as_default=True)
-
 	usage_msg = _('usage: %prog [options]')
 	parser = OptionParser(usage=usage_msg, add_help_option=False)
 	parser.add_option('-h', '--help',
@@ -441,15 +419,15 @@ if __name__ == "__main__":
 			dest='list',
 			default=False,
 			help=_('list devices'))
-
 	(options, args) = parser.parse_args()
-
 	if options.help:
 		parser.print_help()
+		exit(0)
 	elif options.list:
 		device_list.list()
 		exit(0)
 
+	DBusGMainLoop(set_as_default=True)
 	# check if there is another touchpad-indicator
 	if dbus.SessionBus().request_name('es.atareao.touchpad_indicator_service')\
 					!= dbus.bus.REQUEST_NAME_REPLY_PRIMARY_OWNER:
@@ -457,11 +435,16 @@ if __name__ == "__main__":
 			change_status()
 		else: # show by default
 			make_visible()
-			exit(0)
 		exit(0)
 	else: # first!!!
+		####################################################################
+		print '#####################################################'
+		print machine_information.get_information()
+		print 'Touchpad-Indicator version: %s'%com.VERSION
+		print '#####################################################'
+		####################################################################	
 		Notify.init("touchpad-indicator")
 		tpi=TouchpadIndicator()
 		my_service = DBUSService(tpi)
 		Gtk.main()
-		exit(0)
+	exit(0)

@@ -1,0 +1,22 @@
+<gconfentryfile>
+  <entrylist base="/desktop/gnome/keybindings">
+    <entry>
+      <key>touchpad-indicator/action</key>
+      <value>
+        <string>miprueba</string>
+      </value>
+    </entry>
+    <entry>
+      <key>touchpad-indicator/binding</key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>touchpad-indicator/name</key>
+      <value>
+        <string>touchpad-indicator</string>
+      </value>
+    </entry>
+  </entrylist>
+</gconfentryfile>

@@ -32,14 +32,16 @@ except:
 
 FILEOUTPUT = os.path.join(os.environ['HOME'],'device_list.txt')
 
-	def print_device_attrib(Device, fileoutput=None):
+def print_device_attrib(Device, fileoutput=None):
 	print('------------------------------------------------------')
 	print(u'sys_name: ' + unicode(Device.sys_name))
+	print(u'sys_number: ' + unicode(Device.sys_number))
 	for attrName, attrValue in Device.iteritems():
 		print(attrName + ': ' + str(attrValue))
 	if fileoutput != None:
 		fileoutput.write('------------------------------------------------------\n')
 		fileoutput.write('sys_name: ' + Device.sys_name+'\n')
+		fileoutput.write('sys_number: ' + str(Device.sys_number)+'\n')
 		for attrName, attrValue in Device.iteritems():
 			fileoutput.write(attrName + ': ' + str(attrValue)+'\n')
 
@@ -57,6 +59,7 @@ def print_devices(kind, context, fileoutput=None):
 	print search
 	for device in devices_list:
 		print('device: ' + device.sys_name)
+		print('device number: ' + str(device.sys_number))
 		try:
 			print('parent name: ' + device.parent['NAME'])
 			print('parent attributes:')
@@ -71,6 +74,7 @@ def print_devices(kind, context, fileoutput=None):
 		fileoutput.write(search+'\n')
 		for device in devices_list:
 			fileoutput.write('device: ' + device.sys_name+'\n')
+			fileoutput.write('device number: ' + str(device.sys_number)+'\n')
 			try:
 				fileoutput.write('parent name: ' + device.parent['NAME']+'\n')
 				fileoutput.write('parent attributes:\n')
@@ -98,5 +102,5 @@ def list():
 
 if __name__ == "__main__":	
 	list()
-	print(unicode(chr(255)))
+	#print(unicode(chr(255)))
 	exit(0)
