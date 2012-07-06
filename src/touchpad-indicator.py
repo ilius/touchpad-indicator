@@ -53,7 +53,7 @@ locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(com.APP, com.LANGDIR)
 gettext.textdomain(com.APP)
 _ = gettext.gettext
-	
+
 def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
 	if text != None:
 		if icon == None:
@@ -69,7 +69,7 @@ def add2menu(menu, text = None, icon = None, conector_event = None, conector_act
 		else:
 			menu_item = Gtk.ImageMenuItem.new_from_stock(icon, None)
 			menu_item.set_always_show_image(True)
-	if conector_event != None and conector_action != None:				
+	if conector_event != None and conector_action != None:
 		menu_item.connect(conector_event,conector_action)
 	menu_item.show()
 	menu.append(menu_item)
@@ -99,9 +99,9 @@ class DBUSService(dbus.service.Object):
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
 	def unhide(self):
 		self.ind.unhide()
-	
+
 	@dbus.service.method('es.atareao.touchpad_indicator_service')
-	def get_shortcut(self):		
+	def get_shortcut(self):
 		return self.ind.get_shortcut()
 
 class TouchpadIndicator():
@@ -114,6 +114,7 @@ class TouchpadIndicator():
 		self.attention_icon = None
 		self.listenkbd = None
 		self.read_preferences()
+		self.notification = Notify.Notification.new('','', None)
 
 		self.indicator = appindicator.Indicator.new ('Touchpad-Indicator',\
 			self.active_icon, appindicator.IndicatorCategory.HARDWARE)
@@ -187,12 +188,12 @@ class TouchpadIndicator():
 		"""Show a notification of type kind"""
 
 		if kind == 'enabled':
-			notification = Notify.Notification.new('Touchpad-Indicator',
+			self.notification.update('Touchpad-Indicator',
 						_('Touchpad Enabled'), self.active_icon)
 		elif kind == 'disabled':
-			notification = Notify.Notification.new('Touchpad-Indicator',
+			self.notification.update('Touchpad-Indicator',
 						_('Touchpad Disabled'), self.attention_icon)
-		notification.show()
+		self.notification.show()
 
 	def on_mouse_detected_plugged(self):
 		if self.on_mouse_plugged:
@@ -212,7 +213,7 @@ class TouchpadIndicator():
 				self.indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
 			else:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
-		
+
 	def change_state(self):
 		if not self.on_mouse_plugged or\
 				not watchdog.is_mouse_plugged():
@@ -254,7 +255,7 @@ class TouchpadIndicator():
 
 	def get_help_menu(self):
 		help_menu =Gtk.Menu()
-		#		
+		#
 		add2menu(help_menu,text = _('Application Web...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://launchpad.net/touchpad-indicator'))
 		add2menu(help_menu,text = _('Get help online...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://answers.launchpad.net/touchpad-indicator'))
 		add2menu(help_menu,text = _('Translate this application...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://translations.launchpad.net/touchpad-indicator'))
@@ -282,7 +283,7 @@ class TouchpadIndicator():
 		#
 		menu.show()
 		return(menu)
-			
+
 	def get_about_dialog(self):
 		"""Create and populate the about dialog."""
 
@@ -442,7 +443,7 @@ if __name__ == "__main__":
 		print machine_information.get_information()
 		print 'Touchpad-Indicator version: %s'%com.VERSION
 		print '#####################################################'
-		####################################################################	
+		####################################################################
 		Notify.init("touchpad-indicator")
 		tpi=TouchpadIndicator()
 		my_service = DBUSService(tpi)
