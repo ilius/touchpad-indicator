@@ -45,6 +45,7 @@ if is_package():
 	ROOTDIR = '/usr/share/'
 	LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
 	APPDIR = os.path.join(ROOTDIR, APP)
+	GCONFXML = os.path.join(APPDIR,'touchpad-indicator.xml')
 	IMGDIR = '/usr/share/pixmaps'
 	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
 	STATUS_ICON['normal'] = ('touchpad-indicator-normal-enabled','touchpad-indicator-normal-disabled')
@@ -55,6 +56,7 @@ else:
 	ROOTDIR = os.path.dirname(__file__)
 	LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
 	APPDIR = ROOTDIR
+	GCONFXML = os.path.join(APPDIR,'touchpad-indicator.xml')
 	IMGDIR = os.path.normpath(os.path.join(APPDIR, '../data/icons'))
 	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
 	STATUS_ICON['normal'] = (os.path.join(IMGDIR,'touchpad-indicator-normal-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-normal-disabled.svg'))

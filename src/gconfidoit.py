@@ -9,49 +9,32 @@ Copyright: Copyright (C) 2009  Ernesto Nadir Crespo Avila <ecrespo@debianvenezue
 Author: Ernesto Nadir Crespo Avila
 Email: ecrespo@debianvenezuela.org
 """
-
+import com
 from commands import getstatusoutput
 
-print getstatusoutput('gconftool-2 -R /desktop/gnome/keybindings')
-print getstatusoutput('gconftool-2 -a /desktop/gnome/keybindings/touchpad-indicator')
-print getstatusoutput('gconftool-2 --set --type string /desktop/gnome/keybindings/touchpad-indicator/binding "<Primary><Alt>x"')
-print getstatusoutput('gconftool-2 -a /desktop/gnome/keybindings/touchpad-indicator')
-print getstatusoutput('gconftool-2 --set --type string /desktop/gnome/keybindings/touchpad-indicator/binding ""')
-print getstatusoutput('gconftool-2 -a /desktop/gnome/keybindings/touchpad-indicator')
-
-'''
-from commands import getstatusoutput
-def conf_escritorio():
-    usuarios = usuarios.get_users()
-    for usuario in usuarios:
-        ejecutar-root.ejecutar("cp -R ./conf/.*  /home/%s/" %usuario)
-        r = getstatusoutput("sudo -u %s gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_1 \"orca\"" %usuario)
-        if r[0] <> 0: print "Error al colocar el acceso rapido de orca"
-        r = getstatusoutput("sudo -u %s gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_1 \"<Super>o\" " %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_2 \"gnome-terminal\" " %usuario)
-        if r[0] <> 0: print "Error al colocar el acceso rapido del terminal"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_2 \"<Super>t'" " %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_3 \"oowriter\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_3 \"<Super>w\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_4 \"iceweasel\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_4 \"<Super>n\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_5 \"nautilus\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_5 \"<Super>h\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_6 \"ooimpress\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_6 \"<Super>i\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/keybinding_commands/command_7 \"pidgin\" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-        r = getstatusoutput("sudo -u tiflo gconftool-2 --set --type string /apps/metacity/global_keybindings/run_command_7 \"<Super>p\"" %usuario)
-        if r[0] <> 0: print "Error al cambiar los accesos rápidos en gnome"
-
- '''
+class GConfKeybinding():
+	def __init__(self):
+		pass
+		
+	def create_schema(self):
+		ans = getstatusoutput('gconftool-2 --load=%s'%com.GCONFXML)
+		return ans[0]==0
+	
+	def exits_keybinding(self):
+		ans = getstatusoutput('gconftool-2 -R /desktop/gnome/keybindings')
+		return ans[1].find('touchpad-indicator')>-1
+	
+	def set_shortcut(self,shortcut):
+		ans = getstatusoutput('gconftool-2 --type string --set /desktop/gnome/keybindings/touchpad-indicator/binding --set %s'%shortcut)
+		return ans[0]==0
+	
+	def get_shortcut(self):
+		ans = getstatusoutput('gconftool-2 --get /desktop/gnome/keybindings/touchpad-indicator/binding')
+		print ans
+		return ans[1]
+		
+if __name__ == '__main__':
+	gck = GConfKeybinding()
+	print gck.exits_keybinding()
+	print gck.create_schema()
+	print gck.get_shortcut()
