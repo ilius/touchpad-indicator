@@ -5,181 +5,152 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.9.1.0\n"
+"Project-Id-Version: touchpad-indicator 0.9.2.2\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2011-10-15 07:46+0200\n"
+"POT-Creation-Date: 2012-07-28 22:45+0200\n"
 "PO-Revision-Date: 2011-10-15 06:00+0000\n"
 "Last-Translator: Marek Tyburec <marek.tyburec@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-11-06 14:04+0000\n"
 "X-Generator: Launchpad (build 14231)\n"
-"Language: cs\n"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:46
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:288
-msgid "Preferences"
-msgstr "Nastavení"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:65
-msgid "Shortcut"
-msgstr "Klávesová zkratka"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:81
-msgid "Autostart"
-msgstr "Automatické spuštění"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:84
-msgid "Disable touchpad when mouse plugged"
-msgstr "Zakázat touchpad po zapojení myši"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:87
-msgid "Enable touchpad on exit"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:90
-msgid "Enable touchpad on start"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:93
-msgid "Start hidden"
-msgstr "Spustit minimalizovaný"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:96
-msgid "Show notifications"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:99
-msgid "Select icon theme"
-msgstr "Nastavit vzhled ikony"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:102
-msgid "Normal"
-msgstr "Normální"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:104
-msgid "Light"
-msgstr "Světlá"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:106
-msgid "Dark"
-msgstr "Tmavá"
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:132
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:189
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:129
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:170
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:283
 msgid "Disable Touchpad"
 msgstr "Zakázat touchpad"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:134
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:193
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:131
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:180
 msgid "Enable Touchpad"
 msgstr "Povolit touchpad"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:203
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:192
 msgid "Touchpad Enabled"
 msgstr "Touchpad povolen"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:206
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:195
 msgid "Touchpad Disabled"
 msgstr "Touchpad zakázán"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:270
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:268
 msgid "Application Web..."
 msgstr "Webová stránka aplikace..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:269
 msgid "Get help online..."
 msgstr "Získat pomoc online..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:272
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:270
 msgid "Translate this application..."
 msgstr "Přeložit tuto aplikaci..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:273
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:271
 msgid "Report a bug..."
 msgstr "Nahlásit chybu..."
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:275
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:273
 msgid "About"
 msgstr "O aplikaci"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:284
 msgid "Hide icon"
 msgstr "Skrýt ikonu"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:290
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:81
+msgid "Preferences"
+msgstr "Nastavení"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:288
 msgid "Help"
 msgstr "Nápoveda"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:293
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:291
 msgid "Exit"
 msgstr "Ukončit"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:305
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:303
 msgid "An indicator for the Touchpad"
 msgstr "Indikátor pro touchpad"
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:422
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:407
 msgid "usage: %prog [options]"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:428
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:413
 msgid "show this help and exit."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:433
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:418
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:438
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:423
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:51
-msgid "Esc "
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:428
+msgid "list devices"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:55
-msgid "Caps "
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:100
+msgid "Shortcut"
+msgstr "Klávesová zkratka"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:115
+msgid "Autostart"
+msgstr "Automatické spuštění"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:118
+msgid "Disable touchpad when mouse plugged"
+msgstr "Zakázat touchpad po zapojení myši"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:121
+msgid "Enable touchpad on exit"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:68
-msgid "Home "
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:125
+#, fuzzy
+msgid "Disable touchpad on exit"
+msgstr "Zakázat touchpad"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:129
+msgid "Start hidden"
+msgstr "Spustit minimalizovaný"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:132
+msgid "Show notifications"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:70
-msgid "PgUp "
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:135
+msgid "Select icon theme"
+msgstr "Nastavit vzhled ikony"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:138
+msgid "Normal"
+msgstr "Normální"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:140
+msgid "Light"
+msgstr "Světlá"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:142
+msgid "Dark"
+msgstr "Tmavá"
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:197
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:198
+msgid "This shortcut <Control> + <Alt> + "
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:73
-msgid "End "
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:75
-msgid "PgDn "
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:76
-msgid "Ins "
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:77
-msgid "Del "
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:321
-msgid "Ctrl+"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:323
-msgid "Alt+"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/listenkbd.py:325
-msgid "Super+"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:197
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:198
+msgid " is assigned"
 msgstr ""

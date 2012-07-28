@@ -35,5 +35,6 @@ if __name__ == '__main__':
 		check_status()
 		print('Touchpad-Indicator is working')
 	except dbus.exceptions.DBusException,argument:
+		print argument
 		print('Touchpad-Indicator is not working')
 	exit(0)

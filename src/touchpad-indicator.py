@@ -223,8 +223,8 @@ class TouchpadIndicator():
 	def check_status(self):
 		configuration = Configuration()
 		self.touchpad_enabled = configuration.get('touchpad_enabled')
-		if self.touchad_enabled != self.touchpad.are_all_touchpad_enabled():
-			self.set_touch_enabled(touchpad_enabled)
+		if self.touchpad_enabled != self.touchpad.are_all_touchpad_enabled():
+			self.set_touch_enabled(self.touchpad_enabled)
 
 	def launch_watchdog(self):
 		"""Call the watchdog and check if there was any mouse plugged."""
