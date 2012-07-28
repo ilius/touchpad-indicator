@@ -24,7 +24,7 @@
 #
 import os
 import machine_information
-import com
+import comun
 try:
 	import pyudev
 except:
@@ -88,7 +88,7 @@ def print_devices(kind, context, fileoutput=None):
 def header(fileoutput):
 	fileoutput.write('#####################################################\n')
 	fileoutput.write(machine_information.get_information())
-	fileoutput.write('Touchpad-Indicator version: %s\n'%com.VERSION)
+	fileoutput.write('Touchpad-Indicator version: %s\n'%comun.VERSION)
 	fileoutput.write('#####################################################\n')
 
 def list():

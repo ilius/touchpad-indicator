@@ -26,65 +26,53 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
-#from preferences import Preferences
-from configurator import Configuration, create_or_remove_autostart
-from gconfigurator import GConf
-import com
+from configurator import Configuration
+from gconfigurator import GConfManager
+import os
+import shutil
+import comun
 import locale
 import gettext
 
 
 locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain(com.APP, com.LANGDIR)
-gettext.textdomain(com.APP)
+gettext.bindtextdomain(comun.APP, comun.LANGDIR)
+gettext.textdomain(comun.APP)
 _ = gettext.gettext
 
+def check_autostart_dir():
+	if not os.path.exists(comun.AUTOSTART_DIR):
+		os.makedirs(comun.AUTOSTART_DIR)
 
-gconfi = GConf()
+def create_or_remove_autostart(create):
+	check_autostart_dir()
+	if create == True:
+		if not os.path.exists(comun.FILE_AUTO_START):
+			shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',comun.FILE_AUTO_START)
+	else:
+		if os.path.exists(comun.FILE_AUTO_START):
+			os.remove(comun.FILE_AUTO_START)
 
-def set_key(key,value):
-	gconfi.set_key(key,value)
-
-def get_key(key,value=None):
-	try:
-		value = gconfi.get_key(key)
-	except ValueError:
-		gconfi.set_key(key,value)
-	return value
-
-def search_for_keys(chain):
-	keys=[]
-	for key in gconfi.get_all_keys(chain):
-		print get_key(key)
-		'''
-		if key.get_value().type == gconf.VALUE_STRING:
-			if (key.get_value().get_string().find('<Control>')!=-1) and (key.get_value().get_string().find('<Alt>')!=-1):
-				k=key.get_value().get_string()
-				k=k[k.rfind('>')+1:]
-				if len(k)==1:
-					keys.append(k)
-		'''
-	return keys
-
-def get_combination_keys():
-	keys=search_for_keys('/apps/compiz/general/allscreens/options')
-	keys+=search_for_keys('/apps/metacity/global_keybindings')
-	keys+=search_for_keys('/apps/metacity/window_keybindings')
-	for dire in gconfi.get_all_dirs('/desktop/gnome/keybindings'):
-		keys+=search_for_keys(dire)
-	return keys
-
-
-class Keybindings():
-	def __init__(self,combination_key,action):
-		self.combination_key = combination_key
-		self.action = action
-
-	def get_combination_key(self):
-		return self.combination_key
-	
-	def get_action(self):
-		return self.action	
+def exist_touchpad_shortcut():
+	gcm = GConfManager()
+	for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
+		print directory
+def get_shortcuts():
+	gcm = GConfManager()
+	keys = []
+	keys+=gcm.get_keys('/apps/compiz/general/allscreens/options')
+	keys+=gcm.get_keys('/apps/metacity/global_keybindings')
+	keys+=gcm.get_keys('/apps/metacity/window_keybindings')
+	for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
+		for key in gcm.get_keys(directory):
+			if key.endswith('/binding'):
+				keys.append(key)
+	values = []
+	for key in keys:
+		value = gcm.get_value(key)
+		if value != 'disabled':
+			values.append(value)
+	return values
 
 class PreferencesDialog(Gtk.Dialog):
 
@@ -94,7 +82,7 @@ class PreferencesDialog(Gtk.Dialog):
 		self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
 		self.set_size_request(500, 230)
 		self.connect('close', self.close_application)
-		self.set_icon_from_file(com.ICON)
+		self.set_icon_from_file(comun.ICON)
 		#
 		self.vbox1 = Gtk.VBox(spacing = 5)
 		self.vbox1.set_border_width(5)
@@ -106,12 +94,11 @@ class PreferencesDialog(Gtk.Dialog):
 		self.vbox2 = Gtk.VBox(spacing = 5)
 		self.vbox2.set_border_width(5)
 		self.frame1.add(self.vbox2)
-		table1 = Gtk.Table(9,4,True)
+		table1 = Gtk.Table(9,5,True)
 		self.vbox2.add(table1)
 		#
-		self.label11 = Gtk.Label.new(_('Shortcut')+':')
-		self.label11.set_alignment(0,0.5)
-		table1.attach(self.label11,0,1,0,1)
+		self.checkbutton0 = Gtk.CheckButton.new_with_label(_('Shortcut'))
+		table1.attach(self.checkbutton0,0,1,0,1)
 		#
 		self.ctrl = Gtk.ToggleButton('Ctrl')
 		table1.attach(self.ctrl,1,2,0,1)
@@ -132,9 +119,11 @@ class PreferencesDialog(Gtk.Dialog):
 		table1.attach(self.checkbutton2,0,2,2,3)
 		#
 		self.checkbutton3 = Gtk.CheckButton.new_with_label(_('Enable touchpad on exit'))
+		self.checkbutton3.connect('clicked',self.on_checkbutton3_activate)
 		table1.attach(self.checkbutton3,0,2,3,4)
 		#
-		self.checkbutton4 = Gtk.CheckButton.new_with_label(_('Enable touchpad on start'))
+		self.checkbutton4 = Gtk.CheckButton.new_with_label(_('Disable touchpad on exit'))
+		self.checkbutton4.connect('clicked',self.on_checkbutton4_activate)
 		table1.attach(self.checkbutton4,0,2,4,5)
 		#
 		self.checkbutton5 = Gtk.CheckButton.new_with_label(_('Start hidden'))
@@ -160,7 +149,14 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		#
 		#
-		
+	def on_checkbutton3_activate(self,widget):
+		if self.checkbutton3.get_active() and self.checkbutton4.get_active():
+			self.checkbutton4.set_active(False)
+
+	def on_checkbutton4_activate(self,widget):
+		if self.checkbutton3.get_active() and self.checkbutton4.get_active():
+			self.checkbutton3.set_active(False)
+
 	def close_application(self, widget, event):
 		self.destroy()
 	
@@ -183,9 +179,22 @@ class PreferencesDialog(Gtk.Dialog):
 			else:
 				keyval=Gdk.keyval_name(event.keyval)
 			self.entry11.set_text(keyval)
-			self.key = keyval
-			if keyval in get_combination_keys() and keyval!=self.key:
-				dialog = gtk.MessageDialog(None,gtk.DIALOG_MODAL,type=gtk.MESSAGE_WARNING,buttons=gtk.BUTTONS_OK)
+			print keyval
+			print get_shortcuts()
+			key=''
+			if self.ctrl.get_active() == True:
+				key+='<Primary>'
+			if self.alt.get_active() == True:
+				key+='<Alt>'
+			key += self.entry11.get_text()
+			print key
+			print key in get_shortcuts()
+			if key in get_shortcuts() and keyval!=self.key:
+				dialog = Gtk.MessageDialog(	parent = self,
+										flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+										type = Gtk.MessageType.ERROR,
+										buttons = Gtk.ButtonsType.OK_CANCEL,
+										message_format = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned'))
 				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
 				dialog.set_property('title', 'Error')
 				dialog.set_property('text', msg)
@@ -198,18 +207,26 @@ class PreferencesDialog(Gtk.Dialog):
 
 	def load_preferences(self):
 		configuration = Configuration()
-		self.checkbutton1.set_active(configuration.get('autostart') == 'yes')
-		self.checkbutton2.set_active(configuration.get('on_mouse_plugged') == 'yes')
-		self.checkbutton3.set_active(configuration.get('enable_on_exit') == 'yes')
-		self.checkbutton4.set_active(configuration.get('enable_on_start') == 'yes')
-		self.checkbutton5.set_active(configuration.get('start_hidden') == 'yes')
-		self.checkbutton6.set_active(configuration.get('show_notifications') == 'yes')
+		first_time = configuration.get('first-time')
+		version = configuration.get('version')
+		if first_time or version != comun.VERSION:
+			configuration.set_defaults()
+			configuration.read()
+		self.checkbutton0.set_active(configuration.get('shortcut_enabled'))
+		self.checkbutton1.set_active(configuration.get('autostart'))
+		self.checkbutton2.set_active(configuration.get('on_mouse_plugged'))
+		self.checkbutton3.set_active(configuration.get('enable_on_exit'))
+		self.checkbutton4.set_active(configuration.get('disable_on_exit'))
+		self.checkbutton5.set_active(configuration.get('start_hidden'))
+		self.checkbutton6.set_active(configuration.get('show_notifications'))
 		key = configuration.get('shortcut')
-		if key.find('ctrl')>-1:
+		print key
+		if key.find('<Primary>')>-1:
 			self.ctrl.set_active(True)
-		if key.find('alt')>-1:
+		if key.find('<Alt>')>-1:
 			self.alt.set_active(True)
-		self.entry11.set_text(key[-1:])
+		self.key = key[-1:]
+		self.entry11.set_text(self.key)
 		option = configuration.get('theme')
 		if option == 'normal':
 			self.radiobutton0.set_active(True)
@@ -220,40 +237,45 @@ class PreferencesDialog(Gtk.Dialog):
 
 	def save_preferences(self):
 		configuration = Configuration()
+		configuration.set('first-time',False)
+		configuration.set('version',comun.VERSION)
 		key=''
 		if self.ctrl.get_active() == True:
-			key+='ctrl+'
+			key+='<Primary>'
 		if self.alt.get_active() == True:
-			key+='alt+'
-		key += self.entry11.get_text()
-		key = key.lower().strip()
+			key+='<Alt>'
+		key += self.entry11.get_text()		
 		if self.radiobutton0.get_active() == True:
 			theme = 'normal'
 		elif self.radiobutton1.get_active() == True:
 			theme = 'light'
 		elif self.radiobutton2.get_active() == True:
 			theme = 'dark'
-		self.save_option(configuration,'autostart',self.checkbutton1.get_active())
+		configuration.set('shortcut_enabled',self.checkbutton0.get_active())
+		configuration.set('autostart',self.checkbutton1.get_active())
 		create_or_remove_autostart(self.checkbutton1.get_active())
-		self.save_option(configuration,'on_mouse_plugged',self.checkbutton2.get_active())
-		self.save_option(configuration,'enable_on_exit',self.checkbutton3.get_active())
-		self.save_option(configuration,'enable_on_start',self.checkbutton4.get_active())
-		self.save_option(configuration,'start_hidden',self.checkbutton5.get_active())
-		self.save_option(configuration,'show_notifications',self.checkbutton6.get_active())
+		configuration.set('on_mouse_plugged',self.checkbutton2.get_active())
+		configuration.set('enable_on_exit',self.checkbutton3.get_active())
+		configuration.set('disable_on_exit',self.checkbutton4.get_active())
+		configuration.set('start_hidden',self.checkbutton5.get_active())
+		configuration.set('show_notifications',self.checkbutton6.get_active())
 		configuration.set('shortcut',key)
 		configuration.set('theme',theme)
 		configuration.save()
-
-	def save_option(self,conf,option,value):
-		if value:
-			conf.set(option,'yes')
+		gcm = GConfManager()
+		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
+		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
+		if self.checkbutton0.get_active():
+			shortcut = key
 		else:
-			conf.set(option,'no')
+			shortcut = ''
+		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
+		
+
 if __name__ == "__main__":
 	cm = PreferencesDialog()
 	if 	cm.run() == Gtk.ResponseType.ACCEPT:
 			cm.close_ok()
 	cm.hide()
 	cm.destroy()
-
 	exit(0)

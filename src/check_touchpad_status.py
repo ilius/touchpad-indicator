@@ -1,10 +1,10 @@
-#! /usr/bin/python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 __author__='atareao'
 __date__ ='$21/11/2010'
 #
-# Change state of Touchpad-Indicator
+# Check touchpad status of Touchpad-Indicator
 #
 # Copyright (C) 2010 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
@@ -31,8 +31,8 @@ bus = dbus.SessionBus()
 if __name__ == '__main__':
 	try:
 		touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')
-		change_state = touchpad_indicator_service.get_dbus_method('change_state', 'es.atareao.touchpad_indicator_service')
-		change_state()
+		check_status = touchpad_indicator_service.get_dbus_method('check_status', 'es.atareao.touchpad_indicator_service')
+		check_status()
 		print('Touchpad-Indicator is working')
 	except dbus.exceptions.DBusException,argument:
 		print('Touchpad-Indicator is not working')

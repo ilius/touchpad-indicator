@@ -25,6 +25,7 @@
 #
 
 import os
+import shutil
 
 ######################################
 
@@ -34,10 +35,27 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.1.7'
+VERSION = '0.9.2.0'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
+
+
+PARAMS = {
+			'first-time':True,
+			'version':'',
+			'shortcut_enabled':False,
+			'autostart':False,
+			'on_mouse_plugged':False,
+			'enable_on_exit':False,
+			'disable_on_exit':False,
+			'start_hidden':False,
+			'show_notifications':True,
+			'theme':'light',
+			'touchpad_enabled':True,
+			'shortcut':'<Control><Alt>f'
+			}
+
 
 # check if running from source
 STATUS_ICON = {}

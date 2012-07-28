@@ -1,12 +1,11 @@
-#! /usr/bin/python
-# -*- coding: iso-8859-1 -*-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
-__author__="atareao"
-__date__ ="$19-feb-2011$"
+__author__="Lorenzo Carbonell"
+__date__ ="$28-jul-2012$"
 #
-# Configurator for access to gconf
 #
-# Copyright (C) 2011 Lorenzo Carbonell
+# Copyright (C) 2012 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
@@ -24,40 +23,104 @@ __date__ ="$19-feb-2011$"
 #
 #
 #
-import gconf
+import exceptions
 import types
+from gi.repository import GConf
 
-class GConf():
+CASTSFROM = {GConf.ValueType.BOOL:   GConf.Value.get_bool,
+GConf.ValueType.INT:    GConf.Value.get_int,
+GConf.ValueType.FLOAT:  GConf.Value.get_float,
+GConf.ValueType.STRING: GConf.Value.get_string,
+GConf.ValueType.LIST:   GConf.Value.get_list}	
+
+CASTSTO = {types.BooleanType: GConf.Client.set_bool,
+types.IntType:     GConf.Client.set_int,
+types.FloatType:   GConf.Client.set_float,
+types.StringType:  GConf.Client.set_string}
+'''
+types.ListType:    GConf.Client.set_list,
+types.TupleType:   GConf.Client.set_list,
+set:               GConf.Client.set_list}
+'''
+
+class GConfManager(object):
 	def __init__(self):
-		self.client = gconf.client_get_default()
+		self.client = GConf.Client.get_default()
 
-	def set_key(self,key,value):
-		casts = {types.BooleanType: gconf.Client.set_bool,
-                 types.IntType:     gconf.Client.set_int,
-                 types.FloatType:   gconf.Client.set_float,
-                 types.StringType:  gconf.Client.set_string}
-		casts[type(value)](self.client,key, value)		
+	def get_keys(self,key):
+		keys = []
+		for entry in self.client.all_entries(key):
+			keys.append(entry.key)
+		return keys
 
-	def get_key(self,key):
-		try:
-			casts = {gconf.VALUE_BOOL:   gconf.Value.get_bool,
-					 gconf.VALUE_INT:    gconf.Value.get_int,
-					 gconf.VALUE_FLOAT:  gconf.Value.get_float,
-					 gconf.VALUE_STRING: gconf.Value.get_string}		
-			value = self.client.get(key)
-			return casts[value.type](value)
-		except AttributeError:
-			raise ValueError
+	def get_dirs(self,key):
+		directories = []
+		for directory in self.client.all_dirs(key):
+			 directories.append(directory)
+		return directories
+	def add_directory(self,key,directory):
+		if not key.endswith('/'):
+			key += '/'+directory
+		else:
+			key += directory
+		self.set_value(key,'')
+		
+	def has_dirs(self,key):
+		return len(self.client.all_dirs(key))>0
+		
+	def get_dirs_recursive(self,key):
+		directories = []
+		for directory in self.client.all_dirs(key):
+			 directories.append(directory)			 
+			 if self.has_dirs(directory):
+				 directories+=self.get_dirs_recursive(directory)
+		return directories
+		
+	def get_keys_recursive(self,key):		
+		keys = []
+		for directory in self.get_dirs_recursive(key):
+			keys+=self.get_keys_recursive(directory)
+		return keys
+		
+	def get_value(self,key):
+		gval = self.client.get(key)
+		if gval == None:
+			return None
+		if gval.type == GConf.ValueType.LIST:
+			string_list = [item.get_string() for item in gval.get_list()]
+			return string_list
+		else:
+			return CASTSFROM[gval.type](gval)
+			
+	def set_value(self,key,value):
+		if type(value) in (list, tuple, set):
+			string_value = [str(item) for item in value]
+			CASTSTO[type(value)](self.client, key,
+				GConf.ValueType.STRING, string_value)
+		else:
+			CASTSTO[type(value)](self.client, key, 
+				value)
 
+if __name__ == '__main__':
+	def get_shortcuts():		
+		gcm = GConfManager()
+		keys = []
+		keys+=gcm.get_keys('/apps/compiz/general/allscreens/options')
+		keys+=gcm.get_keys('/apps/metacity/global_keybindings')
+		keys+=gcm.get_keys('/apps/metacity/window_keybindings')
+		for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
+			for key in gcm.get_keys(directory):
+				if key.endswith('/binding'):
+					keys.append(key)
+		values = []
+		for key in keys:
+			value = gcm.get_value(key)
+			if value != 'disabled':
+				values.append(value)
+		return values
+	print get_shortcuts()
+	gcm = GConfManager()
+	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','')
+	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding','')
+	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','')
 
-	def set_string_list(self,key,values):
-		self.client.set_list(key,gconf.VALUE_STRING,values)
-	
-	def get_string_list(self,key):
-		return self.client.get_list(key,gconf.VALUE_STRING)
-
-	def get_all_keys(self,folder):
-		return self.client.all_entries(folder)
-
-	def get_all_dirs(self,folder):
-		return self.client.all_dirs(folder)

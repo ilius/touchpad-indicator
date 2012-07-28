@@ -24,106 +24,46 @@ __date__ ='$22/05/2012'
 #
 #
 
-import ConfigParser
-import com
+import codecs
 import os
-import shutil
+import json
 
-DEFAULTS = {
-			'autostart':'no',
-			'on_mouse_plugged':'no',
-			'enable_on_exit':'no',
-			'enable_on_start':'yes',
-			'start_hidden':'no',
-			'show_notifications':'yes',
-			'theme':'light',
-			'shortcut':'ctrl+alt+f'
-			}
-
-def check_autostart_dir():
-	if not os.path.exists(com.AUTOSTART_DIR):
-		os.makedirs(com.AUTOSTART_DIR)
-
-def create_or_remove_autostart(create):
-	check_autostart_dir()
-	if create == True:
-		if not os.path.exists(com.FILE_AUTO_START):
-			shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',com.FILE_AUTO_START)
-	else:
-		if os.path.exists(com.FILE_AUTO_START):
-			os.remove(com.FILE_AUTO_START)
+import comun
 
 class Configuration(object):
-	
 	def __init__(self):
-		self.config = ConfigParser.RawConfigParser()
-		self.conf = DEFAULTS
-		if not os.path.exists(com.CONFIG_FILE):
-			self.create()
-			self.save()
+		self.params = comun.PARAMS
 		self.read()
-	'''
-	####################################################################
-	Config Functions
-	####################################################################
-	'''
-		 
-	def _get(self,key):
-		try:
-			value = self.config.get('Configuration',key)
-		except ConfigParser.NoOptionError:
-			value = DEFAULTS[key]
-		if value == 'None':
-			value = None
-		return value
-		
-	def set(self, key, value):
-		if key in self.conf.keys():
-			self.conf[key] = value
-			return value
-		return None
-			
+	
 	def get(self,key):
-		if key in self.conf.keys():
-			return self.conf[key]
-		return None
-
-	'''
-	####################################################################
-	Operations
-	####################################################################
-	'''
-	def read(self):
-		self.config.read(com.CONFIG_FILE)
-		for key in self.conf.keys():
-			self.conf[key] =  self._get(key)
+		try:
+			return self.params[key]
+		except KeyError:
+			self.params[key] = comun.PARAMS[key]
+			return self.params[key]
 		
-
-	def create(self):
-		if not self.config.has_section('Configuration'):
-			self.config.add_section('Configuration')
-		self.set_defaults()
+	def set(self,key,value):
+		self.params[key] = value
 	
 	def set_defaults(self):
-		self.conf = {}
-		for key in DEFAULTS.keys():
-			self.conf[key] = DEFAULTS[key]
-		self.password = ''
+		self.params = comun.PARAMS
+		self.save()
+	
+	def read(self):		
+		try:
+			f=codecs.open(comun.CONFIG_FILE,'r','utf-8')
+		except IOError:
+			self.save()
+			f=codecs.open(comun.CONFIG_FILE,'r','utf-8')
+		try:
+			self.params = json.loads(f.read())
+		except ValueError:
+			self.save()
+		f.close()
 
 	def save(self):
-		for key in self.conf.keys():
-			self.config.set('Configuration', key, self.conf[key])
-		if not os.path.exists(com.CONFIG_APP_DIR):
-			os.makedirs(com.CONFIG_APP_DIR)
-		self.config.write(open(com.CONFIG_FILE, 'w'))
-		
-
-if __name__=='__main__':
-	configuration = Configuration()
-	#configuration.set('password','armadillo')
-	#configuration.save()
-	print '############################################################'
-	print configuration.get('autostart')
-	print configuration.get('theme')
-	print configuration.set('theme','dark')
-	print configuration.get('theme')
+		if not os.path.exists(comun.CONFIG_APP_DIR):
+			os.makedirs(comun.CONFIG_APP_DIR)
+		f=codecs.open(comun.CONFIG_FILE,'w','utf-8')
+		f.write(json.dumps(self.params,encoding ='utf-8'))
+		f.close()

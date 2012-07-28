@@ -24,7 +24,7 @@
 #
 import shlex, subprocess
 import time
-import com
+import comun
 
 TOUCHPADS = ['touchpad','glidepoint','fingersensingpad','bcm5974']
 
@@ -43,8 +43,8 @@ def search_touchpad(where):
 
 class Touchpad(object):
 	def __init__(self):
-		self.ids = self._get_ids()
-	
+		pass
+		
 	def _get_all_ids(self):
 		ids = []
 		lines = ejecuta('xinput --list')
@@ -61,17 +61,6 @@ class Touchpad(object):
 		comp = ejecuta('xinput --list')
 		return search_touchpad(comp)
 		
-	'''		
-	def _get_ids(self):
-		ids = []
-		lines = ejecuta('xinput list')
-		for line in lines.split('\n'):
-			if line.lower().find('touchpad')!=-1:
-				ids.append(int(line.split('=')[1].split('[')[0].strip()))
-			if line.lower().find('glidepoint')!=-1:
-				ids.append(int(line.split('=')[1].split('[')[0].strip()))
-		return ids
-	'''
 	def _get_ids(self):
 		ids = []
 		for id in self._get_all_ids():
@@ -79,14 +68,11 @@ class Touchpad(object):
 				ids.append(id)
 		return ids
 	
-	
 	def set_touchpad_enabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 1')%id)		
 	
 	def set_touchpad_disabled(self,id):
 		ejecuta(('xinput set-prop %s "Device Enabled" 0')%id)
-		#gconfi = GConf()
-		#gconfi.set_key('/desktop/gnome/peripherals/touchpad/touchpad_enabled',False)		
 
 	def is_touchpad_enabled(self,id):
 		lines = ejecuta('xinput --list-props %s'%id)
@@ -97,40 +83,32 @@ class Touchpad(object):
 		return False
 
 	def disable_all_touchpads(self):
-		for id in self.ids:
+		for id in self._get_ids():
 			self.set_touchpad_disabled(id)
 			time.sleep(1)
-		id=ejecuta('sudo rmmod psmouse')
-		return not self.all_touchpad_enabled()
+		return not self.are_all_touchpad_enabled()
 
 	def enable_all_touchpads(self):
-		for id in self.ids:
+		for id in self._get_ids():
 			self.set_touchpad_enabled(id)
 			time.sleep(1)
-		ejecuta('sudo modprobe psmouse')
-		return self.all_touchpad_enabled()
+		return self.are_all_touchpad_enabled()
 
-	def all_touchpad_enabled(self):
-                modules=ejecuta('lsmod')
-                if "psmouse" in modules:
-                        return True
-		if not self.is_there_touchpad():
-			print 'como'
-			return False
-		for id in self.ids:
-			if self.is_touchpad_enabled(id) == False:
-				return False
-		return True
+	def are_all_touchpad_enabled(self):
+		ids = self._get_ids()
+		if len(ids) > 0:
+			for id in ids:
+				print id
+				print self.is_touchpad_enabled(id)
+				if not self.is_touchpad_enabled(id):
+					return False
+			return True
+		return False
 		
 
 if __name__ == '__main__':
 	tp = Touchpad()
-	for id in tp._get_all_ids():
-		print id
-		print ('El device %s es Touchpad %s')%(id,tp._is_touchpad(id))
-	tp.enable_all_touchpads()
-	print tp.all_touchpad_enabled()
-	tp.disable_all_touchpads()
-	print tp.all_touchpad_enabled()
-	tp.enable_all_touchpads()
-	print tp.is_there_touchpad()
+	print tp.are_all_touchpad_enabled()
+	print tp.disable_all_touchpads()
+	print tp.enable_all_touchpads()
+	exit(0)
