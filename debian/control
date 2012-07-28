@@ -9,11 +9,11 @@ Homepage: http://www.atareao.es
 Package: touchpad-indicator
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
-	gir1.2-gtk,
-	gir1.2-gdkpixbuf,
-	gir1.2-appindicator3,
-	gir1.2-notify,
-	gir1.2-gconf,
+	gir1.2-gtk-3.0,
+	gir1.2-gdkpixbuf-2.0,
+	gir1.2-appindicator3-0.1,
+	gir1.2-notify-0.7,
+	gir1.2-gconf-2.0,
 	python-pyudev,		
 	python-dbus
 Description: Indicator for the Touchpad
