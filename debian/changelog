@@ -1,3 +1,10 @@
+touchpad-indicator (0.9.2.6-1ubuntu1) precise; urgency=low
+
+  * Enable and disable touchpad with shortcut
+  * Added support to Gnome and Xfce
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 29 Jul 2012 11:47:36 +0200
+
 touchpad-indicator (0.9.2.5-1ubuntu1) precise; urgency=low
 
   * Minor changes

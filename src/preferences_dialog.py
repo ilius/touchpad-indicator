@@ -28,6 +28,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from configurator import Configuration
 from gconfigurator import GConfManager
+from xconfigurator import xfconfquery_exists, XFCEConfiguration, get_desktop_environment
 import os
 import shutil
 import comun
@@ -57,6 +58,7 @@ def exist_touchpad_shortcut():
 	gcm = GConfManager()
 	for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
 		print directory
+		
 def get_shortcuts():
 	gcm = GConfManager()
 	keys = []
@@ -179,31 +181,29 @@ class PreferencesDialog(Gtk.Dialog):
 			else:
 				keyval=Gdk.keyval_name(event.keyval)
 			self.entry11.set_text(keyval)
-			print keyval
-			print get_shortcuts()
 			key=''
 			if self.ctrl.get_active() == True:
 				key+='<Primary>'
 			if self.alt.get_active() == True:
 				key+='<Alt>'
 			key += self.entry11.get_text()
-			print key
-			print key in get_shortcuts()
-			if key in get_shortcuts() and keyval!=self.key:
-				dialog = Gtk.MessageDialog(	parent = self,
-										flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
-										type = Gtk.MessageType.ERROR,
-										buttons = Gtk.ButtonsType.OK_CANCEL,
-										message_format = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned'))
-				msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
-				dialog.set_property('title', 'Error')
-				dialog.set_property('text', msg)
-				dialog.run()
-				dialog.destroy()
-				self.entry11.set_text(self.key)
-			else:
-				self.entry11.set_text(keyval)
-				self.key = keyval
+			desktop_environment = get_desktop_environment()
+			if desktop_environment == 'gnome':			
+				if key in get_shortcuts() and key!=self.key:
+					dialog = Gtk.MessageDialog(	parent = self,
+											flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+											type = Gtk.MessageType.ERROR,
+											buttons = Gtk.ButtonsType.OK_CANCEL,
+											message_format = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned'))
+					msg = _('This shortcut <Control> + <Alt> + ')+keyval+_(' is assigned')
+					dialog.set_property('title', 'Error')
+					dialog.set_property('text', msg)
+					dialog.run()
+					dialog.destroy()
+					self.entry11.set_text(self.key)
+				else:
+					self.entry11.set_text(keyval)
+					self.key = keyval
 
 	def load_preferences(self):
 		configuration = Configuration()
@@ -219,14 +219,12 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton4.set_active(configuration.get('disable_on_exit'))
 		self.checkbutton5.set_active(configuration.get('start_hidden'))
 		self.checkbutton6.set_active(configuration.get('show_notifications'))
-		key = configuration.get('shortcut')
-		print key
-		if key.find('<Primary>')>-1:
+		self.key = configuration.get('shortcut')
+		if self.key.find('<Primary>')>-1:
 			self.ctrl.set_active(True)
-		if key.find('<Alt>')>-1:
+		if self.key.find('<Alt>')>-1:
 			self.alt.set_active(True)
-		self.key = key[-1:]
-		self.entry11.set_text(self.key)
+		self.entry11.set_text(self.key[-1:])
 		option = configuration.get('theme')
 		if option == 'normal':
 			self.radiobutton0.set_active(True)
@@ -262,15 +260,30 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.set('shortcut',key)
 		configuration.set('theme',theme)
 		configuration.save()
-		gcm = GConfManager()
-		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
-		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
-		if self.checkbutton0.get_active():
-			shortcut = key
-		else:
-			shortcut = ''
-		gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
-		
+		if key != self.key:
+			desktop_environment = get_desktop_environment()
+			if desktop_environment == 'gnome':
+				gcm = GConfManager()
+				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
+				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
+				if self.checkbutton0.get_active():
+					shortcut = key
+				else:
+					shortcut = ''
+				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
+			elif desktop_environment == 'xfce':
+				if xfconfquery_exists():
+					xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
+					keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
+					print keys
+					if keys:
+						for akey in keys:
+							xfceconf.reset_property(akey['key'])
+					if self.checkbutton0.get_active():
+						key = key.replace('<Primary>','<Control>')
+						print key
+						print xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')
+			
 
 if __name__ == "__main__":
 	cm = PreferencesDialog()

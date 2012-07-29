@@ -25,6 +25,8 @@ __date__ ='$21/11/2010'
 #
 #
 import dbus
+from touchpad import Touchpad
+from configurator import Configuration
  
 bus = dbus.SessionBus()
 
@@ -36,4 +38,19 @@ if __name__ == '__main__':
 		print('Touchpad-Indicator is working')
 	except dbus.exceptions.DBusException,argument:
 		print('Touchpad-Indicator is not working')
+		touchpad = Touchpad()
+		status = touchpad.are_all_touchpad_enabled()
+		if status:
+			touchpad.disable_all_touchpads()
+		else:
+			touchpad.enable_all_touchpads()
+		newstatus = touchpad.are_all_touchpad_enabled()
+		if newstatus != status:
+			configuration = Configuration()
+			configuration.set('touchpad_enabled',newstatus)
+			configuration.save()
+		if newstatus:
+			print('Touchpad is enabled')
+		else:
+			print('Touchpad is disabled')		
 	exit(0)

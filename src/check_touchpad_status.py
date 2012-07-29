@@ -41,7 +41,7 @@ if __name__ == '__main__':
 					configuration.set('touchpad_enabled',self.touchpad.are_all_touchpad_enabled())
 					configuration.save()
 			else:
-				if self.touchpad.disable_all_touchpads():
+				if touchpad.disable_all_touchpads():
 					configuration.set('touchpad_enabled',self.touchpad.are_all_touchpad_enabled())
 					configuration.save()
 	else:
