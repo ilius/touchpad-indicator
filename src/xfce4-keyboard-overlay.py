@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 from gi.repository import Gtk, Gdk
 import cairo

@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # touchpad-indicator.py
@@ -124,20 +124,18 @@ class TouchpadIndicator():
 		self.touchpad = Touchpad()
 
 		menu = self.get_menu()
-
+		self.indicator.set_menu(menu)
+		
 		if self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_label(_('Disable Touchpad'))
 		else:
 			self.change_state_item.set_label(_('Enable Touchpad'))
 			if self.indicator.get_status() != appindicator.IndicatorStatus.PASSIVE:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
-
-		if self.on_mouse_plugged == True:
-			self.launch_watchdog()
+		
 		configuration = Configuration()
 		configuration.set('is_working',True)
-		configuration.save()
-		self.indicator.set_menu(menu)
+		configuration.save()		
 	############ preferences related methods #################
 	def theme_change(self, theme):
 		"""Change the icon theme of the indicator.
@@ -254,13 +252,8 @@ class TouchpadIndicator():
 		self.ICON = comun.ICON
 		self.active_icon = comun.STATUS_ICON[configuration.get('theme')][0]
 		self.attention_icon = comun.STATUS_ICON[configuration.get('theme')][1]
-		if configuration.get('on_mouse_plugged'):
-			if self.the_watchdog == None:
-				self.the_watchdog = subprocess.Popen(comun.WATCHDOG)
-		else:
-			if self.the_watchdog != None:
-				self.the_watchdog.kill()
-				self.the_watchdog = None
+		#
+		self.on_mouse_plugged_change(self.on_mouse_plugged)
 
 	################### menu creation ######################
 

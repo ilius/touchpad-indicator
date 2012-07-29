@@ -1,5 +1,5 @@
-#! /usr/bin/python
-# -*- coding: iso-8859-1 -*-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 __author__='Lorenzo Carbonell'
 __date__ ='$22/05/2012'
