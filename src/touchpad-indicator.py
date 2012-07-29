@@ -134,7 +134,9 @@ class TouchpadIndicator():
 
 		if self.on_mouse_plugged == True:
 			self.launch_watchdog()
-
+		configuration = Configuration()
+		configuration.set('is_working',True)
+		configuration.save()
 		self.indicator.set_menu(menu)
 	############ preferences related methods #################
 	def theme_change(self, theme):
@@ -369,6 +371,9 @@ class TouchpadIndicator():
 			self.touchpad.enable_all_touchpads()
 		if self.disable_on_exit:
 			self.touchpad.disable_all_touchpads()
+		configuration = Configuration()
+		configuration.set('is_working',False)
+		configuration.save()			
 		exit(0)
 
 	def on_about_item(self, widget, data=None):

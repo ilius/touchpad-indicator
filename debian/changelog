@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.2.4-1ubuntu1) precise; urgency=low
+
+  * Working with restart after sleeping
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 29 Jul 2012 08:31:47 +0200
+
 touchpad-indicator (0.9.2.3-1ubuntu1) precise; urgency=low
 
   * Fixed a bug with dependencies

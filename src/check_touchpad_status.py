@@ -24,11 +24,42 @@ __date__ ='$21/11/2010'
 #
 #
 #
-import dbus
- 
-bus = dbus.SessionBus()
+from touchpad import Touchpad
+from configurator import Configuration
+import time
 
 if __name__ == '__main__':
+	touchpad = Touchpad()
+	configuration = Configuration()
+	touchpad_enabled = configuration.get('touchpad_enabled')
+	touchpad_indicator_working = configuration.get('is_working')
+	if touchpad_indicator_working:
+		print('Touchpad-Indicator is working')
+		if touchpad_enabled != touchpad.are_all_touchpad_enabled():
+			if touchpad_enabled:
+				if touchpad.enable_all_touchpads():
+					configuration.set('touchpad_enabled',self.touchpad.are_all_touchpad_enabled())
+					configuration.save()
+			else:
+				if self.touchpad.disable_all_touchpads():
+					configuration.set('touchpad_enabled',self.touchpad.are_all_touchpad_enabled())
+					configuration.save()
+	else:
+		print('Touchpad-Indicator is not working')
+	if touchpad.are_all_touchpad_enabled():
+		print('Touchpad is enabled')
+	else:
+		print('Touchpad is disabled')
+
+	'''
+	error = True
+	time.sleep(1)
+	while error:
+		try:
+			bus = dbus.SessionBus()
+			error = False
+		except:
+			time.sleep(1)
 	try:
 		touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')
 		check_status = touchpad_indicator_service.get_dbus_method('check_status', 'es.atareao.touchpad_indicator_service')
@@ -37,4 +68,5 @@ if __name__ == '__main__':
 	except dbus.exceptions.DBusException,argument:
 		print argument
 		print('Touchpad-Indicator is not working')
+	'''
 	exit(0)

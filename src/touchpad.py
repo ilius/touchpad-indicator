@@ -98,8 +98,6 @@ class Touchpad(object):
 		ids = self._get_ids()
 		if len(ids) > 0:
 			for id in ids:
-				print id
-				print self.is_touchpad_enabled(id)
 				if not self.is_touchpad_enabled(id):
 					return False
 			return True

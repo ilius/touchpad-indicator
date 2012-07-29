@@ -35,7 +35,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.2.3'
+VERSION = '0.9.2.4'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -44,6 +44,7 @@ APPCONF = APP + '.conf'
 PARAMS = {
 			'first-time':True,
 			'version':'',
+			'is_working':False,
 			'shortcut_enabled':False,
 			'autostart':False,
 			'on_mouse_plugged':False,
