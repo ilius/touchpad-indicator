@@ -120,9 +120,11 @@ def watch():
 				if is_mouse(device):
 					try:
 						if action == "add":
-								on_mouse_detected_plugged()
+							on_mouse_detected_plugged()
+							check_status()
 						elif action == "remove":
-								on_mouse_detected_unplugged()
+							on_mouse_detected_unplugged()
+							check_status()
 					except:
 						print('watchdog: failed to comunicate.')
 						exit(0)

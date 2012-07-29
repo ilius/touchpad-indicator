@@ -196,13 +196,13 @@ class TouchpadIndicator():
 		self.notification.show()
 
 	def on_mouse_detected_plugged(self):
-		if self.on_mouse_plugged:
+		if self.on_mouse_plugged and self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_sensitive(False)
 			self.set_touch_enabled(False)
 
 	def on_mouse_detected_unplugged(self):
 		if self.on_mouse_plugged and\
-				not watchdog.is_mouse_plugged():
+				not watchdog.is_mouse_plugged() and not self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_sensitive(True)
 			self.set_touch_enabled(True)
 
