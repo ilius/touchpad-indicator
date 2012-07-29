@@ -132,7 +132,7 @@ class TouchpadIndicator():
 			self.change_state_item.set_label(_('Enable Touchpad'))
 			if self.indicator.get_status() != appindicator.IndicatorStatus.PASSIVE:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
-		
+		self.on_mouse_plugged_change(self.on_mouse_plugged)
 		configuration = Configuration()
 		configuration.set('is_working',True)
 		configuration.save()		
@@ -253,7 +253,6 @@ class TouchpadIndicator():
 		self.active_icon = comun.STATUS_ICON[configuration.get('theme')][0]
 		self.attention_icon = comun.STATUS_ICON[configuration.get('theme')][1]
 		#
-		self.on_mouse_plugged_change(self.on_mouse_plugged)
 
 	################### menu creation ######################
 
@@ -350,6 +349,7 @@ class TouchpadIndicator():
 		if 	preferences_dialog.run() == Gtk.ResponseType.ACCEPT:
 			preferences_dialog.close_ok()
 			self.read_preferences()
+			self.on_mouse_plugged_change(self.on_mouse_plugged)
 		preferences_dialog.hide()
 		preferences_dialog.destroy()
 		# we need to change the status icons

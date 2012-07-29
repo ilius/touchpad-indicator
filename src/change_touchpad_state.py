@@ -37,6 +37,7 @@ if __name__ == '__main__':
 		change_state()
 		print('Touchpad-Indicator is working')
 	except dbus.exceptions.DBusException,argument:
+		print argument
 		print('Touchpad-Indicator is not working')
 		touchpad = Touchpad()
 		status = touchpad.are_all_touchpad_enabled()
