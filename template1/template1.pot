@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2012-07-29 11:49+0200\n"
+"POT-Creation-Date: 2012-07-29 19:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:130
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:170
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:278
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:277
 msgid "Disable Touchpad"
 msgstr ""
 
@@ -36,44 +36,44 @@ msgstr ""
 msgid "Touchpad Disabled"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:263
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:262
 msgid "Application Web..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:264
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:263
 msgid "Get help online..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:265
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:264
 msgid "Translate this application..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:266
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:265
 msgid "Report a bug..."
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:268
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:267
 msgid "About"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:279
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:278
 msgid "Hide icon"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:281
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:83
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:280
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:84
 msgid "Preferences"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:283
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:282
 msgid "Help"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:286
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:285
 msgid "Exit"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:298
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:297
 msgid "An indicator for the Touchpad"
 msgstr ""
 
@@ -99,56 +99,60 @@ msgstr ""
 msgid "list devices"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:102
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:99
 msgid "Shortcut"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:117
-msgid "Autostart"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:105
+msgid "Shortcut enabled"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:120
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:126
+msgid "Actions"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad when mouse plugged"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:123
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:135
 msgid "Enable touchpad on exit"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:127
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:139
 msgid "Disable touchpad on exit"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:131
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:145
+msgid "General options"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:151
+msgid "Autostart"
+msgstr ""
+
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:154
 msgid "Start hidden"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:134
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:157
 msgid "Show notifications"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:137
-msgid "Select icon theme"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:162
+msgid "Theme"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:140
-msgid "Normal"
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:168
+msgid "Select theme"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:142
-msgid "Light"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:144
-msgid "Dark"
-msgstr ""
-
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:197
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:198
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:240
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:241
 msgid "This shortcut <Control> + <Alt> + "
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:197
-#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:198
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:240
+#: /home/atareao/Dropbox/tp/touchpad-indicator/src/preferences_dialog.py:241
 msgid " is assigned"
 msgstr ""

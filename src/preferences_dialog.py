@@ -25,6 +25,7 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+from gi.repository import Gio
 from gi.repository import Gdk
 from configurator import Configuration
 from gconfigurator import GConfManager
@@ -82,67 +83,101 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		Gtk.Dialog.__init__(self, 'Touchpad Indicator | '+_('Preferences'),None,Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
 		self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
-		self.set_size_request(500, 230)
+		#self.set_size_request(400, 230)
 		self.connect('close', self.close_application)
 		self.set_icon_from_file(comun.ICON)
 		#
-		self.vbox1 = Gtk.VBox(spacing = 5)
-		self.vbox1.set_border_width(5)
-		self.get_content_area().add(self.vbox1)
-		#
-		self.frame1 = Gtk.Frame()
-		self.vbox1.add(self.frame1)
+		vbox0 = Gtk.VBox(spacing = 5)
+		vbox0.set_border_width(5)
+		self.get_content_area().add(vbox0)
 		#***************************************************************
-		self.vbox2 = Gtk.VBox(spacing = 5)
-		self.vbox2.set_border_width(5)
-		self.frame1.add(self.vbox2)
-		table1 = Gtk.Table(9,5,True)
-		self.vbox2.add(table1)
-		#
-		self.checkbutton0 = Gtk.CheckButton.new_with_label(_('Shortcut'))
-		table1.attach(self.checkbutton0,0,1,0,1)
+		notebook = Gtk.Notebook.new()
+		vbox0.add(notebook)
+		#***************************************************************
+		vbox1 = Gtk.VBox(spacing = 5)
+		vbox1.set_border_width(5)
+		notebook.append_page(vbox1,Gtk.Label.new(_('Shortcut')))
+		frame1 = Gtk.Frame()
+		vbox1.pack_start(frame1,True,True,0)
+		table1 = Gtk.Table(2, 3, True)
+		frame1.add(table1)
+		#***************************************************************
+		label1 = Gtk.Label(_('Shortcut enabled'))
+		label1.set_alignment(0, 0.5)
+		table1.attach(label1,0,2,0,1, xpadding=5, ypadding=5)
+		self.checkbutton0 = Gtk.Switch()##self.checkbutton0 = Gtk.CheckButton.new_with_label(_('Shortcut'))
+		self.checkbutton0.connect('button-press-event',self.on_checkbutton0_clicked)
+		table1.attach(self.checkbutton0,2,3,0,1, xpadding=5, ypadding=5)
 		#
 		self.ctrl = Gtk.ToggleButton('Ctrl')
-		table1.attach(self.ctrl,1,2,0,1)
+		table1.attach(self.ctrl,0,1,1,2, xpadding=5, ypadding=5)
 		#
 		self.alt = Gtk.ToggleButton('Alt')
-		table1.attach(self.alt,2,3,0,1)
+		table1.attach(self.alt,1,2,1,2, xpadding=5, ypadding=5)
 		#
 		self.entry11 = Gtk.Entry()
 		self.entry11.set_editable(False)
 		self.entry11.set_width_chars(4)
 		self.entry11.connect('key-release-event',self.on_entry11_key_release_event)
-		table1.attach(self.entry11,3,4,0,1)
-		#
-		self.checkbutton1 = Gtk.CheckButton.new_with_label(_('Autostart'))
-		table1.attach(self.checkbutton1,0,2,1,2)
-		#
+		table1.attach(self.entry11,2,3,1,2, xpadding=5, ypadding=5)
+		#***************************************************************
+		vbox2 = Gtk.VBox(spacing = 5)
+		vbox2.set_border_width(5)
+		notebook.append_page(vbox2,Gtk.Label.new(_('Actions')))
+		frame2 = Gtk.Frame()
+		vbox2.pack_start(frame2,True,True,0)
+		table2 = Gtk.Table(3, 1, True)
+		frame2.add(table2)
+		#***************************************************************
 		self.checkbutton2 = Gtk.CheckButton.new_with_label(_('Disable touchpad when mouse plugged'))
-		table1.attach(self.checkbutton2,0,2,2,3)
+		table2.attach(self.checkbutton2,0,1,0,1, xpadding=5, ypadding=5)
 		#
 		self.checkbutton3 = Gtk.CheckButton.new_with_label(_('Enable touchpad on exit'))
 		self.checkbutton3.connect('clicked',self.on_checkbutton3_activate)
-		table1.attach(self.checkbutton3,0,2,3,4)
+		table2.attach(self.checkbutton3,0,1,1,2, xpadding=5, ypadding=5)
 		#
 		self.checkbutton4 = Gtk.CheckButton.new_with_label(_('Disable touchpad on exit'))
 		self.checkbutton4.connect('clicked',self.on_checkbutton4_activate)
-		table1.attach(self.checkbutton4,0,2,4,5)
+		table2.attach(self.checkbutton4,0,1,2,3, xpadding=5, ypadding=5)
+		#***************************************************************
+		vbox3 = Gtk.VBox(spacing = 5)
+		vbox3.set_border_width(5)
+		notebook.append_page(vbox3,Gtk.Label.new(_('General options')))
+		frame3 = Gtk.Frame()
+		vbox3.pack_start(frame3,True,True,0)
+		table3 = Gtk.Table(3, 1, True)
+		frame3.add(table3)
+		#***************************************************************
+		self.checkbutton1 = Gtk.CheckButton.new_with_label(_('Autostart'))
+		table3.attach(self.checkbutton1,0,1,0,1, xpadding=5, ypadding=5)
 		#
 		self.checkbutton5 = Gtk.CheckButton.new_with_label(_('Start hidden'))
-		table1.attach(self.checkbutton5,0,2,5,6)
+		table3.attach(self.checkbutton5,0,1,1,2, xpadding=5, ypadding=5)
 		#
 		self.checkbutton6 = Gtk.CheckButton.new_with_label(_('Show notifications'))
-		table1.attach(self.checkbutton6,0,2,6,7)
-		#
-		label1 = Gtk.Label.new(_('Select icon theme')+':')
-		label1.set_alignment(0,0.5)
-		table1.attach(label1,0,3,7,8)
-		self.radiobutton0 = Gtk.RadioButton.new_with_label_from_widget(None,_('Normal'))
-		table1.attach(self.radiobutton0,0,1,8,9)
-		self.radiobutton1 = Gtk.RadioButton.new_with_label_from_widget(self.radiobutton0,_('Light'))
-		table1.attach(self.radiobutton1,1,2,8,9)
-		self.radiobutton2 = Gtk.RadioButton.new_with_label_from_widget(self.radiobutton0,_('Dark'))
-		table1.attach(self.radiobutton2,2,3,8,9)
+		table3.attach(self.checkbutton6,0,1,2,3, xpadding=5, ypadding=5)
+		#***************************************************************
+		vbox4 = Gtk.VBox(spacing = 5)
+		vbox4.set_border_width(5)
+		notebook.append_page(vbox4,Gtk.Label.new(_('Theme')))
+		frame4 = Gtk.Frame()
+		vbox4.pack_start(frame4,True,True,0)
+		table4 = Gtk.Table(1, 3, True)
+		frame4.add(table4)
+		#***************************************************************
+		label4 = Gtk.Label(_('Select theme')+':')
+		label4.set_alignment(0, 0.5)
+		table4.attach(label4,0,1,0,1, xpadding=5, ypadding=5)
+		self.radiobutton1 = Gtk.RadioButton()
+		image1 = Gtk.Image()
+		image1.set_from_file('/usr/share/icons/hicolor/24x24/status/touchpad-indicator-light-enabled.svg')
+		self.radiobutton1.add(image1)		
+		table4.attach(self.radiobutton1,1,2,0,1, xpadding=5, ypadding=5)
+		self.radiobutton2 = Gtk.RadioButton(group=self.radiobutton1)
+		image2 = Gtk.Image()
+		image2.set_from_file('/usr/share/icons/hicolor/24x24/status/touchpad-indicator-dark-enabled.svg')
+		self.radiobutton2.add(image2)
+		table4.attach(self.radiobutton2,2,3,0,1, xpadding=5, ypadding=5)
 		#***************************************************************
 		#
 		self.load_preferences()
@@ -151,6 +186,14 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		#
 		#
+	def on_checkbutton0_clicked(self,widget,data):
+		self.set_shortcut_sensitive(not widget.get_active())
+			
+	def set_shortcut_sensitive(self,sensitive):
+		self.ctrl.set_sensitive(sensitive)
+		self.alt.set_sensitive(sensitive)
+		self.entry11.set_sensitive(sensitive)
+		
 	def on_checkbutton3_activate(self,widget):
 		if self.checkbutton3.get_active() and self.checkbutton4.get_active():
 			self.checkbutton4.set_active(False)
@@ -220,15 +263,15 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton5.set_active(configuration.get('start_hidden'))
 		self.checkbutton6.set_active(configuration.get('show_notifications'))
 		self.key = configuration.get('shortcut')
+		self.shortcut_enabled = configuration.get('shortcut_enabled')
 		if self.key.find('<Primary>')>-1:
 			self.ctrl.set_active(True)
 		if self.key.find('<Alt>')>-1:
 			self.alt.set_active(True)
 		self.entry11.set_text(self.key[-1:])
 		option = configuration.get('theme')
-		if option == 'normal':
-			self.radiobutton0.set_active(True)
-		elif option == 'light':
+		self.set_shortcut_sensitive(self.checkbutton0.get_active())		
+		if option == 'light':
 			self.radiobutton1.set_active(True)
 		else:
 			self.radiobutton2.set_active(True)
@@ -243,9 +286,7 @@ class PreferencesDialog(Gtk.Dialog):
 		if self.alt.get_active() == True:
 			key+='<Alt>'
 		key += self.entry11.get_text()		
-		if self.radiobutton0.get_active() == True:
-			theme = 'normal'
-		elif self.radiobutton1.get_active() == True:
+		if self.radiobutton1.get_active() == True:
 			theme = 'light'
 		elif self.radiobutton2.get_active() == True:
 			theme = 'dark'
@@ -260,7 +301,7 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.set('shortcut',key)
 		configuration.set('theme',theme)
 		configuration.save()
-		if key != self.key:
+		if key != self.key and self.checkbutton0.get_active() != self.shortcut_enabled:
 			desktop_environment = get_desktop_environment()
 			if desktop_environment == 'gnome':
 				gcm = GConfManager()
@@ -275,15 +316,12 @@ class PreferencesDialog(Gtk.Dialog):
 				if xfconfquery_exists():
 					xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
 					keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
-					print keys
 					if keys:
 						for akey in keys:
 							xfceconf.reset_property(akey['key'])
 					if self.checkbutton0.get_active():
 						key = key.replace('<Primary>','<Control>')
-						print key
-						print xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')
-			
+						xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')		
 
 if __name__ == "__main__":
 	cm = PreferencesDialog()

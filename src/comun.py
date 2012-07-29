@@ -4,7 +4,7 @@
 #
 # com.py
 #
-# Copyright (C) 2010,2011
+# Copyright (C) 2010,2011,2012
 # Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
 # Miguel Angel Santamaría Rogado <leibag@gmail.com>
 #
@@ -35,7 +35,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.2.10'
+VERSION = '0.9.3.0'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -48,13 +48,13 @@ PARAMS = {
 			'shortcut_enabled':False,
 			'autostart':False,
 			'on_mouse_plugged':False,
-			'enable_on_exit':False,
+			'enable_on_exit':True,
 			'disable_on_exit':False,
 			'start_hidden':False,
 			'show_notifications':True,
 			'theme':'light',
 			'touchpad_enabled':True,
-			'shortcut':'<Control><Alt>f'
+			'shortcut':'<Primary><Alt>t'
 			}
 
 

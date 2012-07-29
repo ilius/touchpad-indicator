@@ -1,3 +1,11 @@
+touchpad-indicator (0.9.3.0-1ubuntu1) precise; urgency=low
+
+  * Now works when come back from sleep
+  * Fixed bug with shortcut
+  * Improved preferences dialog
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 29 Jul 2012 19:10:27 +0200
+
 touchpad-indicator (0.9.2.10-1ubuntu1) precise; urgency=low
 
   * come back from sleep 3
