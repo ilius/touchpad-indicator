@@ -51,7 +51,8 @@ import device_list
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(comun.APP, comun.LANGDIR)
 gettext.textdomain(comun.APP)
-_ = gettext.gettext
+t = gettext.translation(comun.APP, 'locale')
+_ = t.ugettext
 
 def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
 	if text != None:

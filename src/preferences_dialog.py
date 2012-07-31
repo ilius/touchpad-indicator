@@ -40,7 +40,8 @@ import gettext
 locale.setlocale(locale.LC_ALL, '')
 gettext.bindtextdomain(comun.APP, comun.LANGDIR)
 gettext.textdomain(comun.APP)
-_ = gettext.gettext
+t = gettext.translation(comun.APP, 'locale')
+_ = t.ugettext
 
 def check_autostart_dir():
 	if not os.path.exists(comun.AUTOSTART_DIR):
