@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.3.2-1ubuntu1) precise; urgency=low
+
+  * Fixed a bug with AUTOSTART_DIR
+
+ -- lorenzo <lorenzo@aao>  Tue, 31 Jul 2012 15:32:25 +0200
+
 touchpad-indicator (0.9.3.1-1ubuntu1) precise; urgency=low
 
   * Fixed errors with UTF-8

@@ -35,7 +35,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.3.1'
+VERSION = '0.9.3.2'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -87,7 +87,7 @@ CONFIG_DIR = os.path.join(os.path.expanduser('~'),'.config')
 CONFIG_APP_DIR = os.path.join(CONFIG_DIR, APP)
 CONFIG_FILE = os.path.join(CONFIG_APP_DIR, APPCONF)
 
-AUTOSTART_DIR = os.path.join(os.getenv('HOME'),'.config/autostart')
+AUTOSTART_DIR = os.path.join(CONFIG_DIR,'autostart')
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.desktop')
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
 
