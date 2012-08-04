@@ -1,13 +1,14 @@
 [Desktop Entry]
-Name = Touchpad-Indicator
+_Name = Touchpad-Indicator
 Exec = /usr/bin/touchpad-indicator
-Comment = An indicator for the Touchpad
+_Comment = An indicator for the Touchpad
 Icon = /usr/share/pixmaps/touchpad-indicator.svg
 Type = Application
 Terminal = false
 StartupNotify = true
 Encoding = UTF-8
 Categories = Utility;
+X-Ubuntu-Gettext-Domain=touchpad-indicator
 Name[eu] = _('Touchpad-Indicator')
 Name[sr] = _('Touchpad-Indicator')
 Name[sv] = _('Touchpad-Indicator')
