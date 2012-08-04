@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.3.7-1ubuntu1) precise; urgency=low
+
+  * Fixed a bug with sources
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 04 Aug 2012 20:16:53 +0200
+
 touchpad-indicator (0.9.3.6-1ubuntu1) precise; urgency=low
 
   * Fixed a bug with sources
