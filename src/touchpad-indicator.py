@@ -260,7 +260,7 @@ class TouchpadIndicator():
 	def get_help_menu(self):
 		help_menu =Gtk.Menu()
 		#
-		add2menu(help_menu,text = _('Application Web...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://launchpad.net/touchpad-indicator'))
+		add2menu(help_menu,text = _('Homepage...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://launchpad.net/touchpad-indicator'))
 		add2menu(help_menu,text = _('Get help online...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://answers.launchpad.net/touchpad-indicator'))
 		add2menu(help_menu,text = _('Translate this application...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://translations.launchpad.net/touchpad-indicator'))
 		add2menu(help_menu,text = _('Report a bug...'),conector_event = 'activate',conector_action = lambda x: webbrowser.open('https://bugs.launchpad.net/touchpad-indicator'))

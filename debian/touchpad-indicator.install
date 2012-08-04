@@ -1,7 +1,0 @@
-bin/* /usr/bin
-src/* /usr/share/touchpad-indicator
-src/00_check_touchpad_status /etc/pm/sleep.d
-data/Touchpad-Indicator.desktop /usr/share/applications
-data/touchpad-indicator-autostart.desktop /usr/share/touchpad-indicator
-data/icons/*.svg /usr/share/icons/hicolor/24x24/status
-data/icons/touchpad-indicator.svg /usr/share/pixmaps

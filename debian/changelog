@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.3.3-1ubuntu1) precise; urgency=low
+
+  * Using distutils
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 04 Aug 2012 19:14:05 +0200
+
 touchpad-indicator (0.9.3.2-1ubuntu1) precise; urgency=low
 
   * Fixed a bug with AUTOSTART_DIR

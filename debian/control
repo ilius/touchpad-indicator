@@ -2,8 +2,8 @@ Source: touchpad-indicator
 Section: utils
 Priority: extra
 Maintainer: Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~), python-support, python (>=2.4)
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 8), python, python-distutils-extra, python-polib
+Standards-Version: 3.9.3
 Homepage: http://www.atareao.es
 
 Package: touchpad-indicator
@@ -16,4 +16,4 @@ Depends: ${misc:Depends}, ${python:Depends},
 	gir1.2-gconf-2.0,
 	python-pyudev,		
 	python-dbus
-Description: Indicator for the Touchpad
+Description: An indicator for the touchpad
