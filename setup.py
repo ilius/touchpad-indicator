@@ -42,7 +42,7 @@ COMPILED_LANGUAGE_FILE = '%s.mo'%APP
 DATA_FILES = [
 	('/usr/bin',glob.glob('bin/*')),
 	('/usr/share/touchpad-indicator',glob.glob('src/*')),
-	('/etc/pm/sleep.d','src/00_check_touchpad_status'),
+	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
 	('/usr/share/icons/hicolor/24x24/status',glob.glob('data/icons/*.svg')),
 	('/usr/share/pixmaps',['data/icons/touchpad-indicator.svg']),
 	('/usr/share/applications',['data/touchpad-indicator.desktop']),
