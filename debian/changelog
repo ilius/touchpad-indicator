@@ -1,3 +1,10 @@
+touchpad-indicator (0.9.3.9-1ubuntu1) precise; urgency=low
+
+  * Fixed bug #888333 Doesn't disable trackpad Inspiron N5110
+  * Fixed bug #939852 Not work correct with dell Vostro series n
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 05 Aug 2012 10:10:03 +0200
+
 touchpad-indicator (0.9.3.8-1ubuntu1) precise; urgency=low
 
   * Update desktop launcher

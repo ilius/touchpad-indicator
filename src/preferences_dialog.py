@@ -33,15 +33,7 @@ from xconfigurator import xfconfquery_exists, XFCEConfiguration, get_desktop_env
 import os
 import shutil
 import comun
-import locale
-import gettext
-
-
-locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain(comun.APP, comun.LANGDIR)
-gettext.textdomain(comun.APP)
-t = gettext.translation(comun.APP, 'locale')
-_ = t.ugettext
+from comun import _
 
 def check_autostart_dir():
 	if not os.path.exists(comun.AUTOSTART_DIR):
@@ -59,7 +51,7 @@ def create_or_remove_autostart(create):
 def exist_touchpad_shortcut():
 	gcm = GConfManager()
 	for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
-		print directory
+		print(directory)
 		
 def get_shortcuts():
 	gcm = GConfManager()
@@ -99,8 +91,8 @@ class PreferencesDialog(Gtk.Dialog):
 		vbox1.set_border_width(5)
 		notebook.append_page(vbox1,Gtk.Label.new(_('Shortcut')))
 		frame1 = Gtk.Frame()
-		vbox1.pack_start(frame1,True,True,0)
-		table1 = Gtk.Table(2, 3, True)
+		vbox1.pack_start(frame1,False,True,1)
+		table1 = Gtk.Table(2, 3, False)
 		frame1.add(table1)
 		#***************************************************************
 		label1 = Gtk.Label(_('Shortcut enabled'))
@@ -140,6 +132,9 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton4 = Gtk.CheckButton.new_with_label(_('Disable touchpad on exit'))
 		self.checkbutton4.connect('clicked',self.on_checkbutton4_activate)
 		table2.attach(self.checkbutton4,0,1,2,3, xpadding=5, ypadding=5)
+		#
+		self.checkbutton7 = Gtk.CheckButton.new_with_label(_('Disable touchpad when Touchpad-Indicator starts'))
+		table2.attach(self.checkbutton7,0,1,3,4, xpadding=5, ypadding=5)
 		#***************************************************************
 		vbox3 = Gtk.VBox(spacing = 5)
 		vbox3.set_border_width(5)
@@ -217,6 +212,7 @@ class PreferencesDialog(Gtk.Dialog):
 		self.save_preferences()
 
 	def on_entry11_key_release_event(self,widget,event):
+		actual_key = widget.get_text()
 		key=event.keyval
 		# numeros / letras mayusculas / letras minusculas
 		if ((key>47) and (key<58)) or ((key > 64) and (key < 91)) or ((key > 96) and (key < 123)):
@@ -244,7 +240,7 @@ class PreferencesDialog(Gtk.Dialog):
 					dialog.set_property('text', msg)
 					dialog.run()
 					dialog.destroy()
-					self.entry11.set_text(self.key)
+					self.entry11.set_text(actual_key)
 				else:
 					self.entry11.set_text(keyval)
 					self.key = keyval
@@ -263,6 +259,7 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton4.set_active(configuration.get('disable_on_exit'))
 		self.checkbutton5.set_active(configuration.get('start_hidden'))
 		self.checkbutton6.set_active(configuration.get('show_notifications'))
+		self.checkbutton7.set_active(configuration.get('disable_touchpad_on_start_indicator'))		
 		self.key = configuration.get('shortcut')
 		self.shortcut_enabled = configuration.get('shortcut_enabled')
 		if self.key.find('<Primary>')>-1:
@@ -299,30 +296,30 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.set('disable_on_exit',self.checkbutton4.get_active())
 		configuration.set('start_hidden',self.checkbutton5.get_active())
 		configuration.set('show_notifications',self.checkbutton6.get_active())
+		configuration.set('disable_touchpad_on_start_indicator',self.checkbutton7.get_active())
 		configuration.set('shortcut',key)
 		configuration.set('theme',theme)
 		configuration.save()
-		if key != self.key and self.checkbutton0.get_active() != self.shortcut_enabled:
-			desktop_environment = get_desktop_environment()
-			if desktop_environment == 'gnome':
-				gcm = GConfManager()
-				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
-				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
+		desktop_environment = get_desktop_environment()
+		if desktop_environment == 'gnome':
+			gcm = GConfManager()
+			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
+			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
+			if self.checkbutton0.get_active():
+				shortcut = key
+			else:
+				shortcut = ''
+			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
+		elif desktop_environment == 'xfce':
+			if xfconfquery_exists():
+				xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
+				keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
+				if keys:
+					for akey in keys:
+						xfceconf.reset_property(akey['key'])
 				if self.checkbutton0.get_active():
-					shortcut = key
-				else:
-					shortcut = ''
-				gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
-			elif desktop_environment == 'xfce':
-				if xfconfquery_exists():
-					xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
-					keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
-					if keys:
-						for akey in keys:
-							xfceconf.reset_property(akey['key'])
-					if self.checkbutton0.get_active():
-						key = key.replace('<Primary>','<Control>')
-						xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')		
+					key = key.replace('<Primary>','<Control>')
+					xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')		
 
 if __name__ == "__main__":
 	cm = PreferencesDialog()

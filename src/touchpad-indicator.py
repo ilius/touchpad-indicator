@@ -40,19 +40,12 @@ from optparse import OptionParser
 from touchpad import Touchpad
 from configurator import Configuration
 from preferences_dialog import PreferencesDialog
+from comun import _
 import comun
 import watchdog
 import machine_information
 
-import locale
-import gettext
 import device_list
-
-locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain(comun.APP, comun.LANGDIR)
-gettext.textdomain(comun.APP)
-t = gettext.translation(comun.APP, 'locale')
-_ = t.ugettext
 
 def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
 	if text != None:
@@ -134,6 +127,8 @@ class TouchpadIndicator():
 			if self.indicator.get_status() != appindicator.IndicatorStatus.PASSIVE:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 		self.on_mouse_plugged_change(self.on_mouse_plugged)
+		if self.touchpad.are_all_touchpad_enabled() and self.disable_touchpad_on_start_indicator:
+			self.set_touch_enabled(False)
 		configuration = Configuration()
 		configuration.set('is_working',True)
 		configuration.save()		
@@ -249,6 +244,7 @@ class TouchpadIndicator():
 		self.show_notifications = configuration.get('show_notifications')
 		self.theme = configuration.get('theme')
 		self.touchpad_enabled = configuration.get('touchpad_enabled')
+		self.disable_touchpad_on_start_indicator = configuration.get('disable_touchpad_on_start_indicator')
 		self.shortcut = configuration.get('shortcut')
 		self.ICON = comun.ICON
 		self.active_icon = comun.STATUS_ICON[configuration.get('theme')][0]

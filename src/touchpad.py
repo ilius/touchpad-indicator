@@ -33,13 +33,24 @@ def ejecuta(comando):
 	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
 	valor = p.communicate()[0]
 	return valor
+	
+def search_touchpad(where):
+	where = where.lower()
+	for touchpad in TOUCHPADS:
+		if where.find(touchpad) != -1:
+			return True
+	if where.find('ps/2 generic mouse') != -1:
+		return True
+	return False
 
+'''
 def search_touchpad(where):
 	where = where.lower()
 	for touchpad in TOUCHPADS:
 		if where.find(touchpad) != -1:
 			return True
 	return False
+'''
 
 class Touchpad(object):
 	def __init__(self):
@@ -106,6 +117,7 @@ class Touchpad(object):
 
 if __name__ == '__main__':
 	tp = Touchpad()
+	print 'Is there touchpad? %s'%tp.is_there_touchpad()
 	print tp.are_all_touchpad_enabled()
 	print tp.disable_all_touchpads()
 	print tp.enable_all_touchpads()

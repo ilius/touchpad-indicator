@@ -26,6 +26,8 @@
 
 import os
 import shutil
+import locale
+import gettext
 
 ######################################
 
@@ -35,7 +37,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.3.8'
+VERSION = '0.9.3.9'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -47,6 +49,7 @@ PARAMS = {
 			'is_working':False,
 			'shortcut_enabled':False,
 			'autostart':False,
+			'disable_touchpad_on_start_indicator':False,
 			'on_mouse_plugged':False,
 			'enable_on_exit':True,
 			'disable_on_exit':False,
@@ -90,4 +93,10 @@ CONFIG_FILE = os.path.join(CONFIG_APP_DIR, APPCONF)
 AUTOSTART_DIR = os.path.join(CONFIG_DIR,'autostart')
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.desktop')
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
+
+####
+current_locale, encoding = locale.getdefaultlocale()
+language = gettext.translation (APP, LANGDIR, [current_locale] )
+language.install()
+_ = language.ugettext
 
