@@ -5,9 +5,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.9.3.2\n"
+"Project-Id-Version: touchpad-indicator 0.9.3.7\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2012-08-04 19:13+0200\n"
+"POT-Creation-Date: 2012-08-05 08:47+0200\n"
 "PO-Revision-Date: 2011-10-15 06:00+0000\n"
 "Last-Translator: Lorenzo Carbonell <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -75,33 +75,33 @@ msgid "Exit"
 msgstr "Koniec"
 
 #: /home/atareao/Dropbox/tp/touchpad-indicator/src/touchpad-indicator.py:298
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:38
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:39
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:40
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:41
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:42
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:43
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:44
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:45
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:46
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:47
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:48
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:49
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:50
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:51
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:52
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:53
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:54
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:55
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:56
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:57
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:58
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:59
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:60
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:61
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:62
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:63
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:64
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:67
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:68
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:69
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:70
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:71
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:72
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:73
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:74
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:75
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:76
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:77
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:78
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:79
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:80
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:81
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:82
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:83
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:84
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:85
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:86
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:87
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:88
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:89
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:90
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:91
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:92
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:93
 msgid "An indicator for the Touchpad"
 msgstr "Indikátor touchpadu"
 
@@ -188,8 +188,6 @@ msgstr ""
 msgid " is assigned"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:11
-#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:12
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:13
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:14
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:15
@@ -215,6 +213,35 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:35
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:36
 #: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:37
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:38
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:39
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:40
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:41
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:42
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:43
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:44
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:45
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:46
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:47
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:48
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:49
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:50
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:51
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:52
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:53
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:54
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:55
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:56
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:57
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:58
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:59
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:60
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:61
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:62
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:63
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:64
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:65
+#: /home/atareao/Dropbox/tp/touchpad-indicator/touchpad-indicator.desktop.in:66
 msgid "Touchpad-Indicator"
 msgstr ""
 

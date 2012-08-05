@@ -19,8 +19,18 @@ import polib
 import ConfigParser
 import codecs
 
+DATA_FILES = [
+	('/usr/bin',glob.glob('bin/*')),
+	('/usr/share/touchpad-indicator',glob.glob('src/*')),
+	('/usr/share/icons/hicolor/24x24/status',glob.glob('data/icons/*.svg')),
+	('/usr/share/pixmaps',['data/icons/touchpad-indicator.svg']),
+	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
+	('/usr/share/applications',['data/touchpad-indicator.desktop']),
+	('/usr/share/my-weather-indicator',['data/touchpad-indicator-autostart.desktop']),	
+	]
 
 MAIN_DIR = os.getcwd()
+DATA_DIR = os.path.join(MAIN_DIR,'data')
 DEBIAN_DIR = os.path.join(MAIN_DIR,'debian')
 LANGUAGES_DIR = os.path.join(MAIN_DIR,'template1')
 SRC_DIR = os.path.join(MAIN_DIR,'src')
@@ -39,15 +49,6 @@ AUTHOR_EMAIL = 'lorenzo.carbonell.cerezo@gmail.com'
 URL = 'http://www.atareao.es'
 LICENSE = 'GNU General Public License (GPL)'
 COMPILED_LANGUAGE_FILE = '%s.mo'%APP
-DATA_FILES = [
-	('/usr/bin',glob.glob('bin/*')),
-	('/usr/share/touchpad-indicator',glob.glob('src/*')),
-	('/usr/share/icons/hicolor/24x24/status',glob.glob('data/icons/*.svg')),
-	('/usr/share/pixmaps',['data/icons/touchpad-indicator.svg']),
-	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
-	('/usr/share/applications',['data/touchpad-indicator.desktop']),
-	('/usr/share/my-weather-indicator',['data/touchpad-indicator-autostart.desktop']),	
-	]
 
 def get_entry(filein,msgid):
 	try:
@@ -127,22 +128,56 @@ def edit_language_file(file):
 	po.save()
 
 def update_desktop_file_fp():
-	config = ConfigParser.ConfigParser()
-	config.optionxform = str
-	config.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
-	name = config.get('Desktop Entry','Name')
-	comment = config.get('Desktop Entry','Comment')
+	desktopfile = ConfigParser.ConfigParser()
+	desktopfile.optionxform = str
+	desktopfile.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
+	lns = []
 	for filein in glob.glob('./template1/*.po'):
 		ln = os.path.splitext(os.path.split(filein)[1])[0]
-		config.set('Desktop Entry','Name[%s]'%ln,"_('%s')"%name)
-	for filein in glob.glob('./template1/*.po'):
-		ln = os.path.splitext(os.path.split(filein)[1])[0]
-		config.set('Desktop Entry','Comment[%s]'%ln,"_('%s')"%comment)
-	with codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='w') as configfile:
-		config.write(configfile)
+		lns.append(ln)
+	if len(lns)>0:
+		for entry in desktopfile.items('Desktop Entry'):
+			if entry[0].startswith('_'):
+				for ln in lns:
+					desktopfile.set('Desktop Entry','$%s[%s]'%(entry[0][1:],ln),"_('%s')"%entry[1])
+	with codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='w') as outputfile:
+		desktopfile.write(outputfile)
 
 
 def update_desktop_file():
+	fileout = os.path.join(DATA_DIR,APP+'.desktop')
+	print fileout
+	if os.path.exists(fileout):
+		os.remove(fileout)
+	fileout = codecs.open('./data/%s.desktop'%APP,encoding = 'utf-8',mode='w')
+	fileout.write('[Desktop Entry]\n')
+	#
+	desktopfile = ConfigParser.ConfigParser()
+	desktopfile.optionxform = str
+	desktopfile.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
+	lns = []
+	for filein in glob.glob('./template1/*.po'):
+		ln = os.path.splitext(os.path.split(filein)[1])[0]
+		lns.append(ln)
+	if len(lns)>0:
+		for entry in desktopfile.items('Desktop Entry'):
+			if  not entry[0].startswith('$'):
+				if entry[0].startswith('_'):
+					fileout.write('%s = %s\n'%(entry[0][1:],entry[1]))
+				else:
+					fileout.write('%s = %s\n'%(entry[0],entry[1]))
+		for entry in desktopfile.items('Desktop Entry'):
+			if entry[0].startswith('_') and not entry[0].startswith('$'):
+				for ln in lns:
+					filepo = os.path.join(LANGUAGES_DIR,'%s.po'%ln)
+					msgstr = get_entry(filepo,entry[1])
+					print filepo
+					if not msgstr:
+						msgstr = ''
+					print '%s[%s]=%s'%(entry[0][1:],ln,msgstr)
+					fileout.write('%s[%s] = %s\n'%(entry[0][1:],ln,msgstr))
+	fileout.close()
+def update_desktop_file2():
 	config = ConfigParser.ConfigParser()
 	config.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
 	name = config.get('Desktop Entry','Name')
