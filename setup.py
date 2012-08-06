@@ -26,7 +26,7 @@ DATA_FILES = [
 	('/usr/share/pixmaps',['data/icons/touchpad-indicator.svg']),
 	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
 	('/usr/share/applications',['data/touchpad-indicator.desktop']),
-	('/usr/share/my-weather-indicator',['data/touchpad-indicator-autostart.desktop']),	
+	('/usr/share/touchpad-indicator',['data/touchpad-indicator-autostart.desktop']),	
 	]
 
 MAIN_DIR = os.getcwd()

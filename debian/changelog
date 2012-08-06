@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.3.10-1ubuntu1) precise; urgency=low
+
+  * Fixed a bub #1033344 Can't Save Autostart Preference
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 06 Aug 2012 06:07:00 +0200
+
 touchpad-indicator (0.9.3.9-1ubuntu1) precise; urgency=low
 
   * Fixed bug #888333 Doesn't disable trackpad Inspiron N5110

@@ -37,7 +37,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.3.9'
+VERSION = '0.9.3.10'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -57,7 +57,7 @@ PARAMS = {
 			'show_notifications':True,
 			'theme':'light',
 			'touchpad_enabled':True,
-			'shortcut':'<Primary><Alt>t'
+			'shortcut':'<Primary><Alt>c'
 			}
 
 
