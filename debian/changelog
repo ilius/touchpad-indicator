@@ -1,3 +1,9 @@
+touchpad-indicator (0.9.3.11-1ubuntu1) precise; urgency=low
+
+  * Updated translations
+
+ -- lorenzo <lorenzo@aao>  Thu, 09 Aug 2012 12:49:23 +0200
+
 touchpad-indicator (0.9.3.10-1ubuntu1) precise; urgency=low
 
   * Fixed a bub #1033344 Can't Save Autostart Preference

@@ -75,7 +75,7 @@ def list_src():
 	f = open(file_txt,'w')
 	for file in glob.glob(os.path.join(SRC_DIR,'*.py')):
 		f.write('%s\n'%file)
-	for file in glob.glob(os.path.join(MAIN_DIR,'*.in')):
+	for file in glob.glob(os.path.join(MAIN_DIR,'*.desktop.in')):
 		f.write('%s\n'%file)
 	f.close()
 	return file_txt
@@ -128,90 +128,60 @@ def edit_language_file(file):
 	po.save()
 
 def update_desktop_file_fp():
-	desktopfile = ConfigParser.ConfigParser()
-	desktopfile.optionxform = str
-	desktopfile.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
 	lns = []
 	for filein in glob.glob('./template1/*.po'):
 		ln = os.path.splitext(os.path.split(filein)[1])[0]
 		lns.append(ln)
-	if len(lns)>0:
-		for entry in desktopfile.items('Desktop Entry'):
-			if entry[0].startswith('_'):
-				for ln in lns:
-					desktopfile.set('Desktop Entry','$%s[%s]'%(entry[0][1:],ln),"_('%s')"%entry[1])
-	with codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='w') as outputfile:
-		desktopfile.write(outputfile)
+	for filedesktopin in glob.glob('*.desktop.in'):
+		desktopfile = ConfigParser.ConfigParser()
+		desktopfile.optionxform = str
+		desktopfile.readfp(codecs.open(filedesktopin,encoding = 'utf-8',mode='r'))
+		if len(lns)>0:
+			for entry in desktopfile.items('Desktop Entry'):
+				if entry[0].startswith('_'):
+					for ln in lns:
+						desktopfile.set('Desktop Entry','$%s[%s]'%(entry[0][1:],ln),"_('%s')"%entry[1])
+		with codecs.open(filedesktopin,encoding = 'utf-8',mode='w') as outputfile:
+			desktopfile.write(outputfile)
 
 
 def update_desktop_file():
-	fileout = os.path.join(DATA_DIR,APP+'.desktop')
-	print fileout
-	if os.path.exists(fileout):
-		os.remove(fileout)
-	fileout = codecs.open('./data/%s.desktop'%APP,encoding = 'utf-8',mode='w')
-	fileout.write('[Desktop Entry]\n')
-	#
-	desktopfile = ConfigParser.ConfigParser()
-	desktopfile.optionxform = str
-	desktopfile.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
 	lns = []
 	for filein in glob.glob('./template1/*.po'):
 		ln = os.path.splitext(os.path.split(filein)[1])[0]
 		lns.append(ln)
-	if len(lns)>0:
-		for entry in desktopfile.items('Desktop Entry'):
-			if  not entry[0].startswith('$'):
-				if entry[0].startswith('_'):
-					fileout.write('%s = %s\n'%(entry[0][1:],entry[1]))
-				else:
-					fileout.write('%s = %s\n'%(entry[0],entry[1]))
-		for entry in desktopfile.items('Desktop Entry'):
-			if entry[0].startswith('_') and not entry[0].startswith('$'):
-				for ln in lns:
-					filepo = os.path.join(LANGUAGES_DIR,'%s.po'%ln)
-					msgstr = get_entry(filepo,entry[1])
-					print filepo
-					if not msgstr:
-						msgstr = ''
-					print '%s[%s]=%s'%(entry[0][1:],ln,msgstr)
-					fileout.write('%s[%s] = %s\n'%(entry[0][1:],ln,msgstr))
-	fileout.close()
-def update_desktop_file2():
-	config = ConfigParser.ConfigParser()
-	config.readfp(codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r'))
-	name = config.get('Desktop Entry','Name')
-	comment = config.get('Desktop Entry','Comment')
-	filein = codecs.open('./%s.desktop.in'%APP,encoding = 'utf-8',mode='r')
-	fileout = codecs.open('./data/%s.desktop'%APP,encoding = 'utf-8',mode='w')
-	for i,line in enumerate(filein.readlines()):
-		if line.split('=')[0].startswith('Comment['):
-			ln = line.split('=')[0][8:-2]
-			if ln.find('_')>-1:
-				lns = ln.split('_')
-				ln = lns[0]+'_'+lns[1].upper()
-			filepo = os.path.join(LANGUAGES_DIR,'%s.po'%ln)
-			msgstr = get_entry(filepo,comment)
-			if msgstr:
-				fileout.write(line.split('=')[0]+' = '+msgstr+'\n')
-			else:
-				fileout.write(line.split('=')[0]+' = '+comment+'\n')
-		elif line.split('=')[0].startswith('Name['):
-			ln = line.split('=')[0][5:-2]
-			if ln.find('_')>-1:
-				lns = ln.split('_')
-				ln = lns[0]+'_'+lns[1].upper()
-			filepo = os.path.join(LANGUAGES_DIR,'%s.po'%ln)
-			msgstr = get_entry(filepo,name)
-			if msgstr:
-				fileout.write(line.split('=')[0]+' = '+msgstr+'\n')
-			else:
-				fileout.write(line.split('=')[0]+' = '+name+'\n')
-		else:
-			fileout.write(line)
-	fileout.close()
-	filein.close()
-	
+	for filedesktopin in glob.glob('*.desktop.in'):
+		desktopfilename = os.path.splitext(os.path.split(filedesktopin)[1])[0]
+		print desktopfilename
+		fileout = os.path.join(DATA_DIR,desktopfilename)
+		print fileout
+		if os.path.exists(fileout):
+			os.remove(fileout)
+		fileout = codecs.open('./data/%s'%desktopfilename,encoding = 'utf-8',mode='w')
+		fileout.write('[Desktop Entry]\n')
+		#
+		desktopfile = ConfigParser.ConfigParser()
+		desktopfile.optionxform = str
+		desktopfile.readfp(codecs.open('./%s.in'%desktopfilename,encoding = 'utf-8',mode='r'))
+		if len(lns)>0:
+			for entry in desktopfile.items('Desktop Entry'):
+				if  not entry[0].startswith('$'):
+					if entry[0].startswith('_'):
+						fileout.write('%s = %s\n'%(entry[0][1:],entry[1]))
+					else:
+						fileout.write('%s = %s\n'%(entry[0],entry[1]))
+			for entry in desktopfile.items('Desktop Entry'):
+				if entry[0].startswith('_') and not entry[0].startswith('$'):
+					for ln in lns:
+						filepo = os.path.join(LANGUAGES_DIR,'%s.po'%ln)
+						msgstr = get_entry(filepo,entry[1])
+						print filepo
+						if not msgstr or msgstr == '':
+							msgstr = entry[1]
+							
+						print '%s[%s]=%s'%(entry[0][1:],ln,msgstr)
+						fileout.write('%s[%s] = %s\n'%(entry[0][1:],ln,msgstr))
+		fileout.close()
 	
 def remove_security_copies():
 	for file in glob.glob(os.path.join(LANGUAGES_DIR,'*.po~')):
