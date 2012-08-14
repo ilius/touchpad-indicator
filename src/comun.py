@@ -37,7 +37,7 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.3.11'
+VERSION = '0.9.3.12'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -77,6 +77,7 @@ else:
 	VERSION = VERSION + '-src'
 	ROOTDIR = os.path.dirname(__file__)
 	LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
+	LANG_DIR = '/usr/share/locale-langpack'
 	APPDIR = ROOTDIR
 	GCONFXML = os.path.join(APPDIR,'touchpad-indicator.xml')
 	IMGDIR = os.path.normpath(os.path.join(APPDIR, '../data/icons'))
@@ -95,8 +96,14 @@ FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.deskt
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
 
 ####
+locale.setlocale(locale.LC_ALL, '')
 current_locale, encoding = locale.getdefaultlocale()
-language = gettext.translation (APP, LANGDIR, [current_locale] )
-language.install()
-_ = language.ugettext
-
+print 'Encoding: %s'%encoding
+print 'Current Locale: %s'%current_locale
+try:
+	language = gettext.translation(APP, LANGDIR, languages = [current_locale])
+	language.install(unicode=True)
+	_ = language.ugettext
+except Exception, e:
+	print e
+	_ = str

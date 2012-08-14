@@ -100,7 +100,7 @@ class PreferencesDialog(Gtk.Dialog):
 		table1.attach(label1,0,2,0,1, xpadding=5, ypadding=5)
 		self.checkbutton0 = Gtk.Switch()##self.checkbutton0 = Gtk.CheckButton.new_with_label(_('Shortcut'))
 		self.checkbutton0.connect('button-press-event',self.on_checkbutton0_clicked)
-		table1.attach(self.checkbutton0,2,3,0,1, xpadding=5, ypadding=5)
+		table1.attach(self.checkbutton0,2,3,0,1, xpadding=5, ypadding=5, xoptions = Gtk.AttachOptions.SHRINK)
 		#
 		self.ctrl = Gtk.ToggleButton('Ctrl')
 		table1.attach(self.ctrl,0,1,1,2, xpadding=5, ypadding=5)
