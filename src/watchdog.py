@@ -49,10 +49,10 @@ def is_mouse_plugged(blacklist=faulty_devices):
 		except pyudev.device.DeviceNotFoundAtPathError as e:
 			retry_count -= 1
 			if retry_count == 0:
-				print "DeviceNotFoundAtPathError: retry limit exceeded"
+				print('DeviceNotFoundAtPathError: retry limit exceeded')
 				raise e
 			else:
-				print "DeviceNotFoundAtPathError: retry"
+				print('DeviceNotFoundAtPathError: retry')
 				sleep(1)
 	return answer
  

@@ -1,8 +1,9 @@
-touchpad-indicator (0.9.4-0extras13.04.1) raring; urgency=low
+touchpad-indicator (0.9.4-0extras13.04.2) raring; urgency=low
 
-  * Updated to Raring Ringtail
+  * Fixed changelog location
+  * Fixed a bug with watchdog
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 12 May 2013 12:31:47 +0200
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 12 May 2013 20:30:01 +0200
 
 touchpad-indicator (0.9.3.12-1ubuntu1) precise; urgency=low
 

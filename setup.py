@@ -21,7 +21,7 @@ import codecs
 
 DATA_FILES = [
 	('/opt/extras.ubuntu.com/touchpad-indicator/bin',glob.glob('bin/*')),
-	('/opt/extras.ubuntu.com/touchpad-indicator/share/tocuhpad-indicator',['debian/changelog']),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',['debian/changelog']),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',glob.glob('src/*')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',glob.glob('data/icons/*.svg')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',['data/icons/touchpad-indicator.svg']),
