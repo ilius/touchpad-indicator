@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # preferences_dialog.py
@@ -166,12 +166,12 @@ class PreferencesDialog(Gtk.Dialog):
 		table4.attach(label4,0,1,0,1, xpadding=5, ypadding=5)
 		self.radiobutton1 = Gtk.RadioButton()
 		image1 = Gtk.Image()
-		image1.set_from_file('/usr/share/icons/hicolor/24x24/status/touchpad-indicator-light-enabled.svg')
+		image1.set_from_file(os.path.join(comun.ICONDIR,'touchpad-indicator-light-enabled.svg'))
 		self.radiobutton1.add(image1)		
 		table4.attach(self.radiobutton1,1,2,0,1, xpadding=5, ypadding=5)
 		self.radiobutton2 = Gtk.RadioButton(group=self.radiobutton1)
 		image2 = Gtk.Image()
-		image2.set_from_file('/usr/share/icons/hicolor/24x24/status/touchpad-indicator-dark-enabled.svg')
+		image2.set_from_file(os.path.join(comun.ICONDIR,'touchpad-indicator-dark-enabled.svg'))
 		self.radiobutton2.add(image2)
 		table4.attach(self.radiobutton2,2,3,0,1, xpadding=5, ypadding=5)
 		#***************************************************************

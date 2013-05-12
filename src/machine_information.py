@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #
@@ -35,11 +35,11 @@ def ejecuta(comando):
 	
 def get_information():
 	information = '#####################################################\n'
-	information += ejecuta('lsb_release -a')
-	information += 'Version:\t%s'%ejecuta('uname -m')
+	information += ejecuta('lsb_release -a').decode('utf-8')
+	information += 'Version:\t%s'%ejecuta('uname -m').decode('utf-8')
 	information += '#####################################################\n'
 	return information
 	
 if __name__=='__main__':
-	print get_information()
+	print(get_information())
 	exit(0)

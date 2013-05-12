@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 __author__="Lorenzo Carbonell"
@@ -23,20 +23,23 @@ __date__ ="$28-jul-2012$"
 #
 #
 #
-import exceptions
 import types
 from gi.repository import GConf
 
-CASTSFROM = {GConf.ValueType.BOOL:   GConf.Value.get_bool,
+CASTSFROM = {
+GConf.ValueType.BOOL:   GConf.Value.get_bool,
 GConf.ValueType.INT:    GConf.Value.get_int,
 GConf.ValueType.FLOAT:  GConf.Value.get_float,
 GConf.ValueType.STRING: GConf.Value.get_string,
-GConf.ValueType.LIST:   GConf.Value.get_list}	
+GConf.ValueType.LIST:   GConf.Value.get_list
+}	
 
-CASTSTO = {types.BooleanType: GConf.Client.set_bool,
-types.IntType:     GConf.Client.set_int,
-types.FloatType:   GConf.Client.set_float,
-types.StringType:  GConf.Client.set_string}
+CASTSTO = {
+bool: GConf.Client.set_bool,
+int:     GConf.Client.set_int,
+float:   GConf.Client.set_float,
+str:  GConf.Client.set_string
+}
 '''
 types.ListType:    GConf.Client.set_list,
 types.TupleType:   GConf.Client.set_list,
@@ -118,7 +121,7 @@ if __name__ == '__main__':
 			if value != 'disabled':
 				values.append(value)
 		return values
-	print get_shortcuts()
+	print(get_shortcuts())
 	gcm = GConfManager()
 	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','')
 	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding','')

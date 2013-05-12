@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 __author__='atareao'
@@ -103,13 +103,13 @@ if __name__=='__main__':
 		key = '<Control><Alt>t'
 		xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
 		akeys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
-		print 'akeys: '+str(akeys)
+		print('akeys: '+str(akeys))
 		if akeys:
 			for akey in akeys:
-				print 'akey: '+str(akey)
+				print('akey: '+str(akey))
 				xfceconf.reset_property(akey['key'])
 		if True:
 			key = key.replace('<Primary>','<Control>')
-			print key
-			print xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')
+			print(key)
+			print(xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py'))
 	exit(0)

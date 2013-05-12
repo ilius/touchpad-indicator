@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #
@@ -37,7 +37,6 @@ def is_package():
 ######################################
 
 
-VERSION = '0.9.3.12'
 APPNAME = 'Touchpad-Indicator'
 APP = 'touchpad-indicator'
 APPCONF = APP + '.conf'
@@ -59,32 +58,30 @@ PARAMS = {
 			'touchpad_enabled':True,
 			'shortcut':'<Primary><Alt>c'
 			}
-
-
 # check if running from source
 STATUS_ICON = {}
 if is_package():
-	ROOTDIR = '/usr/share/'
+	ROOTDIR = '/opt/extras.ubuntu.com/touchpad-indicator/share/'
 	LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
 	APPDIR = os.path.join(ROOTDIR, APP)
 	GCONFXML = os.path.join(APPDIR,'touchpad-indicator.xml')
-	IMGDIR = '/usr/share/pixmaps'
-	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
-	STATUS_ICON['normal'] = ('touchpad-indicator-normal-enabled','touchpad-indicator-normal-disabled')
-	STATUS_ICON['light'] = ('touchpad-indicator-light-enabled','touchpad-indicator-light-disabled')
-	STATUS_ICON['dark'] = ('touchpad-indicator-dark-enabled','touchpad-indicator-dark-disabled')
+	ICONDIR = os.path.join(APPDIR, 'icons')
+	SOCIALDIR = os.path.join(APPDIR, 'social')
+	CHANGELOG = os.path.join(APPDIR,'changelog')
 else:
-	VERSION = VERSION + '-src'
 	ROOTDIR = os.path.dirname(__file__)
-	LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
-	LANG_DIR = '/usr/share/locale-langpack'
+	LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../po'))
 	APPDIR = ROOTDIR
 	GCONFXML = os.path.join(APPDIR,'touchpad-indicator.xml')
-	IMGDIR = os.path.normpath(os.path.join(APPDIR, '../data/icons'))
-	ICON = os.path.join(IMGDIR, 'touchpad-indicator.svg')
-	STATUS_ICON['normal'] = (os.path.join(IMGDIR,'touchpad-indicator-normal-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-normal-disabled.svg'))
-	STATUS_ICON['light'] = (os.path.join(IMGDIR,'touchpad-indicator-light-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-light-disabled.svg'))
-	STATUS_ICON['dark'] = (os.path.join(IMGDIR,'touchpad-indicator-dark-enabled.svg'),os.path.join(IMGDIR,'touchpad-indicator-dark-disabled.svg'))
+	ICONDIR = os.path.normpath(os.path.join(APPDIR, '../data/icons'))
+	SOCIALDIR = os.path.normpath(os.path.join(ROOTDIR, '../data/social'))
+	DEBIANDIR = os.path.normpath(os.path.join(ROOTDIR, '../debian'))
+	CHANGELOG = os.path.join(DEBIANDIR,'changelog')
+
+ICON = os.path.join(ICONDIR, 'touchpad-indicator.svg')
+STATUS_ICON['normal'] = (os.path.join(ICONDIR,'touchpad-indicator-normal-enabled.svg'),os.path.join(ICONDIR,'touchpad-indicator-normal-disabled.svg'))
+STATUS_ICON['light'] = (os.path.join(ICONDIR,'touchpad-indicator-light-enabled.svg'),os.path.join(ICONDIR,'touchpad-indicator-light-disabled.svg'))
+STATUS_ICON['dark'] = (os.path.join(ICONDIR,'touchpad-indicator-dark-enabled.svg'),os.path.join(ICONDIR,'touchpad-indicator-dark-disabled.svg'))
 
 
 CONFIG_DIR = os.path.join(os.path.expanduser('~'),'.config')
@@ -95,15 +92,24 @@ AUTOSTART_DIR = os.path.join(CONFIG_DIR,'autostart')
 FILE_AUTO_START = os.path.join(AUTOSTART_DIR,'touchpad-indicator-autostart.desktop')
 WATCHDOG = os.path.join(APPDIR, 'watchdog.py')
 
+f = open(CHANGELOG,'r')
+line = f.readline()
+f.close()
+pos=line.find('(')
+posf=line.find('-',pos)
+VERSION = line[pos+1:posf].strip()
+if is_package():
+	VERSION = VERSION + '-src'
 ####
-locale.setlocale(locale.LC_ALL, '')
-current_locale, encoding = locale.getdefaultlocale()
-print 'Encoding: %s'%encoding
-print 'Current Locale: %s'%current_locale
 try:
-	language = gettext.translation(APP, LANGDIR, languages = [current_locale])
-	language.install(unicode=True)
-	_ = language.ugettext
-except Exception, e:
-	print e
+	current_locale, encoding = locale.getdefaultlocale()
+	language = gettext.translation(APP, LANGDIR, [current_locale])
+	language.install()
+	print(language)
+	if sys.version_info[0] == 3:
+		_ = language.gettext
+	else:
+		_ = language.ugettext
+except Exception as e:
+	print(e)
 	_ = str

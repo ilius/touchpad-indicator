@@ -20,21 +20,21 @@ import ConfigParser
 import codecs
 
 DATA_FILES = [
-	('/usr/bin',glob.glob('bin/*')),
-	('/usr/share/touchpad-indicator',glob.glob('src/*')),
-	('/usr/share/icons/hicolor/24x24/status',glob.glob('data/icons/*.svg')),
-	('/usr/share/pixmaps',['data/icons/touchpad-indicator.svg']),
+	('/opt/extras.ubuntu.com/touchpad-indicator/bin',glob.glob('bin/*')),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/tocuhpad-indicator',['debian/changelog']),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',glob.glob('src/*')),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',glob.glob('data/icons/*.svg')),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',['data/icons/touchpad-indicator.svg']),
 	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
-	('/usr/share/applications',['data/touchpad-indicator.desktop']),
-	('/usr/share/touchpad-indicator',['data/touchpad-indicator-autostart.desktop']),	
+	('/usr/share/applications',['data/extras-touchpad-indicator.desktop']),	
 	]
 
 MAIN_DIR = os.getcwd()
 DATA_DIR = os.path.join(MAIN_DIR,'data')
 DEBIAN_DIR = os.path.join(MAIN_DIR,'debian')
-LANGUAGES_DIR = os.path.join(MAIN_DIR,'template1')
+LANGUAGES_DIR = os.path.join(MAIN_DIR,'po')
 SRC_DIR = os.path.join(MAIN_DIR,'src')
-TEMPLATE = os.path.join(LANGUAGES_DIR,'template1.pot')
+TEMPLATE = os.path.join(LANGUAGES_DIR,'po.pot')
 CHANGELOG = os.path.join(DEBIAN_DIR,'changelog')
 f = open(CHANGELOG,'r')
 line = f.readline()
@@ -129,7 +129,7 @@ def edit_language_file(file):
 
 def update_desktop_file_fp():
 	lns = []
-	for filein in glob.glob('./template1/*.po'):
+	for filein in glob.glob('./po/*.po'):
 		ln = os.path.splitext(os.path.split(filein)[1])[0]
 		lns.append(ln)
 	for filedesktopin in glob.glob('*.desktop.in'):
@@ -147,7 +147,7 @@ def update_desktop_file_fp():
 
 def update_desktop_file():
 	lns = []
-	for filein in glob.glob('./template1/*.po'):
+	for filein in glob.glob('./po/*.po'):
 		ln = os.path.splitext(os.path.split(filein)[1])[0]
 		lns.append(ln)
 	for filedesktopin in glob.glob('*.desktop.in'):
@@ -198,8 +198,10 @@ def remove_files(dir,ext):
 	files = []
 	for file in glob.glob(os.path.join(dir,'*')):
 		if file != None and os.path.exists(file):
-			if os.path.isdir(file):
-				files.extend(list_files_to_package(file))
+			if file and os.path.isdir(file):
+				morefiles = remove_files(file,ext)
+				if morefiles:
+					files.extend(morefiles)
 			else:
 				files.append(file)
 	for file in files:
@@ -276,7 +278,7 @@ class build_trans(cmd.Command):
 		pass
  
 	def run(self):
-		po_dir = os.path.join(os.path.dirname(os.curdir), 'template1')
+		po_dir = os.path.join(os.path.dirname(os.curdir), 'po')
 		for path, names, filenames in os.walk(po_dir):
 			for f in filenames:
 				if f.endswith('.po'):
@@ -304,7 +306,7 @@ class build(build_extra.build_extra):
 class install_data(_install_data):
 	def run(self):
 		for lang in os.listdir('build/locale-langpack/'):
-			lang_dir = os.path.join('share', 'locale-langpack', lang, 'LC_MESSAGES')
+			lang_dir = os.path.join('/opt/extras.ubuntu.com/touchpad-indicator/share', 'locale-langpack', lang, 'LC_MESSAGES')
 			lang_file = os.path.join('build', 'locale-langpack', lang, 'LC_MESSAGES', COMPILED_LANGUAGE_FILE)
 			self.data_files.append( (lang_dir, [lang_file]) )
 		_install_data.run(self)	

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # touchpad.py
@@ -32,7 +32,7 @@ def ejecuta(comando):
 	args = shlex.split(comando)
 	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
 	valor = p.communicate()[0]
-	return valor
+	return valor.decode('utf-8')
 	
 def search_touchpad(where):
 	where = where.lower()
@@ -117,8 +117,8 @@ class Touchpad(object):
 
 if __name__ == '__main__':
 	tp = Touchpad()
-	print 'Is there touchpad? %s'%tp.is_there_touchpad()
-	print tp.are_all_touchpad_enabled()
-	print tp.disable_all_touchpads()
-	print tp.enable_all_touchpads()
+	print('Is there touchpad? %s'%tp.is_there_touchpad())
+	print(tp.are_all_touchpad_enabled())
+	print(tp.disable_all_touchpads())
+	print(tp.enable_all_touchpads())
 	exit(0)

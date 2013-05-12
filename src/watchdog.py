@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # watchdog.py
@@ -123,7 +123,7 @@ def watch():
 							on_mouse_detected_plugged()
 						elif action == "remove":
 							on_mouse_detected_unplugged()
-					except Exception,e:
+					except Exception as e:
 						print(e)
 						print('watchdog: failed to comunicate.')
 						exit(0)

@@ -14,6 +14,9 @@ Depends: ${misc:Depends}, ${python:Depends},
 	gir1.2-appindicator3-0.1,
 	gir1.2-notify-0.7,
 	gir1.2-gconf-2.0,
-	python-pyudev,		
-	python-dbus
+	python3-pyudev,		
+	python3-dbus
 Description: An indicator for the touchpad
+ With Touchpad-Indicator you can enable or disable the touchpad, with shortcuts
+ or by clicking on menu. Besides, it enables or disables the touchpad, when
+ the computer returns from hibernation.

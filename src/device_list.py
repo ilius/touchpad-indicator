@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # device_list.py
@@ -33,17 +33,36 @@ except:
 FILEOUTPUT = os.path.join(os.environ['HOME'],'device_list.txt')
 
 def print_device_attrib(Device, fileoutput=None):
-	print('------------------------------------------------------')
-	print(u'sys_name: ' + unicode(Device.sys_name))
-	print(u'sys_number: ' + unicode(Device.sys_number))
-	for attrName, attrValue in Device.iteritems():
-		print(attrName + ': ' + str(attrValue))
-	if fileoutput != None:
-		fileoutput.write('------------------------------------------------------\n')
-		fileoutput.write('sys_name: ' + Device.sys_name+'\n')
-		fileoutput.write('sys_number: ' + str(Device.sys_number)+'\n')
-		for attrName, attrValue in Device.iteritems():
-			fileoutput.write(attrName + ': ' + str(attrValue)+'\n')
+	if Device:
+		sys_name = Device.sys_name
+		if not sys_name:
+			sys_name = ''
+		sys_number = Device.sys_number
+		if not sys_number:
+			sys_number = ''
+		print('------------------------------------------------------')
+		print('sys_name: ' + sys_name)
+		print('sys_number: ' + sys_number)
+		for child in Device.children:
+			child_sys_name = child.sys_name
+			if not child_sys_name:
+				child_sys_name = ''
+			child_sys_number = child.sys_number
+			if not child_sys_number:
+				child_sys_number = ''
+			print('%s: %s'%(child_sys_name,child_sys_number))
+		if fileoutput != None:
+			fileoutput.write('------------------------------------------------------\n')
+			fileoutput.write('sys_name: ' + sys_name+'\n')
+			fileoutput.write('sys_number: ' + sys_number+'\n')
+			for child in Device.children:
+				child_sys_name = child.sys_name
+				if not child_sys_name:
+					child_sys_name = ''
+				child_sys_number = child.sys_number
+				if not child_sys_number:
+					child_sys_number = ''
+				fileoutput.write('%s: %s\n'%(child_sys_name,child_sys_number))
 
 def print_devices(kind, context, fileoutput=None):
 	if kind == 'MOUSE':
@@ -56,7 +75,7 @@ def print_devices(kind, context, fileoutput=None):
 		search = '-----------OTHER DEVICES-----------'
 		devices_list = context.list_devices(subsystem='input')
 	print('\n\n')
-	print search
+	print(search)
 	for device in devices_list:
 		print('device: ' + device.sys_name)
 		print('device number: ' + str(device.sys_number))
