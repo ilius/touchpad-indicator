@@ -7,55 +7,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-05-12 12:20+0200\n"
-"PO-Revision-Date: 2011-10-15 06:00+0000\n"
-"Last-Translator: Lorenzo Carbonell <Unknown>\n"
+"POT-Creation-Date: 2013-05-12 12:31+0200\n"
+"PO-Revision-Date: 2013-02-18 16:21+0000\n"
+"Last-Translator: Ahmet Sezgin Duran <marjinalist1@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr\n"
-"X-Generator: Launchpad (build 14231)\n"
-"X-Launchpad-Export-Date: 2011-11-06 14:04+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr ""
+msgstr "İmleçsüreri Devredışı Bırak"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr ""
+msgstr "İmleçsüreri Etkinleştir"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr ""
+msgstr "İmleçsürer Etkin"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr ""
+msgstr "İmleçsürer Devredışı"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
-msgstr ""
+msgstr "Anasayfa..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
-msgstr ""
+msgstr "Çevrimiçi yardım alın..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
-msgstr ""
+msgstr "Bu uygulamayı tercüme et..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr ""
+msgstr "Bir hata bildir...."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
+#, fuzzy
 msgid "Homepage"
-msgstr ""
+msgstr "Anasayfa..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
@@ -71,11 +72,11 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
-msgstr ""
+msgstr "Hakkında"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
-msgstr ""
+msgstr "Simgeyi gizle"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
@@ -84,7 +85,7 @@ msgstr "Tercihler"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
-msgstr ""
+msgstr "Yardım"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
@@ -118,62 +119,72 @@ msgstr "Çıkış"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
-msgstr ""
+msgstr "İmleçsürer için bir işaret"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr ""
+msgstr "kullanım: %prog [seçenekler]"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr ""
+msgstr "bu yardımı göster ve çık"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr ""
+msgstr "eğer işaretçi bunu başlatamazsa, imleçsürer durumunu değiştir"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
+"eğer işaretçi bunu başlatamazsa, işaretçi gizlendiği zaman simgeyi göster. "
+"Varsayılan eylem"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
-msgstr ""
+msgstr "aygıtları listele"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:92
 msgid "Shortcut"
-msgstr ""
+msgstr "Kısayol"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
 msgid "Shortcut enabled"
-msgstr ""
+msgstr "Kısayol etkin"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
-msgstr ""
+msgstr "Eylemler"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Disable touchpad when mouse plugged"
-msgstr ""
+msgstr "Fare takıldığı zaman imleçsüreri devredışı bırak"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Enable touchpad on exit"
-msgstr ""
+msgstr "Çıkışta imleçsüreri etkinleştir"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad on exit"
-msgstr ""
+msgstr "İmleçsüreri çıkışta devre dışı bırak"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr ""
+msgstr "Touchpad-Indicator başladığında imleçsüreri devre dışı bırak"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
-msgstr ""
+msgstr "Genel seçenekler"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:147
 msgid "Autostart"
@@ -181,29 +192,29 @@ msgstr "Otomatik Başlat"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:150
 msgid "Start hidden"
-msgstr ""
+msgstr "Gizli başlat"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
 msgid "Show notifications"
-msgstr ""
+msgstr "Bildirimleri göster"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
 msgid "Select theme"
-msgstr ""
+msgstr "Tema seç"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid "This shortcut <Control> + <Alt> + "
-msgstr ""
+msgstr "Bu kısayol <Ctrl> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid " is assigned"
-msgstr ""
+msgstr " atandı"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -259,5 +270,72 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
-msgstr ""
+msgstr "Touchpad-Indicator"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Application Web..."
+#~ msgstr "Web Uygulaması"
+
+#~ msgid "Light"
+#~ msgstr "Aydınlık"
+
+#~ msgid "Esc "
+#~ msgstr "Esc "
+
+#~ msgid "Caps "
+#~ msgstr "Caps "
+
+#~ msgid "Home "
+#~ msgstr "Ev "
+
+#~ msgid "PgUp "
+#~ msgstr "PgUp "
+
+#~ msgid "PgDn "
+#~ msgstr "PgDn "
+
+#~ msgid "Super+"
+#~ msgstr "Super+"
+
+#~ msgid "Alt+"
+#~ msgstr "Alt+"
+
+#~ msgid "Ctrl+"
+#~ msgstr "Ctrl+"
+
+#~ msgid "Del "
+#~ msgstr "Del "
+
+#~ msgid "Ins "
+#~ msgstr "Ins "
+
+#~ msgid "End "
+#~ msgstr "End "
+
+#~ msgid "Enable touchpad on start"
+#~ msgstr "Başlangıçta imleçsüreri etkinleştir"
+
+#~ msgid "Select icon theme"
+#~ msgstr "Simge temasını seçin"
+
+#~ msgid "Dark"
+#~ msgstr "Karanlık"

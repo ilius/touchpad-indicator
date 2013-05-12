@@ -25,3 +25,11 @@ uk
 zh_TW
 sr
 sv
+hr
+pt
+zh_HK
+ms
+hu
+ro
+mn
+ast

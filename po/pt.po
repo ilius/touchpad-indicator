@@ -1,20 +1,20 @@
-# Catalan translation for touchpad-indicator
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Portuguese translation for touchpad-indicator
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the touchpad-indicator package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2013-05-12 12:31+0200\n"
-"PO-Revision-Date: 2011-10-29 17:53+0000\n"
-"Last-Translator: jrierab <Unknown>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2013-03-24 14:37+0000\n"
+"Last-Translator: Marco Sacristão <Unknown>\n"
+"Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
+"Language: pt\n"
 "X-Generator: Launchpad (build 16598)\n"
 "X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
@@ -22,41 +22,41 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr "Desactiva el touchpad"
+msgstr "Desactivar Touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr "Activa el touchpad"
+msgstr "Activar Touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr "Touchpad activat"
+msgstr "Touchpad Activado"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr "Touchpad desactivat"
+msgstr "Touchpad Desactivado"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
-msgstr ""
+msgstr "Página Inicial"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
-msgstr "Ajuda a la xarxa..."
+msgstr "Obter ajuda online..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
-msgstr "Tradueix aquesta aplicació..."
+msgstr "Traduzir esta aplicação"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr "Informa d'un error..."
+msgstr "Relatar uma falha"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
 #, fuzzy
 msgid "Homepage"
-msgstr "Inici "
+msgstr "Página Inicial"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
@@ -72,16 +72,16 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
-msgstr "Quant a"
+msgstr "Acerca"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
-msgstr "Amaga l'icona"
+msgstr "Ocultar Icone"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
 msgid "Preferences"
-msgstr "Preferències"
+msgstr "Preferências"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
@@ -89,7 +89,7 @@ msgstr "Ajuda"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
-msgstr "Sortir"
+msgstr "Sair"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
@@ -128,93 +128,94 @@ msgstr "Sortir"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
-msgstr "Un indicador pel touchpad"
+msgstr "Um indicador para o Touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr "ús: %prog [opcions]"
+msgstr "uso: %prog [opções]"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr "mostra aquesta ajuda i surt."
+msgstr "mostrar esta ajuda e sair."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr "canvia l'estat del touchpad. Si l'indicador no s'ha obert, llança'l"
+msgstr ""
+"alterar o estado touchpad. Se o indicador não estiver a correr iniciá-lo."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"mostra la icona si l'indicador està amagat. Acció per defecte. Si "
-"l'indicador no s'ha obert, llança'l"
+"mostrar o ícone se o indicador estiver escondido. Acção por defeito. Se o "
+"indicador não estiver a correr iniciá-lo."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
-msgstr ""
+msgstr "listar dispositivos"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:92
 msgid "Shortcut"
-msgstr "Drecera"
+msgstr "Atalho"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
 msgid "Shortcut enabled"
-msgstr ""
+msgstr "Atalho activado"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Disable touchpad when mouse plugged"
-msgstr "Desactivar el touchpad quan el ratolí està connectat"
+msgstr "Desactivar touchpad quando um rato estiver conectado"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Enable touchpad on exit"
-msgstr "Activa el touchpad al sortir"
+msgstr "Activar touchpad ao sair"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad on exit"
-msgstr ""
+msgstr "Desactivar touchpad ao sair"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr ""
+msgstr "Desactivar touchpad quando o Touchpad-Indicator inicia"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
-msgstr ""
+msgstr "Opções gerais"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:147
 msgid "Autostart"
-msgstr "Inici automàtic"
+msgstr "Arranque automático"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:150
 msgid "Start hidden"
-msgstr "Arrenca amagat"
+msgstr "Iniciar oculto"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
 msgid "Show notifications"
-msgstr "Mostra les notificacions"
+msgstr "Mostrar notificações"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
 msgid "Select theme"
-msgstr ""
+msgstr "Seleccionar tema"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid "This shortcut <Control> + <Alt> + "
-msgstr ""
+msgstr "Este atalho <Control> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid " is assigned"
-msgstr ""
+msgstr " está definido"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -287,52 +288,4 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
-msgstr ""
-
-#~ msgid "Select icon theme"
-#~ msgstr "Seleccionar el tema de les icones"
-
-#~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Light"
-#~ msgstr "Clar"
-
-#~ msgid "Dark"
-#~ msgstr "Fosc"
-
-#~ msgid "Application Web..."
-#~ msgstr "Aplicació web..."
-
-#~ msgid "Enable touchpad on start"
-#~ msgstr "Activa el touchpad a l'iniciar"
-
-#~ msgid "Esc "
-#~ msgstr "Esc "
-
-#~ msgid "Caps "
-#~ msgstr "Majúscules "
-
-#~ msgid "PgUp "
-#~ msgstr "RePag "
-
-#~ msgid "PgDn "
-#~ msgstr "AvPag "
-
-#~ msgid "Super+"
-#~ msgstr "Super+"
-
-#~ msgid "Alt+"
-#~ msgstr "Alt+"
-
-#~ msgid "Ctrl+"
-#~ msgstr "Ctrl+"
-
-#~ msgid "Del "
-#~ msgstr "Supr "
-
-#~ msgid "Ins "
-#~ msgstr "Ins "
-
-#~ msgid "End "
-#~ msgstr "Fi "
+msgstr "Touchpad-Indicator"

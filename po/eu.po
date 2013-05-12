@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-05-12 12:20+0200\n"
+"POT-Creation-Date: 2013-05-12 12:31+0200\n"
 "PO-Revision-Date: 2011-11-02 23:33+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
-"X-Generator: Launchpad (build 14231)\n"
-"X-Launchpad-Export-Date: 2011-11-06 14:04+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
@@ -119,6 +119,14 @@ msgstr "Irten"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
 msgstr "Touchpad adierazlea"
 
@@ -153,9 +161,8 @@ msgid "Shortcut"
 msgstr "Laster-tekla"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
-#, fuzzy
 msgid "Shortcut enabled"
-msgstr "Laster-tekla"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
@@ -170,14 +177,12 @@ msgid "Enable touchpad on exit"
 msgstr "Gaitu touchpad-a irtetean"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
-#, fuzzy
 msgid "Disable touchpad on exit"
-msgstr "Gaitu touchpad-a irtetean"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
-#, fuzzy
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr "Desgaitu touchpad-a sagua konektatzean"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
@@ -200,9 +205,8 @@ msgid "Theme"
 msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
-#, fuzzy
 msgid "Select theme"
-msgstr "Aukeratu ikonoen gaia"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
@@ -268,11 +272,27 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
 msgstr ""
 
-#~ msgid "Application Web..."
-#~ msgstr "Web aplikazioa..."
+#~ msgid "Select icon theme"
+#~ msgstr "Aukeratu ikonoen gaia"
 
 #~ msgid "Normal"
 #~ msgstr "Normala"
@@ -282,6 +302,9 @@ msgstr ""
 
 #~ msgid "Dark"
 #~ msgstr "Iluna"
+
+#~ msgid "Application Web..."
+#~ msgstr "Web aplikazioa..."
 
 #~ msgid "Enable touchpad on start"
 #~ msgstr "Gaitu touchpad-a abiaraztean"
@@ -295,23 +318,23 @@ msgstr ""
 #~ msgid "PgUp "
 #~ msgstr "Orri Gora "
 
-#~ msgid "End "
-#~ msgstr "Bukaera "
-
 #~ msgid "PgDn "
 #~ msgstr "Orri Beh "
 
-#~ msgid "Ins "
-#~ msgstr "Insert "
-
-#~ msgid "Del "
-#~ msgstr "Ezab "
-
-#~ msgid "Ctrl+"
-#~ msgstr "Ktrl+"
+#~ msgid "Super+"
+#~ msgstr "Super+"
 
 #~ msgid "Alt+"
 #~ msgstr "Alt+"
 
-#~ msgid "Super+"
-#~ msgstr "Super+"
+#~ msgid "Ctrl+"
+#~ msgstr "Ktrl+"
+
+#~ msgid "Del "
+#~ msgstr "Ezab "
+
+#~ msgid "End "
+#~ msgstr "Bukaera "
+
+#~ msgid "Ins "
+#~ msgstr "Insert "

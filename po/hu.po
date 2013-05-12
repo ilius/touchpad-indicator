@@ -1,20 +1,20 @@
-# Catalan translation for touchpad-indicator
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Hungarian translation for touchpad-indicator
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the touchpad-indicator package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2013-05-12 12:31+0200\n"
-"PO-Revision-Date: 2011-10-29 17:53+0000\n"
-"Last-Translator: jrierab <Unknown>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2012-12-04 17:13+0000\n"
+"Last-Translator: Péter Trombitás <trombipeti@gmail.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
+"Language: hu\n"
 "X-Generator: Launchpad (build 16598)\n"
 "X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
@@ -22,41 +22,41 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr "Desactiva el touchpad"
+msgstr "Érintőtábla letiltása"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr "Activa el touchpad"
+msgstr "Érintőtábla engedélyezése"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr "Touchpad activat"
+msgstr "Érintőtábla engedélyezve"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr "Touchpad desactivat"
+msgstr "Érintőtábla letiltva"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
-msgstr ""
+msgstr "Honlap..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
-msgstr "Ajuda a la xarxa..."
+msgstr "Online segítség..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
-msgstr "Tradueix aquesta aplicació..."
+msgstr "Az alkalmazás fordítása..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr "Informa d'un error..."
+msgstr "Hiba jelentése..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
 #, fuzzy
 msgid "Homepage"
-msgstr "Inici "
+msgstr "Honlap..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
@@ -72,24 +72,24 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
-msgstr "Quant a"
+msgstr "Névjegy"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
-msgstr "Amaga l'icona"
+msgstr "Ikon elrejtése"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
 msgid "Preferences"
-msgstr "Preferències"
+msgstr "Beállítások"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
-msgstr "Ajuda"
+msgstr "Súgó"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
-msgstr "Sortir"
+msgstr "Kilépés"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
@@ -128,93 +128,94 @@ msgstr "Sortir"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
-msgstr "Un indicador pel touchpad"
+msgstr "Egy indikátor az érintőtáblához"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr "ús: %prog [opcions]"
+msgstr "használat: %prog [kapcsolók]"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr "mostra aquesta ajuda i surt."
+msgstr "ezen segítség megjelenítése és kilépés."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr "canvia l'estat del touchpad. Si l'indicador no s'ha obert, llança'l"
+msgstr ""
+"megváltoztatja az érintőtábla állapotát. Ha az indikátor nem fut, elindítja."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"mostra la icona si l'indicador està amagat. Acció per defecte. Si "
-"l'indicador no s'ha obert, llança'l"
+"megjeleníti az ikont, ha az indikátor rejtve van. Ez az alapértelmezett "
+"művelet. Ha az indikátor nem fut, elindítja."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
-msgstr ""
+msgstr "eszközök listázása"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:92
 msgid "Shortcut"
-msgstr "Drecera"
+msgstr "Gyorsbillentyű"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
 msgid "Shortcut enabled"
-msgstr ""
+msgstr "Gyorsbillentyű engedélyezve"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
-msgstr ""
+msgstr "Műveletek"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Disable touchpad when mouse plugged"
-msgstr "Desactivar el touchpad quan el ratolí està connectat"
+msgstr "Érintőtábla letiltása, ha van bedugva egér"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Enable touchpad on exit"
-msgstr "Activa el touchpad al sortir"
+msgstr "Érintőtábla engedélyezése kilépéskor"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad on exit"
-msgstr ""
+msgstr "Érintőtábla letiltása kilépéskor"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr ""
+msgstr "Érintőtábla letiltása, amikor a Touchpad-indicator elindul"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
-msgstr ""
+msgstr "Általános beállítások"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:147
 msgid "Autostart"
-msgstr "Inici automàtic"
+msgstr "Automatikus indítás"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:150
 msgid "Start hidden"
-msgstr "Arrenca amagat"
+msgstr "Indítás rejtve"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
 msgid "Show notifications"
-msgstr "Mostra les notificacions"
+msgstr "Értesítések megjelenítése"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Theme"
-msgstr ""
+msgstr "Téma"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
 msgid "Select theme"
-msgstr ""
+msgstr "Válassz témát"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid "This shortcut <Control> + <Alt> + "
-msgstr ""
+msgstr "A <Control> + <Alt> + "
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid " is assigned"
-msgstr ""
+msgstr " gyorsbillentyű van hozzárendelve"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -287,37 +288,40 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
-msgstr ""
-
-#~ msgid "Select icon theme"
-#~ msgstr "Seleccionar el tema de les icones"
-
-#~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Light"
-#~ msgstr "Clar"
-
-#~ msgid "Dark"
-#~ msgstr "Fosc"
-
-#~ msgid "Application Web..."
-#~ msgstr "Aplicació web..."
+msgstr "Touchpad-Indicator"
 
 #~ msgid "Enable touchpad on start"
-#~ msgstr "Activa el touchpad a l'iniciar"
+#~ msgstr "Érintőtábla engedélyezése induláskor"
+
+#~ msgid "Select icon theme"
+#~ msgstr "Használandó ikontéma:"
+
+#~ msgid "Normal"
+#~ msgstr "Normál"
+
+#~ msgid "Application Web..."
+#~ msgstr "Az alkalmazás weboldala..."
+
+#~ msgid "Dark"
+#~ msgstr "Sötét"
+
+#~ msgid "Light"
+#~ msgstr "Világos"
 
 #~ msgid "Esc "
 #~ msgstr "Esc "
 
 #~ msgid "Caps "
-#~ msgstr "Majúscules "
+#~ msgstr "Caps "
+
+#~ msgid "Home "
+#~ msgstr "Home "
 
 #~ msgid "PgUp "
-#~ msgstr "RePag "
+#~ msgstr "PgUp "
 
 #~ msgid "PgDn "
-#~ msgstr "AvPag "
+#~ msgstr "PgDn "
 
 #~ msgid "Super+"
 #~ msgstr "Super+"
@@ -329,10 +333,10 @@ msgstr ""
 #~ msgstr "Ctrl+"
 
 #~ msgid "Del "
-#~ msgstr "Supr "
+#~ msgstr "Del "
 
 #~ msgid "Ins "
 #~ msgstr "Ins "
 
 #~ msgid "End "
-#~ msgstr "Fi "
+#~ msgstr "End "

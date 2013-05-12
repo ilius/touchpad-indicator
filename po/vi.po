@@ -7,35 +7,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-05-12 12:20+0200\n"
-"PO-Revision-Date: 2011-10-15 06:00+0000\n"
-"Last-Translator: Hoàng Ngọc Long <Unknown>\n"
+"POT-Creation-Date: 2013-05-12 12:31+0200\n"
+"PO-Revision-Date: 2012-03-12 07:44+0000\n"
+"Last-Translator: Lê Trường An <pinkyfinger111@gmail.com>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
-"X-Generator: Launchpad (build 14231)\n"
-"X-Launchpad-Export-Date: 2011-11-06 14:04+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr "Vô hiệu Touchpad"
+msgstr "Tắt touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr "Hiệu lực Touchpad"
+msgstr "Bật touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr "Touchpad có hiệu lực"
+msgstr "Đã bật touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr "Touchpad bị vô hiệu"
+msgstr "Đã tắt touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
@@ -51,11 +51,12 @@ msgstr "Dịch ứng dụng này..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr "Báo cáo một lỗi..."
+msgstr "Báo lỗi..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
+#, fuzzy
 msgid "Homepage"
-msgstr ""
+msgstr "Home "
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
@@ -80,7 +81,7 @@ msgstr "Ẩn biểu tượng"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
 msgid "Preferences"
-msgstr "Sở thích"
+msgstr "Tùy chỉnh"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
@@ -118,20 +119,28 @@ msgstr "Thoát"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
 msgstr "Một chỉ báo cho Touchpad"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr ""
+msgstr "cách dùng: %prog [options]"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr ""
+msgstr "hiện trợ giúp này và thoát."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr ""
+msgstr "đổi trạng thái của touchpad. Bật nó nếu chưa chạy."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
@@ -148,9 +157,8 @@ msgid "Shortcut"
 msgstr "Phím tắt"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
-#, fuzzy
 msgid "Shortcut enabled"
-msgstr "Phím tắt"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
@@ -158,21 +166,19 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Disable touchpad when mouse plugged"
-msgstr "Vô hiệu touchpad khi cắm chuột"
+msgstr "Tắt touchpad khi cắm chuột"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Enable touchpad on exit"
-msgstr ""
+msgstr "Bật touchpad khi thoát"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
-#, fuzzy
 msgid "Disable touchpad on exit"
-msgstr "Vô hiệu Touchpad"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
-#, fuzzy
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr "Vô hiệu touchpad khi cắm chuột"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
@@ -188,16 +194,15 @@ msgstr "Khởi động ẩn"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
 msgid "Show notifications"
-msgstr ""
+msgstr "Hiện thông báo"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Theme"
 msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
-#, fuzzy
 msgid "Select theme"
-msgstr "Chọn chủ đề biểu tượng"
+msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
@@ -263,8 +268,27 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
+#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
 msgstr ""
+
+#~ msgid "Select icon theme"
+#~ msgstr "Chọn chủ đề biểu tượng"
 
 #~ msgid "Normal"
 #~ msgstr "Bình thường"
@@ -274,3 +298,39 @@ msgstr ""
 
 #~ msgid "Dark"
 #~ msgstr "Tối"
+
+#~ msgid "Enable touchpad on start"
+#~ msgstr "Bật touchpad khi khởi động"
+
+#~ msgid "Application Web..."
+#~ msgstr "Trang web của ứng dụng..."
+
+#~ msgid "Esc "
+#~ msgstr "Esc "
+
+#~ msgid "Caps "
+#~ msgstr "Caps "
+
+#~ msgid "PgUp "
+#~ msgstr "PgUp "
+
+#~ msgid "PgDn "
+#~ msgstr "PgDn "
+
+#~ msgid "Super+"
+#~ msgstr "Super+"
+
+#~ msgid "Alt+"
+#~ msgstr "Alt+"
+
+#~ msgid "Ctrl+"
+#~ msgstr "Ctrl+"
+
+#~ msgid "Del "
+#~ msgstr "Del "
+
+#~ msgid "Ins "
+#~ msgstr "Ins "
+
+#~ msgid "End "
+#~ msgstr "End "

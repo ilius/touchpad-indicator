@@ -1,4 +1,4 @@
-# Catalan translation for touchpad-indicator
+# Malay translation for touchpad-indicator
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2013-05-12 12:31+0200\n"
-"PO-Revision-Date: 2011-10-29 17:53+0000\n"
-"Last-Translator: jrierab <Unknown>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2012-08-14 14:21+0000\n"
+"Last-Translator: abuyop <Unknown>\n"
+"Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
+"Language: ms\n"
 "X-Generator: Launchpad (build 16598)\n"
 "X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
 
@@ -22,41 +22,41 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr "Desactiva el touchpad"
+msgstr "Lumpuhkan Pad Sesentuh"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr "Activa el touchpad"
+msgstr "Benarkan Pad Sesentuh"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr "Touchpad activat"
+msgstr "Pad Sesentuh Dibenarkan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr "Touchpad desactivat"
+msgstr "Pad Sesentuh Dilumpuhkan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
-msgstr ""
+msgstr "Laman Sesawang..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
-msgstr "Ajuda a la xarxa..."
+msgstr "Dapatkan bantuan diatas talian..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
-msgstr "Tradueix aquesta aplicació..."
+msgstr "Terjemah aplikasi ini..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr "Informa d'un error..."
+msgstr "Laporkan pepijat..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
 #, fuzzy
 msgid "Homepage"
-msgstr "Inici "
+msgstr "Laman Sesawang..."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
@@ -72,24 +72,24 @@ msgstr ""
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
-msgstr "Quant a"
+msgstr "Perihal"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
-msgstr "Amaga l'icona"
+msgstr "Sembunyi ikon"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
 msgid "Preferences"
-msgstr "Preferències"
+msgstr "Keutamaan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
-msgstr "Ajuda"
+msgstr "Bantuan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
-msgstr "Sortir"
+msgstr "Keluar"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
@@ -128,93 +128,94 @@ msgstr "Sortir"
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
 msgid "An indicator for the Touchpad"
-msgstr "Un indicador pel touchpad"
+msgstr "Merupakan penunjuk untuk Pad Sesentuh"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr "ús: %prog [opcions]"
+msgstr "penggunaan: %prog [option]"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr "mostra aquesta ajuda i surt."
+msgstr "papar bantuan ini dan keluar."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr "canvia l'estat del touchpad. Si l'indicador no s'ha obert, llança'l"
+msgstr ""
+"ubah keadaan pad sesentuh. Jika penunjuk tidak berjalan, lancarkannya."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"mostra la icona si l'indicador està amagat. Acció per defecte. Si "
-"l'indicador no s'ha obert, llança'l"
+"papar ikon jika penunjuk tersembunyi. Tindakan lalai. Jika penunjuk tidak "
+"berjalan, lancarkannya."
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
-msgstr ""
+msgstr "senari peranti"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:92
 msgid "Shortcut"
-msgstr "Drecera"
+msgstr "Pintasan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
 msgid "Shortcut enabled"
-msgstr ""
+msgstr "Pintasan dibenarkan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
 msgid "Actions"
-msgstr ""
+msgstr "Tindakan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Disable touchpad when mouse plugged"
-msgstr "Desactivar el touchpad quan el ratolí està connectat"
+msgstr "Lumpuhkan pad sesentuh bila tetikus dipalamkan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Enable touchpad on exit"
-msgstr "Activa el touchpad al sortir"
+msgstr "Benarkan pad sesentuh bila keluar"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad on exit"
-msgstr ""
+msgstr "Lumpuhkan pad sentuh bila keluar"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr ""
+msgstr "Lumpuhkan pad sentuh bila Touchpad-Indicator bermula"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
 msgid "General options"
-msgstr ""
+msgstr "Pilihan am"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:147
 msgid "Autostart"
-msgstr "Inici automàtic"
+msgstr "Mula-sendiri"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:150
 msgid "Start hidden"
-msgstr "Arrenca amagat"
+msgstr "Mula dengan tersembunyi"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
 msgid "Show notifications"
-msgstr "Mostra les notificacions"
+msgstr "Papar pemberitahuan"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
 msgid "Select theme"
-msgstr ""
+msgstr "Pilih tema"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid "This shortcut <Control> + <Alt> + "
-msgstr ""
+msgstr "Pintasan <Control> + <Alt> + ini "
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
 msgid " is assigned"
-msgstr ""
+msgstr " telah diumpuk"
 
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -287,52 +288,55 @@ msgstr ""
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
 #: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
 msgid "Touchpad-Indicator"
-msgstr ""
+msgstr "Penunjuk-Pad-Sentuh"
 
 #~ msgid "Select icon theme"
-#~ msgstr "Seleccionar el tema de les icones"
+#~ msgstr "Pilih tema ikon"
 
 #~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Light"
-#~ msgstr "Clar"
-
-#~ msgid "Dark"
-#~ msgstr "Fosc"
+#~ msgstr "Biasa"
 
 #~ msgid "Application Web..."
-#~ msgstr "Aplicació web..."
+#~ msgstr "Aplikasi Sesawang..."
+
+#~ msgid "Light"
+#~ msgstr "Cerah"
+
+#~ msgid "Dark"
+#~ msgstr "Gelap"
+
+#~ msgid "Alt+"
+#~ msgstr "Alt+"
 
 #~ msgid "Enable touchpad on start"
-#~ msgstr "Activa el touchpad a l'iniciar"
+#~ msgstr "Benarkan pad sesentuh bila mula"
 
 #~ msgid "Esc "
 #~ msgstr "Esc "
 
 #~ msgid "Caps "
-#~ msgstr "Majúscules "
+#~ msgstr "Caps "
+
+#~ msgid "Home "
+#~ msgstr "Home "
 
 #~ msgid "PgUp "
-#~ msgstr "RePag "
+#~ msgstr "PgUp "
 
 #~ msgid "PgDn "
-#~ msgstr "AvPag "
+#~ msgstr "PgDn "
+
+#~ msgid "End "
+#~ msgstr "End "
 
 #~ msgid "Super+"
 #~ msgstr "Super+"
-
-#~ msgid "Alt+"
-#~ msgstr "Alt+"
 
 #~ msgid "Ctrl+"
 #~ msgstr "Ctrl+"
 
 #~ msgid "Del "
-#~ msgstr "Supr "
+#~ msgstr "Del "
 
 #~ msgid "Ins "
 #~ msgstr "Ins "
-
-#~ msgid "End "
-#~ msgstr "Fi "

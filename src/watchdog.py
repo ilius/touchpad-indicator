@@ -24,6 +24,7 @@
 #
 import pyudev
 import dbus
+from time import sleep
 
 on_mouse_detected_plugged = None
 on_mouse_detected_unplugged = None
@@ -37,6 +38,25 @@ udev_context = pyudev.Context()
 
 
 def is_mouse_plugged(blacklist=faulty_devices):
+	"""Return True if there is any mouse connected.
+	Handle timing conditions where the device disappears while checking.
+	:param blacklist: list of devices to discard."""
+	retry_count = 3
+	answer = None
+	while answer is None:
+		try:
+			answer = _is_mouse_plugged(blacklist)
+		except pyudev.device.DeviceNotFoundAtPathError as e:
+			retry_count -= 1
+			if retry_count == 0:
+				print "DeviceNotFoundAtPathError: retry limit exceeded"
+				raise e
+			else:
+				print "DeviceNotFoundAtPathError: retry"
+				sleep(1)
+	return answer
+ 
+def _is_mouse_plugged(blacklist=faulty_devices):
 	"""Return True if there is any mouse connected
 	   :param blacklist: list of devices to discard."""
 	possible_mice = udev_context.list_devices(subsystem="input",
