@@ -305,7 +305,7 @@ class TouchpadIndicator():
 		about_dialog = Gtk.AboutDialog()
 		about_dialog.set_name(comun.APPNAME)
 		about_dialog.set_version(comun.VERSION)
-		about_dialog.set_copyright('Copyrignt (c) 2010-2011\nMiguel Angel Santamaría Rogado\nLorenzo Carbonell Cerezo')
+		about_dialog.set_copyright('Copyrignt (c) 2010-2013\nMiguel Angel Santamaría Rogado\nLorenzo Carbonell Cerezo')
 		about_dialog.set_comments(_('An indicator for the Touchpad'))
 		about_dialog.set_license(''+
 		'This program is free software: you can redistribute it and/or modify it\n'+

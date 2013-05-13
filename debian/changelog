@@ -1,3 +1,10 @@
+touchpad-indicator (0.9.4-0extras13.04.2ubuntu1) UNRELEASED; urgency=low
+
+  * Fixed a bug with social icons
+  * Fixed a bug with languages 
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 13 May 2013 06:31:21 +0200
+
 touchpad-indicator (0.9.4-0extras13.04.2) raring; urgency=low
 
   * Fixed changelog location

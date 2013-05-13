@@ -24,6 +24,7 @@ DATA_FILES = [
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',['debian/changelog']),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',glob.glob('src/*')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',glob.glob('data/icons/*.svg')),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/social',glob.glob('data/social/*.svg')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',['data/icons/touchpad-indicator.svg']),
 	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
 	('/usr/share/applications',['data/extras-touchpad-indicator.desktop']),	
