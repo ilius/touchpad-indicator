@@ -67,43 +67,7 @@ def add2menu(menu, text = None, icon = None, conector_event = None, conector_act
 	menu_item.show()
 	menu.append(menu_item)
 	return menu_item
-'''
-class DBUSService(dbus.service.Object):
 
-	def __init__(self, indicator):
-		self.ind = indicator		
-		bus_name = dbus.service.BusName('es.atareao.TouchpadIndicator', bus = dbus.SessionBus())
-		dbus.service.Object.__init__(self, bus_name,
-							 '/es/atareao/TouchpadIndicator')
-		self.loop = GObject.MainLoop()
-
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
-	def on_mouse_detected_plugged(self):
-		self.ind.on_mouse_detected_plugged()
-
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
-	def on_mouse_detected_unplugged(self):
-		self.ind.on_mouse_detected_unplugged()
-
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
-	def change_state(self):
-		self.ind.change_state()
-
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
-	def unhide(self):
-		self.ind.unhide()
-
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
-	def check_status(self):
-		return self.ind.check_status()
-	
-	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')		
-	def start (self, options={}):
-		if self.loop.is_running ():
-			print('instance already running')
-		else:
-			self.loop.run ()
-'''
 class TouchpadIndicator(dbus.service.Object):
 
 	def __init__(self):
@@ -129,7 +93,7 @@ class TouchpadIndicator(dbus.service.Object):
 
 		menu = self.get_menu()
 		self.indicator.set_menu(menu)
-		
+		self.indicator.connect('scroll-event', self.on_scroll)
 		if self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_label(_('Disable Touchpad'))
 		else:
@@ -317,7 +281,6 @@ class TouchpadIndicator(dbus.service.Object):
 
 	def get_about_dialog(self):
 		"""Create and populate the about dialog."""
-
 		about_dialog = Gtk.AboutDialog()
 		about_dialog.set_name(comun.APPNAME)
 		about_dialog.set_version(comun.VERSION)
@@ -365,6 +328,9 @@ class TouchpadIndicator(dbus.service.Object):
 		return about_dialog
 
 	###################### callbacks for the menu #######################
+	def on_scroll(self, widget,steps,direcction):
+		self.change_state()
+		
 	def on_change_state_item(self, widget, data=None):
 		self.change_state()
 

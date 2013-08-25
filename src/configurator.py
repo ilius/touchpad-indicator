@@ -70,5 +70,6 @@ class Configuration(object):
 		if not os.path.exists(comun.CONFIG_APP_DIR):
 			os.makedirs(comun.CONFIG_APP_DIR)
 		f=codecs.open(comun.CONFIG_FILE,'w','utf-8')
+		#f.write(json.dumps(self.params,encoding ='utf-8'))
 		f.write(json.dumps(self.params))
 		f.close()

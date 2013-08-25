@@ -5,9 +5,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.9.4\n"
+"Project-Id-Version: touchpad-indicator 0.9.5\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-08-25 09:47+0200\n"
+"POT-Creation-Date: 2013-08-25 17:46+0200\n"
 "PO-Revision-Date: 2013-06-04 21:52+0000\n"
 "Last-Translator: Vistaus <vistausss@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -18,79 +18,79 @@ msgstr ""
 "X-Generator: Launchpad (build 16738)\n"
 "X-Launchpad-Export-Date: 2013-08-25 07:32+0000\n"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:98
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:140
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:269
 msgid "Disable Touchpad"
 msgstr "Touchpad uitschakelen"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:100
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:150
 msgid "Enable Touchpad"
 msgstr "Touchpad inschakelen"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:162
 msgid "Touchpad Enabled"
 msgstr "Touchpad ingeschakeld"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 msgid "Touchpad Disabled"
 msgstr "Touchpad uitgeschakeld"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:238
 msgid "Homepage..."
 msgstr "Homepage..."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:239
 msgid "Get help online..."
 msgstr "Hulp online vragen..."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:240
 msgid "Translate this application..."
 msgstr "Vertaal deze applicatie..."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:241
 msgid "Report a bug..."
 msgstr "Meld een bug..."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:243
 msgid "Homepage"
 msgstr "Website"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:244
 msgid "Follow us in Twitter"
 msgstr "Volg ons op Twitter"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:265
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:245
 msgid "Follow us in Google+"
 msgstr "Volg ons op  Google+"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:266
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:246
 msgid "Follow us in Facebook"
 msgstr "Volg ons op Facebook"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "About"
 msgstr "Over dit programma"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:270
 msgid "Hide icon"
 msgstr "Verberg icoon"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:272
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:73
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:274
 msgid "Help"
 msgstr "Help"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:277
 msgid "Exit"
 msgstr "Afsluiten"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:288
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:68
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:69
@@ -131,20 +131,20 @@ msgstr "Afsluiten"
 msgid "An indicator for the Touchpad"
 msgstr "Een indicator voor het touchpad"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:404
 msgid "usage: %prog [options]"
 msgstr "Gebruik: %prog [options]"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:410
 msgid "show this help and exit."
 msgstr "deze hulp weergeven en afsluiten"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:415
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 "verander de touchpad-toestand. Als de indicator niet draait, start het."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:420
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
@@ -152,7 +152,7 @@ msgstr ""
 "toon het icoon wanneer de indicator verborgen is. Standaardactie. Als de "
 "indicator niet draait, start het."
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:425
 msgid "list devices"
 msgstr "toon apparaten"
 
