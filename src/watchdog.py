@@ -31,8 +31,8 @@ on_mouse_detected_unplugged = None
 check_status = None
 
 faulty_devices = [
-	u'11/2/a/0', # TPPS/2 IBM TrackPoint
-	u'11/2/5/7326'] # ImPS/2 ALPS GlidePoint
+	'11/2/a/0', # TPPS/2 IBM TrackPoint
+	'11/2/5/7326'] # ImPS/2 ALPS GlidePoint
 
 udev_context = pyudev.Context()
 
@@ -138,11 +138,14 @@ def watch():
 		try:
 			for action, device in monitor:
 				if is_mouse(device):
+					print('is mouse')
 					try:
 						if action == "add":
 							on_mouse_detected_plugged()
+							print('mouse added')
 						elif action == "remove":
 							on_mouse_detected_unplugged()
+							print('mouse removed')
 					except Exception as e:
 						print(e)
 						print('watchdog: failed to comunicate.')

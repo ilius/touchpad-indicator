@@ -33,3 +33,5 @@ hu
 ro
 mn
 ast
+be
+si

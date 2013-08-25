@@ -77,6 +77,7 @@ class Touchpad(object):
 		for id in self._get_all_ids():
 			if self._is_touchpad(id):
 				ids.append(id)
+		print(ids)
 		return ids
 	
 	def set_touchpad_enabled(self,id):

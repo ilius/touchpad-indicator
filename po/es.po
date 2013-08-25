@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-05-12 12:31+0200\n"
+"POT-Creation-Date: 2013-08-25 09:47+0200\n"
 "PO-Revision-Date: 2012-11-04 21:12+0000\n"
 "Last-Translator: Pablo Catalina <pablo.catalina@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -15,136 +15,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"X-Generator: Launchpad (build 16598)\n"
-"X-Launchpad-Export-Date: 2013-05-12 10:24+0000\n"
+"X-Generator: Launchpad (build 16738)\n"
+"X-Launchpad-Export-Date: 2013-08-25 07:32+0000\n"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:123
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
 msgstr "Desactivar el touchpad"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
 msgstr "Activar el touchpad"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
 msgstr "Touchpad activado"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
 msgstr "Touchpad desactivado"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
 msgstr "Página de inicio"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
 msgstr "Obtener ayuda en linea..."
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
 msgstr "Traducir esta aplicación..."
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
 msgstr "Informar de un error…"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
-#, fuzzy
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Homepage"
-msgstr "Página de inicio"
+msgstr ""
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:265
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:265
 msgid "Follow us in Google+"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:266
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:266
 msgid "Follow us in Facebook"
 msgstr ""
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
 msgstr "Acerca de"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
 msgstr "Esconder ícono"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:77
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:73
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
 msgstr "Ayuda"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
 msgstr "Salir"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:68
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:69
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:70
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:71
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:72
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:73
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:74
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:75
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:76
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:77
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:78
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:79
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:80
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:81
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:82
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:83
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:84
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:85
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:86
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:87
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:88
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:89
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:90
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:68
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:69
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:70
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:71
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:72
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:73
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:74
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:75
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:76
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:77
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:78
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:79
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:80
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:81
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:82
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:83
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:84
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:85
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:86
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:87
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:88
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:89
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:90
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:122
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:123
 msgid "An indicator for the Touchpad"
 msgstr "Un indicador para el touchpad"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
 msgstr "utiliza: %prog [opciones]"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
 msgstr "Muestra esta ayuda y sale"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 "Cambia el estado del touchpad. Si el indicador no está funcionando lo "
 "inicia."
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
@@ -152,142 +153,146 @@ msgstr ""
 "Muestra el icono si el indicador está oculto. Esta es la acción por defecto."
 " Si el indicador no está funcionando lo inicia."
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
 msgstr "Listar dispositivos"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:92
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:88
 msgid "Shortcut"
 msgstr "Atajo de teclado"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:98
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:94
 msgid "Shortcut enabled"
 msgstr "Atajo de teclado activado"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:119
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:115
 msgid "Actions"
 msgstr "Acciones"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:125
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:121
 msgid "Disable touchpad when mouse plugged"
 msgstr "Desactivar touchpad al conectar un ratón"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:124
 msgid "Enable touchpad on exit"
 msgstr "Activar el touchpad al salir"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Disable touchpad on exit"
 msgstr "Deshabilitar touchpad al salir"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:136
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad when Touchpad-Indicator starts"
 msgstr "Deshabilitar touchpad al inicio de Touchpad-Indicator"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:141
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:137
 msgid "General options"
 msgstr "Opciones generales"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:147
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:143
 msgid "Autostart"
 msgstr "Inicio automático"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:150
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:146
 msgid "Start hidden"
 msgstr "Iniciar oculto"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:153
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:149
 msgid "Show notifications"
 msgstr "Mostrar notificaciones"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:158
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:154
 msgid "Theme"
 msgstr "Tema"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:164
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:160
 msgid "Select theme"
 msgstr "Seleccionar tema"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Este atajo del teclado <Control> + <Alt> + "
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:237
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:238
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
 msgid " is assigned"
 msgstr " es asignado"
 
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:15
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:16
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:17
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:18
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:19
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:20
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:21
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:22
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:23
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:24
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:25
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:26
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:27
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:28
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:29
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:30
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:31
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:32
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:33
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:34
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:35
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:36
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:37
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:38
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:39
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:40
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:41
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:42
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:43
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:44
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:45
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:46
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:47
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:48
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:49
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:50
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:51
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:52
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:53
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:54
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:55
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:56
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:57
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:58
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:59
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:60
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:61
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:62
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:63
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
-#: /home/atareao/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:15
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:16
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:17
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:18
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:19
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:20
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:21
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:22
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:23
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:24
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:25
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:26
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:27
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:28
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:29
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:30
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:31
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:32
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:33
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:34
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:35
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:36
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:37
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:38
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:39
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:40
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:41
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:42
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:43
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:44
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:45
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:46
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:47
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:48
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:49
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:50
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:51
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:52
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:53
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:54
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:55
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:56
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:57
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:58
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:59
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:60
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:61
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:62
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:63
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:118
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:119
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:120
+#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:121
 msgid "Touchpad-Indicator"
 msgstr ""
 

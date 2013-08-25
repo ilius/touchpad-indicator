@@ -28,7 +28,7 @@ from gi.repository import Gtk
 from gi.repository import Gio
 from gi.repository import Gdk
 from configurator import Configuration
-from gconfigurator import GConfManager
+from dconfigurator import DConfManager
 from xconfigurator import xfconfquery_exists, XFCEConfiguration, get_desktop_environment
 import os
 import shutil
@@ -43,7 +43,7 @@ def create_or_remove_autostart(create):
 	check_autostart_dir()
 	if create == True:
 		if not os.path.exists(comun.FILE_AUTO_START):
-			shutil.copyfile('/usr/share/touchpad-indicator/touchpad-indicator-autostart.desktop',comun.FILE_AUTO_START)
+			shutil.copyfile('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/touchpad-indicator-autostart.desktop',comun.FILE_AUTO_START)
 	else:
 		if os.path.exists(comun.FILE_AUTO_START):
 			os.remove(comun.FILE_AUTO_START)
@@ -54,20 +54,16 @@ def exist_touchpad_shortcut():
 		print(directory)
 		
 def get_shortcuts():
-	gcm = GConfManager()
-	keys = []
-	keys+=gcm.get_keys('/apps/compiz/general/allscreens/options')
-	keys+=gcm.get_keys('/apps/metacity/global_keybindings')
-	keys+=gcm.get_keys('/apps/metacity/window_keybindings')
-	for directory in gcm.get_dirs('/desktop/gnome/keybindings'):
-		for key in gcm.get_keys(directory):
-			if key.endswith('/binding'):
-				keys.append(key)
 	values = []
-	for key in keys:
-		value = gcm.get_value(key)
-		if value != 'disabled':
-			values.append(value)
+	dcm = DConfManager('org.gnome.desktop.wm.keybindings')
+	for key in dcm.get_keys():
+		for each_element in dcm.get_value(key):
+			values.append(each_element)
+	dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys')
+	for key in dcm.get_keys():
+		each_element = dcm.get_value(key)
+		if type(each_element)==str:
+			values.append(each_element)	
 	return values
 
 class PreferencesDialog(Gtk.Dialog):
@@ -302,24 +298,31 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.save()
 		desktop_environment = get_desktop_environment()
 		if desktop_environment == 'gnome':
-			gcm = GConfManager()
-			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','/usr/share/touchpad-indicator/change_touchpad_state.py')
-			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','Touchpad-Indicator')
+			print('gnom3')
+			dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys')
+			values = dcm.get_value('custom-keybindings')
 			if self.checkbutton0.get_active():
-				shortcut = key
+				if '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/' not in values:
+					values.append('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/')
+					dcm.set_value('custom-keybindings',values)			
+				dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.touchpad-indicator')
+				print(dcm.set_value('binding',key))
+				print(dcm.set_value('command','/usr/bin/python3 /opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/change_touchpad_state.py'))
+				print(dcm.set_value('name','Touchpad-Indicator key binding'))
 			else:
-				shortcut = ''
-			gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding',shortcut)
+				if '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/' in values:
+					values.remove('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/')
+					dcm.set_value('custom-keybindings',values)
 		elif desktop_environment == 'xfce':
 			if xfconfquery_exists():
 				xfceconf = XFCEConfiguration('xfce4-keyboard-shortcuts')
-				keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/usr/share/touchpad-indicator/change_touchpad_state.py')
+				keys = xfceconf.search_for_value_in_properties_startswith('/commands/custom/','/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/change_touchpad_state.py')
 				if keys:
 					for akey in keys:
 						xfceconf.reset_property(akey['key'])
 				if self.checkbutton0.get_active():
 					key = key.replace('<Primary>','<Control>')
-					xfceconf.set_property('/commands/custom/'+key,'/usr/share/touchpad-indicator/change_touchpad_state.py')		
+					xfceconf.set_property('/commands/custom/'+key,'/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/change_touchpad_state.py')		
 
 if __name__ == "__main__":
 	cm = PreferencesDialog()

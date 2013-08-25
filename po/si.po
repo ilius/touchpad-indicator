@@ -1,4 +1,4 @@
-# Croatian translation for touchpad-indicator
+# Sinhalese translation for touchpad-indicator
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: touchpad-indicator 0.9.4\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2013-08-25 09:47+0200\n"
-"PO-Revision-Date: 2013-01-05 01:25+0000\n"
-"Last-Translator: Paolo Pelesk <ted.teddy.cro@gmail.com>\n"
-"Language-Team: Croatian <hr@li.org>\n"
+"PO-Revision-Date: 2013-06-01 04:26+0000\n"
+"Last-Translator: Thambaru Wijesekara <Unknown>\n"
+"Language-Team: Sinhalese <si@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
+"Language: si\n"
 "X-Generator: Launchpad (build 16738)\n"
 "X-Launchpad-Export-Date: 2013-08-25 07:32+0000\n"
 
@@ -22,73 +22,73 @@ msgstr ""
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:289
 msgid "Disable Touchpad"
-msgstr "Onemogući Touchpad"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:125
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:175
 msgid "Enable Touchpad"
-msgstr "Omogući Touchpad"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:187
 msgid "Touchpad Enabled"
-msgstr "Touchpad omogućen"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:190
 msgid "Touchpad Disabled"
-msgstr "Touchpad onemogućen"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Homepage..."
-msgstr "Početna..."
+msgstr "නිවස්න පිටුව..."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
 msgid "Get help online..."
-msgstr "Online pomoć..."
+msgstr "සබැඳිව උදව් ලබා ගන්න..."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Translate this application..."
-msgstr "Prevedite aplikaciju..."
+msgstr "මෙම යෙදුම පරිවර්තනය කරන්න..."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Report a bug..."
-msgstr "Prijavi grešku..."
+msgstr "දෝෂයක් වාර්තා කරන්න..."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Homepage"
-msgstr ""
+msgstr "නිවස්න පිටුව"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:264
 msgid "Follow us in Twitter"
-msgstr ""
+msgstr "ට්විටර්හි අපව ලුහුබඳින්න"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:265
 msgid "Follow us in Google+"
-msgstr ""
+msgstr "Google+ හි අපව ලුහුබඳින්න"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:266
 msgid "Follow us in Facebook"
-msgstr ""
+msgstr "Facebookහි අපව ලුහුබඳින්න"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:279
 msgid "About"
-msgstr "O"
+msgstr "පිළිබඳව"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:290
 msgid "Hide icon"
-msgstr "Sakri ikonicu"
+msgstr "අයිකනය සඟවන්න"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:292
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:73
 msgid "Preferences"
-msgstr "Postavke"
+msgstr "අභිප්‍රේත"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Help"
-msgstr "Pomoć"
+msgstr "උදව්"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:297
 msgid "Exit"
-msgstr "Izlaz"
+msgstr "ඉවත්වීම"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:309
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
@@ -129,94 +129,91 @@ msgstr "Izlaz"
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:122
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:123
 msgid "An indicator for the Touchpad"
-msgstr "Indikator za Touchpad"
+msgstr "ටච්පුවරුව සඳහා දර්ශකය"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:417
 msgid "usage: %prog [options]"
-msgstr "upotreba: %prog [modućnosti]"
+msgstr "භාවිතය: %prog [විකල්ප]"
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:423
 msgid "show this help and exit."
-msgstr "prikaži pomoć i izađi"
+msgstr "මෙම උදව් පෙන්වන්න හා ඉවත්වන්න."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:428
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
-"promijenite stanje touchpad. Ukoliko indikator nije pokrenut, pokrenite ga."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:433
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"prikaži ikonu ako je indikator skriven. Zadana radnja. Pokrenite indikator "
-"ako nije već pokrenut."
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:438
 msgid "list devices"
-msgstr "prikaži uređaje"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:88
 msgid "Shortcut"
-msgstr "Prečac"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:94
 msgid "Shortcut enabled"
-msgstr "Prečac omogućen"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:115
 msgid "Actions"
-msgstr "Akcije"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:121
 msgid "Disable touchpad when mouse plugged"
-msgstr "Onemogući touchpad kad je miš priključen"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:124
 msgid "Enable touchpad on exit"
-msgstr "Omogući touchpad pri izlazu"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
 msgid "Disable touchpad on exit"
-msgstr "Onemogući touchpad na izlazu"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr "Onemogući touchpad kad se Touchpad-Indikator pokrene"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:137
 msgid "General options"
-msgstr "Opće postavke"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:143
 msgid "Autostart"
-msgstr "Automatsko pokretanje"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:146
 msgid "Start hidden"
-msgstr "Pokreni skriveno"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:149
 msgid "Show notifications"
-msgstr "Prikaži obavijesti"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:154
 msgid "Theme"
-msgstr "Tema"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:160
 msgid "Select theme"
-msgstr "Odaberi temu"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
 msgid "This shortcut <Control> + <Alt> + "
-msgstr "Ovaj prečac <Control> + <Alt> + "
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
 msgid " is assigned"
-msgstr " je dodijeljen"
+msgstr ""
 
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -293,4 +290,4 @@ msgstr " je dodijeljen"
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:120
 #: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:121
 msgid "Touchpad-Indicator"
-msgstr "Touchpad-Indikator"
+msgstr ""

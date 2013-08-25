@@ -23,11 +23,13 @@ DATA_FILES = [
 	('/opt/extras.ubuntu.com/touchpad-indicator/bin',glob.glob('bin/*')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',['debian/changelog']),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',glob.glob('src/*')),
+	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator',['data/touchpad-indicator-autostart.desktop']),	
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',glob.glob('data/icons/*.svg')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/social',glob.glob('data/social/*.svg')),
 	('/opt/extras.ubuntu.com/touchpad-indicator/share/touchpad-indicator/icons',['data/icons/touchpad-indicator.svg']),
+	('/usr/share/glib-2.0/schemas',['data/schemas/org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.touchpad-indicator.gschema.xml']),
 	('/etc/pm/sleep.d',['data/00_check_touchpad_status']),
-	('/usr/share/applications',['data/extras-touchpad-indicator.desktop']),	
+	('/usr/share/applications',['data/extras-touchpad-indicator.desktop']),		
 	]
 
 MAIN_DIR = os.getcwd()

@@ -1,9 +1,17 @@
-touchpad-indicator (0.9.4-0extras13.04.2ubuntu1) UNRELEASED; urgency=low
+touchpad-indicator (0.9.4-0extras13.04.4) raring; urgency=low
+
+  * Using GSettings for shortcut
+  * Fixed a bug with shortcut
+
+ -- Lorenzo <atareao_r@raring>  Sun, 25 Aug 2013 09:28:31 +0200
+
+touchpad-indicator (0.9.4-0extras13.04.2ubuntu3) raring; urgency=low
 
   * Fixed a bug with social icons
   * Fixed a bug with languages 
+  * Fixed a bug with directories
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 13 May 2013 06:31:21 +0200
+ -- Lorenzo <atareao_r@raring>  Sat, 17 Aug 2013 18:44:12 +0200
 
 touchpad-indicator (0.9.4-0extras13.04.2) raring; urgency=low
 

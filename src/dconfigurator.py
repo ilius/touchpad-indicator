@@ -23,38 +23,56 @@ __date__ ="$28-jul-2012$"
 #
 #
 #
-import types
-from gi.repository import GConf
+from gi.repository import Gio, GLib	
 
-CASTSFROM = {
-GConf.ValueType.BOOL:   GConf.Value.get_bool,
-GConf.ValueType.INT:    GConf.Value.get_int,
-GConf.ValueType.FLOAT:  GConf.Value.get_float,
-GConf.ValueType.STRING: GConf.Value.get_string,
-GConf.ValueType.LIST:   GConf.Value.get_list
-}	
+class DConfManager(object):
+	def __init__(self,key):
+		self.setting = Gio.Settings(key)
 
-CASTSTO = {
-bool: GConf.Client.set_bool,
-int:     GConf.Client.set_int,
-float:   GConf.Client.set_float,
-str:  GConf.Client.set_string
-}
-'''
-types.ListType:    GConf.Client.set_list,
-types.TupleType:   GConf.Client.set_list,
-set:               GConf.Client.set_list}
-'''
-
-class GConfManager(object):
-	def __init__(self):
-		self.client = GConf.Client.get_default()
-
-	def get_keys(self,key):
+	def get_keys(self):
 		keys = []
-		for entry in self.client.all_entries(key):
-			keys.append(entry.key)
+		for entry in self.setting.list_keys():
+			keys.append(entry)
 		return keys
+
+	def set_value(self,entry,value):
+		if type(value)==str:
+			self.setting.set_value(entry,GLib.Variant('s',value))
+			return True
+		elif type(value)==bool:
+			self.setting.set_value(entry,GLib.Variant('b',value))
+			return True
+		elif type(value)==int:
+			self.setting.set_value(entry,GLib.Variant('i',value))
+			return True
+		elif type(value)==list:
+			self.setting.set_value(entry,GLib.Variant('as',value))
+			return True
+		return False
+		
+		
+	def get_value(self,entry):
+		value = self.setting.get_value(entry)
+		#print(entry,'->',value,'-',value.get_type_string())
+		if value.get_type_string().endswith('as'):
+			return self.setting.get_strv(entry)
+		elif value.get_type_string().endswith('s'):
+			return self.setting.get_string(entry)
+		elif value.get_type_string().endswith('b'):
+			return self.setting.get_boolean(entry)
+		elif value.get_type_string().endswith('i'):
+			return self.setting.get_int(entry)
+		return None
+		
+	def get_values(self):
+		values = []
+		for entry in self.setting.list_keys():
+			values.append(self.get_value(entry))
+		return values
+	
+	def get_children(self):
+		print(self.setting.list_children())
+'''
 
 	def get_dirs(self,key):
 		directories = []
@@ -103,8 +121,34 @@ class GConfManager(object):
 		else:
 			CASTSTO[type(value)](self.client, key, 
 				value)
-
+'''
 if __name__ == '__main__':
+	dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys')
+	values = dcm.get_value('custom-keybindings')
+	if '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/' in values:
+		values.remove('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/')
+		dcm.set_value('custom-keybindings',values)
+	else:
+		values.append('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/touchpad-indicator/')
+		dcm.set_value('custom-keybindings',values)
+	dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.touchpad-indicator')
+	dcm.get_keys()
+	print(dcm.set_value('binding','<Primary><Alt>p'))
+	print(dcm.set_value('command','/usr/bin/python3 /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/change_touchpad_state.py'))
+	print(dcm.set_value('name','Touchpad-Indicator'))
+	'''
+	dcm = DConfManager('org.gnome.desktop.wm.keybindings')
+	print(dcm.get_keys())
+	print(dcm.get_values())
+	dcm = DConfManager('org.gnome.desktop.wm.preferences')
+	print(dcm.get_keys())
+	print(dcm.get_values())
+	#dcm.set_value('audible-bell',True)
+	dcm = DConfManager('org.gnome.settings-daemon.plugins.media-keys')
+	print(dcm.get_keys())
+	dcm.get_children()
+	'''
+	'''
 	def get_shortcuts():		
 		gcm = GConfManager()
 		print(gcm.get_keys('/org/gnome/desktop/wm/keybindings/activate-window-menu'))
@@ -127,4 +171,4 @@ if __name__ == '__main__':
 	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/action','')
 	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/binding','')
 	gcm.set_value('/desktop/gnome/keybindings/touchpad-indicator/name','')
-
+	'''
