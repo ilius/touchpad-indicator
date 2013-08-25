@@ -1,9 +1,10 @@
-touchpad-indicator (0.9.4-0extras13.04.5) raring; urgency=low
+touchpad-indicator (0.9.4-0extras13.04.6) raring; urgency=low
 
   * Minor bugs
   * Added translations: Sinhalese, Belarusian
+  * Some modifications to Dbus
 
- -- Lorenzo <atareao_r@raring>  Sun, 25 Aug 2013 09:49:06 +0200
+ -- Lorenzo <atareao_r@raring>  Sun, 25 Aug 2013 14:48:48 +0200
 
 touchpad-indicator (0.9.4-0extras13.04.4) raring; urgency=low
 

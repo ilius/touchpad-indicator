@@ -29,6 +29,7 @@ from gi.repository import Gtk
 from gi.repository import GdkPixbuf
 from gi.repository import AppIndicator3 as appindicator
 from gi.repository import Notify
+from gi.repository import GObject
 
 import os
 import webbrowser
@@ -66,39 +67,49 @@ def add2menu(menu, text = None, icon = None, conector_event = None, conector_act
 	menu_item.show()
 	menu.append(menu_item)
 	return menu_item
-
+'''
 class DBUSService(dbus.service.Object):
 
 	def __init__(self, indicator):
-		self.ind = indicator
-		bus = dbus.SessionBus()
-		bus_name = dbus.service.BusName('es.atareao.touchpad_indicator_service', bus)
+		self.ind = indicator		
+		bus_name = dbus.service.BusName('es.atareao.TouchpadIndicator', bus = dbus.SessionBus())
 		dbus.service.Object.__init__(self, bus_name,
-							 '/es/atareao/touchpad_indicator_service')
+							 '/es/atareao/TouchpadIndicator')
+		self.loop = GObject.MainLoop()
 
-	@dbus.service.method('es.atareao.touchpad_indicator_service')
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def on_mouse_detected_plugged(self):
 		self.ind.on_mouse_detected_plugged()
 
-	@dbus.service.method('es.atareao.touchpad_indicator_service')
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def on_mouse_detected_unplugged(self):
 		self.ind.on_mouse_detected_unplugged()
 
-	@dbus.service.method('es.atareao.touchpad_indicator_service')
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def change_state(self):
 		self.ind.change_state()
 
-	@dbus.service.method('es.atareao.touchpad_indicator_service')
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def unhide(self):
 		self.ind.unhide()
 
-	@dbus.service.method('es.atareao.touchpad_indicator_service')
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def check_status(self):
 		return self.ind.check_status()
-
-class TouchpadIndicator():
+	
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')		
+	def start (self, options={}):
+		if self.loop.is_running ():
+			print('instance already running')
+		else:
+			self.loop.run ()
+'''
+class TouchpadIndicator(dbus.service.Object):
 
 	def __init__(self):
+		bus_name = dbus.service.BusName('es.atareao.TouchpadIndicator', bus = dbus.SessionBus())
+		dbus.service.Object.__init__(self, bus_name,
+							 '/es/atareao/TouchpadIndicator')
 		self.about_dialog = None
 		self.the_watchdog = None
 		self.icon = comun.ICON
@@ -189,18 +200,21 @@ class TouchpadIndicator():
 			self.notification.update('Touchpad-Indicator',
 						_('Touchpad Disabled'), self.attention_icon)
 		self.notification.show()
-
+	
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def on_mouse_detected_plugged(self):
 		if self.on_mouse_plugged and self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_sensitive(False)
 			self.set_touch_enabled(False)
-
+	
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def on_mouse_detected_unplugged(self):
 		if self.on_mouse_plugged and\
 				not watchdog.is_mouse_plugged() and not self.touchpad.are_all_touchpad_enabled():
 			self.change_state_item.set_sensitive(True)
 			self.set_touch_enabled(True)
-
+	
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def unhide(self):
 		"""Make the indicator icon visible again, if needed."""
 		if self.indicator.get_status() == appindicator.IndicatorStatus.PASSIVE:
@@ -209,12 +223,14 @@ class TouchpadIndicator():
 			else:
 				self.indicator.set_status(appindicator.IndicatorStatus.ATTENTION)
 
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def change_state(self):
 		if not self.on_mouse_plugged or\
 				not watchdog.is_mouse_plugged():
 			is_touch_enabled = not self.touchpad.are_all_touchpad_enabled()
 			self.set_touch_enabled(is_touch_enabled)
-
+	
+	@dbus.service.method(dbus_interface='es.atareao.TouchpadIndicator')
 	def check_status(self):
 		configuration = Configuration()
 		self.touchpad_enabled = configuration.get('touchpad_enabled')
@@ -396,10 +412,10 @@ def make_visible():
 	"""Get and call the unhide method of the running Touchpad-indicator."""
 
 	bus = dbus.SessionBus()
-	service = bus.get_object('es.atareao.touchpad_indicator_service',\
-									'/es/atareao/touchpad_indicator_service')
+	service = bus.get_object('es.atareao.TouchpadIndicator',\
+									'/es/atareao/TouchpadIndicator')
 	unhide = service.get_dbus_method('unhide',\
-									'es.atareao.touchpad_indicator_service')
+									'es.atareao.TouchpadIndicator')
 	unhide()
 
 def change_status():
@@ -407,48 +423,46 @@ def change_status():
 		Touchpad-indicator."""
 
 	bus = dbus.SessionBus()
-	service = bus.get_object('es.atareao.touchpad_indicator_service',\
-									'/es/atareao/touchpad_indicator_service')
+	service = bus.get_object('es.atareao.TouchpadIndicator',\
+									'/es/atareao/TouchpadIndicator')
 	change_state = service.get_dbus_method('change_state',\
-									'es.atareao.touchpad_indicator_service')
+									'es.atareao.TouchpadIndicator')
 	change_state()
 
-if __name__ == "__main__":
-	usage_msg = _('usage: %prog [options]')
-	parser = OptionParser(usage=usage_msg, add_help_option=False)
-	parser.add_option('-h', '--help',
-			action='store_true',
-			dest='help',
-			default=False,
-			help=_('show this help and exit.'))
-	parser.add_option('-c', '--change-state',
-			action='store_true',
-			dest='change',
-			default=False,
-			help=_('change the touchpad state. If indicator is not running launch it.'))
-	parser.add_option('-s', '--show-icon',
-			action='store_true',
-			dest='show',
-			default=False,
-			help=_('show the icon if indicator is hidden. Default action. If indicator is not running launch it.'))
-	parser.add_option('-l', '--list-devices',
-			action='store_true',
-			dest='list',
-			default=False,
-			help=_('list devices'))
-	(options, args) = parser.parse_args()
-	if options.help:
-		parser.print_help()
-		exit(0)
-	elif options.list:
-		device_list.list()
-		exit(0)
-
+def main():
 	DBusGMainLoop(set_as_default=True)
-	# check if there is another touchpad-indicator
-	if dbus.SessionBus().request_name('es.atareao.touchpad_indicator_service')\
-					!= dbus.bus.REQUEST_NAME_REPLY_PRIMARY_OWNER:
-		if options.change:
+	bus = dbus.SessionBus()
+	request = bus.request_name('es.atareao.TouchpadIndicator',dbus.bus.NAME_FLAG_DO_NOT_QUEUE)
+	if request == dbus.bus.REQUEST_NAME_REPLY_EXISTS:
+		print('Another instance of Touchpad Indicator is working')
+		usage_msg = _('usage: %prog [options]')
+		parser = OptionParser(usage=usage_msg, add_help_option=False)
+		parser.add_option('-h', '--help',
+				action='store_true',
+				dest='help',
+				default=False,
+				help=_('show this help and exit.'))
+		parser.add_option('-c', '--change-state',
+				action='store_true',
+				dest='change',
+				default=False,
+				help=_('change the touchpad state. If indicator is not running launch it.'))
+		parser.add_option('-s', '--show-icon',
+				action='store_true',
+				dest='show',
+				default=False,
+				help=_('show the icon if indicator is hidden. Default action. If indicator is not running launch it.'))
+		parser.add_option('-l', '--list-devices',
+				action='store_true',
+				dest='list',
+				default=False,
+				help=_('list devices'))
+		(options, args) = parser.parse_args()
+		if options.help:
+			parser.print_help()
+		elif options.list:
+			device_list.list()
+		elif options.change:
 			change_status()
 		else: # show by default
 			make_visible()
@@ -461,7 +475,12 @@ if __name__ == "__main__":
 		print('#####################################################')
 		####################################################################
 		Notify.init("touchpad-indicator")
+		object = bus.get_object('es.atareao.TouchpadIndicator',\
+									'/es/atareao/TouchpadIndicator')
+		my_service = dbus.Interface(object,'es.atareao.TouchpadIndicator')
 		tpi=TouchpadIndicator()
-		my_service = DBUSService(tpi)
 		Gtk.main()
 	exit(0)
+	
+if __name__ == "__main__":
+	main()

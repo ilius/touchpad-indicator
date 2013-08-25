@@ -97,7 +97,7 @@ f = open(CHANGELOG,'r')
 line = f.readline()
 f.close()
 pos=line.find('(')
-posf=line.find('-',pos)
+posf=line.find(')',pos)
 VERSION = line[pos+1:posf].strip()
 if is_package():
 	VERSION = VERSION + '-src'

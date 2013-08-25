@@ -107,17 +107,17 @@ def init_dbus():
 	bus = dbus.SessionBus()
 	try:
 		touchpad_indicator_service = bus.get_object\
-								('es.atareao.touchpad_indicator_service',
-								'/es/atareao/touchpad_indicator_service')
+								('es.atareao.TouchpadIndicator',
+								'/es/atareao/TouchpadIndicator')
 		on_mouse_detected_plugged = touchpad_indicator_service.get_dbus_method\
 								('on_mouse_detected_plugged',
-								'es.atareao.touchpad_indicator_service')
+								'es.atareao.TouchpadIndicator')
 		on_mouse_detected_unplugged = touchpad_indicator_service.get_dbus_method\
 								('on_mouse_detected_unplugged',
-								'es.atareao.touchpad_indicator_service')
+								'es.atareao.TouchpadIndicator')
 		check_status = touchpad_indicator_service.get_dbus_method\
 								('check_status',
-								'es.atareao.touchpad_indicator_service')
+								'es.atareao.TouchpadIndicator')
 	except:
 		print('watchdog: Failed to initialize dbus.')
 		exit(0)

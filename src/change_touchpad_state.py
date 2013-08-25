@@ -30,10 +30,11 @@ from configurator import Configuration
  
 bus = dbus.SessionBus()
 
+
 if __name__ == '__main__':
 	try:
-		touchpad_indicator_service = bus.get_object('es.atareao.touchpad_indicator_service', '/es/atareao/touchpad_indicator_service')
-		change_state = touchpad_indicator_service.get_dbus_method('change_state', 'es.atareao.touchpad_indicator_service')
+		touchpad_indicator_service = bus.get_object('es.atareao.TouchpadIndicator', '/es/atareao/TouchpadIndicator')
+		change_state = touchpad_indicator_service.get_dbus_method('change_state', 'es.atareao.TouchpadIndicator')
 		change_state()
 		print('Touchpad-Indicator is working')
 	except dbus.exceptions.DBusException as argument:

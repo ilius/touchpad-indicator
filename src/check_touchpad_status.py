@@ -24,32 +24,41 @@ __date__ ='$21/11/2010'
 #
 #
 #
+import dbus
 from touchpad import Touchpad
 from configurator import Configuration
 import time
 
 if __name__ == '__main__':
-	touchpad = Touchpad()
-	configuration = Configuration()
-	touchpad_enabled = configuration.get('touchpad_enabled')
-	touchpad_indicator_working = configuration.get('is_working')
-	status = touchpad.are_all_touchpad_enabled()
-	if touchpad_indicator_working:
+	try:
+		bus = dbus.SessionBus()
+		touchpad_indicator_service = bus.get_object('es.atareao.TouchpadIndicator', '/es/atareao/TouchpadIndicator')
+		check_status = touchpad_indicator_service.get_dbus_method('check_status', 'es.atareao.TouchpadIndicator')
+		check_status()
 		print('Touchpad-Indicator is working')
-		if touchpad_enabled != status:
-			if touchpad_enabled:
-				touchpad.enable_all_touchpads()
-			else:
-				touchpad.disable_all_touchpads()
-			newstatus = touchpad.are_all_touchpad_enabled()
-			if status != newstatus:
-				configuration.set('touchpad_enabled',newstatus)
-				configuration.save()
-				status = newstatus
-	else:
-		print('Touchpad-Indicator is not working')
-	if status:
-		print('Touchpad is enabled')
-	else:
-		print('Touchpad is disabled')
+	except dbus.exceptions.DBusException as argument:
+		print(argument)	
+		touchpad = Touchpad()
+		configuration = Configuration()
+		touchpad_enabled = configuration.get('touchpad_enabled')
+		touchpad_indicator_working = configuration.get('is_working')
+		status = touchpad.are_all_touchpad_enabled()
+		if touchpad_indicator_working:
+			print('Touchpad-Indicator is working')
+			if touchpad_enabled != status:
+				if touchpad_enabled:
+					touchpad.enable_all_touchpads()
+				else:
+					touchpad.disable_all_touchpads()
+				newstatus = touchpad.are_all_touchpad_enabled()
+				if status != newstatus:
+					configuration.set('touchpad_enabled',newstatus)
+					configuration.save()
+					status = newstatus
+		else:
+			print('Touchpad-Indicator is not working')
+		if status:
+			print('Touchpad is enabled')
+		else:
+			print('Touchpad is disabled')
 	exit(0)

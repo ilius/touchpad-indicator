@@ -36,12 +36,8 @@ if __name__ == '__main__':
 	####################################################################
 	import machine_information
 	import comun
-	from touchpad_indicator import TouchpadIndicator
+	from touchpad_indicator import main
 	####################################################################
-	print(machine_information.get_information())
-	print('touchpad-Indicator version: %s'%comun.VERSION)
-	print('#####################################################')
 	Notify.init('touchpad-indicator')
-	cfi=TouchpadIndicator()
-	Gtk.main()
+	main()
 exit(0)
