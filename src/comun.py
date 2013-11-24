@@ -53,11 +53,13 @@ PARAMS = {
 			'on_mouse_plugged':False,
 			'enable_on_exit':True,
 			'disable_on_exit':False,
+			'disable_on_typing':False,
+			'seconds':2,
 			'start_hidden':False,
 			'show_notifications':True,
 			'theme':'light',
 			'touchpad_enabled':True,
-			'shortcut':'<Primary><Alt>c'
+			'shortcut':'<Primary><Alt>c',						
 			}
 # check if running from source
 STATUS_ICON = {}

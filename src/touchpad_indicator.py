@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # touchpad-indicator.py
@@ -46,8 +46,17 @@ from comun import _
 import comun
 import watchdog
 import machine_information
+import shlex
+import subprocess
 
 import device_list
+
+def ejecuta(comando):
+	args = shlex.split(comando)
+	p = subprocess.Popen(args, bufsize=10000, stdout=subprocess.PIPE)
+	#valor = p.communicate()[0]
+	return 1
+	
 
 def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
 	if text != None:
@@ -224,10 +233,18 @@ class TouchpadIndicator(dbus.service.Object):
 		self.theme = configuration.get('theme')
 		self.touchpad_enabled = configuration.get('touchpad_enabled')
 		self.disable_touchpad_on_start_indicator = configuration.get('disable_touchpad_on_start_indicator')
+		self.disable_on_typing = configuration.get('disable_on_typing')
 		self.shortcut = configuration.get('shortcut')
 		self.ICON = comun.ICON
 		self.active_icon = comun.STATUS_ICON[configuration.get('theme')][0]
 		self.attention_icon = comun.STATUS_ICON[configuration.get('theme')][1]
+		# Actions to do on init
+		if self.disable_on_typing:
+			print('start')
+			ejecuta('syndaemon -d &')
+			print('end')
+		else:
+			ejecuta('killall syndaemon')
 		#
 
 	################### menu creation ######################
@@ -360,7 +377,11 @@ class TouchpadIndicator(dbus.service.Object):
 			self.touchpad.disable_all_touchpads()
 		configuration = Configuration()
 		configuration.set('is_working',False)
-		configuration.save()			
+		configuration.save()
+		# Actions to do on init
+		if self.disable_on_typing:
+			ejecuta('killall syndaemon')
+			
 		exit(0)
 
 	def on_about_item(self, widget, data=None):

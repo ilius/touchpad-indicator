@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # preferences_dialog.py
@@ -30,6 +30,7 @@ from gi.repository import Gdk
 from configurator import Configuration
 from dconfigurator import DConfManager
 from xconfigurator import xfconfquery_exists, XFCEConfiguration, get_desktop_environment
+from synclient import Synclient
 import os
 import shutil
 import comun
@@ -115,7 +116,7 @@ class PreferencesDialog(Gtk.Dialog):
 		notebook.append_page(vbox2,Gtk.Label.new(_('Actions')))
 		frame2 = Gtk.Frame()
 		vbox2.pack_start(frame2,True,True,0)
-		table2 = Gtk.Table(3, 1, True)
+		table2 = Gtk.Table(6, 2, False)
 		frame2.add(table2)
 		#***************************************************************
 		self.checkbutton2 = Gtk.CheckButton.new_with_label(_('Disable touchpad when mouse plugged'))
@@ -131,6 +132,17 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		self.checkbutton7 = Gtk.CheckButton.new_with_label(_('Disable touchpad when Touchpad-Indicator starts'))
 		table2.attach(self.checkbutton7,0,1,3,4, xpadding=5, ypadding=5)
+		#
+		self.checkbutton8 = Gtk.CheckButton.new_with_label(_('Disable touchpad on typing'))
+		self.checkbutton8.connect('toggled',self.on_checkbutton8_toggled)
+		table2.attach(self.checkbutton8,0,1,4,5, xpadding=5, ypadding=5)
+		#
+		self.label_seconds = Gtk.Label('        '+_('Seconds to wait after the last key press before enabling the touchpad')+':')
+		table2.attach(self.label_seconds,0,1,5,6, xpadding=5, ypadding=5)
+		#
+		self.seconds = Gtk.SpinButton()
+		self.seconds.set_adjustment(Gtk.Adjustment(2, 1, 10, 1, 10, 0))
+		table2.attach(self.seconds,1,2,5,6, xpadding=5, ypadding=5)
 		#***************************************************************
 		vbox3 = Gtk.VBox(spacing = 5)
 		vbox3.set_border_width(5)
@@ -151,25 +163,47 @@ class PreferencesDialog(Gtk.Dialog):
 		#***************************************************************
 		vbox4 = Gtk.VBox(spacing = 5)
 		vbox4.set_border_width(5)
-		notebook.append_page(vbox4,Gtk.Label.new(_('Theme')))
+		notebook.append_page(vbox4,Gtk.Label.new(_('Touchpad configuration')))
 		frame4 = Gtk.Frame()
 		vbox4.pack_start(frame4,True,True,0)
-		table4 = Gtk.Table(1, 3, True)
-		frame4.add(table4)
+		table4 = Gtk.Table(6, 1, False)
+		frame4.add(table4)	
+		#***************************************************************
+		self.checkbutton41 = Gtk.CheckButton.new_with_label(_('Vertical scrolling'))
+		table4.attach(self.checkbutton41,0,1,0,1, xpadding=5, ypadding=5)
+		self.checkbutton42 = Gtk.CheckButton.new_with_label(_('Horizontal scrolling'))
+		table4.attach(self.checkbutton42,0,1,1,2, xpadding=5, ypadding=5)
+		self.checkbutton43 = Gtk.CheckButton.new_with_label(_('Circular scrolling'))
+		table4.attach(self.checkbutton43,0,1,2,3, xpadding=5, ypadding=5)
+		self.checkbutton44 = Gtk.CheckButton.new_with_label(_('Two fingers vertical scrolling'))
+		table4.attach(self.checkbutton44,0,1,3,4, xpadding=5, ypadding=5)
+		self.checkbutton45 = Gtk.CheckButton.new_with_label(_('Two fingers horizontal scrolling'))
+		table4.attach(self.checkbutton45,0,2,4,5, xpadding=5, ypadding=5)
+		self.checkbutton46 = Gtk.CheckButton.new_with_label(_('Natural scrolling'))
+		table4.attach(self.checkbutton46,0,2,5,6, xpadding=5, ypadding=5)
+		
+		#***************************************************************
+		vbox5 = Gtk.VBox(spacing = 5)
+		vbox5.set_border_width(5)
+		notebook.append_page(vbox5,Gtk.Label.new(_('Theme')))
+		frame5 = Gtk.Frame()
+		vbox5.pack_start(frame5,True,True,0)
+		table5 = Gtk.Table(1, 3, True)
+		frame5.add(table5)
 		#***************************************************************
 		label4 = Gtk.Label(_('Select theme')+':')
 		label4.set_alignment(0, 0.5)
-		table4.attach(label4,0,1,0,1, xpadding=5, ypadding=5)
+		table5.attach(label4,0,1,0,1, xpadding=5, ypadding=5)
 		self.radiobutton1 = Gtk.RadioButton()
 		image1 = Gtk.Image()
 		image1.set_from_file(os.path.join(comun.ICONDIR,'touchpad-indicator-light-enabled.svg'))
 		self.radiobutton1.add(image1)		
-		table4.attach(self.radiobutton1,1,2,0,1, xpadding=5, ypadding=5)
+		table5.attach(self.radiobutton1,1,2,0,1, xpadding=5, ypadding=5)
 		self.radiobutton2 = Gtk.RadioButton(group=self.radiobutton1)
 		image2 = Gtk.Image()
 		image2.set_from_file(os.path.join(comun.ICONDIR,'touchpad-indicator-dark-enabled.svg'))
 		self.radiobutton2.add(image2)
-		table4.attach(self.radiobutton2,2,3,0,1, xpadding=5, ypadding=5)
+		table5.attach(self.radiobutton2,2,3,0,1, xpadding=5, ypadding=5)
 		#***************************************************************
 		#
 		self.load_preferences()
@@ -178,6 +212,10 @@ class PreferencesDialog(Gtk.Dialog):
 		#
 		#
 		#
+	def on_checkbutton8_toggled(self,widget):
+		self.label_seconds.set_sensitive(self.checkbutton8.get_active())
+		self.seconds.set_sensitive(self.checkbutton8.get_active())
+		
 	def on_checkbutton0_clicked(self,widget,data):
 		self.set_shortcut_sensitive(not widget.get_active())
 			
@@ -256,6 +294,10 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton5.set_active(configuration.get('start_hidden'))
 		self.checkbutton6.set_active(configuration.get('show_notifications'))
 		self.checkbutton7.set_active(configuration.get('disable_touchpad_on_start_indicator'))		
+		self.checkbutton8.set_active(configuration.get('disable_on_typing'))
+		self.seconds.set_value(configuration.get('seconds'))
+		self.label_seconds.set_sensitive(self.checkbutton8.get_active())
+		self.seconds.set_sensitive(self.checkbutton8.get_active())		
 		self.key = configuration.get('shortcut')
 		self.shortcut_enabled = configuration.get('shortcut_enabled')
 		if self.key.find('<Primary>')>-1:
@@ -269,7 +311,14 @@ class PreferencesDialog(Gtk.Dialog):
 			self.radiobutton1.set_active(True)
 		else:
 			self.radiobutton2.set_active(True)
-
+		#
+		aclient = Synclient()
+		self.checkbutton41.set_active(aclient.get('VertEdgeScroll')=='1')
+		self.checkbutton42.set_active(aclient.get('HorizEdgeScroll')=='1')
+		self.checkbutton43.set_active(aclient.get('CircularScrolling')=='1')
+		self.checkbutton44.set_active(aclient.get('VertTwoFingerScroll')=='1')
+		self.checkbutton45.set_active(aclient.get('HorizTwoFingerScroll')=='1')
+		self.checkbutton46.set_active((int(aclient.get('VertScrollDelta'))<0) and (int(aclient.get('HorizScrollDelta'))<0))
 	def save_preferences(self):
 		configuration = Configuration()
 		configuration.set('first-time',False)
@@ -293,9 +342,23 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.set('start_hidden',self.checkbutton5.get_active())
 		configuration.set('show_notifications',self.checkbutton6.get_active())
 		configuration.set('disable_touchpad_on_start_indicator',self.checkbutton7.get_active())
+		configuration.set('disable_on_typing',self.checkbutton8.get_active())
+		configuration.set('seconds',self.seconds.get_value())
 		configuration.set('shortcut',key)
 		configuration.set('theme',theme)
 		configuration.save()
+		aclient = Synclient()
+		aclient.set('VertEdgeScroll',1 if self.checkbutton41.get_active() else 0)
+		aclient.set('HorizEdgeScroll',1 if self.checkbutton42.get_active() else 0)
+		aclient.set('CircularScrolling',1 if self.checkbutton43.get_active() else 0)
+		aclient.set('VertTwoFingerScroll',1 if self.checkbutton44.get_active() else 0)
+		aclient.set('HorizTwoFingerScroll',1 if self.checkbutton45.get_active() else 0)
+		if self.checkbutton46.get_active():
+			aclient.set('VertScrollDelta',-abs(int(aclient.get('VertScrollDelta'))))
+			aclient.set('HorizScrollDelta',-abs(int(aclient.get('HorizScrollDelta'))))
+		else:
+			aclient.set('VertScrollDelta',abs(int(aclient.get('VertScrollDelta'))))
+			aclient.set('HorizScrollDelta',abs(int(aclient.get('HorizScrollDelta'))))
 		desktop_environment = get_desktop_environment()
 		if desktop_environment == 'gnome':
 			print('gnom3')

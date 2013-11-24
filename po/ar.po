@@ -1,20 +1,20 @@
-# English (United Kingdom) translation for touchpad-indicator
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Arabic translation for touchpad-indicator
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the touchpad-indicator package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 1.0.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2013-11-24 19:31+0100\n"
-"PO-Revision-Date: 2013-07-03 17:49+0000\n"
-"Last-Translator: Anthony Harrington <untaintableangel@ubuntu.com>\n"
-"Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"PO-Revision-Date: 2013-09-19 18:09+0000\n"
+"Last-Translator: RaindropR <rajaa@hilltx.com>\n"
+"Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Language: ar\n"
 "X-Generator: Launchpad (build 16831)\n"
 "X-Launchpad-Export-Date: 2013-11-24 18:28+0000\n"
 
@@ -22,73 +22,73 @@ msgstr ""
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:149
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:286
 msgid "Disable Touchpad"
-msgstr "Disable Touchpad"
+msgstr "أبطل تفعيل لوحة اللمس"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:109
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:159
 msgid "Enable Touchpad"
-msgstr "Enable Touchpad"
+msgstr "تفعيل لوحة اللمس"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:171
 msgid "Touchpad Enabled"
-msgstr "Touchpad Enabled"
+msgstr "لوحة اللمس مفعّلة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:174
 msgid "Touchpad Disabled"
-msgstr "Touchpad Disabled"
+msgstr "لوحة اللمس غير مفعّلة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:255
 msgid "Homepage..."
-msgstr "Homepage..."
+msgstr "صفحة رئيسية..."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:256
 msgid "Get help online..."
-msgstr "Get help online..."
+msgstr "احصل على المساعدة عبر الإنترنت..."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:257
 msgid "Translate this application..."
-msgstr "Translate this application..."
+msgstr "ترجم هذا التطبيق..."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Report a bug..."
-msgstr "Report a bug..."
+msgstr "أبلغ عن مشكلة..."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Homepage"
-msgstr "Homepage"
+msgstr "الصفحة الرئيسية"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Follow us in Twitter"
-msgstr "Follow us on Twitter"
+msgstr "تابعنا على تويتر"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:262
 msgid "Follow us in Google+"
-msgstr "Follow us on Google+"
+msgstr "تابعنا على جوجل+"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Follow us in Facebook"
-msgstr "Follow us on Facebook"
+msgstr "تابعنا على فيسبوك"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:276
 msgid "About"
-msgstr "About"
+msgstr "حول"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:287
 msgid "Hide icon"
-msgstr "Hide icon"
+msgstr "إخف الأيقونة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:289
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:74
 msgid "Preferences"
-msgstr "Preferences"
+msgstr "التفضيلات"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:291
 msgid "Help"
-msgstr "Help"
+msgstr "مساعدة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Exit"
-msgstr "Exit"
+msgstr "خروج"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:305
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
@@ -130,64 +130,62 @@ msgstr "Exit"
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:123
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:126
 msgid "An indicator for the Touchpad"
-msgstr "An indicator for the Touchpad"
+msgstr "مؤشر للوحة اللمس"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:425
 msgid "usage: %prog [options]"
-msgstr "usage: %prog [options]"
+msgstr "إستخدام %prog [خيارات]"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:431
 msgid "show this help and exit."
-msgstr "Show this help and exit."
+msgstr "أظهار هذه المساعدة و خروج"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:436
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr "Change the touchpad state. If indicator is not running, launch it."
+msgstr "غيّر حالة لوحة اللمس. إذا كان المؤشر لايبدأ بتشغيله."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:441
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
-msgstr ""
-"Show the icon if indicator is hidden. Default action. If indicator is not "
-"running, launch it."
+msgstr "إظهار الأيقونة في حال إخفاء المؤشر."
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:446
 msgid "list devices"
-msgstr "List devices"
+msgstr "قائمة الأجهزة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:89
 msgid "Shortcut"
-msgstr "Shortcut"
+msgstr "إختصار"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:95
 msgid "Shortcut enabled"
-msgstr "Shortcut enabled"
+msgstr "إختصار مفعّل"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:116
 msgid "Actions"
-msgstr "Actions"
+msgstr "إجراءات"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:122
 msgid "Disable touchpad when mouse plugged"
-msgstr "Disable touchpad when mouse plugged"
+msgstr "أوقف تشغيل لوحة اللمس عند توصيل الفأرة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Enable touchpad on exit"
-msgstr "Enable touchpad on exit"
+msgstr "تفعيل لوحة اللمس عتد خروج"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:129
 msgid "Disable touchpad on exit"
-msgstr "Disable touchpad on exit"
+msgstr "إبطال تفعيل لوحة اللمس عتد خروج"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:133
 msgid "Disable touchpad when Touchpad-Indicator starts"
-msgstr "Disable touchpad when Touchpad-Indicator starts"
+msgstr "أوقف تشغيل لوحة اللمس عند بدأ المؤشر"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:136
 #, fuzzy
 msgid "Disable touchpad on typing"
-msgstr "Disable touchpad on exit"
+msgstr "إبطال تفعيل لوحة اللمس عتد خروج"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:140
 msgid "Seconds to wait after the last key press before enabling the touchpad"
@@ -195,24 +193,24 @@ msgstr ""
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
-msgstr "General options"
+msgstr "خيارات عامة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:155
 msgid "Autostart"
-msgstr "Autostart"
+msgstr "تشغيل تلقائي"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Start hidden"
-msgstr "Start hidden"
+msgstr "إبدأ مخفيًا"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:161
 msgid "Show notifications"
-msgstr "Show notifications"
+msgstr "عرض اﻹشعارات"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:166
 #, fuzzy
 msgid "Touchpad configuration"
-msgstr "Touchpad-Indicator"
+msgstr "مؤشر لوحة اللمس"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:172
 msgid "Vertical scrolling"
@@ -240,21 +238,21 @@ msgstr ""
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Theme"
-msgstr "Theme"
+msgstr "السمة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:194
 msgid "Select theme"
-msgstr "Select theme"
+msgstr "إختيار السمة"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:271
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:272
 msgid "This shortcut <Control> + <Alt> + "
-msgstr "This shortcut <Control> + <Alt> + "
+msgstr "هذا الإختصار <Control> + <Alt> + "
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:271
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:272
 msgid " is assigned"
-msgstr " is assigned"
+msgstr " مُعيّن"
 
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
@@ -333,55 +331,4 @@ msgstr " is assigned"
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:124
 #: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:125
 msgid "Touchpad-Indicator"
-msgstr "Touchpad-Indicator"
-
-#~ msgid "Select icon theme"
-#~ msgstr "Select icon theme"
-
-#~ msgid "Normal"
-#~ msgstr "Normal"
-
-#~ msgid "Dark"
-#~ msgstr "Dark"
-
-#~ msgid "Light"
-#~ msgstr "Light"
-
-#~ msgid "Esc "
-#~ msgstr "Esc "
-
-#~ msgid "Caps "
-#~ msgstr "Caps "
-
-#~ msgid "Application Web..."
-#~ msgstr "Application Web..."
-
-#~ msgid "Enable touchpad on start"
-#~ msgstr "Enable touchpad on start"
-
-#~ msgid "Home "
-#~ msgstr "Home "
-
-#~ msgid "PgUp "
-#~ msgstr "PgUp "
-
-#~ msgid "Super+"
-#~ msgstr "Super+"
-
-#~ msgid "Alt+"
-#~ msgstr "Alt+"
-
-#~ msgid "Ctrl+"
-#~ msgstr "Ctrl+"
-
-#~ msgid "Del "
-#~ msgstr "Del "
-
-#~ msgid "Ins "
-#~ msgstr "Ins "
-
-#~ msgid "PgDn "
-#~ msgstr "PgDn "
-
-#~ msgid "End "
-#~ msgstr "End "
+msgstr "مؤشر لوحة اللمس"

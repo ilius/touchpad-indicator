@@ -1,3 +1,12 @@
+touchpad-indicator (1.0.0-0extras13.10.0) saucy; urgency=low
+
+  * Disable touchpad while write
+  * Configure touchpad with vertical scroll, horizontal scroll, circular scroll
+  * Configure touchpad with two finger vertical and horizontal scroll
+  * Configure natural scroll
+
+ -- Lorenzo <atareao_s@saucy>  Sun, 24 Nov 2013 19:31:29 +0100
+
 touchpad-indicator (0.9.5-0extras13.04.1) raring; urgency=low
 
   * Support scroll to change Touchpad status

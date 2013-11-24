@@ -5,9 +5,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 0.9.5\n"
+"Project-Id-Version: touchpad-indicator 1.0.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2013-08-25 17:46+0200\n"
+"POT-Creation-Date: 2013-11-24 19:31+0100\n"
 "PO-Revision-Date: 2011-10-15 06:00+0000\n"
 "Last-Translator: Lorenzo Carbonell <Unknown>\n"
 "Language-Team: English\n"
@@ -15,279 +15,319 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
-"X-Generator: Launchpad (build 16738)\n"
-"X-Launchpad-Export-Date: 2013-08-25 07:32+0000\n"
+"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2013-11-24 18:28+0000\n"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:98
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:140
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:269
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:107
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:149
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:286
 msgid "Disable Touchpad"
 msgstr "Disable Touchpad"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:100
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:150
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:109
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:159
 msgid "Enable Touchpad"
 msgstr "Enable Touchpad"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:162
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:171
 msgid "Touchpad Enabled"
 msgstr "Touchpad Enabled"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:165
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:174
 msgid "Touchpad Disabled"
 msgstr "Touchpad Disabled"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:238
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:255
 msgid "Homepage..."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:239
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:256
 msgid "Get help online..."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:240
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:257
 msgid "Translate this application..."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:241
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:258
 msgid "Report a bug..."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:243
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Homepage"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:244
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Follow us in Twitter"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:245
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:262
 msgid "Follow us in Google+"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:246
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Follow us in Facebook"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:259
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:276
 msgid "About"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:270
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:287
 msgid "Hide icon"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:272
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:73
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:289
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:74
 msgid "Preferences"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:274
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:291
 msgid "Help"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:277
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:294
 msgid "Exit"
 msgstr "Exit"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:288
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:68
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:69
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:70
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:71
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:72
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:73
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:74
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:75
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:76
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:77
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:78
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:79
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:80
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:81
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:82
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:83
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:84
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:85
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:86
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:87
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:88
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:89
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:90
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:122
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:123
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:305
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:67
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:68
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:69
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:70
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:71
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:72
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:73
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:74
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:75
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:76
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:77
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:78
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:79
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:80
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:81
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:82
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:83
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:84
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:85
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:86
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:87
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:88
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:89
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:90
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:91
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:92
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:93
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:110
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:111
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:112
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:113
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:114
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:115
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:116
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:117
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:122
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:123
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:126
 msgid "An indicator for the Touchpad"
 msgstr "An indicator for the Touchpad"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:404
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:425
 msgid "usage: %prog [options]"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:410
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:431
 msgid "show this help and exit."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:415
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:436
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:420
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:441
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/touchpad_indicator.py:425
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/touchpad_indicator.py:446
 msgid "list devices"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:88
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:89
 msgid "Shortcut"
 msgstr "Shortcut"
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:94
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:95
 msgid "Shortcut enabled"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:115
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:116
 msgid "Actions"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:121
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:122
 msgid "Disable touchpad when mouse plugged"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:124
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:125
 msgid "Enable touchpad on exit"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:128
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:129
 msgid "Disable touchpad on exit"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:132
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:133
 msgid "Disable touchpad when Touchpad-Indicator starts"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:137
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:136
+#, fuzzy
+msgid "Disable touchpad on typing"
+msgstr "Disable Touchpad"
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:140
+msgid "Seconds to wait after the last key press before enabling the touchpad"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:143
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:155
 msgid "Autostart"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:146
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:158
 msgid "Start hidden"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:149
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:161
 msgid "Show notifications"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:154
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:166
+msgid "Touchpad configuration"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:172
+msgid "Vertical scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:174
+msgid "Horizontal scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:176
+msgid "Circular scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:178
+msgid "Two fingers vertical scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:180
+msgid "Two fingers horizontal scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:182
+msgid "Natural scrolling"
+msgstr ""
+
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Theme"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:160
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:194
 msgid "Select theme"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:271
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:272
 msgid "This shortcut <Control> + <Alt> + "
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:233
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/src/preferences_dialog.py:234
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:271
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/src/preferences_dialog.py:272
 msgid " is assigned"
 msgstr ""
 
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:15
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:16
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:17
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:18
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:19
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:20
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:21
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:22
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:23
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:24
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:25
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:26
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:27
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:28
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:29
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:30
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:31
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:32
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:33
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:34
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:35
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:36
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:37
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:38
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:39
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:40
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:41
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:42
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:43
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:44
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:45
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:46
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:47
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:48
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:49
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:50
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:51
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:52
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:53
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:54
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:55
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:56
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:57
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:58
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:59
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:60
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:61
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:62
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:63
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:118
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:119
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:120
-#: /home/atareao_r/Dropbox/tp/raring/touchpad-indicator/extras-touchpad-indicator.desktop.in:121
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:13
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:14
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:15
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:16
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:17
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:18
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:19
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:20
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:21
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:22
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:23
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:24
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:25
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:26
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:27
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:28
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:29
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:30
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:31
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:32
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:33
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:34
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:35
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:36
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:37
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:38
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:39
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:40
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:41
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:42
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:43
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:44
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:45
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:46
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:47
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:48
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:49
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:50
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:51
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:52
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:53
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:54
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:55
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:56
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:57
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:58
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:59
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:60
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:61
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:62
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:63
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:64
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:65
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:66
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:94
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:95
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:96
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:97
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:98
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:99
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:100
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:101
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:102
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:103
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:104
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:105
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:106
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:107
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:108
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:109
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:118
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:119
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:120
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:121
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:124
+#: /home/atareao_s/Copy/PROGRAMACION/Python/saucy/touchpad-indicator/extras-touchpad-indicator.desktop.in:125
 msgid "Touchpad-Indicator"
 msgstr ""
