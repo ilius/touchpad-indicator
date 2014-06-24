@@ -1,3 +1,9 @@
+touchpad-indicator (1.0.1-0extras14.04.1) trusty; urgency=medium
+
+  * Fixed bug #1312091
+
+ -- Lorenzo Carbonell <atareao@trusty>  Sun, 18 May 2014 18:50:47 +0200
+
 touchpad-indicator (1.0.0-0extras14.04.0) trusty; urgency=low
 
   * Ported to trusty

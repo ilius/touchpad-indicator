@@ -1,11 +1,11 @@
 ==================
-Touchpad-Indicator
+PushBullet-Indicator
 ==================
 
-Touchpad-Indicator an indicator to change the status of the touchpad
+pushbullet-Indicator an indicator for sending notes, links, lists, files, to other devices
 
 For more information, please visit our website:
-http://launchpad.net/touchpad-indicator/
+http://launchpad.net/pushbullet-indicator/
 or
 http://www.atareao.es
 
@@ -19,8 +19,7 @@ Required dependencies:
 	gir1.2-gdkpixbuf-2.0,
 	gir1.2-appindicator3-0.1,
 	gir1.2-notify-0.7,
-	python-udev,
-	python-dbus
+	python3-requests
 
 ========
 Download
@@ -28,4 +27,4 @@ Download
 
 Download the package:
 
-    $ bzr branch lp:touchpad-indicator
+    $ bzr branch lp:pushbullet-indicator
