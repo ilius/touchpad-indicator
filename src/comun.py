@@ -59,6 +59,7 @@ PARAMS = {
 			'show_notifications':True,
 			'theme':'light',
 			'touchpad_enabled':True,
+			'natural_scrolling':True,
 			'shortcut':'<Primary><Alt>c',						
 			}
 # check if running from source
