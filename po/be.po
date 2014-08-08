@@ -2,21 +2,21 @@
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 1.0.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2014-03-29 23:52+0100\n"
-"PO-Revision-Date: 2013-06-20 22:37+0000\n"
+"PO-Revision-Date: 2014-05-05 18:02+0000\n"
 "Last-Translator: Pavel <pashokap@gmail.com>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-08-08 18:40+0000\n"
+"X-Generator: Launchpad (build 17156)\n"
 "Language: be\n"
-"X-Generator: Launchpad (build 16967)\n"
-"X-Launchpad-Export-Date: 2014-03-29 22:40+0000\n"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:107
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:149
@@ -149,8 +149,8 @@ msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"паказаць іконку, калі індыкатар схаваны. Змоўчнае дзеянне. Калі індыкатар не"
-" запушчаны, запусціць яго."
+"паказаць іконку, калі індыкатар схаваны. Змоўчнае дзеянне. Калі індыкатар не "
+"запушчаны, запусціць яго."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:446
 msgid "list devices"
@@ -186,11 +186,13 @@ msgstr "Адключыць тачпад, калі Індыкатар Тачпа�
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad on typing"
-msgstr ""
+msgstr "Адключыць тачпад падчас набірання"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:140
 msgid "Seconds to wait after the last key press before enabling the touchpad"
 msgstr ""
+"Колькі секундаў чакаць пасля таго, як апошняя клавіша была націснута, перад "
+"тым, як уключыць тачпад"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
@@ -210,31 +212,31 @@ msgstr "Паказваць паведамленні"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:166
 msgid "Touchpad configuration"
-msgstr ""
+msgstr "Канфігурацыя тачпада"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:172
 msgid "Vertical scrolling"
-msgstr ""
+msgstr "Вертыкальная пракрутка"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:174
 msgid "Horizontal scrolling"
-msgstr ""
+msgstr "Гарызантальная пракрутка"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:176
 msgid "Circular scrolling"
-msgstr ""
+msgstr "Кругавая пракрутка"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:178
 msgid "Two fingers vertical scrolling"
-msgstr ""
+msgstr "Вертыкальная пракрутка двума пальцамі"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
 msgid "Two fingers horizontal scrolling"
-msgstr ""
+msgstr "Гарызантальная пракрутка двума пальцамі"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Натуральная пракрутка"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Theme"

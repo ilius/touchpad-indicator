@@ -2,21 +2,21 @@
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: touchpad-indicator 1.0.0\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2014-03-29 23:52+0100\n"
-"PO-Revision-Date: 2013-02-18 16:21+0000\n"
-"Last-Translator: Ahmet Sezgin Duran <marjinalist1@gmail.com>\n"
+"PO-Revision-Date: 2014-04-19 21:23+0000\n"
+"Last-Translator: Volkan Gezer <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-08-08 18:40+0000\n"
+"X-Generator: Launchpad (build 17156)\n"
 "Language: tr\n"
-"X-Generator: Launchpad (build 16967)\n"
-"X-Launchpad-Export-Date: 2014-03-29 22:40+0000\n"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:107
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:149
@@ -55,19 +55,19 @@ msgstr "Bir hata bildir...."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Homepage"
-msgstr ""
+msgstr "Ana Sayfa"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Follow us in Twitter"
-msgstr ""
+msgstr "Bizi Twitter'dan takip edin..."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:262
 msgid "Follow us in Google+"
-msgstr ""
+msgstr "Bizi Google+ üzerinden takip edin..."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Follow us in Facebook"
-msgstr ""
+msgstr "Bizi Facebook üzerinden takip edin..."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:276
 msgid "About"
@@ -186,11 +186,13 @@ msgstr "Touchpad-Indicator başladığında imleçsüreri devre dışı bırak"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:136
 msgid "Disable touchpad on typing"
-msgstr ""
+msgstr "Yazarken dokunmatik pad'i devre dışı bırak"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:140
 msgid "Seconds to wait after the last key press before enabling the touchpad"
 msgstr ""
+"Dokunmatik pad'i etkinleştirmeden önce son tuştan sonra beklenmesi gereken "
+"süre"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
@@ -210,31 +212,31 @@ msgstr "Bildirimleri göster"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:166
 msgid "Touchpad configuration"
-msgstr ""
+msgstr "Dokunmatik pad yapılandırması"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:172
 msgid "Vertical scrolling"
-msgstr ""
+msgstr "Dikey kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:174
 msgid "Horizontal scrolling"
-msgstr ""
+msgstr "Yatay kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:176
 msgid "Circular scrolling"
-msgstr ""
+msgstr "Dairesel kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:178
 msgid "Two fingers vertical scrolling"
-msgstr ""
+msgstr "İki parmal ile dikey kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
 msgid "Two fingers horizontal scrolling"
-msgstr ""
+msgstr "İki parmal ile yatay kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Doğal kaydırma"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Theme"

@@ -1,3 +1,13 @@
+touchpad-indicator (1.0.3-0extras14.04.0) trusty; urgency=medium
+
+  * Changed the color of the icons
+  * Updated translations
+  * Fixed bug #1328960 Touchpad-indicator crashes on startup
+  * Fixed bug #1225777 Settings not avaible
+  * Fixed bug #1334457 Preferences not displaying (python exception) Mint 17
+
+ -- Lorenzo Carbonell <atareao@trusty>  Fri, 08 Aug 2014 20:43:04 +0200
+
 touchpad-indicator (1.0.2-0extras14.04.1) trusty; urgency=medium
 
   * Fixed bug #1312091
