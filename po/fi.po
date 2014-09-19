@@ -2,21 +2,21 @@
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the touchpad-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 1.0.0\n"
+"Project-Id-Version: touchpad-indicator 1.0.3\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2014-03-29 23:52+0100\n"
+"POT-Creation-Date: 2014-09-19 07:47+0200\n"
 "PO-Revision-Date: 2013-11-28 08:09+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-08 18:40+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
 "Language: fi\n"
+"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-09-18 20:01+0000\n"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:107
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:149
@@ -142,16 +142,15 @@ msgstr "näytä tämä ohje ja poistu."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:436
 msgid "change the touchpad state. If indicator is not running launch it."
-msgstr ""
-"vaihda kosketuslevyn tilaa. Jos ilmaisin ei ole päällä, käynnistä se."
+msgstr "vaihda kosketuslevyn tilaa. Jos ilmaisin ei ole päällä, käynnistä se."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:441
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"näytä kuvake jos ilmaisin on piilotettu. Oletustoiminto. Jos ilmaisin ei ole "
-"päällä, käynnistä se."
+"näytä kuvake jos ilmaisin on piilotettu. Oletustoiminto. Jos ilmaisin ei ole"
+" päällä, käynnistä se."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:446
 msgid "list devices"
@@ -192,8 +191,8 @@ msgstr "Poista kosketuslevy käytöstä kirjoittaessa"
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:140
 msgid "Seconds to wait after the last key press before enabling the touchpad"
 msgstr ""
-"Aika sekunteina, joka odotetaan viimeisimmän näppäimen painalluksen jälkeen, "
-"ennen kuin kosketuslevy otetaan käyttöön"
+"Aika sekunteina, joka odotetaan viimeisimmän näppäimen painalluksen jälkeen,"
+" ennen kuin kosketuslevy otetaan käyttöön"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
@@ -215,45 +214,57 @@ msgstr "Näytä ilmoitukset"
 msgid "Touchpad configuration"
 msgstr "Kosketuslevyn asetukset"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:172
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
 msgid "Vertical scrolling"
 msgstr "Pystysuunnan vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:174
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
 msgid "Horizontal scrolling"
 msgstr "Vaakasuunnan vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:176
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:184
 msgid "Circular scrolling"
 msgstr "Ympyrämäinen vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:178
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:186
 msgid "Two fingers vertical scrolling"
 msgstr "Kahden sormen pystysuunnan vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Two fingers horizontal scrolling"
 msgstr "Kahden sormen vaakasuunnan vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:190
 msgid "Natural scrolling"
 msgstr "Luonnollinen vieritys"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:193
+msgid "Tapping with one finger"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:201
+msgid "Tapping with two fingers"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:209
+msgid "Tapping with three fingers"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:220
 msgid "Theme"
 msgstr "Teema"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:194
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:226
 msgid "Select theme"
 msgstr "Valitse teema"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Tämä pikanäppäin <Control> + <Alt> + "
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid " is assigned"
 msgstr " on määritelty"
 

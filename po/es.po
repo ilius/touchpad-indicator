@@ -2,21 +2,21 @@
 # Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Lorenzo Carbonell <EMAIL@ADDRESS>, 2010.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: touchpad-indicator 1.0.0\n"
+"Project-Id-Version: touchpad-indicator 1.0.3\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2014-03-29 23:52+0100\n"
-"PO-Revision-Date: 2014-06-25 02:33+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"POT-Creation-Date: 2014-09-19 07:47+0200\n"
+"PO-Revision-Date: 2014-08-30 08:10+0000\n"
+"Last-Translator: javier algilaga <algilaga@gmail.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-08 18:40+0000\n"
-"X-Generator: Launchpad (build 17156)\n"
 "Language: es\n"
+"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2014-09-18 20:01+0000\n"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:107
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:149
@@ -55,19 +55,19 @@ msgstr "Informar de un error…"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:260
 msgid "Homepage"
-msgstr ""
+msgstr "Página de inicio"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:261
 msgid "Follow us in Twitter"
-msgstr ""
+msgstr "Síguenos en Twitter"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:262
 msgid "Follow us in Google+"
-msgstr ""
+msgstr "Síguenos en Google+"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:263
 msgid "Follow us in Facebook"
-msgstr ""
+msgstr "Síguenos en Facebook"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:276
 msgid "About"
@@ -75,7 +75,7 @@ msgstr "Acerca de"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:287
 msgid "Hide icon"
-msgstr "Esconder ícono"
+msgstr "Ocultar icono"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:289
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:74
@@ -143,15 +143,16 @@ msgstr "Muestra esta ayuda y sale"
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:436
 msgid "change the touchpad state. If indicator is not running launch it."
 msgstr ""
-"Cambia el estado del touchpad. Si el indicador no está funcionando lo inicia."
+"Cambia el estado del touchpad. Si el indicador no está funcionando lo "
+"inicia."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:441
 msgid ""
 "show the icon if indicator is hidden. Default action. If indicator is not "
 "running launch it."
 msgstr ""
-"Muestra el icono si el indicador está oculto. Esta es la acción por defecto. "
-"Si el indicador no está funcionando lo inicia."
+"Muestra el icono si el indicador está oculto. Esta es la acción por defecto."
+" Si el indicador no está funcionando lo inicia."
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/touchpad_indicator.py:446
 msgid "list devices"
@@ -192,6 +193,8 @@ msgstr "Desactivar el panel táctil al escribir"
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:140
 msgid "Seconds to wait after the last key press before enabling the touchpad"
 msgstr ""
+"Segundos de espera después de la última pulsación antes de activar el panel "
+"táctil"
 
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:149
 msgid "General options"
@@ -213,45 +216,57 @@ msgstr "Mostrar notificaciones"
 msgid "Touchpad configuration"
 msgstr "Configuración del panel táctil"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:172
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
 msgid "Vertical scrolling"
 msgstr "Desplazamiento vertical"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:174
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
 msgid "Horizontal scrolling"
 msgstr "Desplazamiento horizontal"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:176
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:184
 msgid "Circular scrolling"
 msgstr "Desplazamiento circular"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:178
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:186
 msgid "Two fingers vertical scrolling"
 msgstr "Desplazamiento vertical con dos dedos"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Two fingers horizontal scrolling"
 msgstr "Desplazamiento horizontal con dos dedos"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:190
 msgid "Natural scrolling"
 msgstr "Desplazamiento natural"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:193
+msgid "Tapping with one finger"
+msgstr "Al tocar con un dedo"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:201
+msgid "Tapping with two fingers"
+msgstr "Al tocar con dos dedos"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:209
+msgid "Tapping with three fingers"
+msgstr "Al tocar con tres dedos"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:220
 msgid "Theme"
 msgstr "Tema"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:194
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:226
 msgid "Select theme"
 msgstr "Seleccionar tema"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid "This shortcut <Control> + <Alt> + "
 msgstr "Este atajo del teclado <Control> + <Alt> + "
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid " is assigned"
 msgstr " es asignado"
 
@@ -332,7 +347,7 @@ msgstr " es asignado"
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/extras-touchpad-indicator.desktop.in:124
 #: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/extras-touchpad-indicator.desktop.in:125
 msgid "Touchpad-Indicator"
-msgstr ""
+msgstr "Indicador Touchpad"
 
 #~ msgid "Normal"
 #~ msgstr "Normal"

@@ -124,3 +124,4 @@ $Comment[si] = _('An indicator for the Touchpad')
 $Name[ar] = _('Touchpad-Indicator')
 $GenericName[ar] = _('Touchpad-Indicator')
 $Comment[ar] = _('An indicator for the Touchpad')
+

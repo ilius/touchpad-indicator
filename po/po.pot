@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2014-03-29 23:52+0100\n"
+"POT-Creation-Date: 2014-09-19 07:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,45 +209,57 @@ msgstr ""
 msgid "Touchpad configuration"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:172
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
 msgid "Vertical scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:174
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
 msgid "Horizontal scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:176
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:184
 msgid "Circular scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:178
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:186
 msgid "Two fingers vertical scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:180
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
 msgid "Two fingers horizontal scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:182
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:190
 msgid "Natural scrolling"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:188
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:193
+msgid "Tapping with one finger"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:201
+msgid "Tapping with two fingers"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:209
+msgid "Tapping with three fingers"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:220
 msgid "Theme"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:194
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:226
 msgid "Select theme"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid "This shortcut <Control> + <Alt> + "
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:271
-#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:272
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:303
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/touchpad-indicator/src/preferences_dialog.py:304
 msgid " is assigned"
 msgstr ""
 

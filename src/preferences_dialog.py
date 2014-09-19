@@ -166,21 +166,53 @@ class PreferencesDialog(Gtk.Dialog):
 		notebook.append_page(vbox4,Gtk.Label.new(_('Touchpad configuration')))
 		frame4 = Gtk.Frame()
 		vbox4.pack_start(frame4,True,True,0)
-		table4 = Gtk.Table(6, 1, False)
+		table4 = Gtk.Table(9, 2, False)
 		frame4.add(table4)	
 		#***************************************************************
+		mbuttons_store = Gtk.ListStore(str)
+		mbuttons = ['None', 'Left mouse button', 'Middle mouse button', 'Right mouse button']
+		for mbutton in mbuttons:
+			mbuttons_store.append([mbutton])
+
+		renderer_text = Gtk.CellRendererText()        	
+		
+		#***************************************************************
 		self.checkbutton41 = Gtk.CheckButton.new_with_label(_('Vertical scrolling'))
-		table4.attach(self.checkbutton41,0,1,0,1, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton41,0,2,0,1, xpadding=5, ypadding=5)
 		self.checkbutton42 = Gtk.CheckButton.new_with_label(_('Horizontal scrolling'))
-		table4.attach(self.checkbutton42,0,1,1,2, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton42,0,2,1,2, xpadding=5, ypadding=5)
 		self.checkbutton43 = Gtk.CheckButton.new_with_label(_('Circular scrolling'))
-		table4.attach(self.checkbutton43,0,1,2,3, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton43,0,2,2,3, xpadding=5, ypadding=5)
 		self.checkbutton44 = Gtk.CheckButton.new_with_label(_('Two fingers vertical scrolling'))
-		table4.attach(self.checkbutton44,0,1,3,4, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton44,0,2,3,4, xpadding=5, ypadding=5)
 		self.checkbutton45 = Gtk.CheckButton.new_with_label(_('Two fingers horizontal scrolling'))
-		table4.attach(self.checkbutton45,0,2,4,5, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton45,0,3,4,5, xpadding=5, ypadding=5)
 		self.checkbutton46 = Gtk.CheckButton.new_with_label(_('Natural scrolling'))
-		table4.attach(self.checkbutton46,0,2,5,6, xpadding=5, ypadding=5)
+		table4.attach(self.checkbutton46,0,3,5,6, xpadding=5, ypadding=5)
+		
+		self.label_tapping1 = Gtk.Label(_('Tapping with one finger'))
+		self.label_tapping1.set_alignment(0, 0.5)
+		table4.attach(self.label_tapping1,0,1,6,7, xpadding=5, ypadding=5)
+		self.combobox47 = Gtk.ComboBox.new_with_model(mbuttons_store)
+		self.combobox47.pack_start(renderer_text, True)
+		self.combobox47.add_attribute(renderer_text, "text", 0)
+		table4.attach(self.combobox47,2,3,6,7, xpadding=5, ypadding=5)
+		
+		self.label_tapping2 = Gtk.Label(_('Tapping with two fingers'))
+		self.label_tapping2.set_alignment(0, 0.5)
+		table4.attach(self.label_tapping2,0,1,7,8, xpadding=5, ypadding=5)
+		self.combobox48 = Gtk.ComboBox.new_with_model(mbuttons_store)
+		self.combobox48.pack_start(renderer_text, True)
+		self.combobox48.add_attribute(renderer_text, "text", 0)
+		table4.attach(self.combobox48,2,3,7,8, xpadding=5, ypadding=5)
+		
+		self.label_tapping3 = Gtk.Label(_('Tapping with three fingers'))
+		self.label_tapping3.set_alignment(0, 0.5)
+		table4.attach(self.label_tapping3,0,1,8,9, xpadding=5, ypadding=5)
+		self.combobox49 = Gtk.ComboBox.new_with_model(mbuttons_store)
+		self.combobox49.pack_start(renderer_text, True)
+		self.combobox49.add_attribute(renderer_text, "text", 0)
+		table4.attach(self.combobox49,2,3,8,9, xpadding=5, ypadding=5)
 		
 		#***************************************************************
 		vbox5 = Gtk.VBox(spacing = 5)
@@ -232,7 +264,7 @@ class PreferencesDialog(Gtk.Dialog):
 		if self.checkbutton3.get_active() and self.checkbutton4.get_active():
 			self.checkbutton3.set_active(False)
 
-	def close_application(self, widget, event):
+	def close_application(self, widget):
 		self.destroy()
 	
 	def messagedialog(self,title,message):
@@ -320,6 +352,9 @@ class PreferencesDialog(Gtk.Dialog):
 		self.checkbutton44.set_active(aclient.get('VertTwoFingerScroll')=='1')
 		self.checkbutton45.set_active(aclient.get('HorizTwoFingerScroll')=='1')
 		self.checkbutton46.set_active((int(aclient.get('VertScrollDelta'))<0) and (int(aclient.get('HorizScrollDelta'))<0))
+		self.combobox47.set_active(int(aclient.get('TapButton1')))
+		self.combobox48.set_active(int(aclient.get('TapButton2')))
+		self.combobox49.set_active(int(aclient.get('TapButton3')))
 	def save_preferences(self):
 		configuration = Configuration()
 		configuration.set('first-time',False)
@@ -355,6 +390,9 @@ class PreferencesDialog(Gtk.Dialog):
 		aclient.set('CircularScrolling',1 if self.checkbutton43.get_active() else 0)
 		aclient.set('VertTwoFingerScroll',1 if self.checkbutton44.get_active() else 0)
 		aclient.set('HorizTwoFingerScroll',1 if self.checkbutton45.get_active() else 0)
+		aclient.set('TapButton1',self.combobox47.get_active())
+		aclient.set('TapButton2',self.combobox48.get_active())
+		aclient.set('TapButton3',self.combobox49.get_active())		
 		if self.checkbutton46.get_active():
 			aclient.set('VertScrollDelta',-abs(int(aclient.get('VertScrollDelta'))))
 			aclient.set('HorizScrollDelta',-abs(int(aclient.get('HorizScrollDelta'))))
